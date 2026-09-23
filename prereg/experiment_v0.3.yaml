@@ -1,0 +1,19 @@
+experiment_id: SPLAY-AM-MST-v0.3
+parent:
+  experiment_id: SPLAY-AM-BD-v0.2
+  sealed_commit: 38c1be6
+  terminal_claim: FINITE_DEBT_LAW_MINING_RESULTS
+secondary_ancestor:
+  experiment_id: SPLAY-AM-PD-v0.1
+  sealed_commit: 6de1ca2a595e8895f54794f3a211fe6ee1a95a80
+target_problem: Sleator-Tarjan dynamic optimality conjecture
+bridge: Levy-Tarjan subsequence / approximate monotonicity
+primary_discovery_object: multiscale_synchronous_discrepancy_ledger
+primary_branch: RAW_BOUNDARY
+fallback_branch: SIGNED_MULTISCALE
+diagnostic_b: {p: 2, q: 1}
+final_constant_policy: any_universal_finite_C
+finite_evidence_is_theorem: false
+spec_file: IMPLEMENTATION_SPEC_v0.3.md
+workplan_file: WorkPlan.md
+tracker_file: Path.md

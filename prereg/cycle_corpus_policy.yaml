@@ -1,0 +1,9 @@
+critical_sizes: [4, 5, 6, 7]
+import_all_parent_critical_cycles: true
+near_critical:
+  top_k_per_n: 128
+  allowed_scaled_slack: [0, 1, 2]
+canonical_order: [n, source_state_id, cycle_length, key_word_lex]
+no_adaptive_thresholds: true
+selection: {critical_n_4_6: selection, critical_n_7: internal_validation,
+  noncritical_n_2_5: selection, noncritical_n_6_7: validation}

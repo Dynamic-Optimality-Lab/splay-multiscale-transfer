@@ -1,0 +1,27 @@
+# MST0-01..26 gate matrix
+MST0-01: {owner: WP-0, required: REVIEWED, status: UNPROVED}
+MST0-02: {owner: WP-1, required: REVIEWED, status: UNPROVED}
+MST0-03: {owner: WP-2, required: REVIEWED, status: UNPROVED}
+MST0-04: {owner: WP-1, required: REVIEWED, status: UNPROVED}
+MST0-05: {owner: WP-2, required: REVIEWED, status: UNPROVED}
+MST0-06: {owner: WP-2, required: REVIEWED, status: UNPROVED}
+MST0-07: {owner: WP-2, required: REVIEWED, status: UNPROVED}
+MST0-08: {owner: WP-2, required: REVIEWED, status: UNPROVED}
+MST0-09: {owner: WP-4, required: REVIEWED, status: UNPROVED}
+MST0-10: {owner: WP-3, required: REVIEWED, status: UNPROVED}
+MST0-11: {owner: WP-3, required: REVIEWED, status: UNPROVED}
+MST0-12: {owner: WP-4, required: REVIEWED, status: UNPROVED}
+MST0-13: {owner: WP-6, required: REVIEWED, status: UNPROVED}
+MST0-14: {owner: WP-6, required: REVIEWED, status: UNPROVED}
+MST0-15: {owner: WP-6, required: REVIEWED, status: UNPROVED}
+MST0-16: {owner: WP-1, required: REVIEWED, status: UNPROVED}
+MST0-17: {owner: WP-6, required: REVIEWED, status: UNPROVED}
+MST0-18: {owner: WP-6, required: REVIEWED, status: UNPROVED}
+MST0-19: {owner: WP-6, required: REVIEWED, status: UNPROVED}
+MST0-20: {owner: WP-4, required: REVIEWED, status: UNPROVED}
+MST0-21: {owner: WP-4, required: REVIEWED, status: UNPROVED}
+MST0-22: {owner: WP-5, required: REVIEWED, status: UNPROVED}
+MST0-23: {owner: WP-4, required: REVIEWED, status: UNPROVED}
+MST0-24: {owner: WP-4, required: REVIEWED, status: UNPROVED}
+MST0-25: {owner: WP-5, required: REVIEWED, status: UNPROVED}
+MST0-26: {owner: WP-2, required: REVIEWED, status: UNPROVED}

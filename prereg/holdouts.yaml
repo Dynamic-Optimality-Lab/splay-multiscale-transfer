@@ -1,0 +1,18 @@
+n8: {status: PARTIALLY_REVEALED_CANARY_CONTAMINATED, fresh: false}
+H1: {inherited: true, required_status: EMPTY, eligible: STATE_PAIR_COMPATIBLE}
+H2R: {inherited: true, required_status: BANK_COMMITTED, required_unlock_count: 0, eligible: REPLAY_HISTORY_COMPATIBLE}
+H3T:
+  inherited: false
+  status_at_prereg: TO_BE_GENERATED_AND_QUARANTINED
+  sizes: [10, 12, 16, 24, 32, 48, 64]
+  episodes_per_size: 10000
+  total_episodes: 70000
+  eligible: TRANSFER_CALCULUS
+  strata: [RANDOM_LEGAL, DELETE_BURST_THEN_KEEP, ALTERNATING_KEEP_DELETE,
+    SPINE_VS_BALANCED, OPPOSITE_SPINE, ZIGZIG_ENRICHED, ZIGZAG_ENRICHED,
+    BOUNDARY_PAIRING_ENRICHED, NESTED_INTERVAL_ENRICHED, MIRROR_PAIRED,
+    MOTIF_BLIND_RANDOM_WALK]
+  state_machine: [EMPTY, BANK_COMMITTED, TRANSFER_CALCULUS_FROZEN, UNLOCKED_ONCE]
+validation_order_state_only: [development, n8_contaminated, H1, H3T, adversarial]
+validation_order_causal: [development, H2R, H3T, adversarial]
+post_reveal_mutation: POST_HOLDOUT_new_ID

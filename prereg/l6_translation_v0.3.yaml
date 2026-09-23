@@ -1,0 +1,31 @@
+mapping_version: L6MAP-v0.3.1
+reference_convention: KEEP_REF_SNAPSHOT-v1
+objects:
+  PA_REFERENCE_RANK: {source: L6_rank_exact_copy, status: to_be_reviewed}
+  PA_HEAVY_EDGE: {status: to_be_reviewed}
+  PA_HEAVY_PATH: {status: to_be_reviewed}
+  PA_LIGHT_EDGE: {status: to_be_reviewed}
+  PA_HEAP_VIEW: {status: to_be_reviewed}
+  PA_RAW_GAP: {status: to_be_reviewed}
+  PA_INTERVAL_GAP: {status: to_be_reviewed}
+  PA_POINT_GAP: {status: to_be_reviewed}
+  PA_LAZY_INTERVAL: {status: to_be_reviewed}
+  PA_GROWING_INTERVAL: {status: to_be_reviewed}
+  PA_SHRINKING_INTERVAL: {status: to_be_reviewed}
+  PA_BROKEN_INTERVAL: {status: to_be_reviewed}
+  PA_INTERNAL_PAIRING: {status: to_be_reviewed}
+  PA_BOUNDARY_PAIRING: {status: to_be_reviewed}
+  PA_GOOD_PAIRING: {status: to_be_reviewed}
+  PA_BAD_PAIRING: {status: to_be_reviewed}
+  PA_IMPORTANT_BOUNDARY_PAIRING: {status: to_be_reviewed}
+  PA_UNIMPORTANT_BOUNDARY_PAIRING: {status: to_be_reviewed}
+  PA_BEND: {status: to_be_reviewed}
+  PA_CONTRACTED_POINT_GAP_L6: {status: baseline_only}
+  PAIR_UP: {status: to_be_reviewed}
+  DELETE_INTERVAL_MEMBER: {status: to_be_reviewed}
+  INSERT_INTERVAL_MEMBER: {status: to_be_reviewed}
+  SPLIT_INTERVAL: {status: to_be_reviewed}
+  CONVERT_INTERVAL: {status: to_be_reviewed}
+  TRANSFER_INTERVAL: {status: to_be_reviewed}
+  HEAP_CHILD_EXCHANGE: {status: to_be_reviewed}
+rule: source_theorem_never_transplanted_without_MST0_03_REVIEWED

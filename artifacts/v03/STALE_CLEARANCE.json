@@ -1,0 +1,1 @@
+{"cleared_preexisting_results": [], "impl_repo_at_clone": {"commits": 1, "files": ["LICENSE"]}, "policy": "artifacts/v03 holds only newly computed v0.3 outputs; parent evidence stays read-only under parent/", "utc": "2026-09-23"}

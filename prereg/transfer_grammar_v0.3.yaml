@@ -1,0 +1,9 @@
+credit_types: [BOUNDARY_LATENT, BOUNDARY_ACTIVE, SCALE_PACKET, BEND_CREDIT, INTERVAL_CREDIT]
+support_schema: [key, interval, heavy_path, heap_relation, lazy_interval, boundary, bend, orientation]
+scale_systems: [S0_subtree_dyadic, S1_depth_dyadic, S2_rawgap_integer, S3_contracted_baseline_only, S4_span_dyadic, S5_rank_bucket_if_exact]
+rule_templates: [T1_move, T2_up, T3_down_split, T4_flip, T5_activate, T6_repay, T7_inject, T8_lazy_transfer, T9_signed_cancel, T10_bend_discharge]
+branch_A: {allowed: [T1, T2, T3, T4, T5, T6, T7, T8, T10], signed: false}
+branch_B: {allowed: [T1, T2, T3, T4, T5, T6, T7, T8, T9, T10], signed: true, requires_lower_bound: true, preregistered_before_branchA_result: true}
+max_primitive_outputs_per_rule: O1_unless_aggregate_proved
+forbidden_inputs: [regret_values, criticality_labels, Bellman_UVG, state_ids, cycle_ids, holdout_flags, future_keys]
+objective_hierarchy: [local_conservation, critical_cycle_satisfaction, bounded_injection, repayment, cross_n, cross_C, simplicity]

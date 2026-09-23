@@ -1,0 +1,5 @@
+development_selection: [critical_n4_6, near_critical_selection, noncritical_n2_5, generated_selection_mask]
+internal_validation: [critical_n7, noncritical_n6_7, generated_validation_mask]
+fresh: [n8_contaminated, H1, H2R, H3T]
+adversarial: [large_n_16_256, structured_families, motif_inflation]
+rule: masks_and_seeds_frozen_before_target_guided_synthesis

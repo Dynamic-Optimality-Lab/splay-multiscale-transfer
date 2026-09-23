@@ -1,0 +1,1 @@
+{"imported": ["V01_SEAL", "V02_SEAL", "V01_FINAL_RESULT", "V02_FINAL_RESULT", "manifests", "firewalls"], "mode": "one_authorized_bootstrap_transaction_then_read_only", "parent_commits": {"ancestor": "6de1ca2a595e8895f54794f3a211fe6ee1a95a80", "parent": "38c1be6afd2ab2420aa094c68ce45ee6a26b3628"}, "utc": "2026-09-23"}

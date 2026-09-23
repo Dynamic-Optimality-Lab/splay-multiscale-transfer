@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["calculus_id", "exact_residual", "failure_type", "history_hash", "n", "schema_version"], "title": "MST-CEX-v0.3", "type": "object"}

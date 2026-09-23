@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["branch", "calculus_id", "energy_definition", "ontology_version", "rule_ids", "schema_version"], "title": "MST-CALCULUS-v0.3", "type": "object"}

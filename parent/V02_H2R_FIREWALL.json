@@ -1,0 +1,6 @@
+{
+  "bank_id": "HOLDOUT-H2R-v0.1",
+  "note": "v0.3 Phase-00 verification: BANK_COMMITTED, unlock_count 0, no v0.3 discovery read",
+  "state": "BANK_COMMITTED",
+  "unlocks": 0
+}

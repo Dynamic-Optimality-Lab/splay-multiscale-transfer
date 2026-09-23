@@ -1,0 +1,12 @@
+parent_experiment: SPLAY-AM-BD-v0.2
+sealed_commit_full: 38c1be6afd2ab2420aa094c68ce45ee6a26b3628
+sealed_commit_short: 38c1be6
+terminal_claim: FINITE_DEBT_LAW_MINING_RESULTS
+ancestor_experiment: SPLAY-AM-PD-v0.1
+ancestor_commit: 6de1ca2a595e8895f54794f3a211fe6ee1a95a80
+chain_aides: [b444f6a, 08dc1a7, 19245ab, f131b14, 29de3df]
+h1_required: {firewall_state: EMPTY, unlock_record: null}
+h2r_required: {firewall_state: BANK_COMMITTED, unlock_count: 0}
+n8_status: PARTIALLY_REVEALED_CANARY_CONTAMINATED
+parent_mutation_forbidden: true
+mismatch_signal: PARENT_SEAL_MISMATCH

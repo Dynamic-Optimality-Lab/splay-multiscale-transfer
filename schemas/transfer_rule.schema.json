@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["branch", "input_credit_pattern", "output_credit_pattern", "rule_id", "schema_version", "template"], "title": "MST-RULE-v0.3", "type": "object"}

@@ -1,0 +1,13 @@
+ontology_version: MST-ONTOLOGY-v0.3
+primitive_cases: [ROOT, ZIG, LL, RR, LR, RL]
+modes: [KEEP, DELETE]
+sides: [A, B]
+scale_systems: [S0, S1, S2, S3, S4, S5]
+provenance_alphabet: [A_ROTATION_CREATED, A_ROTATION_MOVED, B_ZIGZIG_TRANSFERRED,
+  B_ZIGZAG_EXPOSED, BOUNDARY_INSERT_CREATED, BOUNDARY_PAIRING_MOVED,
+  INTERVAL_SPLIT_REDISTRIBUTED, INTERVAL_TRANSFER_MOVED,
+  HEAP_CHILD_EXCHANGE_MOVED, CANCELLED, PAID_REGRET]
+credit_states: [LATENT, ACTIVE, SPENT, TRANSFERRED]
+target_blind: true
+forbidden_fields: [regret, criticality, Bellman_UVG, candidate_ids, holdout_flags]
+regret_layers: [EDGE_REGRET_authoritative, ROTATION_CONTEXT, DISCOVERY_ATTRIBUTION_unproved]

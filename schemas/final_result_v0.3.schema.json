@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["experiment_id", "terminal_claim"], "title": "FINAL-RESULT-v0.3", "type": "object"}

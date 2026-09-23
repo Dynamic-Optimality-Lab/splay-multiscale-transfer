@@ -1,0 +1,6 @@
+python==3.13.7
+sympy==1.14.0
+zstandard==0.25.0
+jsonschema==4.25.1
+networkx==3.5
+numpy==2.3.3

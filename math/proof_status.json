@@ -1,0 +1,136 @@
+{
+  "experiment": "SPLAY-AM-MST-v0.3",
+  "lifecycle": "UNPROVED->PROVED->REVIEWED",
+  "obligations": {
+    "MST0-01": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-02": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-03": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-04": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-05": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-06": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-07": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-08": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-09": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-10": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-11": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-12": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-13": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-14": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-15": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-16": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-17": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-18": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-19": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-20": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-21": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-22": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-23": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-24": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-25": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    },
+    "MST0-26": {
+      "proof": null,
+      "review": null,
+      "status": "UNPROVED"
+    }
+  }
+}

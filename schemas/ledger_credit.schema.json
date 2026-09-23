@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["credit_type", "mass", "provenance_class", "scale", "schema_version", "support"], "title": "MST-CREDIT-v0.3", "type": "object"}
