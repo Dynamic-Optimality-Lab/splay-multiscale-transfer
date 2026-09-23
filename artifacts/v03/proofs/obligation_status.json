@@ -2,20 +2,20 @@
   "derived_utc": "2026-09-23",
   "statuses": {
     "MST0-01": {
-      "evidence": "math/theorem_MST01_parent_transport.md",
-      "status": "PROVED"
+      "evidence": "MST0-01.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-02": {
-      "evidence": "math/theorem_MST02_rotation_refinement.md",
-      "status": "PROVED"
+      "evidence": "MST0-02.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-03": {
       "evidence": "no proof document yet",
       "status": "UNPROVED"
     },
     "MST0-04": {
-      "evidence": "math/theorem_MST04_keep_reference_snapshot.md",
-      "status": "PROVED"
+      "evidence": "MST0-04.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-05": {
       "evidence": "no proof document yet",
@@ -62,8 +62,8 @@
       "status": "UNPROVED"
     },
     "MST0-16": {
-      "evidence": "math/theorem_MST16_block_partition.md",
-      "status": "PROVED"
+      "evidence": "MST0-16.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-17": {
       "evidence": "no proof document yet",

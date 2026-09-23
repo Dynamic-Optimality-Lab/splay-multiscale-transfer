@@ -113,7 +113,7 @@ Resolution (semantics-preserving, logged here): rewrote ONLY that WP-0 bootstrap
 
 ---
 
-## WP-1 — Exact pair dynamics + rotation traces [IMPLEMENTATION COMPLETE — GATES EMITTED (mechanics scope); SUBGATE PENDING HUMAN REVIEW of MST0-01/02/04/16]
+## WP-1 — Exact pair dynamics + rotation traces [FINISHED — GATES EMITTED + SUBGATE CLOSED (MST0-01/02/04/16 REVIEWED by human ACCEPT 2026-09-23)]
 
 Planned scope/files/code/benchmarks per WorkPlan.md §WP-1 (spec PHASE 01/03/04-expansion; MST0-02/04/16; MST-GATE-2). Head-start already in tree: `splay.py/pair.py/independent.py/trace.py` + 47 green checks. Remaining: `rotations/reference.py`, `rotations/blocks.py`, `cycles/import_parent.py`, `cycles/expand.py`, `cycles/circulation.py`, `artifacts/v03/parent_import|rotations|cycles/expanded`, `theorem_MST02/04/16` proofs, `tests/rotations + tests/parent`. Adherence verdict to be recorded when executed.
 
@@ -359,6 +359,9 @@ Inorder/preorder builder bug; stale-root reuse (twice); `splay2` header clobbere
 ### Verdict + the one remaining action
 WP-1 implementation is COMPLETE. Gates PARENT_CHAIN_VERIFIED + ROTATION_TRACE_CERTIFIED are emitted (mechanics scope). The WP-1 pre-consumption subgate is PROVED but NOT reviewed: MST0-01/02/04/16 await human ACCEPT/REJECT/BLOCKED verdicts on the four packages in `math/reviews/` (template fields complete; reviewer identity/date/verdict are the only empty fields, and only a human may fill them). Until then: no certified parent-fact consumption, no WP-2 theorem-facing use. **Requested of the human reviewer: read the four proof docs + packages and record verdicts as `math/reviews/MST0-XX.review.json` per `schemas/theorem_review.schema.json`; that single act closes WP-1.**
 
+### Subgate closure (human verdict ACCEPT all four, 2026-09-23)
+The reviewer returned ACCEPT for MST0-01/02/04/16. Recorded as `math/reviews/MST0-XX.review.json` (schema-validated by `jsonschema` before write; proof-doc full hashes match the packages' 16-prefixes, proving the reviewed bytes are the packaged bytes). Derived statuses now `REVIEWED: 4, UNPROVED: 22`; re-ran `run_phase01` → `PHASE01_PASS` with subgate line `MST0-01=REVIEWED`. WP-1 is FINISHED: certified parent-fact consumption and WP-2 theorem-facing use are unblocked (within their own entry gates). No other file changed for the verdict (review records are new, unfrozen files).
+
 ---
 
 ## Cross-cutting log
@@ -370,6 +373,6 @@ WP-1 implementation is COMPLETE. Gates PARENT_CHAIN_VERIFIED + ROTATION_TRACE_CE
 - 2026-09-23: Turn 6 (review-response V) — WP-2A/WP-2B target-join barrier (definitions → proof → freeze → target join); count de-hardcoded (yaml self-declares 27 top-level, 30 named incl. sub-fields); FALSE removed from mapping statuses (refutation-record schema instead). Re-verified → commit+push.
 - 2026-09-23: Turn 7 (review-response VI) — PA-native fallback edge case: 27/27 records carry preregistered `MST_NATIVE_*` fallbacks; N/A activates fallback, invention banned mid-experiment. Re-verified → commit+push.
 - 2026-09-23: Turn 8 (WP-0 EXECUTION) — Phase 0 implemented exactly: missing modules created (bootstrap/verify/check + 19 stubs), STEP console logs (00–11) with ID comments, L3+L6 bytes frozen, real bootstrap manifest + lock, STOP-05 read-only integrity, allowlist early-science check, header-anchored gate check, 27/27 stress green, full battery green (freeze/phase00/foundation/stress/reproduce all exit 0). FOUNDATION_FROZEN claimed (one scoped literature item). Re-verified → commit+push.
-- 2026-09-23: Turn 9 (WP-1 EXECUTION) — Phase 1 implemented exactly: canonical enumeration (counts 4/19/196/1764/17424/184041 exact), sealed import (52 files, manifest cross-check), strict replay (19/19 cycles, ratios 3/2–8/5–23/14 exact, all-KEEP closed), forced derivatives edge-exact KEEP-only, 15 specimen witnesses exact, failure table (3 PHI REJECTED, 7 atom families INCONSISTENT), 70-edge dual-core agreement, expansion idempotent, 4 proofs PROVED + review packages, stress green, full regression green. Gates emitted (mechanics scope); MST0-01/02/04/16 REVIEWED pending human verdict — the single remaining act. Re-verified → commit+push.
+- 2026-09-23: Turn 9 (WP-1 EXECUTION) — Phase 1 implemented exactly: canonical enumeration (counts 4/19/196/1764/17424/184041 exact), sealed import (52 files, manifest cross-check), strict replay (19/19 cycles, ratios 3/2–8/5–23/14 exact, all-KEEP closed), forced derivatives edge-exact KEEP-only, 15 specimen witnesses exact, failure table (3 PHI REJECTED, 7 atom families INCONSISTENT), 70-edge dual-core agreement, expansion idempotent, 4 proofs PROVED + review packages, stress green, full regression green. Gates emitted (mechanics scope); human verdict ACCEPT all four recorded schema-valid → subgate CLOSED, WP-1 FINISHED. Re-verified → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).

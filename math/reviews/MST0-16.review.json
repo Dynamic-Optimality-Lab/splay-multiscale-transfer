@@ -1,0 +1,21 @@
+{
+  "case_completeness_audit": "empty/single/leading/trailing runs of each kind in tested set",
+  "computational_evidence": "BLOCK-01/02 checks in run_phase03 + tests/rotations property checks",
+  "hypotheses_checked": [
+    "H1 maximal-run tiling (proof argument + check_coverage)",
+    "H2 determinism (re-partition test BLOCK-02)"
+  ],
+  "lifecycle_note": "UNPROVED -> PROVED -> REVIEWED; recorded by human verdict, agent-authored proof",
+  "objections": [],
+  "obligation_id": "MST0-16",
+  "proof_dependency_audit": "none (self-contained)",
+  "reviewer": {
+    "date_utc": "2026-09-23",
+    "identity": "Saif Malik",
+    "role": "human-owner"
+  },
+  "schema": "THEOREM-REVIEW-v0.3",
+  "statement": "blocks.partition maps each finite history to alternating maximal DELETE/KEEP spans tiling [0,len) with no gaps/overlaps, deterministically.",
+  "theorem_sha256": "3DBF2B987E1C60841CFF3F083BC35678F5A3A9D0A04BCE723E344BED38F15B6A",
+  "verdict": "ACCEPT"
+}

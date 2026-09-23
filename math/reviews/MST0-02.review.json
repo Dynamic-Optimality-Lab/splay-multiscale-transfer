@@ -1,0 +1,24 @@
+{
+  "case_completeness_audit": "ROOT/ZIG/LL/RR/LR/RL constructible and observed in corpus circulation tables; arbitrary-n transfer case analysis explicitly deferred to WP-6",
+  "computational_evidence": "ROT-01/10 suites; corpus-wide replay closure; determinism checks",
+  "hypotheses_checked": [
+    "H1 splay() records every rotation (code read)",
+    "H2 cost independent of events (code read + tests)",
+    "H3 wrappers preserve identity (code read)"
+  ],
+  "lifecycle_note": "UNPROVED -> PROVED -> REVIEWED; recorded by human verdict, agent-authored proof",
+  "objections": [
+    "O1 empirical-per-edge coverage noted; WP-6 scope carve-out accepted"
+  ],
+  "obligation_id": "MST0-02",
+  "proof_dependency_audit": "ordinary bottom-up Splay semantics (L1/parent contract, convention-matched)",
+  "reviewer": {
+    "date_utc": "2026-09-23",
+    "identity": "Saif Malik",
+    "role": "human-owner"
+  },
+  "schema": "THEOREM-REVIEW-v0.3",
+  "statement": "Concatenating recorded primitive rotations reproduces S_x(T); cost convention unchanged; successor and edge identity preserved.",
+  "theorem_sha256": "E175A2DEEAF5C303B10E66F2C0F5F0DD1E96E56B38763EAFD0CC3F9E9100601C",
+  "verdict": "ACCEPT"
+}

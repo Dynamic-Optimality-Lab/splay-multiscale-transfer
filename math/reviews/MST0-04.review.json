@@ -1,0 +1,24 @@
+{
+  "case_completeness_audit": "single convention version; alternatives require new version + equivalence proof by rule",
+  "computational_evidence": "determinism test; snapshot-format checks on all 70 corpus edges",
+  "hypotheses_checked": [
+    "H1 execution identical with/without viewpoint (code read)",
+    "H2 snapshot determinism (repeated-run test)",
+    "H3 single-version codebase (exactly one KEEP_REF_SNAPSHOT definition)"
+  ],
+  "lifecycle_note": "UNPROVED -> PROVED -> REVIEWED; recorded by human verdict, agent-authored proof",
+  "objections": [
+    "O1 scope limited to structural accounting; WP-6 transfer theorems own amortized-validity (gate matrix enforces)"
+  ],
+  "obligation_id": "MST0-04",
+  "proof_dependency_audit": "MST0-02 for rotation-stream identity",
+  "reviewer": {
+    "date_utc": "2026-09-23",
+    "identity": "Saif Malik",
+    "role": "human-owner"
+  },
+  "schema": "THEOREM-REVIEW-v0.3",
+  "statement": "Freezing post-A-splay A1 as the B-side analysis reference alters no execution, cost, or successor; it is a deterministic viewpoint function.",
+  "theorem_sha256": "04ED59EC16DAF8B40A14E07D65A180A9DA4FFA538D301A044DA962BC3F7AFB83",
+  "verdict": "ACCEPT"
+}
