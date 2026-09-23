@@ -1,1 +1,1 @@
-{"sources": ["L0a","L0b","L1","L2","L3","L4","L5","L6"], "note": "exact bytes pinned WP-0; L6 version frozen before translation use"}
+{"l6_frozen_identity": {"arxiv": 2607.18498, "reported": "O(log log n * (log log log n)^2 competitiveness for Splay", "version": "v1_2026_07_20", "work": "Chmel et al., Splay trees are almost dynamically optimal"}, "note": "exact bytes pinned at WP-0 literature freeze before any translation use; per-object source identities live in prereg/l6_translation_v0.3.yaml", "sources": ["L0a", "L0b", "L1", "L2", "L3", "L4", "L5", "L6"]}

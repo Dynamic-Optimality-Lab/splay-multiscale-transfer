@@ -1,49 +1,57 @@
-# L6 Pair-Access translation vocabulary — PREREGISTERED CONTRACT v0.3 (immutable after WP-0 seal)
-# Freezes the mapping language of spec S6: object names, per-object record schema WP-2
-# must fill, status vocabulary, and consumption rules. WP-2 extracts source definitions
-# into math/L6_PAIR_ACCESS_MAPPING.md (implementation realization) and proves/rejects
-# each mapping WITHOUT changing this language. No source-paper theorem survives
-# transplantation without MST0-03 REVIEWED for the objects it uses.
+# L6 Pair-Access translation contract — PREREGISTERED v0.3 (immutable after WP-0 seal)
+# Freezes the COMPLETE language + PROPOSED definitions of spec S6. WP-2 determines
+# which mappings are actually valid (SAME -> proved equivalent; MODIFIED with proved
+# difference; NOT_APPLICABLE / FALSE with preserved justification) and populates the
+# separate math/L6_PAIR_ACCESS_MAPPING.md. WP-2 may NOT introduce a new translation
+# definition or object not already preregistered here (new version required, never silent).
+# Initial mapping_status for every object: UNRESOLVED_PRE_PROOF.
 mapping_version: L6MAP-v0.3.1
-reference_convention: KEEP_REF_SNAPSHOT-v1
 literature_role_L6: TRANSLATION_TARGET_never_automatic_premise
+l6_source_identity: {paper: "Chmel et al., Splay trees are almost dynamically optimal", arxiv: 2607.18498, version_pinned: v1_2026_07_20, bytes_status: pinned_at_literature_freeze_in_external_MANIFEST_json}
 
-# Every translated object carries this record (S6.10); WP-2 fills content, never schema
-object_record_schema: [source_definition_ref, pair_access_definition, verdict_same_modified_NA,
-  proof_obligation, implementation_mapping, known_semantic_differences]
-status_vocabulary: [to_be_reviewed, equivalent_reviewed, modified_with_proved_difference,
-  NOT_APPLICABLE_with_preserved_justification, baseline_only]
+# Exact reference-snapshot semantics (S5.2 / S6.1), frozen
+reference_snapshot_semantics: KEEP_analysis_freezes_post_A_splay_tree_A1_as_reference_snapshot_for_B_splay_analysis_per_KEEP_REF_SNAPSHOT_v1_steps_1_to_5_DELETE_uses_appropriate_A_snapshot_alternative_conventions_mint_new_versions_with_equivalence_proof_or_explicit_separation
+# Exact tie semantics (T14), frozen
+tie_semantics: every_heavy_child_choice_rank_tie_gap_sign_tie_lazy_side_tie_pairing_order_tie_bend_orientation_tie_proved_or_explicitly_represented_no_silent_uniqueness_assumption
 naming_rule: PA_or_MST_prefix_until_formal_equivalence_proved_and_reviewed
-tie_rule: all_tie_uniqueness_assumptions_proved_or_explicitly_represented
 rank_rule: exact_L6_rank_copied_first_never_silently_replaced_by_depth
 
+# Per-object record schema (content filled at WP-0 proposal level; WP-2 proves/rejects)
+object_record_schema: [source_identity, proposed_pair_access_definition, mapping_status,
+  proof_obligation, implementation_mapping_schema, known_semantic_difference_slot]
+status_vocabulary: [UNRESOLVED_PRE_PROOF, SAME_proved_equivalent, MODIFIED_with_proved_difference,
+  NOT_APPLICABLE_with_preserved_justification, FALSE_with_preserved_counterexample, baseline_only_role]
+wp2_rule: prove_or_reject_statuses_and_populate_math_mapping_doc_no_new_definitions_or_objects_without_new_mapping_version
+
 objects:
-  PA_REFERENCE_RANK: {source_object: L6_reference_rank, obligation: MST0-03, note: reference_tree_is_post_A_splay_snapshot_for_KEEP}
-  PA_HEAVY_EDGE: {source_object: L6_heavy_edge, obligation: MST0-03}
-  PA_HEAVY_PATH: {source_object: L6_heavy_path, obligation: MST0-03}
-  PA_LIGHT_EDGE: {source_object: L6_light_edge, obligation: MST0-03}
-  PA_HEAP_VIEW: {source_object: L6_heap_view, obligation: MST0-03, fields: [PA_HEAP_PARENT, PA_HEAP_CHILD_LEFT, PA_HEAP_CHILD_RIGHT]}
-  PA_RAW_GAP: {source_object: L6_gap_raw, obligation: MST0-03}
-  PA_INTERVAL_GAP: {source_object: L6_gap_interval, obligation: MST0-03}
-  PA_POINT_GAP: {source_object: L6_gap_point, obligation: MST0-03}
-  PA_LAZY_INTERVAL: {source_object: L6_lazy_interval, obligation: MST0-03}
-  PA_GROWING_INTERVAL: {source_object: L6_growing_interval, obligation: MST0-03}
-  PA_SHRINKING_INTERVAL: {source_object: L6_shrinking_interval, obligation: MST0-03}
-  PA_BROKEN_INTERVAL: {source_object: L6_broken_interval, obligation: MST0-03}
-  PA_INTERNAL_PAIRING: {source_object: L6_internal_pairing, obligation: MST0-03}
-  PA_BOUNDARY_PAIRING: {source_object: L6_boundary_pairing, obligation: MST0-03}
-  PA_GOOD_PAIRING: {source_object: L6_good_pairing, obligation: MST0-03, note: label_reused_only_after_exact_criterion_map}
-  PA_BAD_PAIRING: {source_object: L6_bad_pairing, obligation: MST0-03, note: label_reused_only_after_exact_criterion_map}
-  PA_IMPORTANT_BOUNDARY_PAIRING: {source_object: L6_important_boundary_pairing, obligation: MST0-03}
-  PA_UNIMPORTANT_BOUNDARY_PAIRING: {source_object: L6_unimportant_boundary_pairing, obligation: MST0-03}
-  PA_BEND: {source_object: L6_bend, obligation: MST0-03, instrumented_under: [every_B_zigzag, every_A_reference_rotation]}
-  PA_CONTRACTED_POINT_GAP_L6: {source_object: L6_contracted_point_gap, obligation: MST0-03, status_fixed: baseline_only}
-  PAIR_UP: {source_object: L6_pair_up_op, obligation: MST0-03}
-  DELETE_INTERVAL_MEMBER: {source_object: L6_delete_interval_member_op, obligation: MST0-03}
-  INSERT_INTERVAL_MEMBER: {source_object: L6_insert_interval_member_op, obligation: MST0-03}
-  SPLIT_INTERVAL: {source_object: L6_split_interval_op, obligation: MST0-03}
-  CONVERT_INTERVAL: {source_object: L6_convert_interval_op, obligation: MST0-03}
-  TRANSFER_INTERVAL: {source_object: L6_transfer_interval_op, obligation: MST0-03}
-  HEAP_CHILD_EXCHANGE: {source_object: L6_heap_child_exchange_op, obligation: MST0-03}
+  PA_REFERENCE_RANK: {source_identity: "L6 v1 rank definition (exact section pinned at literature freeze)", proposed_pair_access_definition: "L6 rank function evaluated on the KEEP reference snapshot (post-A-splay tree); appropriate A snapshot for DELETE analysis", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_HEAVY_EDGE: {source_identity: "L6 v1 heavy/light edge definition (exact section pinned at literature freeze)", proposed_pair_access_definition: "heavy/light marking from the frozen L6 child-weight rule applied to the reference snapshot", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_HEAVY_PATH: {source_identity: "L6 v1 heavy-path definition (exact section pinned at literature freeze)", proposed_pair_access_definition: "maximal heavy-edge chains under the translated marking, structurally identified", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_LIGHT_EDGE: {source_identity: "L6 v1 heavy/light edge definition (exact section pinned at literature freeze)", proposed_pair_access_definition: "complement of PA_HEAVY_EDGE on the reference snapshot", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_HEAP_VIEW: {source_identity: "L6 v1 heap-view construction (exact section pinned at literature freeze)", proposed_pair_access_definition: "heap-order view (PA_HEAP_PARENT/CHILD_LEFT/CHILD_RIGHT) of the translated heavy paths", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_RAW_GAP: {source_identity: "L6 v1 gap definitions (exact section pinned at literature freeze)", proposed_pair_access_definition: "raw gap object; source-paper gap theorems quarantined until equivalence proved", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_INTERVAL_GAP: {source_identity: "L6 v1 gap definitions (exact section pinned at literature freeze)", proposed_pair_access_definition: "interval gap object; source-paper gap theorems quarantined until equivalence proved", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_POINT_GAP: {source_identity: "L6 v1 gap definitions (exact section pinned at literature freeze)", proposed_pair_access_definition: "point gap object; source-paper gap theorems quarantined until equivalence proved", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_LAZY_INTERVAL: {source_identity: "L6 v1 lazy-interval definitions (exact section pinned at literature freeze)", proposed_pair_access_definition: "lazy interval with exact ordering, ownership, interval-contiguity, and update rules", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_GROWING_INTERVAL: {source_identity: "L6 v1 lazy-interval update rules (exact section pinned at literature freeze)", proposed_pair_access_definition: "lazy interval in growing state per translated update rules", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_SHRINKING_INTERVAL: {source_identity: "L6 v1 lazy-interval update rules (exact section pinned at literature freeze)", proposed_pair_access_definition: "lazy interval in shrinking state per translated update rules", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_BROKEN_INTERVAL: {source_identity: "L6 v1 lazy-interval update rules (exact section pinned at literature freeze)", proposed_pair_access_definition: "lazy interval in broken state per translated update rules", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_INTERNAL_PAIRING: {source_identity: "L6 v1 pairing taxonomy (exact section pinned at literature freeze)", proposed_pair_access_definition: "internal pairing per exact translated criterion", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_BOUNDARY_PAIRING: {source_identity: "L6 v1 pairing taxonomy (exact section pinned at literature freeze)", proposed_pair_access_definition: "boundary pairing per exact translated criterion", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_GOOD_PAIRING: {source_identity: "L6 v1 pairing taxonomy (exact section pinned at literature freeze)", proposed_pair_access_definition: "good pairing; label reused only after exact criterion map", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_BAD_PAIRING: {source_identity: "L6 v1 pairing taxonomy (exact section pinned at literature freeze)", proposed_pair_access_definition: "bad pairing; label reused only after exact criterion map", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_IMPORTANT_BOUNDARY_PAIRING: {source_identity: "L6 v1 pairing taxonomy (exact section pinned at literature freeze)", proposed_pair_access_definition: "important boundary pairing per exact translated criterion", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_UNIMPORTANT_BOUNDARY_PAIRING: {source_identity: "L6 v1 pairing taxonomy (exact section pinned at literature freeze)", proposed_pair_access_definition: "unimportant boundary pairing per exact translated criterion", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_BEND: {source_identity: "L6 v1 bend definition (exact section pinned at literature freeze)", proposed_pair_access_definition: "heavy-path bend; instrumented under every B zig-zag and every A reference-tree rotation", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  PA_CONTRACTED_POINT_GAP_L6: {source_identity: "L6 v1 contracted point-gap definition (exact section pinned at literature freeze)", proposed_pair_access_definition: "logarithmically contracted point-gap quantity for baseline reproduction only", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03, role: baseline_only}
+  PAIR_UP: {source_identity: "L6 v1 pair-up operation (exact section pinned at literature freeze)", proposed_pair_access_definition: "translated pair-up op with source paid/free status recorded", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  DELETE_INTERVAL_MEMBER: {source_identity: "L6 v1 interval-member deletion op (exact section pinned at literature freeze)", proposed_pair_access_definition: "translated op with source paid/free status recorded", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  INSERT_INTERVAL_MEMBER: {source_identity: "L6 v1 interval-member insertion op (exact section pinned at literature freeze)", proposed_pair_access_definition: "translated op with source paid/free status recorded", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  SPLIT_INTERVAL: {source_identity: "L6 v1 interval-split op (exact section pinned at literature freeze)", proposed_pair_access_definition: "translated op with source paid/free status recorded", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  CONVERT_INTERVAL: {source_identity: "L6 v1 interval-convert op (exact section pinned at literature freeze)", proposed_pair_access_definition: "translated op with source paid/free status recorded", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  TRANSFER_INTERVAL: {source_identity: "L6 v1 interval-transfer op (exact section pinned at literature freeze)", proposed_pair_access_definition: "translated op with source paid/free status recorded", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+  HEAP_CHILD_EXCHANGE: {source_identity: "L6 v1 heap-child-exchange op (exact section pinned at literature freeze)", proposed_pair_access_definition: "translated op with source paid/free status recorded", mapping_status: UNRESOLVED_PRE_PROOF, obligation: MST0-03}
+
+known_semantic_differences_initial: none_asserted_pre_extraction_WP2_records_findings_in_math_mapping_doc_any_difference_requiring_new_definition_or_object_needs_new_mapping_version
 paid_free_rule: every_op_records_source_paid_free_status_and_whether_it_survives_transplant
 consumption_rule: source_theorem_never_transplanted_without_MST0_03_REVIEWED_for_objects_used

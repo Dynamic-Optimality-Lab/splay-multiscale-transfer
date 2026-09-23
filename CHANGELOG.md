@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — Review-response hardening IV (L6 lifecycle + polish)
+- `l6_translation` now freezes language + proposed definitions (27×UNRESOLVED_PRE_PROOF; WP-2 resolves, never invents); L6-00 gate; L6 version identity in manifest; nine-mode summary; candidate-at-C residual wording; WorkPlan-text-freeze date label. Freeze 24 entries; PHASE00_PASS + 47/47 green.
+
 ## 2026-09-23 — Review-response hardening III (populated prereg, 11 strata, consistency)
 - `event_ontology`/`transfer_grammar`/`l6_translation` promoted stub → fully populated immutable contracts (YAML-validated); H3T 11 strata in WorkPlan (10k/size distributed); WP-1 MST0-10 prerequisite wording; conditional gate wording. Freeze 24 entries; PHASE00_PASS + 47/47 green.
 

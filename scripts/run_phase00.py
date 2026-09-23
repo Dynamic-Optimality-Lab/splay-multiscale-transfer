@@ -78,6 +78,27 @@ def main() -> int:
         m1 = re.search(r"MST0-01:\n(?:.*\n){1,2}.*first_consumer: (\S+)", gm)
         if not m1 or m1.group(1) != "WP-1":
             fails.append("GATE-01 MST0-01 first consumer must be WP-1")
+    # 3b. L6 translation contract completeness (language + proposed definitions frozen)
+    try:
+        import yaml as _yaml
+    except ImportError:
+        fails.append("L6-00 pyyaml unavailable for contract check")
+    else:
+        with open(os.path.join(root, "prereg", "l6_translation_v0.3.yaml"), encoding="utf-8") as f:
+            l6 = _yaml.safe_load(f)
+        objs = l6.get("objects", {})
+        if len(objs) != 27:
+            fails.append(f"L6-00 expected 27 preregistered objects, found {len(objs)}")
+        for name, rec in objs.items():
+            for field in ("source_identity", "proposed_pair_access_definition",
+                          "mapping_status", "obligation"):
+                if field not in rec:
+                    fails.append(f"L6-00 {name} missing {field}")
+                    break
+            if rec.get("mapping_status") != "UNRESOLVED_PRE_PROOF":
+                fails.append(f"L6-00 {name} must start UNRESOLVED_PRE_PROOF")
+        if "UNRESOLVED_PRE_PROOF" not in l6.get("status_vocabulary", []):
+            fails.append("L6-00 status vocabulary lacks UNRESOLVED_PRE_PROOF")
     # 4. threat/stop sets exact
     t = open(os.path.join(root, "prereg", "threat_control_matrix.yaml")).read()
     tids = set(re.findall(r"^T\d\d", t, re.M))
