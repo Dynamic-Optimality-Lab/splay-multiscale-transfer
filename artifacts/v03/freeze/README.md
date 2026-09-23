@@ -6,6 +6,8 @@ Rule (STOP-05): WP-0 prereg files (`prereg/event_ontology_v0.3.yaml`,
 Later phases NEVER edit them.
 
 Instead, each freezing phase emits a certificate here, e.g.
+`PHASE02_L6_MAPPING_FREEZE.json` (math mapping-doc hash + prereg yaml hash + `MST0-03`
+review pointer + `L6_TRANSLATION_FROZEN` status — the WP-2A target-join barrier) or
 `PHASE09_TRANSFER_GRAMMAR_FREEZE.json`, with at minimum:
 
 - `preregistered_ontology_hash` / `preregistered_grammar_hash` (from `prereg_sha256.txt`)

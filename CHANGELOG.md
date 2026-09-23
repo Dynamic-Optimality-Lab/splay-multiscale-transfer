@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — Review-response hardening V (WP-2A/WP-2B barrier, count, enum)
+- WP-2A translation-only subphase with hard target-join barrier (6 steps) + WP-2B corpus science gated on L6_TRANSLATION_FROZEN + MST0-03 REVIEWED; count de-hardcoded (yaml self-declares); FALSE removed from mapping statuses (refutation-record schema). Freeze 24 entries; PHASE00_PASS + 47/47 green.
+
 ## 2026-09-23 — Review-response hardening IV (L6 lifecycle + polish)
 - `l6_translation` now freezes language + proposed definitions (27×UNRESOLVED_PRE_PROOF; WP-2 resolves, never invents); L6-00 gate; L6 version identity in manifest; nine-mode summary; candidate-at-C residual wording; WorkPlan-text-freeze date label. Freeze 24 entries; PHASE00_PASS + 47/47 green.
 

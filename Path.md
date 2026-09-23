@@ -221,11 +221,35 @@ every gate run — no separate obligation remains.
 
 ---
 
+## Review-response turn 5 (2026-09-23): WP-2A/WP-2B barrier, unhardcoded count, enum normalization
+
+1. **WP-2A/WP-2B target-join barrier.** WP-2 now executes as WP-2A (translation-only:
+populate math mapping from immutable prereg definitions → resolve `SAME`/`MODIFIED`/
+`NOT_APPLICABLE` in the math doc (yaml stays `UNRESOLVED_PRE_PROOF`) → dual
+implementation + mutants → prove/review MST0-03 → hash/freeze mapping → emit
+`L6_TRANSLATION_FROZEN`) with an explicit no-target-join rule (no regret/criticality/
+forced-delta/Bellman/target corpus before the gate), then WP-2B (corpus science, heavy
+lemmas, baseline) requiring `L6_TRANSLATION_FROZEN` + `MST0-03 == REVIEWED`. Order is
+now structural (definitions → proof → freeze → target join), not prose order.
+Verified: WorkPlan §§WP-2/8.1 row 02/gates; freeze README covers the mapping cert.
+2. **Count de-hardcoded.** "All 27 objects" → "all translation entities declared by
+Sections 6.1–6.9"; the yaml declares `declared_top_level_objects: 27` itself (heap
+sub-relations are fields → 30 named entities counting sub-fields), and the L6-00 gate
+checks the dict against the yaml's own declaration instead of a code magic number.
+3. **Enum normalized.** `FALSE` removed from mapping statuses everywhere (WorkPlan ×2,
+yaml vocabulary, gate check untouched — it never named FALSE); refuted equivalences use
+the new `equivalence_refutation_record_schema` (flag + counterexample artifact).
+Prior-turn "FALSE" mentions above are superseded history. Verified: grep shows no
+remaining prescriptive FALSE status (only this log + history).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
 - 2026-09-23: Turn 3 (review-response II) — prereg-immutability fix: WP-3 certifies via `artifacts/v03/freeze/` certificates, never rewrites prereg; MST0-01 via WP-1 pre-consumption subgate (owner WP-1); conditional-obligation + multiplicity wording. Re-verified → commit+push.
 - 2026-09-23: Turn 4 (review-response III) — three prereg files promoted stub → fully populated contracts (YAML-validated: prov=11, T=10, objectives=10, objects=27); H3T 11 strata (WorkPlan token split; 10k/size distributed); WP-1 MST0-10 prerequisite wording; conditional gate wording in WP-0 list. Re-verified → commit+push.
 - 2026-09-23: Turn 5 (review-response IV) — L6 language+proposed-definitions freeze (27×UNRESOLVED_PRE_PROOF, L6-00 gate, L6 version identity in manifest); nine-mode summary + candidate-at-C + WorkPlan-text-freeze date wording; Path.md turn order restored chronological. Re-verified → commit+push.
+- 2026-09-23: Turn 6 (review-response V) — WP-2A/WP-2B target-join barrier (definitions → proof → freeze → target join); count de-hardcoded (yaml self-declares 27 top-level, 30 named incl. sub-fields); FALSE removed from mapping statuses (refutation-record schema instead). Re-verified → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).

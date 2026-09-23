@@ -87,8 +87,9 @@ def main() -> int:
         with open(os.path.join(root, "prereg", "l6_translation_v0.3.yaml"), encoding="utf-8") as f:
             l6 = _yaml.safe_load(f)
         objs = l6.get("objects", {})
-        if len(objs) != 27:
-            fails.append(f"L6-00 expected 27 preregistered objects, found {len(objs)}")
+        expected = l6.get("declared_top_level_objects")
+        if expected is None or len(objs) != expected:
+            fails.append(f"L6-00 preregistered object set changed (found {len(objs)}, declared {expected})")
         for name, rec in objs.items():
             for field in ("source_identity", "proposed_pair_access_definition",
                           "mapping_status", "obligation"):

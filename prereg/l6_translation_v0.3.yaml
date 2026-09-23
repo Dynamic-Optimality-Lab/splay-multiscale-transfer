@@ -1,10 +1,15 @@
 # L6 Pair-Access translation contract — PREREGISTERED v0.3 (immutable after WP-0 seal)
 # Freezes the COMPLETE language + PROPOSED definitions of spec S6. WP-2 determines
-# which mappings are actually valid (SAME -> proved equivalent; MODIFIED with proved
-# difference; NOT_APPLICABLE / FALSE with preserved justification) and populates the
-# separate math/L6_PAIR_ACCESS_MAPPING.md. WP-2 may NOT introduce a new translation
+# which mappings are actually valid (SAME proved; MODIFIED with proved difference;
+# NOT_APPLICABLE with preserved justification; a refuted proposed equivalence is recorded
+# separately, never as a status value) and populates the separate
+# math/L6_PAIR_ACCESS_MAPPING.md. WP-2 may NOT introduce a new translation
 # definition or object not already preregistered here (new version required, never silent).
-# Initial mapping_status for every object: UNRESOLVED_PRE_PROOF.
+# mapping_status in this file stays UNRESOLVED_PRE_PROOF forever; resolution lives in the
+# math mapping doc + freeze certificate.
+mapping_version: L6MAP-v0.3.1
+declared_top_level_objects: 27
+declared_count_note: 27 top-level keys; heap sub-relations are fields of PA_HEAP_VIEW, so 30 named entities counting sub-fields per S6.1-S6.9 — no contradiction, no prose hardcoding beyond this frozen declaration
 mapping_version: L6MAP-v0.3.1
 literature_role_L6: TRANSLATION_TARGET_never_automatic_premise
 l6_source_identity: {paper: "Chmel et al., Splay trees are almost dynamically optimal", arxiv: 2607.18498, version_pinned: v1_2026_07_20, bytes_status: pinned_at_literature_freeze_in_external_MANIFEST_json}
@@ -20,7 +25,9 @@ rank_rule: exact_L6_rank_copied_first_never_silently_replaced_by_depth
 object_record_schema: [source_identity, proposed_pair_access_definition, mapping_status,
   proof_obligation, implementation_mapping_schema, known_semantic_difference_slot]
 status_vocabulary: [UNRESOLVED_PRE_PROOF, SAME_proved_equivalent, MODIFIED_with_proved_difference,
-  NOT_APPLICABLE_with_preserved_justification, FALSE_with_preserved_counterexample, baseline_only_role]
+  NOT_APPLICABLE_with_preserved_justification, baseline_only_role]
+equivalence_refutation_record_schema: [proposed_equivalence_refuted_true, counterexample_artifact]
+refutation_rule: no_FALSE_status_value_mathematical_falsity_vs_non_translatability_disambiguated_by_record_not_status
 wp2_rule: prove_or_reject_statuses_and_populate_math_mapping_doc_no_new_definitions_or_objects_without_new_mapping_version
 
 objects:
