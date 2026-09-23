@@ -1,0 +1,137 @@
+{
+  "hypotheses": [
+    {
+      "hypothesis_id": "PHI-0001",
+      "smallest": {
+        "Phi_after": 9,
+        "Phi_before": 0,
+        "cA": 4,
+        "cB": 0,
+        "key": 2,
+        "mode": "DELETE",
+        "n": 5,
+        "residual": 1,
+        "source": 0,
+        "target": 1008
+      },
+      "status": "REJECTED",
+      "track": "STATE_ONLY",
+      "worst": {
+        "Phi_after": 15,
+        "Phi_before": 0,
+        "cA": 4,
+        "cB": 0,
+        "key": 4,
+        "mode": "DELETE",
+        "n": 7,
+        "residual": 7,
+        "source": 0,
+        "target": 30459
+      }
+    },
+    {
+      "hypothesis_id": "PHI-0002",
+      "smallest": {
+        "Phi_after": 5,
+        "Phi_before": 2,
+        "cA": 3,
+        "cB": 4,
+        "key": 1,
+        "mode": "KEEP",
+        "n": 4,
+        "residual": 1,
+        "source": 14,
+        "target": 164
+      },
+      "status": "REJECTED",
+      "track": "STATE_ONLY",
+      "worst": {
+        "Phi_after": 20,
+        "Phi_before": 2,
+        "cA": 6,
+        "cB": 7,
+        "key": 1,
+        "mode": "KEEP",
+        "n": 7,
+        "residual": 13,
+        "source": 429,
+        "target": 133318
+      }
+    },
+    {
+      "hypothesis_id": "PHI-0003",
+      "smallest": {
+        "cA": 1,
+        "cB": 3,
+        "key": 1,
+        "mode": "KEEP",
+        "n": 3,
+        "residual": 1,
+        "source": [
+          4,
+          0,
+          [
+            1
+          ],
+          []
+        ]
+      },
+      "status": "REJECTED",
+      "track": "RECENCY_AUGMENTED",
+      "worst": {
+        "cA": 1,
+        "cB": 4,
+        "key": 1,
+        "mode": "KEEP",
+        "n": 4,
+        "residual": 3,
+        "source": [
+          10,
+          0,
+          [
+            1,
+            4,
+            3,
+            2
+          ],
+          [
+            4,
+            3,
+            2
+          ]
+        ]
+      }
+    }
+  ],
+  "labels": {
+    "FEATURE_DERIVATIVE_INCONSISTENT": {
+      "evidence": "parent claim, imported as context",
+      "pointer": "v01/FINAL_RESULT.json"
+    },
+    "GLOBAL_TOO_EASY_TO_CREATE": {
+      "evidence": "PHI-0001 rejected by DELETE blowup",
+      "pointer": "falsification_PHI-0001_dev.json"
+    },
+    "LOCAL_TOO_WEAK_TO_REPAY": {
+      "evidence": "PHI-0002/PHI-0003 rejected by KEEP underpayment",
+      "pointer": "falsification_PHI-0002/0003_dev.json"
+    },
+    "NO_BEHAVIORAL_COMPRESSION_FINITE": {
+      "evidence": "parent claim, imported as context",
+      "pointer": "v02/FINAL_RESULT.json"
+    },
+    "PURE_DIFFERENCE_LOSES_ABSOLUTE_SHAPE": {
+      "evidence": "parent claim, imported as context",
+      "pointer": "v02/FINAL_RESULT.json"
+    },
+    "RECENCY_SCALAR_UNDERPAYS_KEEP": {
+      "d5_keys": [],
+      "evidence": "D5 near-miss family in recency_atoms.json",
+      "pointer": "recency_atoms.json"
+    },
+    "RECENCY_V_BLIND": {
+      "evidence": "parent claim, imported as context",
+      "pointer": "v02/FINAL_RESULT.json"
+    }
+  }
+}

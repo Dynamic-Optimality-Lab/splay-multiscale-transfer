@@ -1,0 +1,233 @@
+{
+  "4": {
+    "claimed_b": [
+      3,
+      2
+    ],
+    "cycles": 6,
+    "forced": {
+      "count": 12,
+      "keep": 12,
+      "mismatches": 0
+    },
+    "replayed_ok": 6,
+    "rows": [
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 0,
+        "mismatch_count": 0,
+        "ratio": "3/2",
+        "sum_a": 4,
+        "sum_y": 6
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 1,
+        "mismatch_count": 0,
+        "ratio": "3/2",
+        "sum_a": 4,
+        "sum_y": 6
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 2,
+        "mismatch_count": 0,
+        "ratio": "3/2",
+        "sum_a": 4,
+        "sum_y": 6
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 3,
+        "mismatch_count": 0,
+        "ratio": "3/2",
+        "sum_a": 4,
+        "sum_y": 6
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 4,
+        "mismatch_count": 0,
+        "ratio": "3/2",
+        "sum_a": 4,
+        "sum_y": 6
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 5,
+        "mismatch_count": 0,
+        "ratio": "3/2",
+        "sum_a": 4,
+        "sum_y": 6
+      }
+    ]
+  },
+  "5": {
+    "claimed_b": [
+      8,
+      5
+    ],
+    "cycles": 1,
+    "forced": {
+      "count": 8,
+      "keep": 8,
+      "mismatches": 0
+    },
+    "replayed_ok": 1,
+    "rows": [
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 0,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      }
+    ]
+  },
+  "6": {
+    "claimed_b": [
+      8,
+      5
+    ],
+    "cycles": 11,
+    "forced": {
+      "count": 84,
+      "keep": 84,
+      "mismatches": 0
+    },
+    "replayed_ok": 11,
+    "rows": [
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 0,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 1,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 2,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 3,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 4,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 5,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 6,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 7,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 8,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 9,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 10,
+        "mismatch_count": 0,
+        "ratio": "8/5",
+        "sum_a": 10,
+        "sum_y": 16
+      }
+    ]
+  },
+  "7": {
+    "claimed_b": [
+      23,
+      14
+    ],
+    "cycles": 1,
+    "forced": {
+      "count": 10,
+      "keep": 10,
+      "mismatches": 0
+    },
+    "replayed_ok": 1,
+    "rows": [
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 0,
+        "mismatch_count": 0,
+        "ratio": "23/14",
+        "sum_a": 28,
+        "sum_y": 46
+      }
+    ]
+  }
+}

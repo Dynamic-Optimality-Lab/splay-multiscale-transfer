@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — WP-1 EXECUTION (Phase 1 implementation complete; subgate pending human review)
+- Canonical enumeration + sealed import (52 files, manifest cross-check) + strict replay (19/19 cycles exact, all-KEEP closed) + forced derivatives edge-exact + specimen witnesses (15 exact) + failure table + 70-edge dual-core agreement + idempotent expansion + 4 proofs PROVED with review packages + WP-1 stress green. Gates PARENT_CHAIN_VERIFIED + ROTATION_TRACE_CERTIFIED emitted (mechanics scope). Full regression green (phase00/foundation/wp0stress/reproduce exit 0). MST0-01/02/04/16 REVIEWED pending human verdict.
+
 ## 2026-09-23 — WP-0 EXECUTION (Phase 0 finished, FOUNDATION_FROZEN claimed)
 - Implemented WP-0 exactly: bootstrap/verify/check modules + 19 fail-closed phase stubs; WP0-STEP-00..11 console logs with ID comments; L3 (732,837 B) + L6 (628,208 B) PDFs frozen (SHA-256 verified, %PDF-checked); real 11-entry bootstrap manifest + 12-file read-only lock; STOP-05 read-only recompute; artifacts allowlist; header-anchored gate regex. Stress 27/27 green; full battery (freeze, phase00, foundation 47/47, stress, reproduce) all exit 0. One scoped item: L1/L2/L4/L5 bytes pending with tracked reasons and downstream-use blocks.
 

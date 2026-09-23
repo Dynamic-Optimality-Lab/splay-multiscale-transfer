@@ -160,11 +160,27 @@ def test_invalid_inputs() -> None:
 
 def test_stubs_fail_closed() -> None:
     import subprocess
-    for n in (1, 9, 19):
+    for n in (2, 9, 19):
         r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase%02d.py" % n)],
                            capture_output=True, text=True)
         check("STRESS-STUB phase%02d exit 2" % n, r.returncode == 2)
         check("STRESS-STUB phase%02d says NOT_AUTHORIZED" % n, "NOT_AUTHORIZED" in r.stdout)
+    # Real runner 01 refuses without required source args (argparse exit 2).
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase01.py")],
+                       capture_output=True, text=True)
+    check("STRESS-STUB phase01 real runner refuses arg-less", r.returncode != 0)
+    # Real runner 03 is idempotent: re-run succeeds and reproduces byte-identical outputs.
+    import hashlib as _hl
+    before = {}
+    expdir = os.path.join(ROOT, "artifacts", "v03", "cycles", "expanded")
+    for fn in sorted(os.listdir(expdir)):
+        before[fn] = _hl.sha256(open(os.path.join(expdir, fn), "rb").read()).hexdigest()
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase03.py")],
+                       capture_output=True, text=True)
+    after = {fn: _hl.sha256(open(os.path.join(expdir, fn), "rb").read()).hexdigest()
+             for fn in sorted(os.listdir(expdir))}
+    check("STRESS-STUB phase03 re-run exit 0", r.returncode == 0)
+    check("STRESS-STUB phase03 outputs idempotent", before == after)
 
 
 if __name__ == "__main__":

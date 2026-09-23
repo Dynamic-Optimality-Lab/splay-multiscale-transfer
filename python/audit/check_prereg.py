@@ -133,9 +133,20 @@ def check_freeze_integrity(root: str) -> list[str]:
     return fails
 
 
-# WP0-STEP-10: no v0.3 scientific output predates the prereg hash (foundation allowlist).
-FOUNDATION_ALLOWLIST_DIRS = ("logs", "freeze", "seal")
-FOUNDATION_ALLOWLIST_FILES = {"STALE_CLEARANCE.json", "freeze/README.md"}
+# WP0-STEP-10: no unauthorized science output (explicit namespace allowlist).
+# Each entry names its authorizing WP turn; extending this list without a Path.md
+# record + owning-phase justification is a seal violation. Anything else fails.
+AUTHORIZED_NAMESPACES = {
+    "STALE_CLEARANCE.json": "WP-0 stale policy",
+    "logs/": "WP-0 run records (any phase may append)",
+    "freeze/": "WP-0 freeze certificates (WP-2A mapping, WP-3 grammar)",
+    "seal/": "WP-6 seal outputs",
+    "parent_import/": "WP-1 sealed-evidence import + verification",
+    "cycles/expanded/": "WP-1 rotation-expansion mechanics (WP-2 science consumes)",
+    "proofs/obligation_status.json": "WP-1 derived obligation statuses",
+}
+DENIED_UNTIL_AUTHORIZED = ("hypotheses/", "solver/", "transfer_grammar/",
+                           "holdouts/h3t_bank", "seal/FINAL_RESULT.json")
 
 
 def check_no_early_science(root: str, artifacts_rel: str = "artifacts/v03") -> list[str]:
@@ -148,15 +159,17 @@ def check_no_early_science(root: str, artifacts_rel: str = "artifacts/v03") -> l
     for dirpath, _dirnames, filenames in os.walk(base):
         for fn in filenames:
             rel = os.path.relpath(os.path.join(dirpath, fn), base).replace(os.sep, "/")
-            top = rel.split("/")[0]
-            if "/" not in rel:
-                if rel not in FOUNDATION_ALLOWLIST_FILES:
-                    violations.append(rel)
-            elif top not in FOUNDATION_ALLOWLIST_DIRS:
-                violations.append(rel)
+            if rel in AUTHORIZED_NAMESPACES or \
+                    any(rel.startswith(k) for k in AUTHORIZED_NAMESPACES if k.endswith("/")):
+                continue
+            violations.append(rel)
+    denied = [v for v in violations
+              if v.startswith(DENIED_UNTIL_AUTHORIZED) or v in DENIED_UNTIL_AUTHORIZED]
     if violations:
-        fails.append("EARLY-SCIENCE %d non-foundation files under %s: %s"
-                     % (len(violations), artifacts_rel, ",".join(sorted(violations)[:5])))
+        fails.append("EARLY-SCIENCE %d unlisted files under %s%s: %s"
+                     % (len(violations), artifacts_rel,
+                        " (DENIED namespace)" if denied else "",
+                        ",".join(sorted(violations)[:8])))
     else:
-        print("[WP0-STEP-10] artifacts/v03 holds foundation records only (no early science)")
+        print("[WP0-STEP-10] no unauthorized science output (allowlist holds)", flush=True)
     return fails

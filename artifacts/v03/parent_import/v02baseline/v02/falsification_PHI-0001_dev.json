@@ -1,0 +1,44 @@
+{
+  "b_feasible": {
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true
+  },
+  "checked": 2805000,
+  "hypothesis_id": "PHI-0001",
+  "sandwich_violation": {
+    "Phi": 5,
+    "U": 4,
+    "V": 0,
+    "n": 5,
+    "pid": 4
+  },
+  "smallest": {
+    "Phi_after": 9,
+    "Phi_before": 0,
+    "cA": 4,
+    "cB": 0,
+    "key": 2,
+    "mode": "DELETE",
+    "n": 5,
+    "residual": 1,
+    "source": 0,
+    "target": 1008
+  },
+  "verdict": "REJECTED",
+  "worst": {
+    "Phi_after": 15,
+    "Phi_before": 0,
+    "cA": 4,
+    "cB": 0,
+    "key": 4,
+    "mode": "DELETE",
+    "n": 7,
+    "residual": 7,
+    "source": 0,
+    "target": 30459
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "v01_commit": "6de1ca2a595e8895f54794f3a211fe6ee1a95a80",
+  "v01_files": [
+    {
+      "dest": "v01/critical_n2_canonical_cycles.json",
+      "sha256": "17C79D8EA05AB388965A68708CFD44AA8EE804F7CE368D086E2FA4D0C3DDFAA2",
+      "source": "artifacts/critical/n2/canonical_cycles.json"
+    },
+    {
+      "dest": "v01/critical_n2_summary.json",
+      "sha256": "C869327B1F5FB454BC492E2F2001E3004965B03C5C910D53B82F81A348E1BAA5",
+      "source": "artifacts/critical/n2/summary.json"
+    },
+    {
+      "dest": "v01/critical_n2_sccs.json",
+      "sha256": "5985CD34FCC68F0EDE34337B16572523B58B85CE9D9E9D4F5D82254D06D6DC86",
+      "source": "artifacts/critical/n2/sccs.json"
+    },
+    {
+      "dest": "v01/critical_n2_below_optimum.json",
+      "sha256": "ED01E37CC069D34395CF29BF4453620153675BCFF58BCC65A07CEF5C531C5729",
+      "source": "artifacts/critical/n2/below_optimum.json"
+    },
+    {
+      "dest": "v01/critical_n2_forced_delta_edges.json.zst",
+      "sha256": "499303FC015D12387C6C4DDCF3292E23C4A375DD81DC653F9EDD23EB1AA10ACE",
+      "source": "artifacts/critical/n2/forced_delta_edges.json.zst"
+    },
+    {
+      "dest": "v01/critical_n3_canonical_cycles.json",
+      "sha256": "F167F66D17DD8AB9F5A90BA676390F9B4F13ECE3E0BABB2675D95D89BA537C2E",
+      "source": "artifacts/critical/n3/canonical_cycles.json"
+    },
+    {
+      "dest": "v01/critical_n3_summary.json",
+      "sha256": "9FDC57FED96A2FCF830B2721D26BFF6F4E49A19644747F3ED0F202469AAA3C61",
+      "source": "artifacts/critical/n3/summary.json"
+    },
+    {
+      "dest": "v01/critical_n3_sccs.json",
+      "sha256": "AC32220B2FC8C0610F48DFFB7F04BDBAFA69037D66004AFDE141DF212B48871F",
+      "source": "artifacts/critical/n3/sccs.json"
+    },
+    {
+      "dest": "v01/critical_n3_below_optimum.json",
+      "sha256": "842B655E1396B2AE8BF77458CF2DA4636A54C3548D3BE072D815B0275696A1E4",
+      "source": "artifacts/critical/n3/below_optimum.json"
+    },
+    {
+      "dest": "v01/critical_n3_forced_delta_edges.json.zst",
+      "sha256": "C44182C2A5FA6AC111D7DEB28852A8B5CBEA0A768AA9E6BF3F98F0E7F49A0D0B",
+      "source": "artifacts/critical/n3/forced_delta_edges.json.zst"
+    },
+    {
+      "dest": "v01/critical_n4_canonical_cycles.json",
+      "sha256": "721C89B7B4FA6A2F72CB7C5553D53AC1D75E2E96B8574D75C1D4123138FC1CF0",
+      "source": "artifacts/critical/n4/canonical_cycles.json"
+    },
+    {
+      "dest": "v01/critical_n4_summary.json",
+      "sha256": "67159D261BC7354A37C646607B7D427FD27098CBB564D3B393012E7DDC7C8708",
+      "source": "artifacts/critical/n4/summary.json"
+    },
+    {
+      "dest": "v01/critical_n4_sccs.json",
+      "sha256": "84733C224DAF6F513225961D6AAC3B9903E383510D6E2943BE3E3D89568671E9",
+      "source": "artifacts/critical/n4/sccs.json"
+    },
+    {
+      "dest": "v01/critical_n4_below_optimum.json",
+      "sha256": "CE6070387EB955EF6873267A4E6B70A434D908B2AE26D3A0E2F6C1E553B42D85",
+      "source": "artifacts/critical/n4/below_optimum.json"
+    },
+    {
+      "dest": "v01/critical_n4_forced_delta_edges.json.zst",
+      "sha256": "5676CD712F8BB8C1A42E32CB00F5A438F9580D92C9147180BFEF7DE507CAE1ED",
+      "source": "artifacts/critical/n4/forced_delta_edges.json.zst"
+    },
+    {
+      "dest": "v01/critical_n5_canonical_cycles.json",
+      "sha256": "ED67C1438B25F949FD494ECB9C148ED1E6F7FD5989F993A24BB716C766227FF5",
+      "source": "artifacts/critical/n5/canonical_cycles.json"
+    },
+    {
+      "dest": "v01/critical_n5_summary.json",
+      "sha256": "AEA3415451170A7CF90A936B976D14C862BDD4D7D66855883F827D36F8FF27EC",
+      "source": "artifacts/critical/n5/summary.json"
+    },
+    {
+      "dest": "v01/critical_n5_sccs.json",
+      "sha256": "F4D59D274E2BED33C79FB84690601AD18FD0417B96209E10901642F162CFA1A8",
+      "source": "artifacts/critical/n5/sccs.json"
+    },
+    {
+      "dest": "v01/critical_n5_below_optimum.json",
+      "sha256": "FA15AD1879BF3D44A927326C1ADA8A14AE924C217EE6AF0767F3B84B38E2ABF9",
+      "source": "artifacts/critical/n5/below_optimum.json"
+    },
+    {
+      "dest": "v01/critical_n5_forced_delta_edges.json.zst",
+      "sha256": "975E8976FF2989FCB494C8EC14ED3C99E3F7F6A242B3048D8C36BE320B98590F",
+      "source": "artifacts/critical/n5/forced_delta_edges.json.zst"
+    },
+    {
+      "dest": "v01/critical_n6_canonical_cycles.json",
+      "sha256": "4139D2E74E04168783E4FCB30BCC1ECD92E0FA184E3AF7199355D680A5671809",
+      "source": "artifacts/critical/n6/canonical_cycles.json"
+    },
+    {
+      "dest": "v01/critical_n6_summary.json",
+      "sha256": "207A2F0C2887CE0C0952286CFD20D3AFF18A0844691BF4DD12C6026F26BB6221",
+      "source": "artifacts/critical/n6/summary.json"
+    },
+    {
+      "dest": "v01/critical_n6_sccs.json",
+      "sha256": "9E6C0A9BAC771CE395486F427E9704BFB849B1D4EEDA8FE7F98D44480089E9F8",
+      "source": "artifacts/critical/n6/sccs.json"
+    },
+    {
+      "dest": "v01/critical_n6_below_optimum.json",
+      "sha256": "887F92AD605E94C09F28316F5B5D7601EA614C25BB7291E967BF461207A5F771",
+      "source": "artifacts/critical/n6/below_optimum.json"
+    },
+    {
+      "dest": "v01/critical_n6_forced_delta_edges.json.zst",
+      "sha256": "41C9CCC150AF277FC890BBADAF88FAF85B679A641C5AE5ECC1B7E9F8A73A38B6",
+      "source": "artifacts/critical/n6/forced_delta_edges.json.zst"
+    },
+    {
+      "dest": "v01/critical_n7_canonical_cycles.json",
+      "sha256": "CA5FBD9E5A6CFDB083DC75C3ABD40AD92017EBD07A467F95738E81352C69F75F",
+      "source": "artifacts/critical/n7/canonical_cycles.json"
+    },
+    {
+      "dest": "v01/critical_n7_summary.json",
+      "sha256": "E2CC1D03807CCAB4EEB2B7018F68EE9F28F7DFCF4303AE296AF7E8B8C3284933",
+      "source": "artifacts/critical/n7/summary.json"
+    },
+    {
+      "dest": "v01/critical_n7_sccs.json",
+      "sha256": "0F4FA162ECDECE1480A61B240959972F424D95CB24385E439A0F781EE681F3B0",
+      "source": "artifacts/critical/n7/sccs.json"
+    },
+    {
+      "dest": "v01/critical_n7_below_optimum.json",
+      "sha256": "C2C7F36F7B202BC961B01B3695D2F4BCE2A49F02A63E69B5F1B206E5E17E911B",
+      "source": "artifacts/critical/n7/below_optimum.json"
+    },
+    {
+      "dest": "v01/critical_n7_forced_delta_edges.json.zst",
+      "sha256": "43C6CF822FA4A0B5D7E518DCEBFE066B581527CDDCB415E1A4FBF4FD845B311F",
+      "source": "artifacts/critical/n7/forced_delta_edges.json.zst"
+    },
+    {
+      "dest": "v01/FINAL_RESULT.json",
+      "sha256": "FC5B1D755FBBD7C022E429FA23850B71EB737051D8BA355E0F5498A560EADD35",
+      "source": "artifacts/seal/FINAL_RESULT.json"
+    },
+    {
+      "dest": "v01/MANIFEST.sha256",
+      "sha256": "4B48EE1C59283479C0FBC3D68EF94B26D327A239EC1F08D51EDF6B21DC842D05",
+      "source": "artifacts/seal/MANIFEST.sha256"
+    }
+  ],
+  "v02_commit": "38c1be6afd2ab2420aa094c68ce45ee6a26b3628",
+  "v02_files": [
+    {
+      "dest": "v02/fact_table.json",
+      "sha256": "0BC79E299EEB86695E906A5F050538F2CD90BFA9F298672CED981DFF05EBA88E",
+      "source": "artifacts/v02/parent_import/fact_table.json"
+    },
+    {
+      "dest": "v02/FINAL_RESULT.json",
+      "sha256": "C5B1C60ADE7090C3B32000A3FF94FC376D65DF4ECAF16AA2AD227DC775995140",
+      "source": "artifacts/v02/seal/FINAL_RESULT.json"
+    },
+    {
+      "dest": "v02/hypothesis_ledger.json",
+      "sha256": "5B7EF97039D34492A236EFE9622DA27CF13C4C190F04FA6B5CAB9760E50B1DDC",
+      "source": "artifacts/v02/hypotheses/ledger.json"
+    },
+    {
+      "dest": "v02/recency_atoms.json",
+      "sha256": "A735B05104ED5CCC40EAD6746354F5649F947E26351A355A8C593F5843709C48",
+      "source": "artifacts/v02/debt_atoms/recency_atoms.json"
+    },
+    {
+      "dest": "v02/state_only_search.json",
+      "sha256": "76097F8EBD36DBCB5A7A756408F9E21C36FC9C6211B6AFD896B221485D761EBA",
+      "source": "artifacts/v02/debt_atoms/state_only_search.json"
+    },
+    {
+      "dest": "v02/falsification_PHI-0001_dev.json",
+      "sha256": "18D6CD2C2F0865D98F7B7F46083F319495F6F528C2B5D96AE3AC35607BE68F5E",
+      "source": "artifacts/v02/falsification/PHI-0001/dev.json"
+    },
+    {
+      "dest": "v02/falsification_PHI-0002_dev.json",
+      "sha256": "47F2392F2B4BE8B2464A003AC161DA15934C3D6FE061E7F603419FA5CE3D33EF",
+      "source": "artifacts/v02/falsification/PHI-0002/dev.json"
+    },
+    {
+      "dest": "v02/falsification_PHI-0003_dev.json",
+      "sha256": "C9BA429EA6CE7810AA44455E90109EC1767A7AC22794C777898BF427EF099372",
+      "source": "artifacts/v02/falsification/PHI-0003/dev.json"
+    },
+    {
+      "dest": "v02/specimens_n2_specimens.json",
+      "sha256": "7872E40E43EFF32D55910F96FC7378995D650E73A09D371FC2FA167BDBFAE053",
+      "source": "artifacts/v02/specimens/n2/specimens.json"
+    },
+    {
+      "dest": "v02/specimens_n2_witnesses.json",
+      "sha256": "7FC150B93ABDDDD8F2F7905D71A1E9BB6BE2DD982D95438889B38B43ACC0A280",
+      "source": "artifacts/v02/specimens/n2/witnesses.json"
+    },
+    {
+      "dest": "v02/specimens_n3_specimens.json",
+      "sha256": "2F2CFC3B64E9755A42753CE6534B386B8EDEAA0B2F84DF0F4821C172561F7EA2",
+      "source": "artifacts/v02/specimens/n3/specimens.json"
+    },
+    {
+      "dest": "v02/specimens_n3_witnesses.json",
+      "sha256": "AABC83605DD39E039A08E0C061EA19FD190EEA2943D7266FE5002B1239010B5D",
+      "source": "artifacts/v02/specimens/n3/witnesses.json"
+    },
+    {
+      "dest": "v02/specimens_n4_specimens.json",
+      "sha256": "62B74E48F2828249C3ECEE3EE2DD0DB61F042876DF8F36CFC3D1E6D6D35C92BF",
+      "source": "artifacts/v02/specimens/n4/specimens.json"
+    },
+    {
+      "dest": "v02/specimens_n4_witnesses.json",
+      "sha256": "6D7877B95FAB7D8D7601BA3DB71F71BF19BD303D30EBC5DC308169BB4E2EF489",
+      "source": "artifacts/v02/specimens/n4/witnesses.json"
+    },
+    {
+      "dest": "v02/specimens_n5_specimens.json",
+      "sha256": "9F21827E556B4B8F96717EAB8BA3FD9A902B973FF78B242802E41C493877E849",
+      "source": "artifacts/v02/specimens/n5/specimens.json"
+    },
+    {
+      "dest": "v02/specimens_n5_witnesses.json",
+      "sha256": "E19DE5763931DF22A72BD757789A9F659A67E0C4476CE5EE64E8E423F5E4DAE0",
+      "source": "artifacts/v02/specimens/n5/witnesses.json"
+    },
+    {
+      "dest": "v02/specimens_n6_specimens.json",
+      "sha256": "3440EDB3833873BDF3BBEC847D4D9C495C1A70CBEC07CBD82F6C852973D2E99E",
+      "source": "artifacts/v02/specimens/n6/specimens.json"
+    },
+    {
+      "dest": "v02/specimens_n6_witnesses.json",
+      "sha256": "7D99AA4027635C7410B382A17D1796AA0C7BB74A5FD08CB66902AB075AFFE7E3",
+      "source": "artifacts/v02/specimens/n6/witnesses.json"
+    },
+    {
+      "dest": "v02/specimens_n7_specimens.json",
+      "sha256": "C07F1D42F7CE60026D25A2DE637DCD3844F583DB7471F14416A100FBB9B195E3",
+      "source": "artifacts/v02/specimens/n7/specimens.json"
+    },
+    {
+      "dest": "v02/specimens_n7_witnesses.json",
+      "sha256": "2794CBA912AE4133353D6C79F44AE9FA2794B655137AB99FF0AAF099443D5B05",
+      "source": "artifacts/v02/specimens/n7/witnesses.json"
+    }
+  ]
+}

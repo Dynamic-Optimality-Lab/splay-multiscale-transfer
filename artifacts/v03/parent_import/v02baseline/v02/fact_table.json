@@ -1,0 +1,98 @@
+[
+  {
+    "R": 4,
+    "R_match": true,
+    "b": [
+      "1",
+      "1"
+    ],
+    "b_match": true,
+    "forced": 2,
+    "forced_match": true,
+    "maxU": 4,
+    "maxU_match": true,
+    "maxV": 0,
+    "maxV_match": true,
+    "n": 2
+  },
+  {
+    "R": 19,
+    "R_match": true,
+    "b": [
+      "1",
+      "1"
+    ],
+    "b_match": true,
+    "forced": 5,
+    "forced_match": true,
+    "maxU": 10,
+    "maxU_match": true,
+    "maxV": 1,
+    "maxV_match": true,
+    "n": 3
+  },
+  {
+    "R": 196,
+    "R_match": true,
+    "b": [
+      "3",
+      "2"
+    ],
+    "b_match": true,
+    "forced": 14,
+    "forced_match": true,
+    "maxU": 22,
+    "maxU_match": true,
+    "maxV": 2,
+    "maxV_match": true,
+    "n": 4
+  },
+  {
+    "R": 1764,
+    "R_match": true,
+    "b": [
+      "8",
+      "5"
+    ],
+    "b_match": true,
+    "forced": 42,
+    "forced_match": true,
+    "maxU": 38,
+    "maxU_match": true,
+    "maxV": 3,
+    "maxV_match": true,
+    "n": 5
+  },
+  {
+    "R": 17424,
+    "R_match": true,
+    "b": [
+      "8",
+      "5"
+    ],
+    "b_match": true,
+    "forced": 132,
+    "forced_match": true,
+    "maxU": 44,
+    "maxU_match": true,
+    "maxV": 5,
+    "maxV_match": true,
+    "n": 6
+  },
+  {
+    "R": 184041,
+    "R_match": true,
+    "b": [
+      "23",
+      "14"
+    ],
+    "b_match": true,
+    "forced": 429,
+    "forced_match": true,
+    "maxU": 58,
+    "maxU_match": true,
+    "maxV": 6,
+    "maxV_match": true,
+    "n": 7
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "delete_create": {
+    "a": 4,
+    "class": "CANONICAL_CREATION",
+    "dU": 8,
+    "dV": 2,
+    "key": 1,
+    "mode": "DELETE",
+    "n": 4,
+    "source": "0",
+    "target": "140",
+    "w_scaled": -8,
+    "y": 0
+  },
+  "exact_repay": {
+    "a": 1,
+    "class": "EXACT_V_REPAYMENT",
+    "dU": -6,
+    "dV": -1,
+    "key": 4,
+    "mode": "KEEP",
+    "n": 4,
+    "source": "8",
+    "target": "0",
+    "w_scaled": 1,
+    "y": 3
+  },
+  "keep_excess": {
+    "a": 1,
+    "class": "KEEP_EXCESS",
+    "dU": -6,
+    "dV": -1,
+    "key": 4,
+    "mode": "KEEP",
+    "n": 4,
+    "source": "8",
+    "target": "0",
+    "w_scaled": 1,
+    "y": 3
+  }
+}

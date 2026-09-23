@@ -1,0 +1,8 @@
+{
+  "both": 0,
+  "delete_create": 0,
+  "exact_repay": 0,
+  "keep_excess": 0,
+  "utight": 2,
+  "vtight": 2
+}

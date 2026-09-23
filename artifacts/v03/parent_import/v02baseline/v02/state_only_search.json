@@ -1,0 +1,152 @@
+{
+  "combo": [
+    [
+      18,
+      1
+    ]
+  ],
+  "domain": "singles-exhaustive + pairs-among-top12",
+  "inconsistent_create": [
+    {
+      "key": 1,
+      "mode": "DELETE",
+      "pred": 1,
+      "source": 0,
+      "want": 0
+    },
+    {
+      "key": 1,
+      "mode": "DELETE",
+      "pred": -1,
+      "source": 1,
+      "want": 0
+    },
+    {
+      "key": 2,
+      "mode": "DELETE",
+      "pred": -1,
+      "source": 2,
+      "want": 0
+    },
+    {
+      "key": 2,
+      "mode": "DELETE",
+      "pred": 1,
+      "source": 3,
+      "want": 0
+    },
+    {
+      "key": 2,
+      "mode": "DELETE",
+      "pred": 1,
+      "source": 0,
+      "want": 0
+    }
+  ],
+  "inconsistent_repay": [
+    {
+      "key": 2,
+      "mode": "KEEP",
+      "pred": -2,
+      "source": 11,
+      "want": -1
+    },
+    {
+      "key": 2,
+      "mode": "KEEP",
+      "pred": -2,
+      "source": 13,
+      "want": -1
+    },
+    {
+      "key": 4,
+      "mode": "KEEP",
+      "pred": 0,
+      "source": 11,
+      "want": -1
+    },
+    {
+      "key": 4,
+      "mode": "KEEP",
+      "pred": -1,
+      "source": 13,
+      "want": -2
+    },
+    {
+      "key": 4,
+      "mode": "KEEP",
+      "pred": 0,
+      "source": 22,
+      "want": -1
+    }
+  ],
+  "motifs": [
+    {
+      "count": 9669,
+      "counterexample_to_universality": null,
+      "debt_values": [
+        -3,
+        -2,
+        -1,
+        0,
+        1
+      ],
+      "predicate": "mode=KEEP",
+      "sizes": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "count": 9669,
+      "counterexample_to_universality": null,
+      "debt_values": [
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "predicate": "mode=DELETE",
+      "sizes": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "score": [
+    5619,
+    472,
+    5147,
+    -1
+  ],
+  "tested": 1212,
+  "validation": {
+    "6": {
+      "create": [
+        47154,
+        104544
+      ],
+      "repay": [
+        4710,
+        11768
+      ]
+    },
+    "7": {
+      "create": [
+        514335,
+        1288287
+      ],
+      "repay": [
+        53832,
+        151534
+      ]
+    }
+  }
+}

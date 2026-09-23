@@ -113,7 +113,7 @@ Resolution (semantics-preserving, logged here): rewrote ONLY that WP-0 bootstrap
 
 ---
 
-## WP-1 — Exact pair dynamics + rotation traces [ENTRY UNBLOCKED — FOUNDATION_FROZEN; pre-consumption subgate: MST0-01 REVIEWED before certified consumption; work NOT started]
+## WP-1 — Exact pair dynamics + rotation traces [IMPLEMENTATION COMPLETE — GATES EMITTED (mechanics scope); SUBGATE PENDING HUMAN REVIEW of MST0-01/02/04/16]
 
 Planned scope/files/code/benchmarks per WorkPlan.md §WP-1 (spec PHASE 01/03/04-expansion; MST0-02/04/16; MST-GATE-2). Head-start already in tree: `splay.py/pair.py/independent.py/trace.py` + 47 green checks. Remaining: `rotations/reference.py`, `rotations/blocks.py`, `cycles/import_parent.py`, `cycles/expand.py`, `cycles/circulation.py`, `artifacts/v03/parent_import|rotations|cycles/expanded`, `theorem_MST02/04/16` proofs, `tests/rotations + tests/parent`. Adherence verdict to be recorded when executed.
 
@@ -320,6 +320,47 @@ WP-0 is FINISHED. `FOUNDATION_FROZEN` is claimed with exactly one scoped item (c
 
 ---
 
+## WP-1 EXECUTION RECORD (2026-09-23, this turn): Phase 1 implemented exactly as written
+
+### Implementation inventory (all new unless noted)
+- `python/cycles/enumerate.py` — canonical trees (ASCII order), `pid=a*C+b`, BFS reachability, exact edges. STEP-02 lines: `enumerate.py:131,137,141`; `run_phase01.py:107,116`.
+- `python/cycles/import_parent.py` — vendor-by-hash (40 files: 32 v0.1 + 20 v0.2... ledger says 32+20=52 entries: 30 cycle-file manifest cross-checks + seals/fact/ledgers/atoms/specimens), strict chained replay + edge audit. STEP-01: `run_phase01.py:45,57,85,90`; `import_parent.py:68,108`.
+- `python/cycles/expand.py` — A/B rotation expansion per imported edge (prerequisite mechanics for WP-2 science). STEP-05: `run_phase03.py:130`.
+- `python/cycles/circulation.py` — circulation tables (scaled slack + zig/zigzig/zigzag flow counts).
+- `python/rotations/reference.py` (extracted convention; `trace.py` refactored to import it, behavior identical), `python/rotations/blocks.py` (maximal-block partition + exact-once checker). STEP-04: `run_phase03.py:64,78,94,96`.
+- `python/splay_ref/independent.py` — additive `from_nodes` + `serialize2` (exact `splay.serialize` grammar) for cross-implementation checks; `splay2` untouched.
+- `python/audit/status.py` — derived obligation statuses (frozen ledgers never edited). STEP-07: `status.py:86,88`; `run_phase01.py:279`.
+- `scripts/run_phase01.py` (REAL: STEP-00/01/02/03/05/06/07) + `scripts/run_phase03.py` (REAL: STEP-00/04/05); other phase stubs unchanged.
+- Proofs (PROVED, author claim): `math/theorem_MST01_parent_transport.md` (`A35D1221…`), `theorem_MST02_rotation_refinement.md` (`E175A2DE…`), `theorem_MST04_keep_reference_snapshot.md` (`04ED59EC…`), `theorem_MST16_block_partition.md` (`3DBF2B98…`); 4 superseded stubs deleted (logged); 4 review packages in `math/reviews/` (verdict: PENDING HUMAN REVIEW).
+- Suites: `tests/parent/test_import.py` (CYC-00..03), `tests/rotations/test_trace.py` (ROT-11/BLOCK-01/CYC-06), `tests/test_wp1.py` (exhaustive n=4 agreement, tamper rejection, idempotency); `test_wp0_stress.py` extended (real-runner behavior).
+
+### Benchmarks (all exact, no sampling in gates)
+- Reachability (independent BFS): n=2..7 → 4/19/196/1764/17424/184041, all equal parent claims (n=7 in 46–50s).
+- Replay (strict chained + per-edge audit): n4 6/6 @3/2, n5 1/1 @8/5, n6 11/11 @8/5, n7 1/1 @23/14 — zero mismatches, all closed, all-KEEP.
+- Forced derivatives: 12/8/84/10 edges exact (costs+targets), KEEP-only on all n≥4.
+- Specimen witnesses: 15 replayed exact, 3 context-only (n=2 aggregates, no source/target in parent record).
+- Failure table: 3/3 PHI REJECTED confirmed; 7 labels with pointers; 7/7 atom families INCONSISTENT (incl. D5_rank).
+- Dual-core corpus agreement: 70/70 edges (costs + case sequences + final trees); reference determinism; block exact-once on 4 histories + purity.
+- Expansion: 19/19 cycles closed, deterministic (byte-identical re-run hashes); circulation tables written.
+
+### Stress (tests/test_wp1.py + test_wp0_stress.py, all exit 0)
+Exhaustive n=4 dual-core agreement (1,568 edges, 0 divergences); tampered target/key cycles caught; expansion idempotent + critical slack zero; phase stubs fail closed; phase01 refuses arg-less; phase03 re-run byte-identical.
+
+### Compliance audit vs WorkPlan WP-1
+- Files: every listed file exists; extras (`enumerate.py`, `status.py`, `test_wp1.py`) justified as the enumeration engine / live-status rule / stress battery. `cycles/` outputs under `expanded/`; `rotations/`+`translation/` dirs reserved. VERDICT: compliant.
+- Code: splay/pair/independent/trace/reference/blocks/expand/circulation all as specified; cost convention untouched; KEEP_REF_SNAPSHOT-v1 versioned. VERDICT: compliant.
+- Benchmarks: b_n* rematched by replay (not by trust); counts recomputed; Bellman anchors imported as context claims (spec requires import, not recompute); all-KEEP recomputed; forced records matched edge-exact; n2/n3 cycles vendored, replay scoped to critical sizes n4–7 per prereg corpus policy. VERDICT: compliant.
+- Gates: PARENT_CHAIN_VERIFIED (import sealed + independent recomputation equals sealed claims) and ROTATION_TRACE_CERTIFIED (mechanics scope: dual-core agreement + determinism + partition) EMITTED. MST0-01/02/04/16 at PROVED (proof docs + computational evidence + packages). VERDICT: mechanics gates pass; theorem REVIEWED pending.
+- Models/overfitting: no synthesis in WP-1; traces target-blind (structure only); n7 reserved role respected (counts+replay, no motif mining). VERDICT: compliant.
+
+### Gaps found and closed this turn
+Inorder/preorder builder bug; stale-root reuse (twice); `splay2` header clobbered by edit (restored, verified); `serialize2` grammar mismatch (fixed to exact keyed grammar); weak substring gate check → header-anchored regex; allowlist fired on legitimate WP-1 outputs → explicit per-namespace authorization (strict); suite ROOT-level bugs; path reconstruction bug in import suite; obsolete stub expectations; n=2 witnesses context-only (handled, not forced).
+
+### Verdict + the one remaining action
+WP-1 implementation is COMPLETE. Gates PARENT_CHAIN_VERIFIED + ROTATION_TRACE_CERTIFIED are emitted (mechanics scope). The WP-1 pre-consumption subgate is PROVED but NOT reviewed: MST0-01/02/04/16 await human ACCEPT/REJECT/BLOCKED verdicts on the four packages in `math/reviews/` (template fields complete; reviewer identity/date/verdict are the only empty fields, and only a human may fill them). Until then: no certified parent-fact consumption, no WP-2 theorem-facing use. **Requested of the human reviewer: read the four proof docs + packages and record verdicts as `math/reviews/MST0-XX.review.json` per `schemas/theorem_review.schema.json`; that single act closes WP-1.**
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -329,5 +370,6 @@ WP-0 is FINISHED. `FOUNDATION_FROZEN` is claimed with exactly one scoped item (c
 - 2026-09-23: Turn 6 (review-response V) — WP-2A/WP-2B target-join barrier (definitions → proof → freeze → target join); count de-hardcoded (yaml self-declares 27 top-level, 30 named incl. sub-fields); FALSE removed from mapping statuses (refutation-record schema instead). Re-verified → commit+push.
 - 2026-09-23: Turn 7 (review-response VI) — PA-native fallback edge case: 27/27 records carry preregistered `MST_NATIVE_*` fallbacks; N/A activates fallback, invention banned mid-experiment. Re-verified → commit+push.
 - 2026-09-23: Turn 8 (WP-0 EXECUTION) — Phase 0 implemented exactly: missing modules created (bootstrap/verify/check + 19 stubs), STEP console logs (00–11) with ID comments, L3+L6 bytes frozen, real bootstrap manifest + lock, STOP-05 read-only integrity, allowlist early-science check, header-anchored gate check, 27/27 stress green, full battery green (freeze/phase00/foundation/stress/reproduce all exit 0). FOUNDATION_FROZEN claimed (one scoped literature item). Re-verified → commit+push.
+- 2026-09-23: Turn 9 (WP-1 EXECUTION) — Phase 1 implemented exactly: canonical enumeration (counts 4/19/196/1764/17424/184041 exact), sealed import (52 files, manifest cross-check), strict replay (19/19 cycles, ratios 3/2–8/5–23/14 exact, all-KEEP closed), forced derivatives edge-exact KEEP-only, 15 specimen witnesses exact, failure table (3 PHI REJECTED, 7 atom families INCONSISTENT), 70-edge dual-core agreement, expansion idempotent, 4 proofs PROVED + review packages, stress green, full regression green. Gates emitted (mechanics scope); MST0-01/02/04/16 REVIEWED pending human verdict — the single remaining act. Re-verified → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).

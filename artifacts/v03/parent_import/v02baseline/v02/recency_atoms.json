@@ -1,0 +1,351 @@
+{
+  "families": {
+    "2": {
+      "D1_node": {
+        "create": [
+          0,
+          40
+        ],
+        "repay": [
+          0,
+          0
+        ]
+      },
+      "D2_edge": {
+        "create": [
+          0,
+          40
+        ],
+        "repay": [
+          0,
+          0
+        ]
+      },
+      "D3_recency": {
+        "create": [
+          0,
+          40
+        ],
+        "repay": [
+          0,
+          0
+        ]
+      },
+      "D4_nested": {
+        "create": [
+          0,
+          40
+        ],
+        "repay": [
+          0,
+          0
+        ]
+      },
+      "D5_rank": {
+        "create": [
+          0,
+          40
+        ],
+        "repay": [
+          0,
+          0
+        ]
+      },
+      "D6_mapped": {
+        "create": [
+          0,
+          40
+        ],
+        "repay": [
+          0,
+          0
+        ]
+      },
+      "D7_multiscale": {
+        "create": [
+          0,
+          40
+        ],
+        "repay": [
+          0,
+          0
+        ]
+      }
+    },
+    "3": {
+      "D1_node": {
+        "create": [
+          18,
+          705
+        ],
+        "repay": [
+          0,
+          54
+        ]
+      },
+      "D2_edge": {
+        "create": [
+          0,
+          705
+        ],
+        "repay": [
+          0,
+          54
+        ]
+      },
+      "D3_recency": {
+        "create": [
+          54,
+          705
+        ],
+        "repay": [
+          54,
+          54
+        ]
+      },
+      "D4_nested": {
+        "create": [
+          6,
+          705
+        ],
+        "repay": [
+          0,
+          54
+        ]
+      },
+      "D5_rank": {
+        "create": [
+          8,
+          705
+        ],
+        "repay": [
+          54,
+          54
+        ]
+      },
+      "D6_mapped": {
+        "create": [
+          14,
+          705
+        ],
+        "repay": [
+          14,
+          54
+        ]
+      },
+      "D7_multiscale": {
+        "create": [
+          0,
+          705
+        ],
+        "repay": [
+          14,
+          54
+        ]
+      }
+    },
+    "4": {
+      "D1_node": {
+        "create": [
+          870,
+          35056
+        ],
+        "repay": [
+          36,
+          3334
+        ]
+      },
+      "D2_edge": {
+        "create": [
+          168,
+          35056
+        ],
+        "repay": [
+          18,
+          3334
+        ]
+      },
+      "D3_recency": {
+        "create": [
+          2562,
+          35056
+        ],
+        "repay": [
+          2678,
+          3334
+        ]
+      },
+      "D4_nested": {
+        "create": [
+          430,
+          35056
+        ],
+        "repay": [
+          0,
+          3334
+        ]
+      },
+      "D5_rank": {
+        "create": [
+          1118,
+          35056
+        ],
+        "repay": [
+          3318,
+          3334
+        ]
+      },
+      "D6_mapped": {
+        "create": [
+          1488,
+          35056
+        ],
+        "repay": [
+          1488,
+          3334
+        ]
+      },
+      "D7_multiscale": {
+        "create": [
+          0,
+          35056
+        ],
+        "repay": [
+          668,
+          3334
+        ]
+      }
+    }
+  },
+  "note": "no family required to survive; inconsistent witnesses are results",
+  "scale": {
+    "D1_node": {
+      "2": {
+        "max": 0,
+        "min": 0,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "3": {
+        "max": 2,
+        "min": 2,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "4": {
+        "max": 2,
+        "min": 2,
+        "note": "finite observation only; no asymptotic inference"
+      }
+    },
+    "D2_edge": {
+      "2": {
+        "max": 0,
+        "min": 0,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "3": {
+        "max": 0,
+        "min": 0,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "4": {
+        "max": 2,
+        "min": 2,
+        "note": "finite observation only; no asymptotic inference"
+      }
+    },
+    "D3_recency": {
+      "2": {
+        "max": 2,
+        "min": 2,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "3": {
+        "max": 3,
+        "min": 3,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "4": {
+        "max": 6,
+        "min": 6,
+        "note": "finite observation only; no asymptotic inference"
+      }
+    },
+    "D4_nested": {
+      "2": {
+        "max": 2,
+        "min": 2,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "3": {
+        "max": 3,
+        "min": 3,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "4": {
+        "max": 5,
+        "min": 5,
+        "note": "finite observation only; no asymptotic inference"
+      }
+    },
+    "D5_rank": {
+      "2": {
+        "max": 2,
+        "min": 2,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "3": {
+        "max": 4,
+        "min": 4,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "4": {
+        "max": 8,
+        "min": 8,
+        "note": "finite observation only; no asymptotic inference"
+      }
+    },
+    "D6_mapped": {
+      "2": {
+        "max": 1,
+        "min": 1,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "3": {
+        "max": 3,
+        "min": 3,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "4": {
+        "max": 6,
+        "min": 6,
+        "note": "finite observation only; no asymptotic inference"
+      }
+    },
+    "D7_multiscale": {
+      "2": {
+        "max": 2,
+        "min": 2,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "3": {
+        "max": 4,
+        "min": 4,
+        "note": "finite observation only; no asymptotic inference"
+      },
+      "4": {
+        "max": 6,
+        "min": 6,
+        "note": "finite observation only; no asymptotic inference"
+      }
+    }
+  },
+  "verdicts": {
+    "D1_node": "DEBT_ATOM_FAMILY_INCONSISTENT",
+    "D2_edge": "DEBT_ATOM_FAMILY_INCONSISTENT",
+    "D3_recency": "DEBT_ATOM_FAMILY_INCONSISTENT",
+    "D4_nested": "DEBT_ATOM_FAMILY_INCONSISTENT",
+    "D5_rank": "DEBT_ATOM_FAMILY_INCONSISTENT",
+    "D6_mapped": "DEBT_ATOM_FAMILY_INCONSISTENT",
+    "D7_multiscale": "DEBT_ATOM_FAMILY_INCONSISTENT"
+  }
+}

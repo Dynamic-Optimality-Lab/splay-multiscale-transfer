@@ -1,0 +1,49 @@
+{
+  "allowed_claims": [
+    "PARENT_SEAL_ONLY",
+    "FINITE_BELLMAN_DEBT_RESULTS",
+    "FINITE_KERNEL_OBSTRUCTION_RESULTS",
+    "FINITE_DEBT_LAW_MINING_RESULTS",
+    "CANDIDATE_DEBT_LAW_SURVIVES_FINITE_TESTS",
+    "UNIVERSAL_PAIR_ACCESS_LEMMA_PROVED",
+    "APPROXIMATE_MONOTONICITY_PROVED",
+    "DYNAMIC_OPTIMALITY_PROVED",
+    "DYNAMIC_OPTIMALITY_DISPROVED"
+  ],
+  "experiment_id": "SPLAY-AM-BD-v0.2",
+  "finite_evidence": {
+    "bellman_anchor_n": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "candidates_rejected": [
+      "PHI-0001",
+      "PHI-0002",
+      "PHI-0003"
+    ],
+    "quotient": "V_APPLICABLE_U_BLOCKED_BY_SOURCE_CONTRACT",
+    "recency_atoms_exhausted": true,
+    "state_only_search_tested": true
+  },
+  "negative_route": "NOT_ACTIVATED_NO_C1_C4_MOTIF",
+  "normative_spec_set": [
+    {
+      "id": "v0.2",
+      "sha256": "7F7B4EE0107AF2A02B8E264B83708392E61955F67C5A8F9871D22978090FC473"
+    },
+    {
+      "id": "v0.2.1-SA01",
+      "sha256": "EA69C3569F82B1B4AD942A13D4615540EA24FEBE82837D6A303949BFF1D6CC83"
+    },
+    {
+      "id": "v0.2.2-SA02",
+      "sha256": "86669C307563C3BAD386B5F2A8884D227A1ACBC8634E1F9DF5F835C83DB9CB70"
+    }
+  ],
+  "positive_route": "NOT_ACTIVATED_NO_SURVIVOR",
+  "terminal_claim": "FINITE_DEBT_LAW_MINING_RESULTS"
+}

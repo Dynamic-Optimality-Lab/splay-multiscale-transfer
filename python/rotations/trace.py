@@ -9,14 +9,11 @@ from __future__ import annotations
 
 import hashlib
 
+from python.rotations.reference import CONVENTION, snapshot_hash
 from python.splay_ref.pair import delete, keep
 from python.splay_ref.splay import Node, serialize
 
-CONVENTION = "KEEP_REF_SNAPSHOT-v1"
-
-
-def snapshot_hash(A1: Node | None) -> str:
-    return hashlib.sha256(serialize(A1).encode()).hexdigest()
+# Re-exported for backward compatibility; canonical home is reference.py.
 
 
 def trace_keep(A: Node, B: Node, x: int, edge_id: str) -> dict:

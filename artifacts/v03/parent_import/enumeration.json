@@ -1,0 +1,32 @@
+{
+  "2": {
+    "reachable": 4,
+    "seconds": 0.0,
+    "trees": 2
+  },
+  "3": {
+    "reachable": 19,
+    "seconds": 0.0,
+    "trees": 5
+  },
+  "4": {
+    "reachable": 196,
+    "seconds": 0.0,
+    "trees": 14
+  },
+  "5": {
+    "reachable": 1764,
+    "seconds": 0.2,
+    "trees": 42
+  },
+  "6": {
+    "reachable": 17424,
+    "seconds": 3.4,
+    "trees": 132
+  },
+  "7": {
+    "reachable": 184041,
+    "seconds": 49.9,
+    "trees": 429
+  }
+}

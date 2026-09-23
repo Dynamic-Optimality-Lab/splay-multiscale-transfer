@@ -79,6 +79,37 @@ def _rot_left(st: dict, p: int) -> None:
     nodes[p][2] = x
 
 
+def from_nodes(root) -> dict:
+    """Build an equivalent dict-state from a pointer-based Node tree.
+
+    Used only for cross-implementation agreement checks: same keys, same
+    BST structure. Keyed by node key; [left, right, parent] per node.
+    """
+    nodes: dict[int, list] = {}
+
+    def rec(n, parent: int | None) -> int | None:
+        if n is None:
+            return None
+        nodes[n.key] = [None, None, parent]
+        nodes[n.key][0] = rec(n.left, n.key)
+        nodes[n.key][1] = rec(n.right, n.key)
+        return n.key
+
+    return {"nodes": nodes, "root": rec(root, None)}
+
+
+def serialize2(st: dict) -> str:
+    """Keyed serialization with the exact splay.serialize grammar (cross-check)."""
+    nodes = st["nodes"]
+
+    def rec(k: int | None) -> str:
+        if k is None:
+            return "."
+        return "(" + str(k) + rec(nodes[k][0]) + rec(nodes[k][1]) + ")"
+
+    return rec(st["root"])
+
+
 def splay2(st: dict, x: int) -> list[dict]:
     nodes = st["nodes"]
     if x not in nodes:

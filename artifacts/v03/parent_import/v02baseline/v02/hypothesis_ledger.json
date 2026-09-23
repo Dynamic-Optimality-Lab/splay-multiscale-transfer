@@ -1,0 +1,104 @@
+[
+  {
+    "hypothesis_id": "PHI-0001",
+    "smallest": {
+      "Phi_after": 9,
+      "Phi_before": 0,
+      "cA": 4,
+      "cB": 0,
+      "key": 2,
+      "mode": "DELETE",
+      "n": 5,
+      "residual": 1,
+      "source": 0,
+      "target": 1008
+    },
+    "status": "REJECTED",
+    "track": "STATE_ONLY",
+    "worst": {
+      "Phi_after": 15,
+      "Phi_before": 0,
+      "cA": 4,
+      "cB": 0,
+      "key": 4,
+      "mode": "DELETE",
+      "n": 7,
+      "residual": 7,
+      "source": 0,
+      "target": 30459
+    }
+  },
+  {
+    "hypothesis_id": "PHI-0002",
+    "smallest": {
+      "Phi_after": 5,
+      "Phi_before": 2,
+      "cA": 3,
+      "cB": 4,
+      "key": 1,
+      "mode": "KEEP",
+      "n": 4,
+      "residual": 1,
+      "source": 14,
+      "target": 164
+    },
+    "status": "REJECTED",
+    "track": "STATE_ONLY",
+    "worst": {
+      "Phi_after": 20,
+      "Phi_before": 2,
+      "cA": 6,
+      "cB": 7,
+      "key": 1,
+      "mode": "KEEP",
+      "n": 7,
+      "residual": 13,
+      "source": 429,
+      "target": 133318
+    }
+  },
+  {
+    "hypothesis_id": "PHI-0003",
+    "smallest": {
+      "cA": 1,
+      "cB": 3,
+      "key": 1,
+      "mode": "KEEP",
+      "n": 3,
+      "residual": 1,
+      "source": [
+        4,
+        0,
+        [
+          1
+        ],
+        []
+      ]
+    },
+    "status": "REJECTED",
+    "track": "RECENCY_AUGMENTED",
+    "worst": {
+      "cA": 1,
+      "cB": 4,
+      "key": 1,
+      "mode": "KEEP",
+      "n": 4,
+      "residual": 3,
+      "source": [
+        10,
+        0,
+        [
+          1,
+          4,
+          3,
+          2
+        ],
+        [
+          4,
+          3,
+          2
+        ]
+      ]
+    }
+  }
+]
