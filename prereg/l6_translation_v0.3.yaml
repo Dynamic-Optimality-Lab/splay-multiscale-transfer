@@ -1,31 +1,49 @@
+# L6 Pair-Access translation vocabulary — PREREGISTERED CONTRACT v0.3 (immutable after WP-0 seal)
+# Freezes the mapping language of spec S6: object names, per-object record schema WP-2
+# must fill, status vocabulary, and consumption rules. WP-2 extracts source definitions
+# into math/L6_PAIR_ACCESS_MAPPING.md (implementation realization) and proves/rejects
+# each mapping WITHOUT changing this language. No source-paper theorem survives
+# transplantation without MST0-03 REVIEWED for the objects it uses.
 mapping_version: L6MAP-v0.3.1
 reference_convention: KEEP_REF_SNAPSHOT-v1
+literature_role_L6: TRANSLATION_TARGET_never_automatic_premise
+
+# Every translated object carries this record (S6.10); WP-2 fills content, never schema
+object_record_schema: [source_definition_ref, pair_access_definition, verdict_same_modified_NA,
+  proof_obligation, implementation_mapping, known_semantic_differences]
+status_vocabulary: [to_be_reviewed, equivalent_reviewed, modified_with_proved_difference,
+  NOT_APPLICABLE_with_preserved_justification, baseline_only]
+naming_rule: PA_or_MST_prefix_until_formal_equivalence_proved_and_reviewed
+tie_rule: all_tie_uniqueness_assumptions_proved_or_explicitly_represented
+rank_rule: exact_L6_rank_copied_first_never_silently_replaced_by_depth
+
 objects:
-  PA_REFERENCE_RANK: {source: L6_rank_exact_copy, status: to_be_reviewed}
-  PA_HEAVY_EDGE: {status: to_be_reviewed}
-  PA_HEAVY_PATH: {status: to_be_reviewed}
-  PA_LIGHT_EDGE: {status: to_be_reviewed}
-  PA_HEAP_VIEW: {status: to_be_reviewed}
-  PA_RAW_GAP: {status: to_be_reviewed}
-  PA_INTERVAL_GAP: {status: to_be_reviewed}
-  PA_POINT_GAP: {status: to_be_reviewed}
-  PA_LAZY_INTERVAL: {status: to_be_reviewed}
-  PA_GROWING_INTERVAL: {status: to_be_reviewed}
-  PA_SHRINKING_INTERVAL: {status: to_be_reviewed}
-  PA_BROKEN_INTERVAL: {status: to_be_reviewed}
-  PA_INTERNAL_PAIRING: {status: to_be_reviewed}
-  PA_BOUNDARY_PAIRING: {status: to_be_reviewed}
-  PA_GOOD_PAIRING: {status: to_be_reviewed}
-  PA_BAD_PAIRING: {status: to_be_reviewed}
-  PA_IMPORTANT_BOUNDARY_PAIRING: {status: to_be_reviewed}
-  PA_UNIMPORTANT_BOUNDARY_PAIRING: {status: to_be_reviewed}
-  PA_BEND: {status: to_be_reviewed}
-  PA_CONTRACTED_POINT_GAP_L6: {status: baseline_only}
-  PAIR_UP: {status: to_be_reviewed}
-  DELETE_INTERVAL_MEMBER: {status: to_be_reviewed}
-  INSERT_INTERVAL_MEMBER: {status: to_be_reviewed}
-  SPLIT_INTERVAL: {status: to_be_reviewed}
-  CONVERT_INTERVAL: {status: to_be_reviewed}
-  TRANSFER_INTERVAL: {status: to_be_reviewed}
-  HEAP_CHILD_EXCHANGE: {status: to_be_reviewed}
-rule: source_theorem_never_transplanted_without_MST0_03_REVIEWED
+  PA_REFERENCE_RANK: {source_object: L6_reference_rank, obligation: MST0-03, note: reference_tree_is_post_A_splay_snapshot_for_KEEP}
+  PA_HEAVY_EDGE: {source_object: L6_heavy_edge, obligation: MST0-03}
+  PA_HEAVY_PATH: {source_object: L6_heavy_path, obligation: MST0-03}
+  PA_LIGHT_EDGE: {source_object: L6_light_edge, obligation: MST0-03}
+  PA_HEAP_VIEW: {source_object: L6_heap_view, obligation: MST0-03, fields: [PA_HEAP_PARENT, PA_HEAP_CHILD_LEFT, PA_HEAP_CHILD_RIGHT]}
+  PA_RAW_GAP: {source_object: L6_gap_raw, obligation: MST0-03}
+  PA_INTERVAL_GAP: {source_object: L6_gap_interval, obligation: MST0-03}
+  PA_POINT_GAP: {source_object: L6_gap_point, obligation: MST0-03}
+  PA_LAZY_INTERVAL: {source_object: L6_lazy_interval, obligation: MST0-03}
+  PA_GROWING_INTERVAL: {source_object: L6_growing_interval, obligation: MST0-03}
+  PA_SHRINKING_INTERVAL: {source_object: L6_shrinking_interval, obligation: MST0-03}
+  PA_BROKEN_INTERVAL: {source_object: L6_broken_interval, obligation: MST0-03}
+  PA_INTERNAL_PAIRING: {source_object: L6_internal_pairing, obligation: MST0-03}
+  PA_BOUNDARY_PAIRING: {source_object: L6_boundary_pairing, obligation: MST0-03}
+  PA_GOOD_PAIRING: {source_object: L6_good_pairing, obligation: MST0-03, note: label_reused_only_after_exact_criterion_map}
+  PA_BAD_PAIRING: {source_object: L6_bad_pairing, obligation: MST0-03, note: label_reused_only_after_exact_criterion_map}
+  PA_IMPORTANT_BOUNDARY_PAIRING: {source_object: L6_important_boundary_pairing, obligation: MST0-03}
+  PA_UNIMPORTANT_BOUNDARY_PAIRING: {source_object: L6_unimportant_boundary_pairing, obligation: MST0-03}
+  PA_BEND: {source_object: L6_bend, obligation: MST0-03, instrumented_under: [every_B_zigzag, every_A_reference_rotation]}
+  PA_CONTRACTED_POINT_GAP_L6: {source_object: L6_contracted_point_gap, obligation: MST0-03, status_fixed: baseline_only}
+  PAIR_UP: {source_object: L6_pair_up_op, obligation: MST0-03}
+  DELETE_INTERVAL_MEMBER: {source_object: L6_delete_interval_member_op, obligation: MST0-03}
+  INSERT_INTERVAL_MEMBER: {source_object: L6_insert_interval_member_op, obligation: MST0-03}
+  SPLIT_INTERVAL: {source_object: L6_split_interval_op, obligation: MST0-03}
+  CONVERT_INTERVAL: {source_object: L6_convert_interval_op, obligation: MST0-03}
+  TRANSFER_INTERVAL: {source_object: L6_transfer_interval_op, obligation: MST0-03}
+  HEAP_CHILD_EXCHANGE: {source_object: L6_heap_child_exchange_op, obligation: MST0-03}
+paid_free_rule: every_op_records_source_paid_free_status_and_whether_it_survives_transplant
+consumption_rule: source_theorem_never_transplanted_without_MST0_03_REVIEWED_for_objects_used

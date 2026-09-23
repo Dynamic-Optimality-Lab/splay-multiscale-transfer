@@ -1,13 +1,69 @@
+# MST event ontology — PREREGISTERED CONTRACT v0.3 (immutable after WP-0 seal)
+# Freezes the complete allowable event/ledger language of spec S8+S10. WP-3..WP-6
+# instantiate it (freeze certificates); they never extend it. Target-blind by construction.
 ontology_version: MST-ONTOLOGY-v0.3
-primitive_cases: [ROOT, ZIG, LL, RR, LR, RL]
-modes: [KEEP, DELETE]
-sides: [A, B]
-scale_systems: [S0, S1, S2, S3, S4, S5]
+reference_convention: KEEP_REF_SNAPSHOT-v1
+
+primitive_modes: [KEEP, DELETE]
+execution_sides: [A, B]
+splay_cases: [ROOT, ZIG, LL, RR, LR, RL]
+
+# S8.1: every primitive rotation event records exactly these fields (raw preserved)
+primitive_event_record_fields: [mode, side, access_key, splay_case, rotation_index,
+  local_parent_child_grandparent_tuple, affected_key_interval, subtree_intervals_before_after,
+  subtree_sizes_before_after, depths_before_after, reference_ranks_before_after,
+  heavy_light_status_before_after, heavy_path_ids_before_after, heap_parent_before_after,
+  raw_gap_state_before_after, lazy_interval_membership_and_owner_before_after,
+  bend_status_before_after, geometric_inversion_record_where_defined,
+  cumulative_access_step_id, reference_snapshot_hash]
+
+# S8.2: three separate regret layers; only EDGE_REGRET is mathematically inherited
+regret_layers:
+  EDGE_REGRET: {role: authoritative_pair_access_quantity, definition: "w_b = c(B,x) - b*c(A,x) per KEEP edge"}
+  ROTATION_CONTEXT: {role: structural_events_during_edge}
+  DISCOVERY_ATTRIBUTION: {role: optional_mining_allocation, theorem_facing: false_until_separately_proved}
+
+# S8.3: zig-class decomposition preserved per KEEP edge
+zig_context_fields: [n_ZIG, n_LL, n_RR, n_LR, n_RL, n_zigzig_total, n_zigzag_total,
+  access_path_length_A, access_path_length_B, positive_regret_per_diagnostic_C]
+
+# S8.4: discrete integer scale systems (logarithmic quantities only as integer buckets/symbolic)
+scale_systems:
+  S0: {name: subtree_size_dyadic, definition: "floor(log2(subtree_size))", theorem_eligible: true}
+  S1: {name: depth_dyadic, definition: "floor(log2(depth+1))", theorem_eligible: true}
+  S2: {name: raw_gap_integer, definition: "integer raw-gap coordinate, no contraction", theorem_eligible: true}
+  S3: {name: contracted_gap_L6, definition: "source-L6 contracted point-gap level", theorem_eligible: false_baseline_only}
+  S4: {name: interval_span_dyadic, definition: "floor(log2(span))", theorem_eligible: true}
+  S5: {name: rank_difference_bucket, definition: "bucketed rank difference", theorem_eligible: only_if_rank_translation_exact}
+
+# S8.5: causal provenance alphabet (type of generating event + structural support; never raw time/IDs)
 provenance_alphabet: [A_ROTATION_CREATED, A_ROTATION_MOVED, B_ZIGZIG_TRANSFERRED,
   B_ZIGZAG_EXPOSED, BOUNDARY_INSERT_CREATED, BOUNDARY_PAIRING_MOVED,
   INTERVAL_SPLIT_REDISTRIBUTED, INTERVAL_TRANSFER_MOVED,
   HEAP_CHILD_EXCHANGE_MOVED, CANCELLED, PAID_REGRET]
+
+# S8.6: credit lifecycle; active predicate structural, local-to-support, future-blind
 credit_states: [LATENT, ACTIVE, SPENT, TRANSFERRED]
+active_predicate_constraints: [structural_only, local_to_declared_support,
+  no_future_accesses, no_bellman_values, no_holdout_labels]
+
+# S8.7: signed transfers allowed only in SIGNED_TRANSFER branch with lower-bound route
+signed_transfer_preconditions: [precise_support_per_component, local_deterministic_cancellation,
+  proved_universal_lower_bound, no_hidden_negative_terminal_energy]
+
+# S10.2: ledger support descriptor — allowed vs forbidden primitives
+support_allowed: [key, ordered_key_interval, translated_heavy_path, heap_parent_child_relation,
+  lazy_interval_by_owner_side_members, boundary_between_objects, bend_location,
+  orientation_LEFT_RIGHT_MIXED]
+support_forbidden_theorem_facing: [BFS_state_ID, memory_address, finite_table_index,
+  cycle_ID, holdout_membership, absolute_event_timestamp, future_key, Bellman_value]
+
+# Ledger state form (S10.1): finite multiset of (type, support, scale, mass)
+ledger_entry_schema: [credit_type_from_vocabulary, support_descriptor, scale_descriptor, integer_or_rational_mass]
+allowed_credit_type_vocabulary: [BOUNDARY_LATENT, BOUNDARY_ACTIVE, SCALE_PACKET, BEND_CREDIT, INTERVAL_CREDIT]
+vocabulary_rule: new_type_names_require_new_grammar_version_with_justification_never_silent
+
+# Target-blindness: ontology extraction must be statically incapable of importing these
 target_blind: true
-forbidden_fields: [regret, criticality, Bellman_UVG, candidate_ids, holdout_flags]
-regret_layers: [EDGE_REGRET_authoritative, ROTATION_CONTEXT, DISCOVERY_ATTRIBUTION_unproved]
+forbidden_fields: [regret_values, criticality_labels, Bellman_UVG, candidate_IDs, holdout_flags, future_keys]
+canonical_order: [n, source_state_id, cycle_length, key_word_lex]

@@ -1,9 +1,59 @@
-credit_types: [BOUNDARY_LATENT, BOUNDARY_ACTIVE, SCALE_PACKET, BEND_CREDIT, INTERVAL_CREDIT]
-support_schema: [key, interval, heavy_path, heap_relation, lazy_interval, boundary, bend, orientation]
-scale_systems: [S0_subtree_dyadic, S1_depth_dyadic, S2_rawgap_integer, S3_contracted_baseline_only, S4_span_dyadic, S5_rank_bucket_if_exact]
-rule_templates: [T1_move, T2_up, T3_down_split, T4_flip, T5_activate, T6_repay, T7_inject, T8_lazy_transfer, T9_signed_cancel, T10_bend_discharge]
-branch_A: {allowed: [T1, T2, T3, T4, T5, T6, T7, T8, T10], signed: false}
-branch_B: {allowed: [T1, T2, T3, T4, T5, T6, T7, T8, T9, T10], signed: true, requires_lower_bound: true, preregistered_before_branchA_result: true}
-max_primitive_outputs_per_rule: O1_unless_aggregate_proved
-forbidden_inputs: [regret_values, criticality_labels, Bellman_UVG, state_ids, cycle_ids, holdout_flags, future_keys]
-objective_hierarchy: [local_conservation, critical_cycle_satisfaction, bounded_injection, repayment, cross_n, cross_C, simplicity]
+# MST transfer grammar — PREREGISTERED CONTRACT v0.3 (immutable after WP-0 seal)
+# Freezes the complete rule language of spec S11+S12: templates, branches, bounds,
+# forbidden escapes, solver objectives. The solver may instantiate — never extend — it.
+grammar_version: MST-GRAMMAR-v0.3
+ontology_version: MST-ONTOLOGY-v0.3
+mapping_version: L6MAP-v0.3.1
+
+credit_type_schema:
+  required_fields: [type_name_from_vocabulary, support_descriptor, scale_descriptor, mass_type]
+  vocabulary: [BOUNDARY_LATENT, BOUNDARY_ACTIVE, SCALE_PACKET, BEND_CREDIT, INTERVAL_CREDIT]
+  vocabulary_rule: new_type_names_require_new_grammar_version_with_justification_never_silent
+support_schema: [key, ordered_key_interval, translated_heavy_path, heap_parent_child_relation,
+  lazy_interval_by_owner_side_members, boundary_between_objects, bend_location,
+  orientation_LEFT_RIGHT_MIXED]
+scale_systems: [S0, S1, S2, S3, S4, S5]
+
+# S11.2: rule templates T1..T10; every instantiated rule carries all rule fields
+rule_templates:
+  T1_scale_preserving_move: {from: "(type,support,scale j)", to: "(type,support',scale j)"}
+  T2_upward_scale_transfer: {from: "(type,support,j)", to: "bounded packet at j+1 plus local residue"}
+  T3_downward_scale_split: {from: "(type,support,j)", to: "bounded packet at j-1/j"}
+  T4_orientation_flip: {from: "LEFT credit", to: "RIGHT credit", condition: exact_local_splay_event}
+  T5_boundary_activation: {from: "LATENT boundary credit", to: "ACTIVE boundary credit", condition: declared_B_access_path_condition}
+  T6_repayment: {from: "ACTIVE credits", to: SPENT, requires: exact_lower_bound_on_paid_positive_KEEP_regret}
+  T7_A_rotation_injection: {from: "A rotation", to: "bounded packet of new latent credits", requires: total_created_energy_bounded_per_rotation_or_per_A_cost}
+  T8_lazy_interval_structural_transfer: {from: "credits on interval ops", to: "transferred credits", requires: MST0_03_and_MST0_08_reviewed_mapping, ops: [PAIR_UP, SPLIT, CONVERT, TRANSFER, HEAP_CHILD_EXCHANGE]}
+  T9_signed_cancellation: {from: "positive+negative scale/orientation credits", to: "local cancellation", branch_only: SIGNED_MULTISCALE}
+  T10_bend_discharge: {from: "bend-supported credit under zig-zag", to: "changed/destroyed credit + designated regret class", requires: MST0_07_reviewed}
+rule_record_fields: [precondition, triggering_primitive_event, input_credit_pattern,
+  output_credit_pattern, energy_change, regret_paid_if_any, source_cost_charged_if_any,
+  scale_movement, symmetry_relabel_behavior]
+
+# S11.3: rule complexity bounds
+complexity_bounds:
+  inspected_objects: "O(1) primitive structural objects around triggering rotation, OR one declared interval/heavy-path object with ledger aggregate"
+  outputs_per_primitive_event: "O(1) unless a proved aggregate operation replaces many records"
+  constants: independent_of_n
+  invariance: order_relabel_invariant
+  lookup_ban: no_state_cycle_holdout_lookup
+
+# S11.4: branch permissions (Branch B preregistered now, not invented after Branch-A failure)
+branch_RAW_BOUNDARY: {allowed_templates: [T1, T2, T3, T4, T5, T6, T7, T8, T10], signed: false}
+branch_SIGNED_MULTISCALE: {allowed_templates: [T1, T2, T3, T4, T5, T6, T7, T8, T9, T10], signed: true, requires_global_lower_bound_theorem: true, activation: only_after_exact_Branch_A_rejection}
+max_primary_calculi_across_branches: 3
+
+# S11.5: forbidden grammar escapes (each a seal-failing violation)
+forbidden_escapes: [arbitrary_per_state_potential_lookup, arbitrary_per_cycle_rule,
+  n_specific_coefficient_vector, unbounded_depth_tree_keyed_by_finite_state_serialization,
+  Bellman_UVG_as_rule_inputs, future_access_information, holdout_derived_predicates,
+  free_global_cancellation, unbounded_new_credits_per_primitive_event_without_proved_aggregate_bound]
+
+# S12.3: discovery objective hierarchy (lexicographic; no statistical fit outranks exact coverage)
+solver_objective_hierarchy: [exact_local_conservation_payment_satisfaction,
+  exact_critical_KEEP_cycle_satisfaction, exact_bounded_A_rotation_injection,
+  exact_positive_KEEP_regret_repayment, cross_n_survival, cross_C_diagnostic_stability,
+  number_of_rule_templates_used, number_of_credit_types,
+  max_local_support_radius_or_aggregate_complexity, expression_simplicity]
+solver_roles: {authoritative: [exact_SAT, SMT_over_integers_rationals, ILP, mincost_circulation_flow, exact_rational_LP_with_checkable_certs, finite_state_DP, symbolic_elimination], advisory_only: [floating_relaxations, heuristic_search]}
+certificate_policy: {feasible: frozen_assignment_replayed_by_independent_exact_checker, infeasible: proof_checked_independently_or_second_formulation_or_exhaustive_witness}

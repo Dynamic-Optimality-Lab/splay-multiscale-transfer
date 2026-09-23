@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — Review-response hardening III (populated prereg, 11 strata, consistency)
+- `event_ontology`/`transfer_grammar`/`l6_translation` promoted stub → fully populated immutable contracts (YAML-validated); H3T 11 strata in WorkPlan (10k/size distributed); WP-1 MST0-10 prerequisite wording; conditional gate wording. Freeze 24 entries; PHASE00_PASS + 47/47 green.
+
 ## 2026-09-23 — Review-response hardening II (freeze-conflict, MST0-01 handoff, wording)
 - WP-0 prereg permanently immutable; WP-3 emits `artifacts/v03/freeze/` certificates (prereg hash + impl/generator hashes), never rewrites prereg; `holdouts.yaml` H3T status frozen as preregistered. MST0-01 via WP-1 pre-consumption subgate (owner WP-1; entry needs FOUNDATION_FROZEN only). Conditional-obligation + multiplicity wording. Freeze 24 entries; PHASE00_PASS + 47/47 green.
 

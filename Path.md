@@ -137,6 +137,35 @@ Per WorkPlan.md §WP-6 (spec PHASE 17/18/19; MST0-13/14/15/17/18/19/20/21). No p
 
 ---
 
+## Review-response turn 3 (2026-09-23): populated prereg contracts, 11 strata, consistency
+
+1. **BLOCKER — immutable stubs.** The three prereg files were promoted from initial stub
+form to fully populated preregistered contracts *before any FOUNDATION_FROZEN seal
+claim* (hashes regenerated; turn-1 "stub" mentions above are the superseded history):
+`event_ontology_v0.3.yaml` (21 keys: S8+S10 language — event record fields, regret
+layers, zig context, S0–S5 definitions with eligibility, 11-tag provenance alphabet,
+credit lifecycle, support allowed/forbidden, target-blindness), `transfer_grammar_v0.3.yaml`
+(16 keys: credit/support schemas + vocabulary rule, T1–T10 with record fields, complexity
+bounds, Branch A/B permissions with B preregistered, 9 forbidden escapes, 10-step solver
+objective hierarchy, certificate policy), `l6_translation_v0.3.yaml` (27 objects each with
+source ref + obligation + naming/tie/rank rules; WP-2 fills records in
+`math/L6_PAIR_ACCESS_MAPPING.md` without changing this language). All three parse as
+valid YAML (PyYAML 6.0.2) with content assertions green (prov=11, T=10, objectives=10,
+objects=27). WP-3 certificates now realize `preregistered language → implementation →
+freeze certificate`. **Adherence: follows the repaired WorkPlan; no post-seal mutation
+(no seal claim exists yet).**
+2. **BLOCKER — H3T 10 vs 11 strata.** `prereg/holdouts.yaml` already enumerated 11
+(asserted: 11); the WorkPlan's combined `ZIGZIG/ZIGZAG_ENRICHED` token is split into
+`ZIGZIG_ENRICHED` + `ZIGZAG_ENRICHED`, with the 10,000-episodes-per-size distributed
+across the 11 strata (not per stratum) — 70k total unchanged. WP-5's "11 strata" text
+was already correct; the contradiction is closed. Verified: strata count assertion.
+3. **Consistency:** WP-1 now "provides rotation-determinism prerequisites/evidence for
+MST0-10 (theorem owner: WP-3)" (matrix already assigned MST0-10 → WP-3); WP-0 file-list
+wording matches the conditional gate rule (`REVIEWED` when applicable;
+`NOT_APPLICABLE` only with preserved justification; `BLOCKED` forbids consumption).
+
+---
+
 ## Review-response turn 2 (2026-09-23): freeze-conflict, MST0-01 handoff, wording
 
 1. **Prereg-freeze vs WP-3 "finalization" conflict (fix-before-implementation).**
@@ -169,5 +198,6 @@ invariants" (WorkPlan §0). Gate description → "`REVIEWED` when applicable;
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
 - 2026-09-23: Turn 3 (review-response II) — prereg-immutability fix: WP-3 certifies via `artifacts/v03/freeze/` certificates, never rewrites prereg; MST0-01 via WP-1 pre-consumption subgate (owner WP-1); conditional-obligation + multiplicity wording. Re-verified → commit+push.
+- 2026-09-23: Turn 4 (review-response III) — three prereg files promoted stub → fully populated contracts (YAML-validated: prov=11, T=10, objectives=10, objects=27); H3T 11 strata (WorkPlan token split; 10k/size distributed); WP-1 MST0-10 prerequisite wording; conditional gate wording in WP-0 list. Re-verified → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).
