@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — Review-response hardening VI (PA-native fallback edge case)
+- All 27 translation records carry preregistered `MST_NATIVE_*` fallbacks; NOT_APPLICABLE activates fallback, post-WP-0 invention banned (new experiment/version required); L6-00 gate extended. Freeze 24 entries; PHASE00_PASS + 47/47 green.
+
 ## 2026-09-23 — Review-response hardening V (WP-2A/WP-2B barrier, count, enum)
 - WP-2A translation-only subphase with hard target-join barrier (6 steps) + WP-2B corpus science gated on L6_TRANSLATION_FROZEN + MST0-03 REVIEWED; count de-hardcoded (yaml self-declares); FALSE removed from mapping statuses (refutation-record schema). Freeze 24 entries; PHASE00_PASS + 47/47 green.
 

@@ -244,6 +244,23 @@ remaining prescriptive FALSE status (only this log + history).
 
 ---
 
+## Review-response turn 6 (2026-09-23): PA-native fallback edge case
+
+1. **NOT_APPLICABLE without invention.** Every one of the 27 preregistered translation
+records now carries `fallback_pa_native_object` + `fallback_pa_native_definition`
+(`MST_NATIVE_*`: purely structural Pair-Access definitions with no source-equivalence
+claim), alongside source identity, proposed translated definition, and
+`UNRESOLVED_PRE_PROOF` status. WP-2A resolves `SAME`/`MODIFIED`, or `NOT_APPLICABLE`
+**plus activation of the already-preregistered distinct fallback** — so a failed source
+translation yields N/A + a usable native object with the freeze intact. The old "new
+mapping version" escape hatch is replaced everywhere (WorkPlan ×3, yaml rules) with:
+no post-WP-0 invention; unanticipated objects require a new experiment/version and stay
+out of v0.3 target-facing analysis. Verified: extended L6-00 gate (fallback fields +
+activation/no-invention rules present per object) passes; YAML parses.
+2. Prior-turn history above is unchanged and remains accurate.
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -251,5 +268,6 @@ remaining prescriptive FALSE status (only this log + history).
 - 2026-09-23: Turn 4 (review-response III) — three prereg files promoted stub → fully populated contracts (YAML-validated: prov=11, T=10, objectives=10, objects=27); H3T 11 strata (WorkPlan token split; 10k/size distributed); WP-1 MST0-10 prerequisite wording; conditional gate wording in WP-0 list. Re-verified → commit+push.
 - 2026-09-23: Turn 5 (review-response IV) — L6 language+proposed-definitions freeze (27×UNRESOLVED_PRE_PROOF, L6-00 gate, L6 version identity in manifest); nine-mode summary + candidate-at-C + WorkPlan-text-freeze date wording; Path.md turn order restored chronological. Re-verified → commit+push.
 - 2026-09-23: Turn 6 (review-response V) — WP-2A/WP-2B target-join barrier (definitions → proof → freeze → target join); count de-hardcoded (yaml self-declares 27 top-level, 30 named incl. sub-fields); FALSE removed from mapping statuses (refutation-record schema instead). Re-verified → commit+push.
+- 2026-09-23: Turn 7 (review-response VI) — PA-native fallback edge case: 27/27 records carry preregistered `MST_NATIVE_*` fallbacks; N/A activates fallback, invention banned mid-experiment. Re-verified → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).

@@ -92,12 +92,16 @@ def main() -> int:
             fails.append(f"L6-00 preregistered object set changed (found {len(objs)}, declared {expected})")
         for name, rec in objs.items():
             for field in ("source_identity", "proposed_pair_access_definition",
+                          "fallback_pa_native_object", "fallback_pa_native_definition",
                           "mapping_status", "obligation"):
                 if field not in rec:
                     fails.append(f"L6-00 {name} missing {field}")
                     break
             if rec.get("mapping_status") != "UNRESOLVED_PRE_PROOF":
                 fails.append(f"L6-00 {name} must start UNRESOLVED_PRE_PROOF")
+        for rule in ("fallback_activation_rule", "no_invention_rule"):
+            if rule not in l6:
+                fails.append(f"L6-00 missing {rule}")
         if "UNRESOLVED_PRE_PROOF" not in l6.get("status_vocabulary", []):
             fails.append("L6-00 status vocabulary lacks UNRESOLVED_PRE_PROOF")
     # 4. threat/stop sets exact
