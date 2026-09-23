@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["grammar_version", "result", "schema_version"], "title": "SOLVER-CERTIFICATE-v0.3", "type": "object"}

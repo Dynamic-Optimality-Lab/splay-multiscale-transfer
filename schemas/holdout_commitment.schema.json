@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["bank_id", "schema_version", "state"], "title": "HOLDOUT-COMMITMENT-v0.3", "type": "object"}

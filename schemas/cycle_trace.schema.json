@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["cycle_id", "edge_count", "n", "rotation_trace_sha256", "schema_version"], "title": "MST-CYCLE-v0.3", "type": "object"}

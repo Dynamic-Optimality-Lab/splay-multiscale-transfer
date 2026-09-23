@@ -1,7 +1,7 @@
 # CITATIONS (frozen roles; exact bytes/versions in external/MANIFEST.json)
 
 - L0a SPLAY-AM-PD-v0.1 sealed release — ancestor evidence.
-- L0b SPLAY-AM-BD-v0.2 final sealed release (`38c1be6`) — parent evidence.
+- L0b SPLAY-AM-BD-v0.2 final sealed release (`38c1be6afd2ab2420aa094c68ce45ee6a26b3628`, ratified in v0.3.1 PIN) — parent evidence.
 - L1 Sleator & Tarjan, Self-Adjusting Binary Search Trees, JACM 1985 — PREMISE for Splay semantics after convention match.
 - L2 Levy & Tarjan, A New Path from Splay to Dynamic Optimality, SODA 2019 — PREMISE for bridge after audit.
 - L3 Levy & Tarjan, A Foundation for Proving Splay is Dynamically Optimal, arXiv:1907.06310 — PREMISE for bridge after audit.

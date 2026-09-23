@@ -3,9 +3,14 @@
 **Experiment:** `SPLAY-AM-MST-v0.3` — Multiscale Synchronous Transfer, Causal Discrepancy Ledgers, Constant-Factor Pair-Access
 **Implementation repo:** `Dynamic-Optimality-Lab/splay-multiscale-transfer`
 **Parent repo:** `Dynamic-Optimality-Lab/splay-bellman-debt`
-**Normative spec:** `IMPLEMENTATION_SPEC_v0.3.md` (frozen v0.3, 20 phases `PHASE 00`–`PHASE 19`, sections 0–38)
+**Normative spec:** `IMPLEMENTATION_SPEC_v0.3.md` as issued (`PRE_FREEZE_PARENT_PIN_REQUIRED`)
+ratified by `SPLAY_AM_MST_IMPLEMENTATION_SPEC_v0.3.1_PIN.md` (v0.3.1 parent-pin freeze;
+the v0.3 text itself is byte-identical, never edited in place)
 **Secondary ancestor:** `SPLAY-AM-PD-v0.1`, sealed commit `6de1ca2a595e8895f54794f3a211fe6ee1a95a80`
-**Pinned parent seal (verified 2026-09-23):** `38c1be6` (`WP-6 GATED_PASS: routes recorded, FINITE_DEBT_LAW_MINING_RESULTS sealed`), terminal claim `FINITE_DEBT_LAW_MINING_RESULTS`
+**Pinned parent seal (verified 2026-09-23, ratified in v0.3.1 PIN amendment):**
+`38c1be6afd2ab2420aa094c68ce45ee6a26b3628` (short `38c1be6`), terminal claim
+`FINITE_DEBT_LAW_MINING_RESULTS`, with `FINAL_RESULT`/manifest/archive/route-audit
+SHA-256 hashes recorded in `prereg/parent_contract.yaml` and the PIN amendment
 **Parent firewall states (verified):** H1 `EMPTY`, H2R `BANK_COMMITTED/unlocks=0`, n8 `PARTIALLY_REVEALED_CANARY_CONTAMINATED`
 **Parent chain aides verified in log:** `b444f6a` (WP-1), `08dc1a7` (WP2), `19245ab` (WP3), `f131b14`/`1821865` (WP-4), `29de3df` (WP-5)
 **Date frozen:** 2026-09-23
@@ -17,7 +22,11 @@
 
 This WorkPlan is a **practical-implications partition** of the normative spec, not a replacement for it. Every normative rule still binds. The partition was verified as follows:
 
-1. Listed all 20 spec phases (00–19) and assigned each to exactly one WP (§8.1). No spec phase is split across WPs for ownership (cross-references are read-only).
+1. Listed all 20 spec phases (00–19) and assigned each exactly one accountable owner WP
+(§8.1). A WP may produce prerequisite artifacts consumed by the owning WP (e.g. WP-1
+rotation expansions feed WP-2-owned Phase 04 science); accountability is never shared.
+Cross-cutting controls (threats, stops, invariants, shared test families) may have
+multiple owning WPs, as the specification itself supports multi-owner controls.
 2. Listed all spec sections 0–38 and assigned each to at least one WP (§8.2).
 3. Listed all theorem obligations `MST0-01…26`, transfer gates `MST-GATE-0…21`, threats `T01…T90`, stops `STOP-01…50`, named tests, and invariants `INV-001…070`, and mapped each to its owning WP (§8.3–§8.6).
 4. Checked that firewall transitions (`EMPTY → BANK_COMMITTED → TRANSFER_CALCULUS_FROZEN → UNLOCKED_ONCE`, at most one unlock) are never split across WPs in a way that would allow a read-before-freeze.
@@ -25,7 +34,7 @@ This WorkPlan is a **practical-implications partition** of the normative spec, n
 
 **Models / learning policy (applies to all WPs).** v0.3 trains **no statistical/ML models** (no neural nets, no regressors, no embeddings as authority). The "models" in the user's sense are **transfer calculi**: finite-alphabet local conservation laws (rule templates `T1…T10`, §11) instantiated by **exact** SAT/SMT/ILP/flow solvers. "Training benchmarks" = frozen development corpora only. "Brutally tested by benchmarks ENTIRELY different from the training benchmarks" is implemented as: (a) disjoint internal-validation split (n=7 critical, n=6–7 noncritical, generated-history validation mask — different states, cycles, histories, never used for synthesis); (b) contaminated-n8 validation (different size, contaminated label, never fresh); (c) genuinely fresh banks H1/H2R/H3T (generated/committed before synthesis, unlocked at most once, post-reveal edits get new IDs and are never called fresh-tested); (d) clean-room reimplementation + large-n adversarial search (n=16…256, different engines: uniform, structured, hill-climb, annealing, genetic, rotation-neighborhood, cycle-splicing, motif-inflation — §13/§16); (e) constant-ladder stability check (same frozen rules evaluated at C ∈ {2,3,4,6,8,12,16,24,32,64} without rule mutation); (f) mutation controls (every suite must catch injected corruptions); (g) exact arithmetic throughout (integers/`Fraction`, symbolic log handling; floats visualization-only). Any single exact residual rejects the candidate gate — no statistical outranking. This anti-overfitting contract is repeated per WP where it binds, and enforced by firewalls + `STOP-10/17/18/19/22/23/24/25/26/27/28/29/30/31` + tests `TR-*`, `HLD-*`, `LED-*`.
 
-**Stale-results policy.** The implementation repo at clone time contained only `LICENSE` (1 commit) — i.e. **zero prior scientific results**, so there was nothing stale to carry over. This WorkPlan mandates: `artifacts/v03/` contains **only** newly computed v0.3 outputs; any pre-existing file found there during WP-0 is deleted and the deletion is logged in `Path.md` and `artifacts/v03/STALE_CLEARANCE.json`. Parent results are never copied as v0.3 results; they live read-only under `parent/` with hashes. Failed calculi/counterexamples are append-only, never deleted (§19-seal rule).
+**Stale-results policy.** The implementation repo at clone time contained only `LICENSE` (1 commit) — i.e. **zero prior scientific results**, so there was nothing stale to carry over. This WorkPlan mandates: `artifacts/v03/` contains **only** newly computed v0.3 outputs. Any unexpected pre-existing file found there during WP-0 is **quarantined outside the authoritative `v03` result namespace and hash-logged** (never silently deleted, never merged into results); if quarantine is impossible the run fails closed. This respects the seal rule that unexpected scientific artifacts are retained with status and failed experiments/counterexamples are never deleted to make the archive clean. Parent results are never copied as v0.3 results; they live read-only under `parent/` with hashes. Failed calculi/counterexamples are append-only, never deleted (§19-seal rule).
 
 **Commit/push policy.** Every WP ends with `VERIFY → COMMIT → PUSH` per the deterministic order in §21 of the spec. No failed run is deleted to make a gate pass. Standing instruction (user): commit and push without being asked each time.
 
@@ -39,32 +48,63 @@ This WorkPlan is a **practical-implications partition** of the normative spec, n
 Create the immutable boundary before any scientific output exists: pin the final v0.2 seal + v0.1 ancestor chain, bootstrap `parent/` read-only, freeze literature L0a/L0b/L1–L6 bytes/versions, freeze the normative spec + all prereg YAMLs + hashes, initialize `math/proof_status.json` (`MST0-01…26` → `UNPROVED`), freeze threat/stop/split/claim matrices, verify H1/H2R/n8 firewall states **without reading contents**, and lay the deterministic repo skeleton (§18) with logging, schemas, and foundation tests. No `PHASE 01+` scientific execution is permitted until the WP-0 gate passes (`PARENT_NOT_FINAL` otherwise).
 
 ### Files to be made (exact paths)
-- `IMPLEMENTATION_SPEC_v0.3.md` (byte copy of frozen spec) + `CITATIONS.md`, `CHANGELOG.md`, `README.md`, `LICENSE` (keep), `pyproject.toml`, `requirements-lock.txt`, `.gitignore`
-- `parent/`: `V01_SEAL.json`, `V02_SEAL.json`, `V01_FINAL_RESULT.json`, `V02_FINAL_RESULT.json`, `V01_MANIFEST.sha256`, `V02_MANIFEST.sha256`, `V01_ARCHIVE.sha256`, `V02_ARCHIVE.sha256`, `V02_H1_FIREWALL.json`, `V02_H2R_FIREWALL.json`, `import_ledger.json`, `BOOTSTRAP_MANIFEST.sha256` (then read-only)
-- `prereg/`: `experiment_v0.3.yaml`, `parent_contract.yaml`, `constant_policy.yaml`, `l6_translation_v0.3.yaml` (definition stubs only), `event_ontology_v0.3.yaml` (stub), `transfer_grammar_v0.3.yaml` (stub, Branch B preregistered now per §11.4), `cycle_corpus_policy.yaml`, `holdouts.yaml`, `theorem_gate_matrix.yaml`, `threat_control_matrix.yaml` (T01–T90 each ≥1 control), `stop_control_matrix.yaml` (STOP-01–50), `discovery_splits.yaml`, `allowed_claims.md`, `forbidden_claims.md`, `prereg_sha256.txt`
-- `math/`: `definitions_v0.3.md`, `L6_PAIR_ACCESS_MAPPING.md` (skeleton), `theorem_MST*.md` stubs (26 files per §18), `proof_status.json`
-- `schemas/`: all 12 schemas listed in §18 (`parent_import`, `rotation_event`, `l6_object`, `cycle_trace`, `provenance_packet`, `ledger_credit`, `transfer_rule`, `transfer_calculus`, `solver_certificate`, `holdout_commitment`, `counterexample`, `theorem_review`, `final_result_v0.3`)
+- `IMPLEMENTATION_SPEC_v0.3.md` (byte copy of v0.3 as issued — never edited in place) +
+  `SPLAY_AM_MST_IMPLEMENTATION_SPEC_v0.3.1_PIN.md` (ratified parent-pin amendment that
+  discharges `PRE_FREEZE_PARENT_PIN_REQUIRED`; included in `prereg_sha256.txt`) +
+  `CITATIONS.md`, `CHANGELOG.md`, `README.md`, `LICENSE` (keep), `pyproject.toml`, `requirements-lock.txt`, `.gitignore`
+- `parent/`: `V01_SEAL.json`, `V02_SEAL.json` (full 40-char commits), `V01_FINAL_RESULT.json`, `V02_FINAL_RESULT.json`, `V01_MANIFEST.sha256`, `V02_MANIFEST.sha256`, `V01_ARCHIVE.sha256`, `V02_ARCHIVE.sha256`, `V02_H1_FIREWALL.json`, `V02_H2R_FIREWALL.json`, `import_ledger.json`, `BOOTSTRAP_MANIFEST.sha256` (then read-only)
+- `prereg/`: `experiment_v0.3.yaml`, `parent_contract.yaml` (full commit + `FINAL_RESULT`/
+  manifest/archive/route-audit/normative-set hashes + firewall states), `constant_policy.yaml`, `solver_backends.yaml` (backend freeze record; synthesis stays blocked until populated), `l6_translation_v0.3.yaml` (definition stubs only), `event_ontology_v0.3.yaml` (stub), `transfer_grammar_v0.3.yaml` (stub, Branch B preregistered now per §11.4), `cycle_corpus_policy.yaml`, `holdouts.yaml`, `theorem_gate_matrix.yaml` (all 26 obligations with owner, FIRST consumer, required status `REVIEWED`, proof/review artifacts, controls), `threat_control_matrix.yaml` (T01–T90 each ≥1 control), `stop_control_matrix.yaml` (STOP-01–50), `discovery_splits.yaml`, `allowed_claims.md`, `forbidden_claims.md`, `prereg_sha256.txt`
+- `math/`: `definitions_v0.3.md`, `L6_PAIR_ACCESS_MAPPING.md` (skeleton), `theorem_MST*.md` stubs (26 files per §18), `proof_status.json`, `reviews/REVIEW_TEMPLATE.md` (required fields for every `REVIEWED` verdict)
+- `schemas/`: all 13 schemas listed in §18 (`parent_import`, `rotation_event`, `l6_object`, `cycle_trace`, `provenance_packet`, `ledger_credit`, `transfer_rule`, `transfer_calculus`, `solver_certificate`, `holdout_commitment`, `counterexample`, `theorem_review`, `final_result_v0.3`)
 - `scripts/run_phase00.py` (+ `run_phase01..19` stubs, `reproduce_all_v0.3.py`), `tests/test_foundation.py` (`PARENT-01…08`), `artifacts/v03/STALE_CLEARANCE.json`, `artifacts/v03/logs/`, `artifacts/v03/seal/`
 - `WorkPlan.md` (this file), `Path.md` (tracker, created here, updated every WP)
 
 ### Code to be produced and how to code it
-- `python/inherited/bootstrap_parent.py`: single authorized transaction — verifies `38c1be6` + `6de1ca2…`, copies sealed parent artifacts by hash, writes `BOOTSTRAP_MANIFEST.sha256`, sets read-only. How: `hashlib.sha256` over canonical bytes, `json` with sorted keys; assert `FINAL_RESULT.terminal_claim == FINITE_DEBT_LAW_MINING_RESULTS`, `H1.state == EMPTY`, `H2R.unlocks == 0`; any mismatch → emit `PARENT_SEAL_MISMATCH`, exit non-zero. No parent file is ever edited in place.
+- `python/inherited/bootstrap_parent.py`: single authorized transaction — verifies the FULL
+`38c1be6afd2ab2420aa094c68ce45ee6a26b3628` commit plus `FINAL_RESULT`/manifest/archive/
+route-audit/normative-set hashes against `parent_contract.yaml` and the v0.3.1 PIN amendment,
+copies sealed parent artifacts by hash, writes `BOOTSTRAP_MANIFEST.sha256`, sets read-only.
+Verifies `FINAL_RESULT.terminal_claim == FINITE_DEBT_LAW_MINING_RESULTS`,
+`H1.state == EMPTY`, `H2R.unlocks == 0`; any mismatch → emit `PARENT_SEAL_MISMATCH`,
+exit non-zero (a short-SHA match alone never passes). No parent file is ever edited in place.
 - `python/audit/verify_parent.py` + `check_prereg.py`: recompute every hash in `prereg_sha256.txt`, assert `set(threat_ids)=={T01..T90}`, `set(stop_ids)=={STOP-01..STOP-50}`, every control exists; assert no `artifacts/v03/**` scientific output predates prereg hash (mtime + git-log check).
 - `python/audit/log.py`: append-only run-record writer emitting every field of §27 (experiment/phase/branch/UTC/commit/parent commits/spec+prereg+literature+gate-matrix SHAs/firewalls/calculus/C/deps/command/input+output+stdout+stderr hashes/wall/peak/exit/status).
-- Coding rules: Python 3.12+ (3.13 used here, version frozen in lock file); stdlib + `zstandard`, `jsonschema`, `sympy` only; exact integer arithmetic; deterministic sorted iteration everywhere; `ruff`/compile check; two-person-equivalent review = script re-verifies its own output via an independent code path (e.g. hash recomputed by shell `sha256sum` vs Python).
+- Coding rules: Python 3.12+ baseline (3.13.7 actually used and frozen in lock file; 3.12 was a recommended baseline, not a semantic constraint); stdlib + `zstandard`, `jsonschema`, `sympy` only for WP-0; exact integer arithmetic; deterministic sorted iteration everywhere; `ruff`/compile check.
+- Verification vocabulary (used in every WP): **INDEPENDENT_COMPUTATIONAL_VERIFICATION** =
+two differently-structured code paths agreeing on outputs (plus hash/seed records). This is
+necessary but NEVER sufficient for a theorem `REVIEWED` verdict. **Theorem review** is a
+separate human-owned act recorded in `math/reviews/MST0-XX.review.json` per
+`math/reviews/REVIEW_TEMPLATE.md` and `schemas/theorem_review.schema.json`: theorem SHA,
+verbatim statement + domain, hypotheses checked, proof-dependency audit, case-completeness
+audit, computational evidence (supporting only), objections + resolutions, reviewer
+identity/role/date, verdict `ACCEPT`/`REJECT`/`BLOCKED`. `REVIEWED` never means externally
+peer reviewed. Reviews that inspect only status/keywords are rejected by seal audit.
 
-### Benchmarks (train vs entirely-different test) + anti-overfitting
-- No synthesis in WP-0, hence no training. Benchmarks are **verification gates**: `PARENT-01…08` (commit/manifest/ancestor-chain/H1/H2R/n8/theorem-ledger-hash/no-pre-prereg-output), `SEAL-02/03/04/05`, `L6-01` (source-version hash). Test data is the parent seal itself — entirely different from anything v0.3 will later synthesize — plus mutation probes (corrupt one hash → suite must fail).
+### Benchmarks + anti-overfitting
+- No synthesis in WP-0, hence no training. Solver backends are nevertheless frozen this early
+by record: `prereg/solver_backends.yaml` pins the backend freeze format (exact version,
+binary/package hash, seed/thread policy, parameter-file hash, certificate capability,
+discovery-only vs authoritative-after-replay) and synthesis stays blocked until at least
+one backend entry is frozen (existing `STOP-22/23` + `TR-01/03/04`; no new stop ID).
+- Benchmarks are **verification gates**: `PARENT-01…08` (full commit/manifest/ancestor-chain/H1/H2R/n8/theorem-ledger-hash/no-pre-prereg-output), `SEAL-02/03/04/05`, `L6-01` (source-version hash). Test data is the parent seal itself — entirely different from anything v0.3 will later synthesize — plus mutation probes (corrupt one hash → suite must fail).
 - Anti-overfit: nothing to overfit yet; the control is temporal — prereg hashes freeze **before** any target inspection (`STOP-05`, `TR-01`).
 
 ### Gate emitted
-`FOUNDATION_FROZEN` (all Phase-00 checkboxes) or `FOUNDATION_NOT_FROZEN` / `PARENT_NOT_FINAL` / `PARENT_SEAL_MISMATCH`. Blocks WP-1+ on failure.
+`FOUNDATION_FROZEN` (all Phase-00 checkboxes **plus** the ratified v0.3.1 parent pin)
+or `FOUNDATION_NOT_FROZEN` / `PARENT_NOT_FINAL` / `PARENT_SEAL_MISMATCH`. Blocks WP-1+ on failure; `MST0-01` must additionally reach `REVIEWED` before WP-1 certified consumption.
 
 ---
 
 ## WP-1 — Exact pair dynamics + rotation traces + parent reverification (the trusted core)
 
-**Covers spec:** `PHASE 01`, `PHASE 03`, `PHASE 04` (expansion mechanics only; motif science belongs to WP-2); §§4 (Pair-Access contract), 5 (rotation contract), 9.4 (expansion); owns `MST0-02` (refinement), `MST0-04` (reference-snapshot legitimacy), `MST0-10` (determinism preamble), `MST0-16` (partition preamble); `MST-GATE-2`.
+**Covers spec:** `PHASE 01`, `PHASE 03`, plus prerequisite rotation-expansion artifacts
+consumed by WP-2-owned `PHASE 04`; §§4 (Pair-Access contract), 5 (rotation contract),
+9.4 (expansion); owns `MST0-02` (refinement), `MST0-04` (reference-snapshot legitimacy),
+`MST0-10` (determinism preamble), `MST0-16` (partition preamble); `MST-GATE-2`.
+**Entry:** `FOUNDATION_FROZEN` **and** `MST0-01 == REVIEWED` — no certified parent fact
+(parent transitions, ratios, cycles, derivatives) is consumed theorem-facing before the
+parent-transport review record exists (gate matrix first-consumer rule).
 
 ### Scope
 Re-derive the exact object under attack without redefining it: read-only import of parent pair/tree universes, transition tables, reachable domains n=2..7, `b_n*` certificates, critical/near-critical cycles, forced derivatives, v0.2 failure ledgers (incl. 16 D5 failures); independent reproduction (n=2..6 full, n=7 streamed); rotation-level refinement of every Pair-Access edge (ROOT/ZIG/LL/RR/LR/RL) with frozen-reference KEEP analysis order; full A-then-B expansion of all imported critical cycles; failure-mechanism table (`GLOBAL_TOO_EASY_TO_CREATE`, `LOCAL_TOO_WEAK_TO_REPAY`, etc. as evidence labels only).
@@ -90,13 +130,19 @@ Re-derive the exact object under attack without redefining it: read-only import 
 - Anti-overfit: two-implementation agreement; streamed n=7 verification (no full re-enumeration); mutation controls (flip one case label, one tie-break, snapshot order → suite must catch); n=7 reserved for validation where WP-2 needs it (`CYC-07`).
 
 ### Gates emitted
-`PARENT_CHAIN_VERIFIED`, `ROTATION_TRACE_CERTIFIED` (or `ROTATION_TRACE_FAIL` / `PARENT_SEAL_MISMATCH`). Required before WP-2 consumes traces theorem-facing.
+`PARENT_CHAIN_VERIFIED`, `ROTATION_TRACE_CERTIFIED` (or `ROTATION_TRACE_FAIL` / `PARENT_SEAL_MISMATCH`).
+`MST0-01` must already be `REVIEWED` (WP-1 entry condition); `MST0-02`/`MST0-04` advance
+to at least `PROVED` here and must be `REVIEWED` before WP-2 consumes traces
+theorem-facing (gate matrix). Required before WP-2 consumes traces theorem-facing.
 
 ---
 
 ## WP-2 — L6 translation, critical-corpus science, heavy/pairing/bend lemmas, contracted baseline
 
-**Covers spec:** `PHASE 02`, `PHASE 04` (science), `PHASE 05`, `PHASE 06`; §§6 (translation), 8.3/8.4 (zig stratification, scales S0–S5), 9 (corpus), 13.5/§6.8 (baseline); owns `MST0-03`, `MST0-05`, `MST0-06`, `MST0-07`, `MST0-08`; `MST-GATE-1`, `MST-GATE-3`.
+**Covers spec:** `PHASE 02`, `PHASE 04` (sole accountable owner — WP-1 supplies prerequisite
+rotation-expansion artifacts), `PHASE 05`, `PHASE 06`; §§6 (translation), 8.3/8.4 (zig stratification, scales S0–S5), 9 (corpus), 13.5/§6.8 (baseline); owns `MST0-03`, `MST0-05`, `MST0-06`, `MST0-07`, `MST0-08`; `MST-GATE-1`, `MST-GATE-3`.
+**Entry:** `ROTATION_TRACE_CERTIFIED` **and** `MST0-02 == REVIEWED` plus the relevant form
+of `MST0-04 == REVIEWED` (gate matrix first-consumer rule for WP-2).
 
 ### Scope
 Turn L6 from inspiration into audited definitions: extract exact source definitions (ranks, heavy/light, heap view, gaps, lazy intervals, pairings, paid/free ops, bends), write `L6_PAIR_ACCESS_MAPPING.md` (same/modified/N-A per object + proof obligation), implement translation twice, prove-or-kill the KEEP heavy-path / zig-zig-pairing / zig-zag-bend / reference-rotation-locality lemmas **under the actual translated rank** (never depth-substituted), stratify critical KEEP burden by Splay-case context, compute full-cycle circulation per primitive, canonicalize cross-n motifs (order/orientation/scale/roles only), reproduce the contracted-gap baseline to see where log/loglog loss appears in Pair Access — without overclaiming it as a result.
@@ -157,7 +203,7 @@ Replace history with structural causal provenance (A-rotations → bounded desce
 **Covers spec:** `PHASE 10`, `PHASE 11`, `PHASE 12`, `PHASE 13`; §§12 (solver policy), 13 (raw-damage target); owns `MST0-09` (raw-boundary statement), `MST0-12` (signed-bound setup); gates `MST-GATE-5/6/7/8/9`.
 
 ### Scope
-**Train** (synthesize) raw-boundary transfer laws on development only, then signed-multiscale only if Branch A is exactly refuted; generalize every decisive counterexample toward parameterized motifs and triage the negative branch on actual Splay ratios (never residuals); stress survivors across the diagnostic constant ladder and a broad adversarial development battery. One exact residual kills the gate — no fit outranks a violation.
+**Train** (synthesize) raw-boundary transfer laws on development only, then signed-multiscale only if Branch A is exactly refuted; generalize every decisive counterexample toward parameterized motifs and triage the negative branch on actual Splay ratios (never residuals); stress survivors across the diagnostic constant ladder and a broad adversarial development battery. One exact residual at the frozen C rejects that candidate at that C (see gate semantics below) — no fit outranks a violation.
 
 ### Files to be made
 - `python/solver/{encode_sat,smt,ilp,flow,certify}.py` (exact back ends; floats guide-only), `python/transfer/{branchA,branchB,ladder}.py`, `python/adversary/{generators,hillclimb,anneal,genetic,neighborhood,splice,inflate,generalize}.py`
@@ -170,11 +216,11 @@ Replace history with structural causal provenance (A-rotations → bounded desce
 - Constraints per candidate: bounded A-injection, determinism, nonnegative raw energy (Branch A), exact repayment at frozen diagnostic C or symbolic budget, cycle consistency, relabel/mirror covariance, no hidden state lookup. Solver outputs replayed by independent exact checker (`TR-03`); UNSAT confirmed by certificate or second formulation/exhaustive witness (`TR-04`); every failure preserves minimal inconsistent subsystem + smallest counterexample under canonical order (`TR-09/10`).
 - Branch B activation: **only** if Branch A rejected by exact evidence **and** Branch-B grammar was frozen in WP-3; joint search for signed rules + global lower-bounded energy + bounded init/injection/repayment; scale-circulation checks on critical cycles.
 - Negative triage: motif inflation per decisive counterexample → parameterized family; track only real `R_k = Σc_B/Σc_A`; activation needs N1–N5 (legal, explicit construction, growing actual ratio/b, independent replay, diagonal-rooted plausibility); "worst solver state per k" rejected (`T53/NEG-*`).
-- Ladder/stress: frozen rules evaluated across C ∈ ladder **without rule edits**; adversarial battery (spines, opposite spines, balanced/spine, zig-zag runs, zig-zig enrichment, nested intervals, rank-gap extremes, boundary enrichment, DELETE-bursts-then-KEEP, repeated KEEP cycles, mirrors, rotation neighborhoods, dev-failure motif inflation) via ≥8 engines; heuristics propose, exact evaluator disposes (`INV-038`); zero exact violations at frozen C required to advance.
+- Ladder/stress: frozen rules evaluated across C ∈ ladder **without rule edits**; adversarial battery (spines, opposite spines, balanced/spine, zig-zag runs, zig-zig enrichment, nested intervals, rank-gap extremes, boundary enrichment, DELETE-bursts-then-KEEP, repeated KEEP cycles, mirrors, rotation neighborhoods, dev-failure motif inflation) via **all nine spec-required search modes, each with a distinct run record** — (1) uniform legal histories, (2) structured generators, (3) hill climb, (4) simulated annealing, (5) genetic search, (6) rotation-neighborhood search, (7) cycle splicing, (8) motif inflation, (9) counterexample generalization; additional engines permitted, and two modes may share one code module only if both still emit distinct run records; heuristics propose, exact evaluator disposes (`INV-038`); zero exact violations at frozen C required to advance.
 
 ### Benchmarks (training vs ENTIRELY different testing) + anti-overfitting
 - **Training benchmarks:** selection corpora above + solver-dev splits from `discovery_splits.yaml`.
-- **Entirely different test benchmarks:** (i) internal validation split (different n/cycles/histories); (ii) constant-ladder transfer (same rules, harder C); (iii) cross-branch check (raw failure ≠ signed failure, `MST0-24`); (iv) motif-inflation scale growth (different sizes); (v) later WPs' fresh banks + large-n + clean-room (WP-5, never touched here). Overfitting controls: target-blind ontology + frozen grammar + ID-immutable calculi + append-only counterexamples + minimal-unsat preservation + exact-replay discipline + `STOP-22/23/24/34/35` + `TR-*`/`NEG-*` suites. Diagnostic C=2 never mistaken for theorem constant (`T41`, `INV-007`).
+- **Entirely different test benchmarks:** (i) internal validation split (different n/cycles/histories); (ii) cross-C stability/feasibility (same frozen rules evaluated across the diagnostic ladder — note larger C eases the competitive inequality, so this checks stability, not "hardness"); (iii) cross-branch check (raw failure ≠ signed failure, `MST0-24`); (iv) motif-inflation scale growth (different sizes); (v) later WPs' fresh banks + large-n + clean-room (WP-5, never touched here). Gate semantics: one exact residual at the frozen C **rejects that candidate at that C** — it does not by itself kill the underlying structural rule family, which the preregistered ladder explicitly permits re-testing at a larger C **without changing any rule** (a rule change creates a new calculus ID). Overfitting controls: target-blind ontology + frozen grammar + ID-immutable calculi + append-only counterexamples + minimal-unsat preservation + exact-replay discipline + `STOP-22/23/24/34/35` + `TR-*`/`NEG-*` suites. Diagnostic C=2 never mistaken for theorem constant (`T41`, `INV-007`).
 
 ### Gates emitted
 Exactly one of `RAW_BOUNDARY_LAW_SURVIVES_DEV` / `RAW_BOUNDARY_LAW_REJECTED` / `RESOURCE_LIMIT_NO_CLAIM` … similarly `SIGNED_TRANSFER_{NOT_ACTIVATED,SURVIVES_DEV,REJECTED}` … normally `NEGATIVE_FAMILY_NOT_ACTIVATED` (or `NEGATIVE_CYCLE_FAMILY_CANDIDATE` if N1–N5 pass). Survivors capped at ≤3 primary calculi for WP-5 (frozen complexity order).
@@ -242,11 +288,11 @@ One of: `BOUNDED_DELETE_INJECTION_PROVED`, `SYNCHRONOUS_KEEP_TRANSFER_PROVED`, `
 ### 8.1 Spec PHASE → WP (each spec phase owned exactly once)
 | Spec phase | Owner | Gate |
 |---|---|---|
-| 00 Freeze parent/literature/contract/obligations | WP-0 | FOUNDATION_FROZEN |
-| 01 Reverify pair dynamics + failures | WP-1 | PARENT_CHAIN_VERIFIED |
-| 02 L6 translation freeze+proof | WP-2 | L6_TRANSLATION_FROZEN |
+| 00 Freeze parent/literature/contract/obligations | WP-0 | FOUNDATION_FROZEN (incl. v0.3.1 pin; MST0-01 still must reach REVIEWED before WP-1 consumption) |
+| 01 Reverify pair dynamics + failures | WP-1 (entry: MST0-01 REVIEWED) | PARENT_CHAIN_VERIFIED |
+| 02 L6 translation freeze+proof | WP-2 (entry: MST0-02 + relevant MST0-04 REVIEWED) | L6_TRANSLATION_FROZEN |
 | 03 Rotation traces | WP-1 | ROTATION_TRACE_CERTIFIED |
-| 04 Critical corpus at rotation level | WP-1 (expansion) + WP-2 (science) | CRITICAL_KEEP_CORPUS_CERTIFIED |
+| 04 Critical corpus at rotation level | WP-2 (sole owner; WP-1 supplies prerequisite expansion artifacts) | CRITICAL_KEEP_CORPUS_CERTIFIED |
 | 05 Heavy/pairing/bend lemmas | WP-2 | lemma REVIEWED set |
 | 06 Known-loss baseline | WP-2 | L6_BASELINE_REPRODUCED |
 | 07 Causal provenance | WP-3 | CAUSAL_PROVENANCE_CERTIFIED |
@@ -282,12 +328,15 @@ Full enumerations live in `prereg/threat_control_matrix.yaml` / `stop_control_ma
 1. ✅ Clone verification (done): impl repo held only `LICENSE` → working tree = fresh; `STALE_CLEARANCE.json` records zero deletions-needed + policy.
 2. ✅ This WorkPlan (WP-0 deliverable) + `Path.md` skeleton with adherence log.
 3. Next (same WP-0): scaffold files listed in WP-0, run `run_phase00.py`, pass `PARENT-01…08`, commit + push.
-4. Then WP-1 … WP-6 strictly in order; no WP starts until the prior WP's gate passes, except WP-1 expansion mechanics may parallelize internally with sorted reductions. `Path.md` is updated **as implementation moves forward**, per-WP, with WorkPlan-adherence verdicts — never batched at the end.
+4. Then WP-1 … WP-6 strictly in order; no WP starts until the prior WP's gate passes **and**
+the gate-matrix entry conditions hold (`MST0-01` REVIEWED before WP-1 certified
+consumption; `MST0-02` + relevant `MST0-04` REVIEWED before WP-2 theorem-facing use),
+except WP-1 expansion mechanics may parallelize internally with sorted reductions. `Path.md` is updated **as implementation moves forward**, per-WP, with WorkPlan-adherence verdicts — never batched at the end.
 
 ---
 
 ## 10. Risk register (top risks → control)
-- Parent not finally sealed → `STOP-01`, gate `PARENT_NOT_FINAL`; mitigated: verified `38c1be6` + terminal claim before any science.
+- Parent not finally sealed → `STOP-01`, gate `PARENT_NOT_FINAL`; mitigated: ratified v0.3.1 pin (full `38c1be6afd2ab…` + all seal hashes + terminal claim) before any science.
 - L6 transplant smuggling theorems → `STOP-09`, `T11/12/13/15`; mitigated: `PA_*/MST_*` naming + `MST0-03 REVIEWED` gate + dual implementation + mutants.
 - Cost-convention drift (depth+1 → rotations) → `STOP-11`, `T17`; mitigated: `ROT-12` + explicit `MST0-02` statement.
 - Target leakage into ontology/grammar → `STOP-10/17/18/19`; mitigated: static audit + target-blind extraction + firewall.

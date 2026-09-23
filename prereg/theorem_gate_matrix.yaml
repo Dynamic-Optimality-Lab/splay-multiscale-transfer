@@ -1,27 +1,211 @@
-# MST0-01..26 gate matrix
-MST0-01: {owner: WP-0, required: REVIEWED, status: UNPROVED}
-MST0-02: {owner: WP-1, required: REVIEWED, status: UNPROVED}
-MST0-03: {owner: WP-2, required: REVIEWED, status: UNPROVED}
-MST0-04: {owner: WP-1, required: REVIEWED, status: UNPROVED}
-MST0-05: {owner: WP-2, required: REVIEWED, status: UNPROVED}
-MST0-06: {owner: WP-2, required: REVIEWED, status: UNPROVED}
-MST0-07: {owner: WP-2, required: REVIEWED, status: UNPROVED}
-MST0-08: {owner: WP-2, required: REVIEWED, status: UNPROVED}
-MST0-09: {owner: WP-4, required: REVIEWED, status: UNPROVED}
-MST0-10: {owner: WP-3, required: REVIEWED, status: UNPROVED}
-MST0-11: {owner: WP-3, required: REVIEWED, status: UNPROVED}
-MST0-12: {owner: WP-4, required: REVIEWED, status: UNPROVED}
-MST0-13: {owner: WP-6, required: REVIEWED, status: UNPROVED}
-MST0-14: {owner: WP-6, required: REVIEWED, status: UNPROVED}
-MST0-15: {owner: WP-6, required: REVIEWED, status: UNPROVED}
-MST0-16: {owner: WP-1, required: REVIEWED, status: UNPROVED}
-MST0-17: {owner: WP-6, required: REVIEWED, status: UNPROVED}
-MST0-18: {owner: WP-6, required: REVIEWED, status: UNPROVED}
-MST0-19: {owner: WP-6, required: REVIEWED, status: UNPROVED}
-MST0-20: {owner: WP-4, required: REVIEWED, status: UNPROVED}
-MST0-21: {owner: WP-4, required: REVIEWED, status: UNPROVED}
-MST0-22: {owner: WP-5, required: REVIEWED, status: UNPROVED}
-MST0-23: {owner: WP-4, required: REVIEWED, status: UNPROVED}
-MST0-24: {owner: WP-4, required: REVIEWED, status: UNPROVED}
-MST0-25: {owner: WP-5, required: REVIEWED, status: UNPROVED}
-MST0-26: {owner: WP-2, required: REVIEWED, status: UNPROVED}
+# MST0-01..26: owner, FIRST theorem-facing consumer, required status before
+# consumption, proof/review artifacts, controls. Lifecycle UNPROVED->PROVED->REVIEWED.
+# No theorem-dependent shortcut may consume an UNPROVED obligation (spec S7).
+MST0-01:
+  owner: WP-0
+  first_consumer: WP-1
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST01_parent_transport.md
+  review_artifact: math/reviews/MST0-01.review.json
+  controls: [STOP-01, STOP-02, PARENT-01..08]
+  status: UNPROVED
+MST0-02:
+  owner: WP-1
+  first_consumer: WP-2
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST02_rotation_refinement.md
+  review_artifact: math/reviews/MST0-02.review.json
+  controls: [STOP-11, ROT-01..12]
+  status: UNPROVED
+MST0-03:
+  owner: WP-2
+  first_consumer: WP-2
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST03_l6_translation.md
+  review_artifact: math/reviews/MST0-03.review.json
+  controls: [STOP-09, L6-02..12]
+  status: UNPROVED
+MST0-04:
+  owner: WP-1
+  first_consumer: WP-2
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST04_keep_reference_snapshot.md
+  review_artifact: math/reviews/MST0-04.review.json
+  controls: [STOP-12, ROT-11]
+  status: UNPROVED
+MST0-05:
+  owner: WP-2
+  first_consumer: WP-4
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST05_keep_heavy_path.md
+  review_artifact: math/reviews/MST0-05.review.json
+  controls: [STOP-13, PR-01]
+  status: UNPROVED
+MST0-06:
+  owner: WP-2
+  first_consumer: WP-4
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST06_zigzig_pairing.md
+  review_artifact: math/reviews/MST0-06.review.json
+  controls: [STOP-14, PR-02]
+  status: UNPROVED
+MST0-07:
+  owner: WP-2
+  first_consumer: WP-4
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST07_zigzag_bends.md
+  review_artifact: math/reviews/MST0-07.review.json
+  controls: [STOP-14, PR-03]
+  status: UNPROVED
+MST0-08:
+  owner: WP-2
+  first_consumer: WP-4
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST08_reference_rotation_locality.md
+  review_artifact: math/reviews/MST0-08.review.json
+  controls: [PR-04]
+  status: UNPROVED
+MST0-09:
+  owner: WP-4
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST09_raw_boundary.md
+  review_artifact: math/reviews/MST0-09.review.json
+  controls: [TR-05..10]
+  status: UNPROVED
+MST0-10:
+  owner: WP-3
+  first_consumer: WP-4
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST10_ledger_determinism.md
+  review_artifact: math/reviews/MST0-10.review.json
+  controls: [STOP-17, STOP-18, LED-01]
+  status: UNPROVED
+MST0-11:
+  owner: WP-3
+  first_consumer: WP-4
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST11_transfer_preservation.md
+  review_artifact: math/reviews/MST0-11.review.json
+  controls: [LED-06, LED-09]
+  status: UNPROVED
+MST0-12:
+  owner: WP-4
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST12_signed_lower_bound.md
+  review_artifact: math/reviews/MST0-12.review.json
+  controls: [STOP-21, LED-10]
+  status: UNPROVED
+MST0-13:
+  owner: WP-6
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST13_delete_injection.md
+  review_artifact: math/reviews/MST0-13.review.json
+  controls: [PR-05, STOP-36]
+  status: UNPROVED
+MST0-14:
+  owner: WP-6
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST14_keep_repayment.md
+  review_artifact: math/reviews/MST0-14.review.json
+  controls: [PR-06, STOP-36]
+  status: UNPROVED
+MST0-15:
+  owner: WP-6
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST15_integrability.md
+  review_artifact: math/reviews/MST0-15.review.json
+  controls: [PR-08, STOP-40]
+  status: UNPROVED
+MST0-16:
+  owner: WP-1
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST16_block_partition.md
+  review_artifact: math/reviews/MST0-16.review.json
+  controls: [PR-09, STOP-42]
+  status: UNPROVED
+MST0-17:
+  owner: WP-6
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST17_pair_access.md
+  review_artifact: math/reviews/MST0-17.review.json
+  controls: [PR-12]
+  status: UNPROVED
+MST0-18:
+  owner: WP-6
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST18_telescoping.md
+  review_artifact: math/reviews/MST0-18.review.json
+  controls: [PR-12, PR-13]
+  status: UNPROVED
+MST0-19:
+  owner: WP-6
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST19_bridge.md
+  review_artifact: math/reviews/MST0-19.review.json
+  controls: [PR-13, STOP-43, STOP-44]
+  status: UNPROVED
+MST0-20:
+  owner: WP-4
+  first_consumer: WP-4
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST20_negative_guard.md
+  review_artifact: math/reviews/MST0-20.review.json
+  controls: [NEG-01, STOP-34]
+  status: UNPROVED
+MST0-21:
+  owner: WP-4
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST21_negative_family.md
+  review_artifact: math/reviews/MST0-21.review.json
+  controls: [NEG-02..08, STOP-35]
+  status: UNPROVED
+MST0-22:
+  owner: WP-5
+  first_consumer: WP-5
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST22_constant_independence.md
+  review_artifact: math/reviews/MST0-22.review.json
+  controls: [PR-11, TR-13]
+  status: UNPROVED
+MST0-23:
+  owner: WP-4
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST23_finite_integrability_guard.md
+  review_artifact: math/reviews/MST0-23.review.json
+  controls: [STOP-36]
+  status: UNPROVED
+MST0-24:
+  owner: WP-4
+  first_consumer: WP-5
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST24_branch_scope.md
+  review_artifact: math/reviews/MST0-24.review.json
+  controls: [STOP-20]
+  status: UNPROVED
+MST0-25:
+  owner: WP-5
+  first_consumer: WP-5
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST25_holdout_scope.md
+  review_artifact: math/reviews/MST0-25.review.json
+  controls: [HLD-01..12, STOP-27..31]
+  status: UNPROVED
+MST0-26:
+  owner: WP-2
+  first_consumer: WP-6
+  required_status_before_consumption: REVIEWED
+  proof_artifact: math/theorem_MST26_literature_scope.md
+  review_artifact: math/reviews/MST0-26.review.json
+  controls: [PR-14, STOP-09]
+  status: UNPROVED

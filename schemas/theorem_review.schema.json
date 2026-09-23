@@ -1,0 +1,1 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "required": ["computational_evidence", "hypotheses_checked", "obligation_id", "reviewer", "statement", "theorem_sha256", "verdict"], "properties": {"verdict": {"enum": ["ACCEPT", "REJECT", "BLOCKED"]}}, "title": "THEOREM-REVIEW-v0.3", "type": "object"}

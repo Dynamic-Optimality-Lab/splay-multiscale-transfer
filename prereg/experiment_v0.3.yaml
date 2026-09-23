@@ -1,8 +1,9 @@
 experiment_id: SPLAY-AM-MST-v0.3
 parent:
   experiment_id: SPLAY-AM-BD-v0.2
-  sealed_commit: 38c1be6
+  sealed_commit: 38c1be6afd2ab2420aa094c68ce45ee6a26b3628
   terminal_claim: FINITE_DEBT_LAW_MINING_RESULTS
+  pin_amendment: SPLAY_AM_MST_IMPLEMENTATION_SPEC_v0.3.1_PIN.md
 secondary_ancestor:
   experiment_id: SPLAY-AM-PD-v0.1
   sealed_commit: 6de1ca2a595e8895f54794f3a211fe6ee1a95a80

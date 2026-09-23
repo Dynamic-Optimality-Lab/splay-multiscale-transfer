@@ -1,0 +1,19 @@
+# Solver backends freeze record (WP-0 establishes the record; synthesis stays blocked until populated)
+# Spec rule: solver versions and parameter files are frozen; feasibility alone never certifies.
+python_actual: 3.13.7
+python_spec_baseline: 3.12.x (recommended baseline, not a semantic constraint)
+frozen_at: 2026-09-23
+synthesis_authorized: false
+backends: []
+# Each backend, before any target-guided synthesis, must record:
+#   name, exact_version, binary_or_package_hash_sha256, deterministic_seed,
+#   thread_policy (e.g. single-threaded or seed-pinned deterministic),
+#   parameter_file_hash_sha256, certificate_capability (exact-replay | proof-cert),
+#   role: discovery_only | authoritative_after_independent_replay
+# Until at least one backend is frozen here, synthesis is BLOCKED (enforced via the
+# existing STOP-22/STOP-23 infeasibility/feasibility gates + TR-01/TR-03/TR-04; no new
+# stop ID is introduced — the stop set stays exactly STOP-01..STOP-50).
+installed_probe_2026_09_23: {z3_solver: not_installed, ortools: not_installed, scipy_with_highs: "1.16.3_installed_but_UNFROZEN_for_synthesis", pyscipopt: not_installed}
+note: WP-0 uses no solver backend (exact Python only); scipy presence does NOT authorize
+  synthesis use — authorization requires a frozen backend entry above. This file exists so
+  the freeze precedes any synthesis rather than being invented alongside it.

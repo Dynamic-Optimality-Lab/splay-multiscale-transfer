@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — Review-response hardening (10 findings, no architecture change)
+- Added ratified `SPLAY_AM_MST_IMPLEMENTATION_SPEC_v0.3.1_PIN.md` (discharges PRE_FREEZE_PARENT_PIN_REQUIRED; v0.3 text byte-identical); full-SHA parent contract (all seal hashes); first-consumer gate matrix (26×REVIEWED-required); review-record template+schema (human-owned review vs INDEPENDENT_COMPUTATIONAL_VERIFICATION); Phase-04 single owner (WP-2); nine mandatory adversarial modes; `solver_backends.yaml` freeze (synthesis blocked); quarantine stale policy (count=0); 13/13 schemas; WP-4 residual/cross-C wording. Freeze 24 entries; PHASE00_PASS + 47/47 green.
+
 ## 2026-09-23 — WP-0 foundation freeze
 - Cloned `splay-multiscale-transfer` (was LICENSE-only, 1 commit); working tree verified fresh, zero stale scientific results carried over (`artifacts/v03/STALE_CLEARANCE.json`).
 - Pinned parent `splay-bellman-debt@38c1be6` (`FINITE_DEBT_LAW_MINING_RESULTS`), ancestor `6de1ca2` (`FINITE_EXACT_BN_RESULTS`); verified H1 EMPTY / H2R BANK_COMMITTED(0) / n8 contaminated.

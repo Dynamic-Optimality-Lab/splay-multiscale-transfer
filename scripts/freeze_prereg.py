@@ -13,6 +13,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 NORMATIVE = [
     "IMPLEMENTATION_SPEC_v0.3.md",
+    "SPLAY_AM_MST_IMPLEMENTATION_SPEC_v0.3.1_PIN.md",
     "WorkPlan.md",
     "Path.md",
     "math/proof_status.json",
@@ -23,6 +24,7 @@ NORMATIVE = [
     "prereg/experiment_v0.3.yaml",
     "prereg/parent_contract.yaml",
     "prereg/constant_policy.yaml",
+    "prereg/solver_backends.yaml",
     "prereg/l6_translation_v0.3.yaml",
     "prereg/event_ontology_v0.3.yaml",
     "prereg/transfer_grammar_v0.3.yaml",

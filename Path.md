@@ -2,7 +2,83 @@
 
 **Rule (standing):** this file is updated **as implementation moves forward**, per work package, with the same depth as `WorkPlan.md`: scope actually executed, files actually made, code actually produced + how, benchmarks actually run (training vs entirely-different tests), anti-overfitting evidence, gates actually emitted, and an explicit **WorkPlan-adherence verdict** per WP. Deviations are versioned here, never silent. Failed runs/counterexamples are retained, never deleted.
 
-**Repo:** `Dynamic-Optimality-Lab/splay-multiscale-transfer` · **Parent:** `splay-bellman-debt@38c1be6` · **Ancestor:** `6de1ca2a595e8895f54794f3a211fe6ee1a95a80` · **Start:** 2026-09-23
+**Repo:** `Dynamic-Optimality-Lab/splay-multiscale-transfer` · **Parent:** `splay-bellman-debt@38c1be6afd2ab2420aa094c68ce45ee6a26b3628` (ratified v0.3.1 PIN) · **Ancestor:** `6de1ca2a595e8895f54794f3a211fe6ee1a95a80` · **Start:** 2026-09-23
+
+---
+
+## Review-response turn (2026-09-23): 10 findings → 10 repairs, no architecture change
+
+An external review graded the foundation `FAIL_REPAIRABLE` on freeze compliance and
+theorem review/gate lifecycle while passing scientific architecture, phase mapping (after
+a small ownership correction), holdout/branch discipline, and claim discipline. All ten
+findings were repaired in this turn; nothing was redesigned. Per-finding log
+(severity · fix · files · verification):
+
+1. **BLOCKER — v0.3 called "frozen" while `PRE_FREEZE_PARENT_PIN_REQUIRED`.**
+Fix: v0.3 text left byte-identical (SHA-256 `462676E1…` re-verified inside the
+amendment); new ratified file `SPLAY_AM_MST_IMPLEMENTATION_SPEC_v0.3.1_PIN.md`
+discharges the condition with the full parent identity (§2: full commit,
+`FINAL_RESULT`/manifest/archive/route-audit hashes, authoritative normative set,
+H1/H2R/n8 states, ancestor pin). Amendment added to `prereg_sha256.txt` (now 24
+entries). Verified: `run_phase00.py` PIN-01/02/03 checks + freeze output
+(`0A51BEB3… ./SPLAY_AM_MST_IMPLEMENTATION_SPEC_v0.3.1_PIN.md`).
+2. **BLOCKER — short-SHA parent pin.** Fix: `prereg/parent_contract.yaml` now carries the
+full 40-char commit `38c1be6afd2ab2420aa094c68ce45ee6a26b3628` plus every required
+artifact hash (values read from the sealed clone at that commit, clean tree), and
+`bootstrap_parent.py`'s contract (WorkPlan) requires full-SHA + artifact-hash match —
+short-SHA alone never passes. `prereg/experiment_v0.3.yaml` likewise updated.
+Verified: new `PARENT-01`/`PARENT-01b` checks in `run_phase00.py`, PHASE00_PASS.
+3. **BLOCKER — first-consumer gates (MST0-01/02/04).** Fix: `prereg/theorem_gate_matrix.yaml`
+regenerated with full fields for all 26 obligations (owner, FIRST consumer, required
+status `REVIEWED` ×26, proof/review artifacts, controls). WP-1 entry now requires
+`MST0-01 == REVIEWED`; WP-2 entry requires `MST0-02` + relevant `MST0-04 == REVIEWED`
+(WorkPlan §§WP-1/WP-2/8.1/9). Honest consequence recorded: all 26 obligations are
+currently `UNPROVED` (no human review has occurred), so WP-1 certified consumption is
+BLOCKED until the MST0-01 review record exists — computational reproduction is not
+theorem-facing consumption and does not bypass this. Verified: `GATE-01` checks.
+4. **MAJOR — "script re-verifies itself" mislabeled as review.** Fix: WorkPlan now defines
+**INDEPENDENT_COMPUTATIONAL_VERIFICATION** (two code paths agreeing — necessary, never
+sufficient) separately from **theorem review**: human-owned `math/reviews/MST0-XX.review.json`
+per `math/reviews/REVIEW_TEMPLATE.md` + `schemas/theorem_review.schema.json`
+(theorem SHA, verbatim statement + domain, hypotheses, dependency audit,
+case-completeness audit, supporting computation only, objections, reviewer
+identity/role/date, verdict; `REVIEWED` never means externally peer reviewed).
+Verified: template + schema exist; gate matrix points each obligation at its record.
+5. **MEDIUM — Phase 04 double ownership.** Fix: WP-2 is now the sole accountable owner of
+spec Phase 04; WP-1 supplies prerequisite expansion artifacts (WorkPlan §§WP-1/WP-2/8.1).
+Opening language changed to "one accountable owner per spec phase; cross-cutting
+controls may have multiple owning WPs" (spec-supported). Verified: §8.1 row updated.
+6. **MEDIUM — "≥8 engines" weakened adversarial set.** Fix: WP-4 now mandates all nine
+spec-required search modes with distinct run records — uniform histories, structured
+generators, hill climb, simulated annealing, genetic search, rotation-neighborhood
+search, cycle splicing, motif inflation, counterexample generalization — plus any
+additional engines. Verified: text updated (code lands in WP-4).
+7. **MEDIUM — solver freeze too late/vague.** Fix: new `prereg/solver_backends.yaml`
+(freeze record created in WP-0: exact version, binary/package hash, seed/thread policy,
+parameter-file hash, certificate capability, discovery-only vs authoritative-after-replay;
+synthesis stays blocked via existing STOP-22/23 + TR-01/03/04 — no new stop ID, set
+stays exactly STOP-01..50). Truthful probe recorded (scipy 1.16.3 present but UNFROZEN
+for synthesis; z3/OR-Tools/pyscipopt absent); `requirements-lock.txt` corrected to
+actual installed versions; Python 3.13.7 noted as frozen actual vs 3.12 recommended
+baseline. Verified: `SOLV-01/02` checks + freeze entry (`B0DC97B6… solver_backends.yaml`).
+8. **MEDIUM/LOW — stale policy "deleted".** Fix: policy is now quarantine-outside-`v03` +
+hash-log, fail-closed if quarantine is impossible (WorkPlan §0 + `STALE_CLEARANCE.json`
+with `stale_scientific_file_count: 0`). Verified: JSON updated; count is 0 in fact.
+9. **MINOR — "12 schemas".** Fix: 13/13 schema files now exist (added `parent_import`,
+`l6_object`, `cycle_trace`, `provenance_packet`, `holdout_commitment`,
+`solver_certificate`, `theorem_review`) and WorkPlan says 13. Verified: directory listing.
+10. **MINOR — WP-4 residual / "harder C" wording.** Fix: one exact residual at frozen C
+rejects *that candidate at that C* (ladder re-test at larger C without rule change is
+explicitly allowed; rule changes mint new IDs); "harder C" → "cross-C
+stability/feasibility (larger C eases the inequality)". Verified: text updated.
+
+Transparency note on pre-seal prereg edits: `parent_contract.yaml`,
+`theorem_gate_matrix.yaml`, `experiment_v0.3.yaml`, `requirements-lock.txt`, and
+`run_phase00.py` were revised in this turn *before any FOUNDATION_FROZEN seal claim*
+(the turn-1 `PHASE00_PASS` was a checks-pass, not a seal claim), each revision reasoned
+above, and `prereg_sha256.txt` was regenerated accordingly (22 → 24 entries). The only
+immutable texts — `IMPLEMENTATION_SPEC_v0.3.md` and sealed parent artifacts — were never
+edited (amendment mechanism used instead).
 
 ---
 
@@ -62,6 +138,7 @@ Per WorkPlan.md §WP-6 (spec PHASE 17/18/19; MST0-13/14/15/17/18/19/20/21). No p
 ---
 
 ## Cross-cutting log
-- 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push.
+- 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
+- 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (26×REVIEWED-required, all UNPROVED → WP-1 consumption blocked pending MST0-01 review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
-- Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); no scientific failures yet (no science run yet).
+- Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).
