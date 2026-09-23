@@ -111,7 +111,7 @@ Resolution (semantics-preserving, logged here): rewrote ONLY that WP-0 bootstrap
 
 ---
 
-## WP-1 — Exact pair dynamics + rotation traces [PENDING — entry: WP-0 gate FOUNDATION_FROZEN]
+## WP-1 — Exact pair dynamics + rotation traces [PENDING — entry: FOUNDATION_FROZEN; pre-consumption subgate: MST0-01 REVIEWED before certified consumption]
 
 Planned scope/files/code/benchmarks per WorkPlan.md §WP-1 (spec PHASE 01/03/04-expansion; MST0-02/04/16; MST-GATE-2). Head-start already in tree: `splay.py/pair.py/independent.py/trace.py` + 47 green checks. Remaining: `rotations/reference.py`, `rotations/blocks.py`, `cycles/import_parent.py`, `cycles/expand.py`, `cycles/circulation.py`, `artifacts/v03/parent_import|rotations|cycles/expanded`, `theorem_MST02/04/16` proofs, `tests/rotations + tests/parent`. Adherence verdict to be recorded when executed.
 
@@ -119,7 +119,7 @@ Planned scope/files/code/benchmarks per WorkPlan.md §WP-1 (spec PHASE 01/03/04-
 
 Per WorkPlan.md §WP-2 (spec PHASE 02/04-science/05/06; MST0-03/05/06/07/08). Nothing implemented yet beyond prereg stubs. Adherence verdict to be recorded when executed.
 
-## WP-3 — Provenance + H3T + ontology/grammar lock [PENDING — entry: WP-2 gates]
+## WP-3 — Provenance + H3T + ontology/grammar lock [PENDING — entry: WP-2 gates; prereg files immutable, WP-3 emits freeze certificates only]
 
 Per WorkPlan.md §WP-3 (spec PHASE 07/08/09; MST0-10/11). `firewall.py` skeleton exists; generator/ledger/grammar code pending. No H3T bank content exists; no discovery read has occurred. Adherence verdict to be recorded when executed.
 
@@ -137,8 +137,37 @@ Per WorkPlan.md §WP-6 (spec PHASE 17/18/19; MST0-13/14/15/17/18/19/20/21). No p
 
 ---
 
+## Review-response turn 2 (2026-09-23): freeze-conflict, MST0-01 handoff, wording
+
+1. **Prereg-freeze vs WP-3 "finalization" conflict (fix-before-implementation).**
+WP-0 prereg files (`event_ontology`, `transfer_grammar`, `holdouts` + all of
+`prereg_sha256.txt`) are now permanently immutable after the WP-0 seal; the WP-3
+"(finalized)" line is replaced by phase-freeze certificates in
+`artifacts/v03/freeze/` (`PHASE09_*_FREEZE.json` carrying preregistered hash +
+implementation/generator hashes + timestamp + status). `holdouts.yaml` keeps
+`H3T.status_at_prereg = TO_BE_GENERATED_AND_QUARANTINED` forever; `BANK_COMMITTED`
+lives only in the commitment/firewall artifact. Preregistered rule vs observed
+execution state stay separated (STOP-05 fail-closed via `freeze_prereg.py` re-run).
+Verified: WorkPlan §§WP-3/WP-0 + `artifacts/v03/freeze/README.md`; `holdouts.yaml`
+bytes unchanged (hash `477D2D33…` stable across freezes).
+2. **MST0-01 handoff deadlock.** Adopted the preferred option: WP-1 entry needs
+`FOUNDATION_FROZEN` only; a WP-1 **pre-consumption subgate** (prove MST0-01 →
+INDEPENDENT_COMPUTATIONAL_VERIFICATION → human review → `REVIEWED`) gates all
+certified parent-fact consumption. Gate-matrix owner for MST0-01 moved WP-0 → WP-1
+(WP-0 keeps statement setup); header notes the subgate. Current status honestly
+`UNPROVED`, so consumption remains blocked — no implicit transition.
+Verified: `GATE-01` checks still pass (first_consumer WP-1, 26×REVIEWED-required).
+3. **Wording:** "covered exactly once" → "one accountable owner per spec phase;
+multiplicity allowed by the specification for sections/gates/threats/stops/tests/
+invariants" (WorkPlan §0). Gate description → "`REVIEWED` when applicable;
+`NOT_APPLICABLE` only with preserved justification; `BLOCKED` prevents consumption"
+(§8.3 + gate-matrix header naming MST0-03/12/20/21 as conditional).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
-- 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (26×REVIEWED-required, all UNPROVED → WP-1 consumption blocked pending MST0-01 review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
+- 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
+- 2026-09-23: Turn 3 (review-response II) — prereg-immutability fix: WP-3 certifies via `artifacts/v03/freeze/` certificates, never rewrites prereg; MST0-01 via WP-1 pre-consumption subgate (owner WP-1); conditional-obligation + multiplicity wording. Re-verified → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).

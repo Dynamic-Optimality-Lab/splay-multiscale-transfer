@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — Review-response hardening II (freeze-conflict, MST0-01 handoff, wording)
+- WP-0 prereg permanently immutable; WP-3 emits `artifacts/v03/freeze/` certificates (prereg hash + impl/generator hashes), never rewrites prereg; `holdouts.yaml` H3T status frozen as preregistered. MST0-01 via WP-1 pre-consumption subgate (owner WP-1; entry needs FOUNDATION_FROZEN only). Conditional-obligation + multiplicity wording. Freeze 24 entries; PHASE00_PASS + 47/47 green.
+
 ## 2026-09-23 — Review-response hardening (10 findings, no architecture change)
 - Added ratified `SPLAY_AM_MST_IMPLEMENTATION_SPEC_v0.3.1_PIN.md` (discharges PRE_FREEZE_PARENT_PIN_REQUIRED; v0.3 text byte-identical); full-SHA parent contract (all seal hashes); first-consumer gate matrix (26×REVIEWED-required); review-record template+schema (human-owned review vs INDEPENDENT_COMPUTATIONAL_VERIFICATION); Phase-04 single owner (WP-2); nine mandatory adversarial modes; `solver_backends.yaml` freeze (synthesis blocked); quarantine stale policy (count=0); 13/13 schemas; WP-4 residual/cross-C wording. Freeze 24 entries; PHASE00_PASS + 47/47 green.
 

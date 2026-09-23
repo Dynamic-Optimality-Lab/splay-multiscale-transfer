@@ -14,7 +14,7 @@ SHA-256 hashes recorded in `prereg/parent_contract.yaml` and the PIN amendment
 **Parent firewall states (verified):** H1 `EMPTY`, H2R `BANK_COMMITTED/unlocks=0`, n8 `PARTIALLY_REVEALED_CANARY_CONTAMINATED`
 **Parent chain aides verified in log:** `b444f6a` (WP-1), `08dc1a7` (WP2), `19245ab` (WP3), `f131b14`/`1821865` (WP-4), `29de3df` (WP-5)
 **Date frozen:** 2026-09-23
-**Work-phase count:** 7 (`WP-0` … `WP-6`). The normative spec has 20 phases; the workload is large, so the instruction "5–6 phases or more if needed" is exercised: 7 work packages are the minimal flawless partition that keeps every spec phase, section, gate, threat, stop, test, and invariant covered exactly once without splitting atomic firewalls. Coverage is verified by the matrices in §8 below.
+**Work-phase count:** 7 (`WP-0` … `WP-6`). The normative spec has 20 phases; the workload is large, so the instruction "5–6 phases or more if needed" is exercised: 7 work packages are the minimal flawless partition: every spec phase has exactly one accountable owner, while every section, gate, threat, stop, test, and invariant is covered with the multiplicity allowed by the specification, without splitting atomic firewalls. Coverage is verified by the matrices in §8 below.
 
 ---
 
@@ -42,7 +42,7 @@ multiple owning WPs, as the specification itself supports multi-owner controls.
 
 ## WP-0 — Foundation freeze: parent pin, literature, contract, repo skeleton, theorem ledger, controls
 
-**Covers spec:** `PHASE 00` fully; §§2, 3, 17, 18, 19 (prereg files), 21 (order), 23 (threats), 24 (foundation tests), 25 (foundation invariants), 27, 28, 29, 30 (stops). Owns `MST0-01` (parent-transport statement setup), `MST-GATE-0` (definitions-total setup), gates `FOUNDATION_NOT_FROZEN` / `PARENT_CHAIN_VERIFIED` preconditions.
+**Covers spec:** `PHASE 00` fully; §§2, 3, 17, 18, 19 (prereg files), 21 (order), 23 (threats), 24 (foundation tests), 25 (foundation invariants), 27, 28, 29, 30 (stops). Initiates `MST0-01` (parent-transport statement setup; proof + review owned by the WP-1 pre-consumption subgate), `MST-GATE-0` (definitions-total setup), gates `FOUNDATION_NOT_FROZEN` / `PARENT_CHAIN_VERIFIED` preconditions.
 
 ### Scope (what and why)
 Create the immutable boundary before any scientific output exists: pin the final v0.2 seal + v0.1 ancestor chain, bootstrap `parent/` read-only, freeze literature L0a/L0b/L1–L6 bytes/versions, freeze the normative spec + all prereg YAMLs + hashes, initialize `math/proof_status.json` (`MST0-01…26` → `UNPROVED`), freeze threat/stop/split/claim matrices, verify H1/H2R/n8 firewall states **without reading contents**, and lay the deterministic repo skeleton (§18) with logging, schemas, and foundation tests. No `PHASE 01+` scientific execution is permitted until the WP-0 gate passes (`PARENT_NOT_FINAL` otherwise).
@@ -92,7 +92,7 @@ one backend entry is frozen (existing `STOP-22/23` + `TR-01/03/04`; no new stop 
 
 ### Gate emitted
 `FOUNDATION_FROZEN` (all Phase-00 checkboxes **plus** the ratified v0.3.1 parent pin)
-or `FOUNDATION_NOT_FROZEN` / `PARENT_NOT_FINAL` / `PARENT_SEAL_MISMATCH`. Blocks WP-1+ on failure; `MST0-01` must additionally reach `REVIEWED` before WP-1 certified consumption.
+or `FOUNDATION_NOT_FROZEN` / `PARENT_NOT_FINAL` / `PARENT_SEAL_MISMATCH`. Blocks WP-1+ on failure; WP-1's pre-consumption subgate then requires `MST0-01 == REVIEWED` before certified consumption.
 
 ---
 
@@ -102,7 +102,13 @@ or `FOUNDATION_NOT_FROZEN` / `PARENT_NOT_FINAL` / `PARENT_SEAL_MISMATCH`. Blocks
 consumed by WP-2-owned `PHASE 04`; §§4 (Pair-Access contract), 5 (rotation contract),
 9.4 (expansion); owns `MST0-02` (refinement), `MST0-04` (reference-snapshot legitimacy),
 `MST0-10` (determinism preamble), `MST0-16` (partition preamble); `MST-GATE-2`.
-**Entry:** `FOUNDATION_FROZEN` **and** `MST0-01 == REVIEWED` — no certified parent fact
+**Entry:** `FOUNDATION_FROZEN`.
+**Pre-consumption subgate (before any certified parent fact is consumed theorem-facing):**
+inside WP-1, prove `theorem_MST01_parent_transport`, run INDEPENDENT_COMPUTATIONAL_VERIFICATION,
+conduct human theorem review per `REVIEW_TEMPLATE.md`, and record `MST0-01 → REVIEWED`.
+Only then may WP-1 consume certified parent facts (transitions, ratios, cycles, derivatives)
+theorem-facing. This placement is semantically clean: Phase 01 is literally where the
+inherited pair dynamics and parent claims are independently reverified. No certified parent fact
 (parent transitions, ratios, cycles, derivatives) is consumed theorem-facing before the
 parent-transport review record exists (gate matrix first-consumer rule).
 
@@ -131,8 +137,8 @@ Re-derive the exact object under attack without redefining it: read-only import 
 
 ### Gates emitted
 `PARENT_CHAIN_VERIFIED`, `ROTATION_TRACE_CERTIFIED` (or `ROTATION_TRACE_FAIL` / `PARENT_SEAL_MISMATCH`).
-`MST0-01` must already be `REVIEWED` (WP-1 entry condition); `MST0-02`/`MST0-04` advance
-to at least `PROVED` here and must be `REVIEWED` before WP-2 consumes traces
+`MST0-01` reaches `REVIEWED` via the WP-1 pre-consumption subgate above (prove → independent
+check → human review); `MST0-02`/`MST0-04` advance to at least `PROVED` here and must be `REVIEWED` before WP-2 consumes traces
 theorem-facing (gate matrix). Required before WP-2 consumes traces theorem-facing.
 
 ---
@@ -180,7 +186,8 @@ Replace history with structural causal provenance (A-rotations → bounded desce
 - `python/provenance/{sources,descendants,merge,active}.py`, `python/ledger/{state,support,update,energy,flow}.py`, `python/transfer/{grammar,templates_T1_T10,branches,complexity}.py`
 - `python/holdout/h3t_generate.py` (frozen generator + strata), `python/holdout/h3t_verify.py` (independent replay), `python/holdout/firewall.py` (state machine, fail-closed imports)
 - `artifacts/v03/provenance/` (D5 separation analysis: boundary/zig/scale/bend/lazy/provenance/geometry predicates), `artifacts/v03/holdouts/h3t_commitment.json` (seed policy, generator hash, per-size/logical-stream hashes, manifest, replay-verifier hash, stratum counts, length distribution), quarantined bank (not in discovery path)
-- `prereg/{event_ontology_v0.3.yaml,transfer_grammar_v0.3.yaml,holdouts.yaml}` (finalized), `math/theorem_MST10_ledger_determinism.md`, `math/theorem_MST11_transfer_preservation.md` (stubs + determinism proof)
+- `artifacts/v03/freeze/PHASE09_EVENT_ONTOLOGY_FREEZE.json`, `artifacts/v03/freeze/PHASE09_TRANSFER_GRAMMAR_FREEZE.json` — phase-freeze certificates stating preregistered ontology/grammar hashes (from WP-0 `prereg_sha256.txt`), implementation/generator hashes, freeze timestamp, and `TRANSFER_GRAMMAR_FROZEN` status; `math/theorem_MST10_ledger_determinism.md`, `math/theorem_MST11_transfer_preservation.md` (stubs + determinism proof)
+- **Immutability rule (STOP-05): the WP-0 prereg files `prereg/event_ontology_v0.3.yaml`, `prereg/transfer_grammar_v0.3.yaml`, `prereg/holdouts.yaml` are NEVER edited after `prereg_sha256.txt` is sealed. WP-3 certifies/instantiates the frozen preregistration; it does not rewrite it.** `holdouts.yaml` keeps `H3T.status_at_prereg = TO_BE_GENERATED_AND_QUARANTINED` forever; the later `BANK_COMMITTED` state lives only in `artifacts/v03/holdouts/h3t_commitment.json` + the firewall artifact. Any prereg-byte change is a `STOP-05` prereg-hash-mismatch fail-closed, detectable by re-running `scripts/freeze_prereg.py`.
 - `tests/provenance+ledger/` (`LED-01…10`), `tests/holdout/` (`HLD-07…10`)
 
 ### Code + how
@@ -289,7 +296,7 @@ One of: `BOUNDED_DELETE_INJECTION_PROVED`, `SYNCHRONOUS_KEEP_TRANSFER_PROVED`, `
 | Spec phase | Owner | Gate |
 |---|---|---|
 | 00 Freeze parent/literature/contract/obligations | WP-0 | FOUNDATION_FROZEN (incl. v0.3.1 pin; MST0-01 still must reach REVIEWED before WP-1 consumption) |
-| 01 Reverify pair dynamics + failures | WP-1 (entry: MST0-01 REVIEWED) | PARENT_CHAIN_VERIFIED |
+| 01 Reverify pair dynamics + failures | WP-1 (entry: FOUNDATION_FROZEN; pre-consumption subgate: MST0-01 REVIEWED) | PARENT_CHAIN_VERIFIED |
 | 02 L6 translation freeze+proof | WP-2 (entry: MST0-02 + relevant MST0-04 REVIEWED) | L6_TRANSLATION_FROZEN |
 | 03 Rotation traces | WP-1 | ROTATION_TRACE_CERTIFIED |
 | 04 Critical corpus at rotation level | WP-2 (sole owner; WP-1 supplies prerequisite expansion artifacts) | CRITICAL_KEEP_CORPUS_CERTIFIED |
@@ -313,7 +320,7 @@ One of: `BOUNDED_DELETE_INJECTION_PROVED`, `SYNCHRONOUS_KEEP_TRANSFER_PROVED`, `
 0 purpose → WP-0/6 (reports); 1 scope/question → WP-0/2/4/6; 2 lineage → WP-0/1; 3 literature → WP-0/2/6; 4 contract → WP-1; 5 rotations → WP-1; 6 L6 translation → WP-2; 7 crown ledger → WP-0/6; 8 ontology → WP-2/3; 9 corpus → WP-1/2; 10 ledger → WP-3; 11 grammar → WP-3/4; 12 solvers → WP-4; 13 raw-damage → WP-4; 14 holdouts → WP-3/5; 15 calculus contract → WP-5; 16 arithmetic → all (WP-0 freezes, WP-6 audits); 17 taxonomy → WP-0/6; 18 layout → WP-0; 19 prereg → WP-0; 20 schemas → WP-0/3/5; 21 order → WP-0 (all WPs follow); 22 phases → this plan; 23 threats → WP-0 (matrix) + owners per threat; 24 tests → per-WP suites; 25 invariants → WP-0 + continuous; 26 scaling → WP-1/4/5/6; 27 logging → WP-0 (all runs); 28 deps → WP-0; 29 AI use → WP-0/6; 30 stops → WP-0 + owners; 31 ladder → WP-4/5/6; 32 interpretation → WP-6; 33 claims → WP-5/6; 34 seal checklist → WP-6; 35 success S1–S10 → WP-6 report; 36 Q01–Q40 → WP-6 report; 37 refs → WP-0/6; 38 intent → WP-6.
 
 ### 8.3 Obligations MST0-01…26 → WP
-01 parent transport → WP-0/1; 02 refinement → WP-1; 03 translation → WP-2; 04 snapshot → WP-1; 05 heavy → WP-2; 06 pairing → WP-2; 07 bends → WP-2; 08 ref-locality → WP-2 (+WP-6 proof); 09 raw boundary → WP-4/6; 10 determinism → WP-3; 11 preservation → WP-3/6; 12 signed bound → WP-4/6; 13 injection → WP-6 (dev checks WP-4); 14 repayment → WP-6 (dev WP-4); 15 integrability → WP-6; 16 partition → WP-1/6; 17 PA composition → WP-6; 18 telescoping → WP-6; 19 bridge → WP-6; 20 fixed-b guard → WP-4/6; 21 negative family → WP-4/6; 22 constant independence → WP-5/6; 23 finite-integrability guard → WP-4/6; 24 branch scope → WP-4/6; 25 holdout scope → WP-5; 26 literature scope → WP-2/6. Lifecycle `UNPROVED → PROVED → REVIEWED` enforced; `BLOCKED` never silently consumed.
+01 parent transport → WP-0/1; 02 refinement → WP-1; 03 translation → WP-2; 04 snapshot → WP-1; 05 heavy → WP-2; 06 pairing → WP-2; 07 bends → WP-2; 08 ref-locality → WP-2 (+WP-6 proof); 09 raw boundary → WP-4/6; 10 determinism → WP-3; 11 preservation → WP-3/6; 12 signed bound → WP-4/6; 13 injection → WP-6 (dev checks WP-4); 14 repayment → WP-6 (dev WP-4); 15 integrability → WP-6; 16 partition → WP-1/6; 17 PA composition → WP-6; 18 telescoping → WP-6; 19 bridge → WP-6; 20 fixed-b guard → WP-4/6; 21 negative family → WP-4/6; 22 constant independence → WP-5/6; 23 finite-integrability guard → WP-4/6; 24 branch scope → WP-4/6; 25 holdout scope → WP-5; 26 literature scope → WP-2/6. Lifecycle `UNPROVED → PROVED → REVIEWED` enforced; `BLOCKED` never silently consumed. Required status before consumption is `REVIEWED` when applicable; `NOT_APPLICABLE` only with preserved justification (e.g. untranslatable L6 objects under MST0-03, unactivated signed/negative obligations under MST0-12/20/21); `BLOCKED` prevents consumption.
 
 ### 8.4 Gates MST-GATE-0…21 → WP
 0 definitions → WP-0; 1 translation → WP-2; 2 refinement → WP-1; 3 lemmas → WP-2; 4 determinism → WP-3; 5 injection-dev → WP-4; 6 repayment-dev → WP-4; 7 cycle consistency → WP-4; 8 lower-bound → WP-4/6; 9 internal validation → WP-4; 10 freeze → WP-5; 11 n8 → WP-5; 12 H1/H2R → WP-5; 13 H3T → WP-5; 14 clean-room → WP-5; 15 adversarial → WP-5; 16 injection proof → WP-6; 17 KEEP proof → WP-6; 18 integrability → WP-6; 19 Pair Access → WP-6; 20 monotonicity → WP-6; 21 optimality → WP-6. First decisive failure freezes the candidate at that gate.
@@ -329,7 +336,7 @@ Full enumerations live in `prereg/threat_control_matrix.yaml` / `stop_control_ma
 2. ✅ This WorkPlan (WP-0 deliverable) + `Path.md` skeleton with adherence log.
 3. Next (same WP-0): scaffold files listed in WP-0, run `run_phase00.py`, pass `PARENT-01…08`, commit + push.
 4. Then WP-1 … WP-6 strictly in order; no WP starts until the prior WP's gate passes **and**
-the gate-matrix entry conditions hold (`MST0-01` REVIEWED before WP-1 certified
+the gate-matrix conditions hold (WP-1 pre-consumption subgate: `MST0-01` REVIEWED before certified
 consumption; `MST0-02` + relevant `MST0-04` REVIEWED before WP-2 theorem-facing use),
 except WP-1 expansion mechanics may parallelize internally with sorted reductions. `Path.md` is updated **as implementation moves forward**, per-WP, with WorkPlan-adherence verdicts — never batched at the end.
 

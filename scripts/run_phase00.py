@@ -105,7 +105,8 @@ def main() -> int:
             print(" -", x)
         return 1
     print("PHASE00_PASS: full-SHA parent pin + amendment + gates + solver record exact")
-    print("NOTE: WP-1 certified consumption still requires MST0-01 == REVIEWED.")
+    print("NOTE: WP-1 entry needs FOUNDATION_FROZEN only; certified consumption waits on")
+    print("the WP-1 pre-consumption subgate (MST0-01 == REVIEWED).")
     return 0
 
 

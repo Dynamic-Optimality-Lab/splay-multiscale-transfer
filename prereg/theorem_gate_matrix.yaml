@@ -1,8 +1,13 @@
 # MST0-01..26: owner, FIRST theorem-facing consumer, required status before
 # consumption, proof/review artifacts, controls. Lifecycle UNPROVED->PROVED->REVIEWED.
 # No theorem-dependent shortcut may consume an UNPROVED obligation (spec S7).
+# Required status is REVIEWED when applicable; NOT_APPLICABLE only with preserved
+# justification (conditional: MST0-03 untranslatable objects, MST0-12 unactivated signed
+# branch, MST0-20/21 unactivated negative branch); BLOCKED prevents consumption.
+# MST0-01 note: WP-1 entry needs FOUNDATION_FROZEN only; MST0-01 is proved+reviewed in
+# the WP-1 pre-consumption subgate before any certified parent fact is consumed.
 MST0-01:
-  owner: WP-0
+  owner: WP-1
   first_consumer: WP-1
   required_status_before_consumption: REVIEWED
   proof_artifact: math/theorem_MST01_parent_transport.md
