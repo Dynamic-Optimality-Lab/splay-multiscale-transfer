@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — WP-0 EXECUTION (Phase 0 finished, FOUNDATION_FROZEN claimed)
+- Implemented WP-0 exactly: bootstrap/verify/check modules + 19 fail-closed phase stubs; WP0-STEP-00..11 console logs with ID comments; L3 (732,837 B) + L6 (628,208 B) PDFs frozen (SHA-256 verified, %PDF-checked); real 11-entry bootstrap manifest + 12-file read-only lock; STOP-05 read-only recompute; artifacts allowlist; header-anchored gate regex. Stress 27/27 green; full battery (freeze, phase00, foundation 47/47, stress, reproduce) all exit 0. One scoped item: L1/L2/L4/L5 bytes pending with tracked reasons and downstream-use blocks.
+
 ## 2026-09-23 — Review-response hardening VI (PA-native fallback edge case)
 - All 27 translation records carry preregistered `MST_NATIVE_*` fallbacks; NOT_APPLICABLE activates fallback, post-WP-0 invention banned (new experiment/version required); L6-00 gate extended. Freeze 24 entries; PHASE00_PASS + 47/47 green.
 

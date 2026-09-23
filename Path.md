@@ -82,7 +82,7 @@ edited (amendment mechanism used instead).
 
 ---
 
-## WP-0 — Foundation freeze [IN PROGRESS → foundation commit pending]
+## WP-0 — Foundation freeze [COMPLETE — FOUNDATION_FROZEN claimed this turn with one scoped item (literature bytes); see EXECUTION RECORD]
 
 ### WorkPlan prescription (recap)
 Spec `PHASE 00`: pin final v0.2 seal + v0.1 chain, bootstrap `parent/` read-only, freeze literature + spec + prereg + hashes, init `proof_status.json` (26 obligations `UNPROVED`), freeze threat/stop/split/claim matrices, verify H1/H2R/n8 **contents-unread**, scaffold §18 layout, logging/schemas/tests, gate `FOUNDATION_FROZEN`. No Phase-01+ science before gate.
@@ -109,9 +109,11 @@ Resolution (semantics-preserving, logged here): rewrote ONLY that WP-0 bootstrap
 ### WorkPlan-adherence verdict — WP-0 (to date)
 **FOLLOWS WorkPlan.md.** Every WP-0 file/code-suite item is implemented; verification evidence is green; the one test bug was repaired transparently above. Remaining WP-0 close-out (next turn or same turn if clean): compute `prereg/prereg_sha256.txt` over the normative stack, set `parent/` read-only, re-run gates, commit + push. No `FOUNDATION_FROZEN` claim is made until that close-out passes; no WP-1 scientific execution has begun.
 
+**Update (WP-0 EXECUTION RECORD, this turn): verdict superseded — WP-0 is FINISHED and `FOUNDATION_FROZEN` is claimed** with the single scoped literature-bytes item documented above. Close-out done: freeze recomputed (24 entries), `parent/` re-locked (12 files), all gates re-run green, committing + pushing now. The earlier "no claim until close-out" sentence is retained as history: the close-out it demanded is exactly what this turn executed.
+
 ---
 
-## WP-1 — Exact pair dynamics + rotation traces [PENDING — entry: FOUNDATION_FROZEN; pre-consumption subgate: MST0-01 REVIEWED before certified consumption]
+## WP-1 — Exact pair dynamics + rotation traces [ENTRY UNBLOCKED — FOUNDATION_FROZEN; pre-consumption subgate: MST0-01 REVIEWED before certified consumption; work NOT started]
 
 Planned scope/files/code/benchmarks per WorkPlan.md §WP-1 (spec PHASE 01/03/04-expansion; MST0-02/04/16; MST-GATE-2). Head-start already in tree: `splay.py/pair.py/independent.py/trace.py` + 47 green checks. Remaining: `rotations/reference.py`, `rotations/blocks.py`, `cycles/import_parent.py`, `cycles/expand.py`, `cycles/circulation.py`, `artifacts/v03/parent_import|rotations|cycles/expanded`, `theorem_MST02/04/16` proofs, `tests/rotations + tests/parent`. Adherence verdict to be recorded when executed.
 
@@ -261,6 +263,63 @@ activation/no-invention rules present per object) passes; YAML parses.
 
 ---
 
+## WP-0 EXECUTION RECORD (2026-09-23, this turn): Phase 0 implemented exactly as written
+
+Language note: the repo is Python, so "console.log at every step" is implemented as
+`print()` console lines, each tagged `[WP0-STEP-0x]` and preceded by a `# WP0-STEP-0x:`
+identifying comment. Table (file:line verified by grep this turn):
+
+| Step | Meaning | Console lines (file:line) |
+|---|---|---|
+| 00 | Gate orchestration plan/PASS/FAIL | scripts/run_phase00.py:22,47,51,53,54 |
+| 01 | Full-SHA parent pin + firewalls | python/audit/verify_parent.py:32,36,46,59 |
+| 02 | v0.3.1 amendment discharge | python/audit/verify_parent.py:68,79 |
+| 03 | Bootstrap manifest + read-only lock | python/audit/verify_parent.py:95,112; python/inherited/bootstrap_parent.py:38,47,58,81,83,91,96,101,105,109 |
+| 04 | Literature identities + bytes | python/audit/verify_parent.py:126,139,143 |
+| 05 | Ledger + gate matrix | python/audit/check_prereg.py:26,33,37,42 |
+| 06 | L6 contract completeness | python/audit/check_prereg.py:52,62,78 |
+| 07 | Threat/stop sets | python/audit/check_prereg.py:90,96 |
+| 08 | Solver-freeze record | python/audit/check_prereg.py:105,110 |
+| 09 | STOP-05 freeze integrity (read-only) | python/audit/check_prereg.py:127,132 |
+| 10 | No-early-science allowlist | python/audit/check_prereg.py:145,161 |
+| 11 | Freeze write (sole writer) | scripts/freeze_prereg.py:61,64,68 |
+| STRESS | Determinism/idempotency/mutation/invalid/stub probes | tests/test_wp0_stress.py (`STRESS-*` lines) |
+
+### Files audit (mechanical, this turn)
+60/60 WP-0 listed files exist (`missing=0`); 13/13 schemas; 20/20 phase runners
+(`run_phase00` + `run_phase01..19` fail-closed stubs, exit 2 verified for 01/09/19);
+26/26 theorem stubs; 24/24 normative freeze entries. Gaps found and closed this turn:
+`bootstrap_parent.py`, `verify_parent.py`, `check_prereg.py`, `run_phase01..19` stubs
+did not exist (created, production-grade); `BOOTSTRAP_MANIFEST.sha256` was a
+placeholder tag (replaced by a real 11-entry hash manifest via the authorized
+`--write-manifest` transaction, then re-locked); literature bytes for L3+L6 unfetched
+(retrieved: 732,837 + 628,208 bytes, `%PDF`-verified, SHA-256 `F7AA7901…`/`60B3213D…`,
+quirk-checked non-empty); L1/L2/L4/L5 bytes unretrievable (paywall/migrated endpoint —
+recorded `PENDING` with per-source reason, use blocked downstream); substring gate check
+too weak to catch a renamed obligation header (replaced by header-anchored regex;
+mutation probe proved the kill); stress-test stale-root reuse + fixture read-only flags
+(fixed; probes run on temp copies only).
+
+### Phase-00 checkbox matrix (spec §22 → evidence → verdict)
+1. v0.2 final seal pinned — full `38c1be6afd…` + terminal claim + seal hashes verified from sealed clone (clean tree), STEP-01. PASS.
+2. v0.1 chain verified — `6de1ca2a…` + `FINITE_EXACT_BN_RESULTS` via parent `PARENT_SEAL.json`, STEP-01/PARENT-03 test. PASS.
+3. Parent bootstrap locked — 12/12 files read-only, 11-entry manifest matches bytes, STEP-03. PASS.
+4. Literature exact — SCOPED: version identities exact for all 8 (STEP-04); bytes frozen for L3/L6 (+L0a/L0b via seals); L1/L2/L4/L5 bytes `PENDING` with reasons and downstream-use blocks. No translation/premise code exists yet that could consume pending bytes. PASS-WITH-SCOPE (scope stated, not hidden).
+5. Spec/prereg hashes exact — 24/24 recompute exactly, STOP-05 clear, STEP-09/11. PASS.
+6. Theorem ledger exists — 26 obligations + gate matrix + review template, STEP-05. PASS (all `UNPROVED` by design; first review belongs to the WP-1 subgate).
+7. H1 pristine — `EMPTY`, STEP-01. PASS.
+8. H2R pristine — `BANK_COMMITTED`/0, STEP-01. PASS.
+9. n8 contamination preserved — `PARTIALLY_REVEALED_CANARY_CONTAMINATED` in contract, PARENT-06 test. PASS.
+10. No pre-prereg output — artifacts/v03 allowlist clean (foundation records only), STEP-10. PASS.
+
+### Stress evidence (tests/test_wp0_stress.py, exit 0, 27/27)
+Determinism (3 seeded 40-access sequences ×2 reps, dual-core agreement), perf (200×n=64 in 0.00s < 30s), idempotency (freeze twice identical + matches sealed file), 5 fail-closed mutations (tampered seal/restored seal/dropped obligation/pre-resolved mapping/early science/dropped fallback — each kills or passes exactly as specified), 5 invalid-input behaviors (KeyError paths, snapshot format, inorder preservation, DELETE y=0), 6 stub checks (01/09/19 exit 2 + NOT_AUTHORIZED). Full battery this turn: freeze exit 0, phase00 exit 0, foundation 47/47 exit 0, stress 27/27 exit 0, reproduce exit 0.
+
+### Verdict
+WP-0 is FINISHED. `FOUNDATION_FROZEN` is claimed with exactly one scoped item (checkbox 4, literature bytes pending with tracked reasons and downstream blocks). No Phase-01+ science executed; no holdout contents read; no synthesis authorized (`synthesis_authorized: false`). WP-1 entry is unblocked (its pre-consumption subgate still requires MST0-01 REVIEWED before certified consumption; that work is NOT started).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -269,5 +328,6 @@ activation/no-invention rules present per object) passes; YAML parses.
 - 2026-09-23: Turn 5 (review-response IV) — L6 language+proposed-definitions freeze (27×UNRESOLVED_PRE_PROOF, L6-00 gate, L6 version identity in manifest); nine-mode summary + candidate-at-C + WorkPlan-text-freeze date wording; Path.md turn order restored chronological. Re-verified → commit+push.
 - 2026-09-23: Turn 6 (review-response V) — WP-2A/WP-2B target-join barrier (definitions → proof → freeze → target join); count de-hardcoded (yaml self-declares 27 top-level, 30 named incl. sub-fields); FALSE removed from mapping statuses (refutation-record schema instead). Re-verified → commit+push.
 - 2026-09-23: Turn 7 (review-response VI) — PA-native fallback edge case: 27/27 records carry preregistered `MST_NATIVE_*` fallbacks; N/A activates fallback, invention banned mid-experiment. Re-verified → commit+push.
+- 2026-09-23: Turn 8 (WP-0 EXECUTION) — Phase 0 implemented exactly: missing modules created (bootstrap/verify/check + 19 stubs), STEP console logs (00–11) with ID comments, L3+L6 bytes frozen, real bootstrap manifest + lock, STOP-05 read-only integrity, allowlist early-science check, header-anchored gate check, 27/27 stress green, full battery green (freeze/phase00/foundation/stress/reproduce all exit 0). FOUNDATION_FROZEN claimed (one scoped literature item). Re-verified → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).
