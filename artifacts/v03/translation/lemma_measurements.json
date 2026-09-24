@@ -4,6 +4,35 @@
     "violations": [],
     "zigzags": 816
   },
+  "generated": {
+    "16": {
+      "bad": 28,
+      "good": 30,
+      "heavy_path_edges": 3389,
+      "keep_edges": 1037,
+      "light_path_edges": 0,
+      "r2_few": 667,
+      "r2_ok": 143
+    },
+    "32": {
+      "bad": 86,
+      "good": 96,
+      "heavy_path_edges": 4603,
+      "keep_edges": 1027,
+      "light_path_edges": 0,
+      "r2_few": 732,
+      "r2_ok": 383
+    },
+    "64": {
+      "bad": 127,
+      "good": 145,
+      "heavy_path_edges": 6030,
+      "keep_edges": 1049,
+      "light_path_edges": 0,
+      "r2_few": 799,
+      "r2_ok": 692
+    }
+  },
   "heavy": {
     "light_edges": 0,
     "path_edges": 27876,
@@ -44,10 +73,17 @@
     "rotations": 870
   },
   "pairing": {
-    "bad": 3833,
-    "degenerate": 2301,
-    "distinct": 2856,
-    "good": 1879,
-    "other": 0
+    "R1": {
+      "degenerate": 2301,
+      "distinct": 2856
+    },
+    "R2": {
+      "bad": 3,
+      "few_children": 5152,
+      "good": 3,
+      "important": 4,
+      "triples": 5,
+      "unimportant": 0
+    }
   }
 }

@@ -10,28 +10,28 @@
       "status": "REVIEWED"
     },
     "MST0-03": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-03.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-04": {
       "evidence": "MST0-04.review.json:ACCEPT",
       "status": "REVIEWED"
     },
     "MST0-05": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-05.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-06": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-06.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-07": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-07.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-08": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-08.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-09": {
       "evidence": "no proof document yet",

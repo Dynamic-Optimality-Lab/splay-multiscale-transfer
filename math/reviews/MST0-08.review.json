@@ -1,0 +1,25 @@
+{
+  "case_completeness_audit": "all single rotations n4-6; hill-climb n8-64 as evidence only",
+  "computational_evidence": "lemma_measurements.json locality; WP2STRESS-HILL maxima 2 at all scales",
+  "hypotheses_checked": [
+    "H1 neighborhoods exhaustive (42+168+660 rotations)",
+    "H2 measurement/code match (code read)",
+    "H3 gap paragraph honest about ancestor-chain gap"
+  ],
+  "lifecycle_note": "UNPROVED -> PROVED -> REVIEWED; recorded by human verdict, agent-authored proof",
+  "objections": [
+    "O1 split-verdict soundness accepted with scope restriction (universal locality stays blocked for WP-4)"
+  ],
+  "obligation_id": "MST0-08",
+  "post_package_edit": "hill-climb evidence paragraph added after packaging (additive evidence; claims unchanged); package SHA 43B33316... superseded by this record SHA",
+  "proof_dependency_audit": "translated structures (MST0-03 REVIEWED); interval machinery (WP-2B measurements)",
+  "reviewer": {
+    "date_utc": "2026-09-23",
+    "identity": "Saif Malik",
+    "role": "human-owner"
+  },
+  "schema": "THEOREM-REVIEW-v0.3",
+  "statement": "Finite exhaustive bounds (n<=6: flips<=2, gap<=2, created<=3) PROVED; arbitrary-n conjecture UNPROVED with explicit gap. Verdict scope: finite bounds ONLY.",
+  "theorem_sha256": "2A8A3DB0FE902EC280F2FD119B4591CA3F3FBEFEC9468DC40216288DD6C645FE",
+  "verdict": "ACCEPT"
+}

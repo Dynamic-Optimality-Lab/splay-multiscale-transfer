@@ -1,0 +1,16 @@
+{
+  "contracted_delta": {
+    "max": 6,
+    "min": -1,
+    "positive": 57
+  },
+  "edges": 70,
+  "important_boundary_edges": 15,
+  "important_contracted_max": 6,
+  "paid_free_status": "UNDETERMINED_PRE_WP6 (vocabulary only, no transplant)",
+  "raw_delta": {
+    "max": 3,
+    "min": -1
+  },
+  "structural_ops_per_rotation_max": 6
+}

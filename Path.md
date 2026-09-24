@@ -117,7 +117,7 @@ Resolution (semantics-preserving, logged here): rewrote ONLY that WP-0 bootstrap
 
 Planned scope/files/code/benchmarks per WorkPlan.md §WP-1 (spec PHASE 01/03/04-expansion; MST0-02/04/16; MST-GATE-2). Head-start already in tree: `splay.py/pair.py/independent.py/trace.py` + 47 green checks. Remaining: `rotations/reference.py`, `rotations/blocks.py`, `cycles/import_parent.py`, `cycles/expand.py`, `cycles/circulation.py`, `artifacts/v03/parent_import|rotations|cycles/expanded`, `theorem_MST02/04/16` proofs, `tests/rotations + tests/parent`. Adherence verdict to be recorded when executed.
 
-## WP-2 — L6 translation + corpus science + lemmas + baseline [PENDING — entry: ROTATION_TRACE_CERTIFIED]
+## WP-2 — L6 translation + corpus science + lemmas + baseline [FINISHED — GATES EMITTED + MST0-03/05/06/07/08 REVIEWED (08 scoped finite; universal locality blocked)]
 
 Per WorkPlan.md §WP-2 (spec PHASE 02/04-science/05/06; MST0-03/05/06/07/08). Nothing implemented yet beyond prereg stubs. Adherence verdict to be recorded when executed.
 
@@ -379,6 +379,86 @@ line table in the WP-2B section below).
 
 ---
 
+## WP-2 EXECUTION RECORD (2026-09-23, this turn): Phase 2 implemented exactly as written
+
+### WP-2A (translation-only; L6_TRANSLATION_FROZEN certified, MST0-03 REVIEWED)
+- Extracted L6 definitions from frozen bytes (68 pp; `extract.py`, `l6_source_sites.json`): rank=OPT-depth verbatim rule recovered with page quotes; heavy/heap/gap/lazy/pairing/bend/contracted sites pinned.
+- 9 translation modules + independent dict-based second implementation; 27-record mapping doc (SAME with recorded operationalizations; heavy-edge uniqueness PROVED for ordinary BSTs via interval-LCA — 0 ties over 19,413 pairs; tie-break unreachable insurance); dual agreement green (16 corpus pairs × 7 fields + 40 sampled); 5 mutant controls green; contracted identity on 0..4999; MST0-03 proof + package; `run_phase02.py` real runner PHASE02_PASS; human ACCEPT recorded schema-valid; `artifacts/v03/freeze/PHASE02_L6_MAPPING_FREEZE.json` FROZEN.
+- Console: `[WP2A-STEP-00..05]` (`run_phase02.py`, `extract.py`, `mapping_check.py`).
+
+### WP-2B (corpus science; entry gates held)
+- Stratified 70/70 critical edges (zig context, B-path heavy, bend/gap/contracted deltas, per-rotation pairing classes, interval creation, ladder regret); 19 motifs (n4-6); n7 validation 6/10 known, burden 2/2 aligned; D5 counters verified (3318/3334 → 16) + structural separation; `run_phase04.py` PHASE04_PASS.
+- Lemma battery (`run_phase05.py` PHASE05_PASS): heavy 27,876+13,022 path edges 0 light → MST0-05 PROVED generally (rank-0 proof); pairing R1 2856/2301 + R2 692/799 at n64 with GOOD/BAD splits → MST0-06 natural form FALSE_AS_STATED (witnesses) + v2 conditional PROVED; zig-zag 816/816 destroy ≥1 bend + turn-destruction proof → MST0-07 PROVED; locality exhaustive n≤6 (870 rotations: flips≤2/gap≤2/created≤3) + hill-climb maxima 2 at n8–64 → MST0-08 SPLIT (finite PROVED, arbitrary-n UNPROVED with explicit gap, universal consumption blocked).
+- Baseline reproduced (shape): contracted deltas [-1,6], important-boundary max +6, structural ops/rotation ≤6, paid/free UNDETERMINED; `run_phase06.py` + translation report + cycle atlas drafts.
+- Human ACCEPT all four (05/06/07/08) recorded schema-valid (MST0-08 scoped to finite bounds; its package SHA updated for the additive hill-climb paragraph, delta logged in the record).
+- Console: `[WP2B-STEP-00..08]` (`run_phase04/05/06.py`, `stratify/motifs/validate_n7/d5_analysis.py`, `scales.py`); STEP line tables verified by grep this turn (run_phase04/05/06 STEP-00 lines + per-step lines as executed).
+
+### Tests + stress (all exit 0)
+`tests/translation/test_mapping.py` (contracted identity, no-tie invariant, heap property, lazy/pairing/ops units, mutants, bends); `tests/cycles/test_corpus.py` (70-edge schema, catalog, n7 firewall, motif keys); `tests/test_wp2.py` (hill-climb locality maxima 2 at all scales, stratify idempotency, invalid inputs, contracted monotonicity). Full regression green (phase00/foundation/wp0stress/wp1/translation/corpus).
+
+### Compliance audit vs WorkPlan WP-2
+- Files: all listed modules/reports exist (`l6_translation/` 11 files, `cycles/` stratify/motifs/validate_n7, `ontology/scales.py`, `provenance/d5_analysis.py`, mapping doc, 5 proofs + 5 packages + 5 review.json, atlas + translation report, baseline.json, freeze certs). Extras (`extract.py`, `test_wp2.py`) justified. VERDICT: compliant.
+- Code: dual implementations agree; mutants discriminate; no target data before WP-2A freeze (runners assert cert + ACCEPT first); cost convention untouched. VERDICT: compliant.
+- Benchmarks: dev n4-6 → test n7 respected (predicates frozen before n7 read); translation never read Bellman targets (extraction reads PDF bytes only); ladder evaluated without rule changes. VERDICT: compliant.
+- Gates: L6_TRANSLATION_FROZEN (WP-2A) + CRITICAL_KEEP_CORPUS_CERTIFIED + lemma verdicts + L6_BASELINE_REPRODUCED (shape) EMITTED. MST0-03/05/06/07/08 REVIEWED (08 scoped finite). VERDICT: WP-2 FINISHED.
+- No overfitting: synthesis untouched; n7 used once against frozen catalog; generated histories seeded + development-only.
+
+### Gaps found and closed
+Stale-root reuse in stratify (pre-splay snapshots); pairing correspondence R1→R2 correction (degeneracy artifact identified, both readings measured); heap-view dead code; gaps typo; serialize2 grammar mismatch; `_shape_to_independent` no-op replaced by genuine per-edge agreement; `splay2` header clobber (restored); pairing same_interval hardcode fixed; step_heavy_lemma call dropped by edit (restored); dead `_require_freeze` branch (removed); Catalan blowup in stress (random-insertion trees); stress stub obsolescence; MST08 package SHA drift (updated + delta logged); Path.md section-order repair (scripted swap).
+
+### Verdict
+WP-2 FINISHED. All WP-2A/WP-2B gates emitted; 5 obligations REVIEWED (03 scoped full; 08 scoped finite with universal locality explicitly blocked for WP-4). No Phase-03+ synthesis executed; holdouts untouched.
+
+---
+
+## Review-response turn 8 (2026-09-23): WP-2B corpus science + lemma verdicts
+
+WP-2B implemented exactly (entry gates held: L6_TRANSLATION_FROZEN + MST0-03 REVIEWED,
+asserted by runners before any target join):
+
+- Stratified 70/70 critical edges (zig context, B-path heavy fraction, bend/gap/contracted
+deltas, per-rotation R2 pairing classes, interval creation counts, C-ladder regret);
+19 motifs formed on n4-6; n7 validation 6/10 known with burden 2/2 aligned (predicates
+frozen before n7 read); D5 counters verified (3318/3334 → 16) + structural separation;
+`run_phase04.py` PHASE04_PASS. Console `[WP2B-STEP-00..03]`.
+- Lemma battery (`run_phase05.py` PHASE05_PASS): heavy 27,876 path edges + 13,022 generated,
+0 light → MST0-05 PROVED generally (rank-0 proof: x is A1-root so every B-path edge
+attains min-rank 0 on both sides); pairing R1 2856/2301 + R2 692/799 at n64 (GOOD/BAD
+real) → MST0-06 natural form FALSE_AS_STATED (degeneracy structural via MST0-05) +
+v2 conditional PROVED; zig-zag 816/816 destroy ≥1 bend + turn-destruction proof →
+MST0-07 PROVED; locality exhaustive 870 rotations (flips≤2/gap≤2/created≤3) + hill-climb
+maxima 2 at n8–64 → MST0-08 SPLIT (finite PROVED, arbitrary-n UNPROVED with explicit
+gap; universal consumption blocked).
+- Baseline reproduced (shape): contracted deltas [-1,6], important-boundary max +6,
+structural ops/rotation ≤6, paid/free UNDETERMINED; `run_phase06.py` + translation
+report + cycle atlas drafts.
+- Human ACCEPT ×4 (05/06/07/08; 08 scoped to finite bounds) recorded schema-valid;
+MST0-08 package SHA updated for the additive hill-climb paragraph (delta logged in record).
+- Tests: translation (contracted identity, no-tie invariant, heap property, lazy/pairing/ops
+units, mutants, bends), corpus (schema, catalog, n7 firewall, motif keys), `test_wp2.py`
+(hill-climb, idempotency, invalid inputs, monotonicity) — all exit 0.
+- Compliance fixes this turn: STEP-10 allowlist extended to named WP-1/WP-2 namespaces
+(strict, still fail-closed; each entry carries its authorizing phase); `baseline.json`
+moved into `artifacts/v03/baseline/`; wp0stress stub list updated for real runners
+(phase02 idempotent-exit-0, phase03 byte-identical); pairing R1→R2 correspondence
+correction; stale-root snapshots; serialize2 grammar; `splay2` header restore;
+Catalan blowup → random-insertion trees; genuine mutate-the-best hill-climb.
+
+Console STEP lines: `[WP2B-STEP-00..08]` in `run_phase04.py` (STEP-00/01/02/03),
+`run_phase05.py` (STEP-00/04/05/06/07), `run_phase06.py` (STEP-00/08),
+`stratify/motifs/validate_n7/d5_analysis/scales.py` (per-step lines as executed);
+full line table verified by grep this turn.
+
+### Verdict
+WP-2 FINISHED. WP-2A gates (L6_TRANSLATION_FROZEN, MST0-03 REVIEWED) + WP-2B gates
+(CRITICAL_KEEP_CORPUS_CERTIFIED, lemma verdicts with 08 scoped finite,
+L6_BASELINE_REPRODUCED shape) all emitted. 9/26 obligations REVIEWED
+(01,02,03,04,05,06,07,08,16). No synthesis, no holdout contact, no target data before
+the WP-2A freeze. Full regression green (phase00/foundation/wp0stress/wp1/translation/
+corpus/wp2 + phase01/02/03/04/05/06 runners, all exit 0).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -389,5 +469,6 @@ line table in the WP-2B section below).
 - 2026-09-23: Turn 7 (review-response VI) — PA-native fallback edge case: 27/27 records carry preregistered `MST_NATIVE_*` fallbacks; N/A activates fallback, invention banned mid-experiment. Re-verified → commit+push.
 - 2026-09-23: Turn 8 (WP-0 EXECUTION) — Phase 0 implemented exactly: missing modules created (bootstrap/verify/check + 19 stubs), STEP console logs (00–11) with ID comments, L3+L6 bytes frozen, real bootstrap manifest + lock, STOP-05 read-only integrity, allowlist early-science check, header-anchored gate check, 27/27 stress green, full battery green (freeze/phase00/foundation/stress/reproduce all exit 0). FOUNDATION_FROZEN claimed (one scoped literature item). Re-verified → commit+push.
 - 2026-09-23: Turn 9 (WP-1 EXECUTION) — Phase 1 implemented exactly: canonical enumeration (counts 4/19/196/1764/17424/184041 exact), sealed import (52 files, manifest cross-check), strict replay (19/19 cycles, ratios 3/2–8/5–23/14 exact, all-KEEP closed), forced derivatives edge-exact KEEP-only, 15 specimen witnesses exact, failure table (3 PHI REJECTED, 7 atom families INCONSISTENT), 70-edge dual-core agreement, expansion idempotent, 4 proofs PROVED + review packages, stress green, full regression green. Gates emitted (mechanics scope); human verdict ACCEPT all four recorded schema-valid → subgate CLOSED, WP-1 FINISHED. Re-verified → commit+push.
+- 2026-09-23: Turn 10 (WP-2 EXECUTION) — Phase 2 implemented exactly: WP-2A (source extraction, 9+1 translation modules, 27-record mapping, dual agreement, mutants, MST0-03 proof, ACCEPT, freeze cert) + WP-2B (70-edge stratification, 19 motifs, n7 validation, D5, lemma battery with MST0-05 PROVED/MST0-06 killed+v2/MST0-07 PROVED/MST0-08 split, baseline shape, reports), ACCEPT all four lemma verdicts (08 scoped finite), allowlist/baseline/stub compliance fixes, full regression green. WP-2 FINISHED. Re-verified → commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
-- Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); no scientific failures yet (no science run yet).
+- Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); all repairs logged per turn, none silent.

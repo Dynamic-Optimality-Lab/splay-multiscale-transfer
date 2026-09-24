@@ -1,0 +1,22 @@
+{
+  "case_completeness_audit": "LR proved, RL mirror; ZIG terminal not claimed",
+  "computational_evidence": "816/816 exhaustive+sampled; 2/2 critical",
+  "hypotheses_checked": [
+    "H1 turn node is a bend before (rule check LR case)",
+    "H2 loses heavy parent edge after (rank-0 exclusion)",
+    "H3 mirror symmetry for RL"
+  ],
+  "lifecycle_note": "UNPROVED -> PROVED -> REVIEWED; recorded by human verdict, agent-authored proof",
+  "objections": [],
+  "obligation_id": "MST0-07",
+  "proof_dependency_audit": "translated bend definition (MST0-03 REVIEWED); rank-0 fact (MST0-05 setup REVIEWED)",
+  "reviewer": {
+    "date_utc": "2026-09-23",
+    "identity": "Saif Malik",
+    "role": "human-owner"
+  },
+  "schema": "THEOREM-REVIEW-v0.3",
+  "statement": "Every KEEP zig-zag destroys at least one bend (turn node of the rotation).",
+  "theorem_sha256": "063359C99751D24A1E8FFDCD9C510FD3D4D2E0969BF8FFF946A808AEB67DB3EE",
+  "verdict": "ACCEPT"
+}

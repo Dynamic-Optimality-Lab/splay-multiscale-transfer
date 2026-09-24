@@ -160,12 +160,16 @@ def test_invalid_inputs() -> None:
 
 def test_stubs_fail_closed() -> None:
     import subprocess
-    for n in (2, 9, 19):
+    for n in (9, 19):
         r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase%02d.py" % n)],
                            capture_output=True, text=True)
         check("STRESS-STUB phase%02d exit 2" % n, r.returncode == 2)
         check("STRESS-STUB phase%02d says NOT_AUTHORIZED" % n, "NOT_AUTHORIZED" in r.stdout)
-    # Real runner 01 refuses without required source args (argparse exit 2).
+    # Real runner 02 is idempotent and side-effect free without --finalize.
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase02.py")],
+                       capture_output=True, text=True)
+    check("STRESS-STUB phase02 re-run exit 0", r.returncode == 0)
+    check("STRESS-STUB phase02 no cert rewrite", "L6_TRANSLATION_FROZEN certified" not in r.stdout)
     r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase01.py")],
                        capture_output=True, text=True)
     check("STRESS-STUB phase01 real runner refuses arg-less", r.returncode != 0)

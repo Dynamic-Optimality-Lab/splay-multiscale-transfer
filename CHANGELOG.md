@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-09-23 — WP-2 EXECUTION (Phase 2 finished: WP-2A frozen + WP-2B science + lemma verdicts)
+- WP-2A: source extraction, 9+1 translation modules, 27-record mapping (all SAME with operationalizations), dual agreement, 5 mutants, MST0-03 proof, human ACCEPT, L6_TRANSLATION_FROZEN cert. WP-2B: 70-edge stratification, 19 motifs, n7 validation (burden aligned), D5 verified, lemma battery (MST0-05 PROVED rank-0; MST0-06 killed + v2 conditional; MST0-07 PROVED turn-destruction; MST0-08 split finite-PROVED/universal-OPEN), baseline shape, reports. Human ACCEPT ×4 (08 scoped finite). Full regression green. WP-2 FINISHED.
+
+## 2026-09-23 — WP-2 EXECUTION (Phase 2 finished: WP-2A frozen + WP-2B science + lemma verdicts)
+- WP-2A: source extraction, 9+1 translation modules, 27-record mapping (all SAME with operationalizations), dual agreement, 5 mutants, MST0-03 proof, human ACCEPT, L6_TRANSLATION_FROZEN cert. WP-2B: 70-edge stratification, 19 motifs, n7 validation (burden aligned), D5 verified, lemma battery (MST0-05 PROVED rank-0; MST0-06 killed + v2 conditional; MST0-07 PROVED turn-destruction; MST0-08 split finite-PROVED/universal-OPEN), baseline shape, reports. Human ACCEPT ×4 (08 scoped finite). Full regression green. WP-2 FINISHED.
+
 ## 2026-09-23 — WP-1 CLOSED (subgate REVIEWED by human ACCEPT, WP-1 finished)
 - Human verdict ACCEPT recorded for MST0-01/02/04/16 as schema-validated `math/reviews/*.review.json` (proof hashes match packages); derived statuses REVIEWED:4/UNPROVED:22; `run_phase01` re-ran PHASE01_PASS with subgate cleared. Certified consumption + WP-2 theorem-facing use unblocked (within entry gates).
 - Canonical enumeration + sealed import (52 files, manifest cross-check) + strict replay (19/19 cycles exact, all-KEEP closed) + forced derivatives edge-exact + specimen witnesses (15 exact) + failure table + 70-edge dual-core agreement + idempotent expansion + 4 proofs PROVED with review packages + WP-1 stress green. Gates PARENT_CHAIN_VERIFIED + ROTATION_TRACE_CERTIFIED emitted (mechanics scope). Full regression green (phase00/foundation/wp0stress/reproduce exit 0). Subgate then CLOSED by human ACCEPT (see entry above).

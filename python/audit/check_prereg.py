@@ -143,6 +143,12 @@ AUTHORIZED_NAMESPACES = {
     "seal/": "WP-6 seal outputs",
     "parent_import/": "WP-1 sealed-evidence import + verification",
     "cycles/expanded/": "WP-1 rotation-expansion mechanics (WP-2 science consumes)",
+    "cycles/stratified/": "WP-2B stratification tables",
+    "cycles/motif_catalog.json": "WP-2B motif catalog (n4-6 selection)",
+    "cycles/n7_validation.json": "WP-2B n7 validation record",
+    "cycles/d5_analysis.json": "WP-2B D5 analysis record",
+    "translation/": "WP-2A source sites + WP-2B lemma measurements",
+    "baseline/": "WP-2B contracted baseline record",
     "proofs/obligation_status.json": "WP-1 derived obligation statuses",
 }
 DENIED_UNTIL_AUTHORIZED = ("hypotheses/", "solver/", "transfer_grammar/",

@@ -97,7 +97,9 @@ def step_heavy_lemma(sizes: list[int], sample_n6: int) -> tuple[list[str], dict]
 # WP2B-STEP-05: zig-zig pairing decomposition (distinct vs degenerate triples).
 def step_pairing(sizes: list[int], sample_n6: int) -> tuple[list[str], dict]:
     fails: list[str] = []
-    distinct = degenerate = good = bad = important = 0
+    r1 = {"distinct": 0, "degenerate": 0}
+    r2 = {"triples": 0, "few_children": 0, "good": 0, "bad": 0, "important": 0,
+          "unimportant": 0}
     rng = random.Random(20260923)
     for n in sizes:
         dom = PairDomain(n)
@@ -111,35 +113,156 @@ def step_pairing(sizes: list[int], sample_n6: int) -> tuple[list[str], dict]:
             from python.splay_ref.splay import splay
             A1, _e = splay(A0, x)
             rank = rank_mod.all_ranks(A1)
-            steps = strat_mod.stepwise_b_splay(strat_mod._snapshot(B0), x)
+            B0snap = strat_mod._snapshot(B0)
+            steps = strat_mod.stepwise_b_splay(B0snap, x)
+            # Initial lazy intervals (one per component over heap-children).
+            v_init = strat_mod.translated_view(A1, strat_mod._snapshot(B0snap))
+            interval_of = {}
+            for b, rec0 in v_init["view"].items():
+                for k in rec0["heap_children"]:
+                    interval_of[k] = b
+            sizes0 = {b: len(rec0["heap_children"]) for b, rec0 in v_init["view"].items()}
             for s in steps[1:]:
-                if s["case"] not in ("LL", "RR") or len(s["nodes"]) != 3:
+                if s["case"] not in ("LL", "RR"):
                     continue
                 tree = strat_mod._parse_serialized(s["tree"])
                 v = strat_mod.translated_view(A1, tree)
+                # R2 reading (source-faithful): three consecutive heap-children of the
+                # host component, centered by symmetric order on the rotation site.
+                # R1 reading (B-node bottoms) recorded alongside for comparison.
+                host = None
+                site = sorted(s["nodes"])[len(s["nodes"]) // 2] if s["nodes"] else None
                 owner = {}
                 for b, rec0 in v["view"].items():
                     for k in rec0["members"]:
                         owner[k] = b
-                triple = sorted({owner[k] for k in s["nodes"] if k in owner})
-                if len(triple) != 3:
-                    degenerate += 1
-                    continue
-                distinct += 1
-                dec = pairing_mod.decompose_zigzig(triple, rank)
+                bottoms = sorted({owner[k] for k in s["nodes"] if k in owner})
+                if site is not None and site in owner:
+                    host = owner[site]
+                if len(bottoms) == 3:
+                    r1["distinct"] += 1
+                else:
+                    r1["degenerate"] += 1
+                r2_triple = []
+                if host is not None:
+                    kids = sorted(v["view"][host]["heap_children"])
+                    if len(kids) >= 3 and site is not None:
+                        pos = 0
+                        for i, k in enumerate(kids):
+                            if k >= site:
+                                pos = i
+                                break
+                            pos = i
+                        lo = max(0, min(pos - 1, len(kids) - 3))
+                        r2_triple = kids[lo:lo + 3]
                 contracted_of = {b: contracted_mod.contracted(v["gaps"][b]) for b in v["gaps"]}
+                if len(r2_triple) == 3:
+                    r2["triples"] += 1
+                    dec = pairing_mod.decompose_zigzig(r2_triple, rank)
+                    same = len({interval_of.get(k, k) for k in r2_triple}) == 1
+                    sz = tuple(sorted(sizes0.get(interval_of.get(k, k), 0) for k in r2_triple))
+                    for pr in dec:
+                        cls = pairing_mod.classify_pairing(pr, same, contracted_of,
+                                                           (sz[0], sz[-1]))
+                        if cls == "GOOD":
+                            r2["good"] += 1
+                        elif cls == "BAD":
+                            r2["bad"] += 1
+                        elif cls == "IMPORTANT":
+                            r2["important"] += 1
+                        else:
+                            r2["unimportant"] += 1
+                else:
+                    r2["few_children"] += 1
+    print("[WP2B-STEP-05] R1 bottoms: distinct=%d degenerate=%d; R2 triples: ok=%d few=%d GOOD=%d BAD=%d IMPORTANT=%d UNIMPORTANT=%d"
+          % (r1["distinct"], r1["degenerate"], r2["triples"], r2["few_children"],
+             r2["good"], r2["bad"], r2["important"], r2["unimportant"]), flush=True)
+    return fails, {"R1": r1, "R2": r2}
+
+
+# WP2B-STEP-05: pairing/heavy/bend behavior on generated histories at scale
+# (seeded; development measurement only, never a holdout bank).
+def step_generated(sizes: list[int], per_size: int, seed: int) -> tuple[list[str], dict]:
+    fails: list[str] = []
+    import random as _random
+    from python.splay_ref.splay import build_balanced, build_spine, cost, splay
+    rng = _random.Random(seed)
+    out: dict = {}
+    for n in sizes:
+        keys = list(range(1, n + 1))
+        A = build_balanced(keys)
+        B = build_balanced(keys) if rng.random() < 0.5 else build_spine(keys)
+        heavy_edges = light_edges = 0
+        r2_ok = r2_few = good = bad = 0
+        nedges = 0
+        for _ in range(per_size):
+            x = rng.randint(1, n)
+            if rng.random() < 0.3:
+                A, _e = splay(A, x)
+                continue
+            a, y = cost(A, x), cost(B, x)
+            A1, _e = splay(A, x)
+            rank = rank_mod.all_ranks(A1)
+            Bpre = strat_mod._snapshot(B)
+            heavy = heavy_mod.heavy_edges(Bpre, rank)
+            path = strat_mod._path_keys(Bpre, x)
+            pe = [(path[i], path[i + 1]) for i in range(len(path) - 1)]
+            hs = set(heavy)
+            heavy_edges += sum(1 for e in pe if e in hs)
+            light_edges += sum(1 for e in pe if e not in hs)
+            steps = strat_mod.stepwise_b_splay(strat_mod._snapshot(Bpre), x)
+            B, _e2 = splay(B, x)
+            v = strat_mod.translated_view(A1, strat_mod._snapshot(Bpre))
+            interval_of = {}
+            for b, rec0 in v["view"].items():
+                for k in rec0["heap_children"]:
+                    interval_of[k] = b
+            for s in steps[1:]:
+                if s["case"] not in ("LL", "RR"):
+                    continue
+                tree = strat_mod._parse_serialized(s["tree"])
+                vv = strat_mod.translated_view(A1, tree)
+                host = None
+                site = sorted(s["nodes"])[len(s["nodes"]) // 2] if s["nodes"] else None
+                owner = {}
+                for b, rec0 in vv["view"].items():
+                    for k in rec0["members"]:
+                        owner[k] = b
+                if site is not None and site in owner:
+                    host = owner[site]
+                if host is None:
+                    r2_few += 1
+                    continue
+                kids = sorted(vv["view"][host]["heap_children"])
+                if len(kids) < 3 or site is None:
+                    r2_few += 1
+                    continue
+                pos = 0
+                for i, k in enumerate(kids):
+                    if k >= site:
+                        pos = i
+                        break
+                    pos = i
+                lo = max(0, min(pos - 1, len(kids) - 3))
+                triple = kids[lo:lo + 3]
+                r2_ok += 1
+                dec = pairing_mod.decompose_zigzig(triple, rank)
+                contracted_of = {b: contracted_mod.contracted(vv["gaps"][b]) for b in vv["gaps"]}
+                same = len({interval_of.get(k, k) for k in triple}) == 1
                 for pr in dec:
-                    cls = pairing_mod.classify_pairing(pr, True, contracted_of, (0, 0))
+                    cls = pairing_mod.classify_pairing(pr, same, contracted_of, (0, 0))
                     if cls == "GOOD":
                         good += 1
                     elif cls == "BAD":
                         bad += 1
-                    else:
-                        important += 1
-    print("[WP2B-STEP-05] pairing: distinct=%d degenerate=%d GOOD=%d BAD=%d other=%d"
-          % (distinct, degenerate, good, bad, important), flush=True)
-    return fails, {"distinct": distinct, "degenerate": degenerate, "good": good,
-                   "bad": bad, "other": important}
+            nedges += 1
+            A = A1
+        out[str(n)] = {"keep_edges": nedges, "heavy_path_edges": heavy_edges,
+                       "light_path_edges": light_edges, "r2_ok": r2_ok,
+                       "r2_few": r2_few, "good": good, "bad": bad}
+        print("[WP2B-STEP-05] gen n=%d edges=%d heavy=%d light=%d R2ok=%d R2few=%d GOOD=%d BAD=%d"
+              % (n, nedges, heavy_edges, light_edges, r2_ok, r2_few, good, bad), flush=True)
+    return fails, out
 
 
 # WP2B-STEP-06: zig-zag / bend accounting (every zig-zag vs bends destroyed).
@@ -268,6 +391,9 @@ def main() -> int:
     ap.add_argument("--sizes", default="2,3,4,5")
     ap.add_argument("--sample-n6", type=int, default=6000)
     ap.add_argument("--locality-sizes", default="4,5,6")
+    ap.add_argument("--gen-sizes", default="16,32,64")
+    ap.add_argument("--gen-per-size", type=int, default=1500)
+    ap.add_argument("--gen-seed", type=int, default=20260923)
     args = ap.parse_args()
     print("[WP2B-STEP-00] PHASE 05: lemma prove-or-kill battery", flush=True)
     cert = os.path.join(ROOT, "artifacts", "v03", "freeze", "PHASE02_L6_MAPPING_FREEZE.json")
@@ -291,6 +417,10 @@ def main() -> int:
     f, r = step_locality([int(s) for s in args.locality_sizes.split(",")])
     fails += f
     results["locality"] = r
+    f, r = step_generated([int(s) for s in args.gen_sizes.split(",")],
+                          args.gen_per_size, args.gen_seed)
+    fails += f
+    results["generated"] = r
     with open(os.path.join(outdir, "lemma_measurements.json"), "w",
               encoding="utf-8", newline="\n") as fh:
         json.dump(results, fh, sort_keys=True, indent=2)

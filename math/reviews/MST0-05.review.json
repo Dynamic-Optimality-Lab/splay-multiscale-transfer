@@ -1,0 +1,22 @@
+{
+  "case_completeness_audit": "no case split needed; rank-0 argument covers all path lengths",
+  "computational_evidence": "27,876/27,876 exhaustive+sampled + 13,022 generated + 140 corpus, 0 light",
+  "hypotheses_checked": [
+    "H1 x is A1-root rank 0 (KEEP construction)",
+    "H2 x in every B-path subtree (path definition)",
+    "H3 heavy rule equality (implementation match)"
+  ],
+  "lifecycle_note": "UNPROVED -> PROVED -> REVIEWED; recorded by human verdict, agent-authored proof",
+  "objections": [],
+  "obligation_id": "MST0-05",
+  "proof_dependency_audit": "translated rank+rule (MST0-03 REVIEWED); KEEP convention (MST0-04 REVIEWED)",
+  "reviewer": {
+    "date_utc": "2026-09-23",
+    "identity": "Saif Malik",
+    "role": "human-owner"
+  },
+  "schema": "THEOREM-REVIEW-v0.3",
+  "statement": "Every edge of the B access path is heavy after the A splay (translated rank + frozen reference convention).",
+  "theorem_sha256": "2C4455A4212381C0A7F03A07E2706FE5D7124D12CF69EA0C5DD6B5A5CF9ECBBE",
+  "verdict": "ACCEPT"
+}
