@@ -47,7 +47,12 @@ PROOF_DOCS = {
 
 # WP1-STEP-07: derive live statuses without touching frozen ledgers.
 def derive(root: str) -> dict:
-    """Return {obligation: {status, evidence}} for all 26 obligations."""
+    """Return {obligation: {status, evidence}} for all 26 obligations.
+
+    A proof document maps to PROVED only when its Status line claims PROVED
+    (SETUP/design documents map to UNPROVED with the reason recorded).
+    """
+    import re as _re
     out = {}
     for oid in sorted(PROOF_DOCS):
         review = os.path.join(root, "math", "reviews", "%s.review.json" % oid)
@@ -65,7 +70,14 @@ def derive(root: str) -> dict:
         elif os.path.exists(blocked):
             out[oid] = {"status": "BLOCKED", "evidence": "%s.BLOCKED marker" % oid}
         elif os.path.exists(proof):
-            out[oid] = {"status": "PROVED", "evidence": PROOF_DOCS[oid]}
+            text = open(proof, encoding="utf-8").read()
+            m = _re.search(r"\*\*Status:\*\*\s*([A-Z_]+)", text)
+            claimed = m.group(1) if m else "PROVED"
+            if claimed == "PROVED":
+                out[oid] = {"status": "PROVED", "evidence": PROOF_DOCS[oid]}
+            else:
+                out[oid] = {"status": "UNPROVED",
+                            "evidence": "%s declares %s" % (PROOF_DOCS[oid], claimed)}
         else:
             out[oid] = {"status": "UNPROVED", "evidence": "no proof document yet"}
     return out

@@ -149,6 +149,9 @@ AUTHORIZED_NAMESPACES = {
     "cycles/d5_analysis.json": "WP-2B D5 analysis record",
     "translation/": "WP-2A source sites + WP-2B lemma measurements",
     "baseline/": "WP-2B contracted baseline record",
+    "holdouts/h3t_bank/": "WP-3 quarantined H3T bank (firewall-guarded, hash-committed)",
+    "holdouts/h3t_commitment.json": "WP-3 H3T commitment record",
+    "holdouts/h3t_state.json": "WP-3 H3T firewall state",
     "proofs/obligation_status.json": "WP-1 derived obligation statuses",
 }
 DENIED_UNTIL_AUTHORIZED = ("hypotheses/", "solver/", "transfer_grammar/",

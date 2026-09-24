@@ -1,0 +1,8 @@
+{
+  "commitment": {
+    "logical_stream": "CB37F3D99110118F7CDD7FC62D8534918CC003CE82E0EB0BE97034B2E9E425A7",
+    "total": 70000
+  },
+  "state": "BANK_COMMITTED",
+  "unlock_count": 0
+}

@@ -1,0 +1,26 @@
+{
+  "case_completeness_audit": "match/no-match x inputs-present/absent; merge equal/divergent; duplicate-ID rejection; ruleset gate clean/dirty",
+  "computational_evidence": "determinism checks + 300-trial fuzz + tag-independence test + leakage audit clean",
+  "hypotheses_checked": [
+    "H1 totality on restricted domain (code read; validators raise outside domain)",
+    "H2 canonical order genuine (unique IDs enforced twice)",
+    "H3 tag-independence (signature read + test)"
+  ],
+  "lifecycle_note": "UNPROVED -> PROVED -> REVIEWED; conditional ACCEPT discharged by the three fixes above",
+  "objections": [
+    "R1 domain/totality tension: fixed by restricting domain to well-formed lists (validation pre-invocation)",
+    "R2 duplicate rule_ids: fixed by two-place unique-ID enforcement (pre + invocation)",
+    "R3 provenance/merge: fixed by U_R LxE->LxT formalization with tag-independence lemma + test"
+  ],
+  "obligation_id": "MST0-10",
+  "proof_dependency_audit": "ledger state/support (structural); event-only active predicates",
+  "reviewer": {
+    "date_utc": "2026-09-23",
+    "identity": "Saif Malik",
+    "role": "human-owner"
+  },
+  "schema": "THEOREM-REVIEW-v0.3",
+  "statement": "For every frozen legal rule list R, update_R: L x E -> L x T is a well-defined deterministic transition operator over finite legal ledgers, legal rotation events, and finite well-formed frozen rule lists.",
+  "theorem_sha256": "F976C12FC8A4ECD9BE1FA1549EC164CC438E6E5012FA4EB728931E5C42028097",
+  "verdict": "ACCEPT"
+}

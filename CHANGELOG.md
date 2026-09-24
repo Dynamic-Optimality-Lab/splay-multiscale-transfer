@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — WP-3 EXECUTION (Phase 3 finished: provenance + ledger + grammar + H3T + MST0-10)
+- Provenance/ledger/transfer machinery (deterministic U_R, support arity, event/credit predicate separation, duplicate-ID guards, tag-independence, flow/energy exactness); leakage audit clean over 7 scopes (two-tier + carve-outs); H3T 70,000-episode bank (11 strata, streams verified, 539 exact independent replays, BANK_COMMITTED, 14.1 MB committed to git); prereg untouched (re-verified); freeze certs; Branch B BLOCKED; MST0-10 conditional ACCEPT discharged via 3 fixes and recorded schema-valid; MST0-11 UNPROVED-setup. 15 suites/runners green. WP-3 FINISHED.
+
 ## 2026-09-23 — WP-2 EXECUTION (Phase 2 finished: WP-2A frozen + WP-2B science + lemma verdicts)
 - WP-2A: source extraction, 9+1 translation modules, 27-record mapping (all SAME with operationalizations), dual agreement, 5 mutants, MST0-03 proof, human ACCEPT, L6_TRANSLATION_FROZEN cert. WP-2B: 70-edge stratification, 19 motifs, n7 validation (burden aligned), D5 verified, lemma battery (MST0-05 PROVED rank-0; MST0-06 killed + v2 conditional; MST0-07 PROVED turn-destruction; MST0-08 split finite-PROVED/universal-OPEN), baseline shape, reports. Human ACCEPT ×4 (08 scoped finite). Full regression green. WP-2 FINISHED.
 

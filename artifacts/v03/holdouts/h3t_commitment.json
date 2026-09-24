@@ -1,0 +1,171 @@
+{
+  "generator": "python/holdout/h3t_generate.py",
+  "generator_sha256": "EC3AE07B4D2AD8A3530177426C445E6D3946E40F0F17F0BAC7262596A116A54E",
+  "logical_stream": "CB37F3D99110118F7CDD7FC62D8534918CC003CE82E0EB0BE97034B2E9E425A7",
+  "replay_verifier_sha256": "59162A46615CA0047B04406553589275AD039B06AD39EF3753B3951358D1116C",
+  "seed_policy": "master=20260923 per-episode (size,stratum,idx)",
+  "sizes": {
+    "10": {
+      "bytes": 1437064,
+      "count": 10000,
+      "lengths": {
+        "24": 3334,
+        "48": 3333,
+        "96": 3333
+      },
+      "strata": {
+        "ALTERNATING_KEEP_DELETE": 800,
+        "BOUNDARY_PAIRING_ENRICHED": 800,
+        "DELETE_BURST_THEN_KEEP": 800,
+        "MIRROR_PAIRED": 800,
+        "MOTIF_BLIND_RANDOM_WALK": 800,
+        "NESTED_INTERVAL_ENRICHED": 800,
+        "OPPOSITE_SPINE": 800,
+        "RANDOM_LEGAL": 2000,
+        "SPINE_VS_BALANCED": 800,
+        "ZIGZAG_ENRICHED": 800,
+        "ZIGZIG_ENRICHED": 800
+      },
+      "stream": "388749A1C90AA91F15B3730EB67CB7CA73CFA54ACF161A941E0C02C910077349"
+    },
+    "12": {
+      "bytes": 1527529,
+      "count": 10000,
+      "lengths": {
+        "24": 3333,
+        "48": 3334,
+        "96": 3333
+      },
+      "strata": {
+        "ALTERNATING_KEEP_DELETE": 800,
+        "BOUNDARY_PAIRING_ENRICHED": 800,
+        "DELETE_BURST_THEN_KEEP": 800,
+        "MIRROR_PAIRED": 800,
+        "MOTIF_BLIND_RANDOM_WALK": 800,
+        "NESTED_INTERVAL_ENRICHED": 800,
+        "OPPOSITE_SPINE": 800,
+        "RANDOM_LEGAL": 2000,
+        "SPINE_VS_BALANCED": 800,
+        "ZIGZAG_ENRICHED": 800,
+        "ZIGZIG_ENRICHED": 800
+      },
+      "stream": "3C4DE45080E342789407A73B2838DCA757A22629C138CCA51103C6CC7491C97E"
+    },
+    "16": {
+      "bytes": 1670912,
+      "count": 10000,
+      "lengths": {
+        "24": 3333,
+        "48": 3333,
+        "96": 3334
+      },
+      "strata": {
+        "ALTERNATING_KEEP_DELETE": 800,
+        "BOUNDARY_PAIRING_ENRICHED": 800,
+        "DELETE_BURST_THEN_KEEP": 800,
+        "MIRROR_PAIRED": 800,
+        "MOTIF_BLIND_RANDOM_WALK": 800,
+        "NESTED_INTERVAL_ENRICHED": 800,
+        "OPPOSITE_SPINE": 800,
+        "RANDOM_LEGAL": 2000,
+        "SPINE_VS_BALANCED": 800,
+        "ZIGZAG_ENRICHED": 800,
+        "ZIGZIG_ENRICHED": 800
+      },
+      "stream": "AABD4677447D4C55ECCA1B8E141AD22B2064BB3A9A003AAFF78A343015BB0A6B"
+    },
+    "24": {
+      "bytes": 1926334,
+      "count": 10000,
+      "lengths": {
+        "24": 3334,
+        "48": 3333,
+        "96": 3333
+      },
+      "strata": {
+        "ALTERNATING_KEEP_DELETE": 800,
+        "BOUNDARY_PAIRING_ENRICHED": 800,
+        "DELETE_BURST_THEN_KEEP": 800,
+        "MIRROR_PAIRED": 800,
+        "MOTIF_BLIND_RANDOM_WALK": 800,
+        "NESTED_INTERVAL_ENRICHED": 800,
+        "OPPOSITE_SPINE": 800,
+        "RANDOM_LEGAL": 2000,
+        "SPINE_VS_BALANCED": 800,
+        "ZIGZAG_ENRICHED": 800,
+        "ZIGZIG_ENRICHED": 800
+      },
+      "stream": "6778AF6415655AABF7361670A8D5055B1E7E44592DD2677FFA8FB0DF8B036059"
+    },
+    "32": {
+      "bytes": 2144773,
+      "count": 10000,
+      "lengths": {
+        "24": 3333,
+        "48": 3334,
+        "96": 3333
+      },
+      "strata": {
+        "ALTERNATING_KEEP_DELETE": 800,
+        "BOUNDARY_PAIRING_ENRICHED": 800,
+        "DELETE_BURST_THEN_KEEP": 800,
+        "MIRROR_PAIRED": 800,
+        "MOTIF_BLIND_RANDOM_WALK": 800,
+        "NESTED_INTERVAL_ENRICHED": 800,
+        "OPPOSITE_SPINE": 800,
+        "RANDOM_LEGAL": 2000,
+        "SPINE_VS_BALANCED": 800,
+        "ZIGZAG_ENRICHED": 800,
+        "ZIGZIG_ENRICHED": 800
+      },
+      "stream": "17779DA2404537E4E9BA3E872C2AC93BC8D78C57348F74BF54C5B35C1CF08A9E"
+    },
+    "48": {
+      "bytes": 2535492,
+      "count": 10000,
+      "lengths": {
+        "24": 3333,
+        "48": 3333,
+        "96": 3334
+      },
+      "strata": {
+        "ALTERNATING_KEEP_DELETE": 800,
+        "BOUNDARY_PAIRING_ENRICHED": 800,
+        "DELETE_BURST_THEN_KEEP": 800,
+        "MIRROR_PAIRED": 800,
+        "MOTIF_BLIND_RANDOM_WALK": 800,
+        "NESTED_INTERVAL_ENRICHED": 800,
+        "OPPOSITE_SPINE": 800,
+        "RANDOM_LEGAL": 2000,
+        "SPINE_VS_BALANCED": 800,
+        "ZIGZAG_ENRICHED": 800,
+        "ZIGZIG_ENRICHED": 800
+      },
+      "stream": "26C3F23DEC7F2F83BB57F8306B1D3A5249DB4BA6D56A63C524C132BD8E890DE5"
+    },
+    "64": {
+      "bytes": 2868166,
+      "count": 10000,
+      "lengths": {
+        "24": 3334,
+        "48": 3333,
+        "96": 3333
+      },
+      "strata": {
+        "ALTERNATING_KEEP_DELETE": 800,
+        "BOUNDARY_PAIRING_ENRICHED": 800,
+        "DELETE_BURST_THEN_KEEP": 800,
+        "MIRROR_PAIRED": 800,
+        "MOTIF_BLIND_RANDOM_WALK": 800,
+        "NESTED_INTERVAL_ENRICHED": 800,
+        "OPPOSITE_SPINE": 800,
+        "RANDOM_LEGAL": 2000,
+        "SPINE_VS_BALANCED": 800,
+        "ZIGZAG_ENRICHED": 800,
+        "ZIGZIG_ENRICHED": 800
+      },
+      "stream": "C8E3E5342D05705BA92A71123681C9AD3FE1EF44A9F0AAE530E794C184FA78D1"
+    }
+  },
+  "total_episodes": 70000
+}

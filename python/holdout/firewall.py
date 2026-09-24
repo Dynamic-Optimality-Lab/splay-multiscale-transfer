@@ -1,4 +1,4 @@
-"""Fail-closed holdout firewall (H1/H2R/H3T + n8). Discovery modules must call
+"""Fail-closed sealed-bank firewall. Discovery modules must call
 guard_read() before touching any bank; it raises unless the bank state
 machine permits the (phase, calculus-frozen) context."""
 from __future__ import annotations

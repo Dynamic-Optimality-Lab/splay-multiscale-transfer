@@ -38,11 +38,11 @@
       "status": "UNPROVED"
     },
     "MST0-10": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "math/theorem_MST10_ledger_determinism.md",
+      "status": "PROVED"
     },
     "MST0-11": {
-      "evidence": "no proof document yet",
+      "evidence": "math/theorem_MST11_transfer_preservation.md declares SETUP",
       "status": "UNPROVED"
     },
     "MST0-12": {

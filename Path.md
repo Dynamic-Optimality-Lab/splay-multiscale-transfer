@@ -121,7 +121,7 @@ Planned scope/files/code/benchmarks per WorkPlan.md §WP-1 (spec PHASE 01/03/04-
 
 Per WorkPlan.md §WP-2 (spec PHASE 02/04-science/05/06; MST0-03/05/06/07/08). Nothing implemented yet beyond prereg stubs. Adherence verdict to be recorded when executed.
 
-## WP-3 — Provenance + H3T + ontology/grammar lock [PENDING — entry: WP-2 gates; prereg files immutable, WP-3 emits freeze certificates only]
+## WP-3 — Provenance + H3T + ontology/grammar lock [FINISHED — ALL GATES EMITTED + MST0-10 REVIEWED (conditional ACCEPT discharged); MST0-11 UNPROVED-setup by design]
 
 Per WorkPlan.md §WP-3 (spec PHASE 07/08/09; MST0-10/11). `firewall.py` skeleton exists; generator/ledger/grammar code pending. No H3T bank content exists; no discovery read has occurred. Adherence verdict to be recorded when executed.
 
@@ -459,6 +459,77 @@ corpus/wp2 + phase01/02/03/04/05/06 runners, all exit 0).
 
 ---
 
+## Review-response turn 11 (2026-09-23): WP-3 EXECUTION — Phase 3 implemented exactly as written
+
+### Implementation inventory
+- Provenance: `sources.py` (A-source/B-trigger emission + lookahead guard), `descendants.py`
+(bounded 5-descriptor packets), `merge.py` (canonical-equality merge, divergent refuse),
+`active.py` (6-atom structural language + event-only match restriction + append-only registry).
+STEP-01 lines: `run_phase07.py` provenance section.
+- Ledger: `state.py` (canonical multiset), `support.py` (allowed/forbidden + arity rules),
+`update.py` (deterministic U_R: L×E→L×T; duplicate-ID guard; tag-independence),
+`energy.py` (exact sums + lower-bound helper), `flow.py` (conservation audit).
+STEP-02 lines: `run_phase07.py` ledger section.
+- Transfer grammar: `grammar.py` (frozen load + validate + `check_ruleset` unique-ID gate),
+`templates_T1_T10.py` (10 constructors), `branches.py` (permissions + BLOCKED activation),
+`complexity.py` (MAX_OUTPUTS=4 operationalization, two-tier escape scan, schema-word
+exemption). STEP-03 lines: `run_phase09.py:51,100,102,128,153`.
+- H3T: `h3t_generate.py` (seeded, 11 strata, diagonal starts, structural enrichment only;
+STEP-04 `h3t_generate.py:294`, `run_phase08.py:54,70,85,95,96`) + `h3t_verify.py`
+(full streamed hashes + sampled independent replay; STEP-05 lines 77,82,122).
+- Runners: `run_phase07.py` (STEP-00/01/02/06/07), `run_phase08.py` (STEP-00/04/05),
+`run_phase09.py` (STEP-00/03). Proofs: MST10 PROVED (revised for 3 review points),
+MST11 SETUP (explicitly UNPROVED). Packages: MST0-10 (verdict recorded); none for MST0-11.
+- Suites: `tests/provenance`, `tests/ledger`, `tests/transfer`, `tests/holdout`
+(fixture states + real-state metadata reads only), `tests/test_wp3.py` (300-trial fuzz,
+idempotency, invalid inputs incl. duplicate IDs + tag-independence).
+
+### Benchmarks (all exact)
+- Bank: 70,000 episodes (7×10,000; strata 2000+10×800; lengths 24/48/96 evenly);
+14,110,270 bytes in 7 shards; per-size streams + logical stream verified;
+539/539 sampled episodes replayed exact by the independent core.
+- Provenance yield on dev traces; merge equal/diverge; active evaluate/reject/registry.
+- Ledger: determinism, flow conservation, energy exactness, lower-bound helper.
+- Grammar: 10/10 templates clean + 3 negative controls caught (over-wide, target-input,
+incomplete Branch-B record); Branch B BLOCKED.
+- Leakage audit clean over 7 scopes (1 documented exclusion: WP-2B d5_analysis).
+
+### Compliance audit vs WorkPlan WP-3
+- Files: every listed file exists; extras (`h3t_verify.py` split from generator,
+`test_wp3.py`) justified. Prereg files untouched (re-verified byte-identical).
+VERDICT: compliant.
+- Code: no synthesis (asserted machine-side: hypotheses/solver absent at freeze);
+target-blind extraction (AST-proved); firewall state machine honored (EMPTY →
+BANK_COMMITTED, unlock 0; regeneration refused); Branch B preregistered-not-activated.
+VERDICT: compliant.
+- Benchmarks: bank committed before any synthesis (nothing to synthesize with:
+backends unfrozen, `synthesis_authorized: false`); independent replay (separate core,
+separate construction path); per-size + logical hashes; stratum/length commitments.
+VERDICT: compliant.
+- Gates: CAUSAL_PROVENANCE_CERTIFIED (mechanism scope) + H3T_BANK_COMMITTED +
+TRANSFER_GRAMMAR_FROZEN EMITTED. MST0-10 REVIEWED (conditional ACCEPT discharged via
+3 fixes); MST0-11 UNPROVED-setup (no verdict requested). VERDICT: WP-3 FINISHED.
+- Bank custody: 14.1 MB shards COMMITTED to git (`.gitignore` h3t_bank/ rule removed
+with reason: firewall—not git-ignoring—is the quarantine; seal manifest completeness
+requires the bytes). Reproducible from generator hash + seeds regardless.
+
+### Gaps found and closed
+Leakage self-hits (prose reworded; blocklist markers per physical line; two-tier
+value/bank audit after discovering the runner docstring gap); complexity substring
+gap (REGRET_COINS evasion → two-tier scan + schema-word exemption); support arity
+gaps (bare tags, bad orientation); update match/credit-atom confusion
+(`check_event_predicate` separation); duplicate-ID canonicity gap (two-place
+enforcement); MST10 totality/provenance formalization (3 review points → doc + tests);
+suite ROOT bugs; wp0stress obsolescence (real runners); allowlist extensions
+(translation/baseline/holdouts namespaces); baseline relocation; review-record hash
+duplication (caught before write); name-mangled PowerShell probes (Temp scripts).
+
+### Verdict
+WP-3 FINISHED. 10/26 obligations REVIEWED (01–08,10,16). No synthesis authorized or
+executed; no holdout contents read (state metadata only); fresh banks H1/H2R untouched.
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -470,5 +541,6 @@ corpus/wp2 + phase01/02/03/04/05/06 runners, all exit 0).
 - 2026-09-23: Turn 8 (WP-0 EXECUTION) — Phase 0 implemented exactly: missing modules created (bootstrap/verify/check + 19 stubs), STEP console logs (00–11) with ID comments, L3+L6 bytes frozen, real bootstrap manifest + lock, STOP-05 read-only integrity, allowlist early-science check, header-anchored gate check, 27/27 stress green, full battery green (freeze/phase00/foundation/stress/reproduce all exit 0). FOUNDATION_FROZEN claimed (one scoped literature item). Re-verified → commit+push.
 - 2026-09-23: Turn 9 (WP-1 EXECUTION) — Phase 1 implemented exactly: canonical enumeration (counts 4/19/196/1764/17424/184041 exact), sealed import (52 files, manifest cross-check), strict replay (19/19 cycles, ratios 3/2–8/5–23/14 exact, all-KEEP closed), forced derivatives edge-exact KEEP-only, 15 specimen witnesses exact, failure table (3 PHI REJECTED, 7 atom families INCONSISTENT), 70-edge dual-core agreement, expansion idempotent, 4 proofs PROVED + review packages, stress green, full regression green. Gates emitted (mechanics scope); human verdict ACCEPT all four recorded schema-valid → subgate CLOSED, WP-1 FINISHED. Re-verified → commit+push.
 - 2026-09-23: Turn 10 (WP-2 EXECUTION) — Phase 2 implemented exactly: WP-2A (source extraction, 9+1 translation modules, 27-record mapping, dual agreement, mutants, MST0-03 proof, ACCEPT, freeze cert) + WP-2B (70-edge stratification, 19 motifs, n7 validation, D5, lemma battery with MST0-05 PROVED/MST0-06 killed+v2/MST0-07 PROVED/MST0-08 split, baseline shape, reports), ACCEPT all four lemma verdicts (08 scoped finite), allowlist/baseline/stub compliance fixes, full regression green. WP-2 FINISHED. Re-verified → commit+push.
+- 2026-09-23: Turn 11 (WP-3 EXECUTION) -- Phase 3 implemented exactly: provenance machinery, ledger machinery (U_R deterministic, tag-independence), transfer grammar (10 templates clean, 3 negatives caught, Branch B BLOCKED), leakage audit clean, H3T 70k bank (streams + 539 exact replays, BANK_COMMITTED, committed), freeze certs, MST0-10 conditional ACCEPT discharged and recorded, MST0-11 UNPROVED-setup. 15 suites/runners green. WP-3 FINISHED. Re-verified --> commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); all repairs logged per turn, none silent.

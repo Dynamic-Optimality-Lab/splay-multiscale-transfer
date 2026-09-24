@@ -1,0 +1,26 @@
+{
+  "branch_B": "preregistered_not_activated",
+  "conforming_templates": [
+    "TR-CF-0000",
+    "TR-CF-0001",
+    "TR-CF-0002",
+    "TR-CF-0003",
+    "TR-CF-0004",
+    "TR-CF-0005",
+    "TR-CF-0006",
+    "TR-CF-0007",
+    "TR-CF-0008",
+    "TR-CF-0009"
+  ],
+  "grammar_sha256": "21F17870D1198C4FC2E2B77AA230209BAC698D5902F97B7F0B120858DA96FE81",
+  "impl_hashes": {
+    "python/ledger/update.py": "E3A78F8F077A141F",
+    "python/provenance/active.py": "1DD1494918DC533F",
+    "python/transfer/branches.py": "2A6C9DE155F76475",
+    "python/transfer/complexity.py": "8FD26A0C2E826388",
+    "python/transfer/grammar.py": "0C0DB506DDA664E1",
+    "python/transfer/templates_T1_T10.py": "9072B1D399120AD4"
+  },
+  "prereg": "transfer_grammar_v0.3.yaml",
+  "status": "TRANSFER_GRAMMAR_FROZEN"
+}
