@@ -1,0 +1,53 @@
+{
+  "bends": {
+    "destroy_ge1": 816,
+    "violations": [],
+    "zigzags": 816
+  },
+  "heavy": {
+    "light_edges": 0,
+    "path_edges": 27876,
+    "path_lengths": {
+      "1": 2983,
+      "2": 4000,
+      "3": 4054,
+      "4": 3000,
+      "5": 1392,
+      "6": 240
+    },
+    "smallest_light": null
+  },
+  "locality": {
+    "max_created": 3,
+    "max_gap_delta": 2,
+    "max_heavy_flips": 2,
+    "per_n": {
+      "4": {
+        "count": 42,
+        "created": 2,
+        "gap": 1,
+        "heavy": 2
+      },
+      "5": {
+        "count": 168,
+        "created": 2,
+        "gap": 2,
+        "heavy": 2
+      },
+      "6": {
+        "count": 660,
+        "created": 3,
+        "gap": 2,
+        "heavy": 2
+      }
+    },
+    "rotations": 870
+  },
+  "pairing": {
+    "bad": 3833,
+    "degenerate": 2301,
+    "distinct": 2856,
+    "good": 1879,
+    "other": 0
+  }
+}

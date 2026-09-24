@@ -1,0 +1,502 @@
+{
+  "pages": 68,
+  "pdf_sha256": "60B3213D9380F9C2D4DA2549133D0222960DED8A0956AA10429C569148E7C5E7",
+  "sites": {
+    "bend": [
+      {
+        "context": " decomposed into heavy paths (thick) which are connected by light edges (dashed). The heavy path corresponding to value 4 has rank 0 so it contains the root. The parent of external node 1 is the only bend on this heavy path. Figure 4: An overview of the concepts for splay-tree analysis. The ternary view, in particular, makes the structure of heavy paths nice. Every heavy path now ends in an external node and there is exactly one such external node on each heavy path. We can therefore associate e",
+        "keyword": "bend",
+        "page": 7
+      },
+      {
+        "context": " bad internal pairings in terms of the numbers of good internal pairings and boundary pairings, which is the last ingredient needed to bound the number of zig-zigs. Bounding the number of zig-zags by bends and by normalizing the optimal tree.The last part is to bound the zig-zags. Unlike in the static case, the contraction does not allow us to bound zig-zags by the sum of contracted point gaps. We bound them by introducing another combinatorial element \u2013bends. A bend is an internal node where th",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": " to bound the zig-zags. Unlike in the static case, the contraction does not allow us to bound zig-zags by the sum of contracted point gaps. We bound them by introducing another combinatorial element \u2013bends. A bend is an internal node where the heavy path \u201cturns\u201d \u2013 it is a left child, but the heavy path continues to the right, or vice versa. To charge zig-zags to bends and ensure that each splay creates only a controlled number of bends, we require, among other things, that the optimal tree berib",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": " the zig-zags. Unlike in the static case, the contraction does not allow us to bound zig-zags by the sum of contracted point gaps. We bound them by introducing another combinatorial element \u2013bends. A bend is an internal node where the heavy path \u201cturns\u201d \u2013 it is a left child, but the heavy path continues to the right, or vice versa. To charge zig-zags to bends and ensure that each splay creates only a controlled number of bends, we require, among other things, that the optimal tree beribless, i.e",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": "ing another combinatorial element \u2013bends. A bend is an internal node where the heavy path \u201cturns\u201d \u2013 it is a left child, but the heavy path continues to the right, or vice versa. To charge zig-zags to bends and ensure that each splay creates only a controlled number of bends, we require, among other things, that the optimal tree beribless, i.e., that two vertices that are close in symmetric order also have similar heights in the tree. We show that we can impose these assumptions on the optimal tr",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": "where the heavy path \u201cturns\u201d \u2013 it is a left child, but the heavy path continues to the right, or vice versa. To charge zig-zags to bends and ensure that each splay creates only a controlled number of bends, we require, among other things, that the optimal tree beribless, i.e., that two vertices that are close in symmetric order also have similar heights in the tree. We show that we can impose these assumptions on the optimal tree while slowing it down by only a constant factor. Then, every optim",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": " also have similar heights in the tree. We show that we can impose these assumptions on the optimal tree while slowing it down by only a constant factor. Then, every optimal-tree rotation createsO(1) bends, and every splay createsO(1) bends plus one for each zig-zig. Every zig-zag removes one bend, so the total number of zig-zags can be asymptotically bounded by the number of zig-zigs, the cost of the optimal tree, and the maximum initial numbernof bends. Overall, these ingredients suffice to pr",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": "ree. We show that we can impose these assumptions on the optimal tree while slowing it down by only a constant factor. Then, every optimal-tree rotation createsO(1) bends, and every splay createsO(1) bends plus one for each zig-zig. Every zig-zag removes one bend, so the total number of zig-zags can be asymptotically bounded by the number of zig-zigs, the cost of the optimal tree, and the maximum initial numbernof bends. Overall, these ingredients suffice to prove \u02dcO(log logn)-competitiveness fo",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": "timal tree while slowing it down by only a constant factor. Then, every optimal-tree rotation createsO(1) bends, and every splay createsO(1) bends plus one for each zig-zig. Every zig-zag removes one bend, so the total number of zig-zags can be asymptotically bounded by the number of zig-zigs, the cost of the optimal tree, and the maximum initial numbernof bends. Overall, these ingredients suffice to prove \u02dcO(log logn)-competitiveness for sequences of length \u02dc\u2126(nlog logn). The same techniques ca",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": " each zig-zig. Every zig-zag removes one bend, so the total number of zig-zags can be asymptotically bounded by the number of zig-zigs, the cost of the optimal tree, and the maximum initial numbernof bends. Overall, these ingredients suffice to prove \u02dcO(log logn)-competitiveness for sequences of length \u02dc\u2126(nlog logn). The same techniques can also be used to prove the split conjecture within a factor of \u02dcO(log logn) (Section D). 5 Proof of splay tree competitiveness In this section, we prove that ",
+        "keyword": "bend",
+        "page": 13
+      },
+      {
+        "context": " bad internal pairings in terms of the numbers of good internal pairings and boundary pairings, which is the last ingredient needed to bound the number of zig-zigs. Bounding the number of zig-zags by bends and by normalizing the optimal tree.The last part is to bound the zig-zags. Unlike in the static case, the contraction does not allow us to bound zig-zags by the sum of contracted point gaps. We bound them by introducing another combinatorial element \u2013bends. A bend is an internal node where th",
+        "keyword": "bends",
+        "page": 13
+      },
+      {
+        "context": " to bound the zig-zags. Unlike in the static case, the contraction does not allow us to bound zig-zags by the sum of contracted point gaps. We bound them by introducing another combinatorial element \u2013bends. A bend is an internal node where the heavy path \u201cturns\u201d \u2013 it is a left child, but the heavy path continues to the right, or vice versa. To charge zig-zags to bends and ensure that each splay creates only a controlled number of bends, we require, among other things, that the optimal tree berib",
+        "keyword": "bends",
+        "page": 13
+      }
+    ],
+    "contracted": [
+      {
+        "context": " sequence, they perform within a constant factor of the optimal offline dynamic binary search tree. Despite four decades of work, noo(logn) competitive ratio was known. We prove that splay trees areO(log logn\u00b7log 2 log logn) = \u02dcO(log logn)-competitive. 1 Introduction Binary search trees are among the most fundamental data structures for maintaining an ordered set ofnelements. A binary search tree consists of nodes arranged in a tree; each node stores one key, with all smaller keys in its left su",
+        "keyword": "log log",
+        "page": 1
+      },
+      {
+        "context": " perform within a constant factor of the optimal offline dynamic binary search tree. Despite four decades of work, noo(logn) competitive ratio was known. We prove that splay trees areO(log logn\u00b7log 2 log logn) = \u02dcO(log logn)-competitive. 1 Introduction Binary search trees are among the most fundamental data structures for maintaining an ordered set ofnelements. A binary search tree consists of nodes arranged in a tree; each node stores one key, with all smaller keys in its left subtree and all l",
+        "keyword": "log log",
+        "page": 1
+      },
+      {
+        "context": " a constant factor of the optimal offline dynamic binary search tree. Despite four decades of work, noo(logn) competitive ratio was known. We prove that splay trees areO(log logn\u00b7log 2 log logn) = \u02dcO(log logn)-competitive. 1 Introduction Binary search trees are among the most fundamental data structures for maintaining an ordered set ofnelements. A binary search tree consists of nodes arranged in a tree; each node stores one key, with all smaller keys in its left subtree and all larger keys in i",
+        "keyword": "log log",
+        "page": 1
+      },
+      {
+        "context": " follow from the fact that accesses in both take amortized timeO(logn) [ST85b; Fox11], as is also true for any balanced binary search tree. Several binary search tree algorithms are known to achieveO(log logn)-competitiveness; the first was the Tango tree [Dem+07], followed by a line of work using similar proof ideas [WDS06; Geo08; Bos+10]. All of these track the so-called interleave lower bound on the optimal tree [Wil89], but since this lower bound can be separated from the optimal tree by a f",
+        "keyword": "log log",
+        "page": 2
+      },
+      {
+        "context": "f ideas [WDS06; Geo08; Bos+10]. All of these track the so-called interleave lower bound on the optimal tree [Wil89], but since this lower bound can be separated from the optimal tree by a factor of \u2126(log logn), this line of analyses cannot prove dynamic optimality. For Tango trees specifically, the \u0398(log logn) analysis is tight. Splay trees, which were introduced in 1985 by Sleator and Tarjan [ST85b], are binary search trees that, unlike other trees, are not balanced by a set of static rules, bu",
+        "keyword": "log log",
+        "page": 2
+      },
+      {
+        "context": " tree [Wil89], but since this lower bound can be separated from the optimal tree by a factor of \u2126(log logn), this line of analyses cannot prove dynamic optimality. For Tango trees specifically, the \u0398(log logn) analysis is tight. Splay trees, which were introduced in 1985 by Sleator and Tarjan [ST85b], are binary search trees that, unlike other trees, are not balanced by a set of static rules, but adjust themselves after every operation based on which element was accessed. In particular, after an",
+        "keyword": "log log",
+        "page": 2
+      },
+      {
+        "context": "near time. However, prior to this work, no competitive ratio beyondO(logn) was known for splay trees. Here, we give the firsto(logn) competitive ratio for splay trees, showing that splay trees are \u02dcO(log logn)-competitive, which, ignoring log log lognfactors, matches the best currently known competitive binary search trees. While there are already binary search trees known to achieve this competitive ratio, this is the first time such a ratio is given for a binary search tree that is conjectured",
+        "keyword": "log log",
+        "page": 2
+      },
+      {
+        "context": " no competitive ratio beyondO(logn) was known for splay trees. Here, we give the firsto(logn) competitive ratio for splay trees, showing that splay trees are \u02dcO(log logn)-competitive, which, ignoring log log lognfactors, matches the best currently known competitive binary search trees. While there are already binary search trees known to achieve this competitive ratio, this is the first time such a ratio is given for a binary search tree that is conjectured to be dynamically optimal. Unlike exis",
+        "keyword": "log log",
+        "page": 2
+      },
+      {
+        "context": " asymptotically bounded by the number of zig-zigs by observing how the structure of heavy paths changes. Finally, we apply the same techniques to prove the split conjecture for splay trees up to a \u02dcO(log logn) factor. 2 Setting the stage In this section, we set up the basics needed to state our result: we define the model in which the time complexity of binary search trees is measured and introduce splay trees. 2.1 Problem setup BST model.Formally, this is the BST model: we have to dynamically m",
+        "keyword": "log log",
+        "page": 3
+      },
+      {
+        "context": "tion, if we imagine that the external nodes connected by light edges have degenerate heavy paths consisting of a single node, then every external node also has its own heavy path. See also Figure 4c. Potential via gaps.We now have almost everything needed to prove static optimality. As in the original proof of static optimality, where rank differences along edges were central, we define thegapof a heavy pathPas the difference between the rank ofPand the rank of the heavy path to which it is conn",
+        "keyword": "potential",
+        "page": 8
+      },
+      {
+        "context": " also associate the gap of a heavy path with the light edge to its top-most node. The gap of the root heavy path, which contains the root, is 0. The sum of the gaps of all heavy paths will serve as a potential: we show that each operation over heavy edges decreases the potential, and we bound the increases caused by operations over light edges, thus concluding that the splay tree cannot do too much work. Operations over light edges.When a nodexis accessed, the splay tree rotates it to the root v",
+        "keyword": "potential",
+        "page": 8
+      },
+      {
+        "context": "-most node. The gap of the root heavy path, which contains the root, is 0. The sum of the gaps of all heavy paths will serve as a potential: we show that each operation over heavy edges decreases the potential, and we bound the increases caused by operations over light edges, thus concluding that the splay tree cannot do too much work. Operations over light edges.When a nodexis accessed, the splay tree rotates it to the root via a series of zig-zigs and zig-zags and possibly one zig. The first c",
+        "keyword": "potential",
+        "page": 8
+      }
+    ],
+    "gap": [
+      {
+        "context": "he gaps, we simply record the amount by which all gaps in an interval are shifted. The amount by which the whole interval is shifted is called aninterval gap and the gaps without this shift are calledpoint gaps. The important property of lazy intervals is that, for zig-zigs occurring within a lazy interval, the interval gap cancels out of the corresponding changes to the gaps. Thus, the point gaps behave as if they were the gaps themselves; see Figure 7. In other words, it does not matter whethe",
+        "keyword": "point gap",
+        "page": 10
+      },
+      {
+        "context": "are calledpoint gaps. The important property of lazy intervals is that, for zig-zigs occurring within a lazy interval, the interval gap cancels out of the corresponding changes to the gaps. Thus, the point gaps behave as if they were the gaps themselves; see Figure 7. In other words, it does not matter whether we first update the gaps and then perform zig-zigs, or we perform the zig-zigs and only later update the gaps lazily when needed. Thus we can track the sum of point gaps instead of the sum",
+        "keyword": "point gap",
+        "page": 10
+      },
+      {
+        "context": " other words, it does not matter whether we first update the gaps and then perform zig-zigs, or we perform the zig-zigs and only later update the gaps lazily when needed. Thus we can track the sum of point gaps instead of the sum of gaps and every rotation can then be handled by creating O(1) new lazy intervals. Contracting gaps to bound the number of zig-zigs.The remaining difficulty is posed by boundary zig-zigs, which affect heap-children from two different lazy intervals. To simplify the dis",
+        "keyword": "point gap",
+        "page": 10
+      },
+      {
+        "context": "th into so-called lazy intervals. Instead of updating the gaps, we simply record the amount by which all gaps in an interval are shifted. The amount by which the whole interval is shifted is called aninterval gap and the gaps without this shift are calledpoint gaps. The important property of lazy intervals is that, for zig-zigs occurring within a lazy interval, the interval gap cancels out of the corresponding changes to the gaps. Thus, the point gaps behave as if they were the gaps themselves; ",
+        "keyword": "interval gap",
+        "page": 10
+      },
+      {
+        "context": "interval is shifted is called aninterval gap and the gaps without this shift are calledpoint gaps. The important property of lazy intervals is that, for zig-zigs occurring within a lazy interval, the interval gap cancels out of the corresponding changes to the gaps. Thus, the point gaps behave as if they were the gaps themselves; see Figure 7. In other words, it does not matter whether we first update the gaps and then perform zig-zigs, or we perform the zig-zigs and only later update the gaps l",
+        "keyword": "interval gap",
+        "page": 10
+      },
+      {
+        "context": "x+ y+ 1 z+ 1 y+ 2 z+ 2 gap(y+ 1 )\u2212gI gap(z+ 1 )\u2212gI gap(y+ 2 )\u2212gI gap(z+ 2 )\u2212gI gap(y+ 2 )\u2212gI gap(y+ 1 )\u2212gI x+ y+ 1 z+ 1 y+ 2 z+ 2 gap(z+ 1 )\u2212gap(y+ 1 ) gap(z+ 2 )\u2212gap(y+ 2 ) Figure 7: The change of point gaps after two consecutive zig-zigs over heavy edges in one particular configuration with all heap-children in the same lazy intervalI. We useg I as a shorthand for intervalgap(I). gap(\u00b7) denotes the gap before the zig-zigs. Note that for the resulting gap ofz + i , the interval gaps cancel. w",
+        "keyword": "point gap",
+        "page": 11
+      },
+      {
+        "context": "ng to this modified tree, each boundary pairing can increase the sum of point gaps by up to \u0398(logn). This again could not be used to prove ano(logn) competitive ratio. The solution is to contract the point gaps by passing them through an integer-valued logarithmic function. As a potential, we then sum the contracted point gaps instead of the point gaps. As a result, each boundary pairing increases the sum of contracted point gaps byO(log logn), so we can hope for \u02dcO(log logn)-competitiveness. Th",
+        "keyword": "point gap",
+        "page": 11
+      },
+      {
+        "context": "not be used to prove ano(logn) competitive ratio. The solution is to contract the point gaps by passing them through an integer-valued logarithmic function. As a potential, we then sum the contracted point gaps instead of the point gaps. As a result, each boundary pairing increases the sum of contracted point gaps byO(log logn), so we can hope for \u02dcO(log logn)-competitiveness. The contraction, however, complicates matters, as a decrease in a point gap does not imply a decrease in the correspondi",
+        "keyword": "point gap",
+        "page": 11
+      },
+      {
+        "context": "ogn) competitive ratio. The solution is to contract the point gaps by passing them through an integer-valued logarithmic function. As a potential, we then sum the contracted point gaps instead of the point gaps. As a result, each boundary pairing increases the sum of contracted point gaps byO(log logn), so we can hope for \u02dcO(log logn)-competitiveness. The contraction, however, complicates matters, as a decrease in a point gap does not imply a decrease in the corresponding contracted point gap, s",
+        "keyword": "point gap",
+        "page": 11
+      },
+      {
+        "context": "hem through an integer-valued logarithmic function. As a potential, we then sum the contracted point gaps instead of the point gaps. As a result, each boundary pairing increases the sum of contracted point gaps byO(log logn), so we can hope for \u02dcO(log logn)-competitiveness. The contraction, however, complicates matters, as a decrease in a point gap does not imply a decrease in the corresponding contracted point gap, so not all internal pairings decrease the sum of contracted point gaps. The inte",
+        "keyword": "point gap",
+        "page": 11
+      },
+      {
+        "context": "ult, each boundary pairing increases the sum of contracted point gaps byO(log logn), so we can hope for \u02dcO(log logn)-competitiveness. The contraction, however, complicates matters, as a decrease in a point gap does not imply a decrease in the corresponding contracted point gap, so not all internal pairings decrease the sum of contracted point gaps. The internal pairings where the point gaps are of the same magnitude, which we callgood, still decrease the sum of contracted point gaps. This is bec",
+        "keyword": "point gap",
+        "page": 11
+      },
+      {
+        "context": "s byO(log logn), so we can hope for \u02dcO(log logn)-competitiveness. The contraction, however, complicates matters, as a decrease in a point gap does not imply a decrease in the corresponding contracted point gap, so not all internal pairings decrease the sum of contracted point gaps. The internal pairings where the point gaps are of the same magnitude, which we callgood, still decrease the sum of contracted point gaps. This is because decreasing the input of the logarithm by a constant fraction de",
+        "keyword": "point gap",
+        "page": 11
+      }
+    ],
+    "heap": [
+      {
+        "context": "rst, we introduce lazy intervals, which allow us to absorb changes in the ranks after a tree rotates. Second, we observe that the structure of heavy paths after a splay changes similarly to a pairing heap after a delete-min. This lets us use recent progress in the analysis of multi-pass and pure pairing heaps [ST25; TX26] to help bound the total number of zig-zigs performed. Third, we show that we can assume a normal form on the optimal tree, which restricts it to certain properties while slowin",
+        "keyword": "heap",
+        "page": 3
+      },
+      {
+        "context": "ond, we observe that the structure of heavy paths after a splay changes similarly to a pairing heap after a delete-min. This lets us use recent progress in the analysis of multi-pass and pure pairing heaps [ST25; TX26] to help bound the total number of zig-zigs performed. Third, we show that we can assume a normal form on the optimal tree, which restricts it to certain properties while slowing it down only by a constant factor. With this, we show that the number of zig-zags can be asymptotically",
+        "keyword": "heap",
+        "page": 3
+      },
+      {
+        "context": "y tree, define node ranks based on their depths in the optimal tree, define heavy paths, and consider their gaps. The proof itself will rely on a deeper understanding of these combinatorial concepts. Heap view of heavy paths.Imagine contracting every heavy path into the bottom-most node and keeping all the children of nodes on the heavy path as children of the contracted node. In this contracted tree, there are only light edges and thus the ranks increase with every edge. Hence, 9",
+        "keyword": "heap",
+        "page": 9
+      },
+      {
+        "context": "this contracted tree is heap-ordered on the ranks, meaning that a node has lower rank than all its children, and we call this theheap view of heavy paths; see Figure 6. To distinguish between the children in the tree itself and in the heap view, we call the children and parents in the heap view theheap-childrenandheap-pare",
+        "keyword": "heap",
+        "page": 10
+      },
+      {
+        "context": "this contracted tree is heap-ordered on the ranks, meaning that a node has lower rank than all its children, and we call this theheap view of heavy paths; see Figure 6. To distinguish between the children in the tree itself and in the heap view, we call the children and parents in the heap view theheap-childrenandheap-parents, respectively. Heap-children whose values precede that of the heap-parent in symmetric order are call",
+        "keyword": "heap",
+        "page": 10
+      },
+      {
+        "context": "d on the ranks, meaning that a node has lower rank than all its children, and we call this theheap view of heavy paths; see Figure 6. To distinguish between the children in the tree itself and in the heap view, we call the children and parents in the heap view theheap-childrenandheap-parents, respectively. Heap-children whose values precede that of the heap-parent in symmetric order are calledleft heap-children;right heap-childrenare defined analogously. \u22a50 r=3 1 r=2 \u22a51 r=3 2 r=1 \u22a52 r=3 3 r=2 \u22a53",
+        "keyword": "heap",
+        "page": 10
+      },
+      {
+        "context": "than all its children, and we call this theheap view of heavy paths; see Figure 6. To distinguish between the children in the tree itself and in the heap view, we call the children and parents in the heap view theheap-childrenandheap-parents, respectively. Heap-children whose values precede that of the heap-parent in symmetric order are calledleft heap-children;right heap-childrenare defined analogously. \u22a50 r=3 1 r=2 \u22a51 r=3 2 r=1 \u22a52 r=3 3 r=2 \u22a53 r=4 4 r=3 \u22a54 r=4 5 r=0 \u22a55 r=1 5 1 \u22a50 \u22a51 2 3 \u22a52 4 \u22a5",
+        "keyword": "heap",
+        "page": 10
+      },
+      {
+        "context": "children, and we call this theheap view of heavy paths; see Figure 6. To distinguish between the children in the tree itself and in the heap view, we call the children and parents in the heap view theheap-childrenandheap-parents, respectively. Heap-children whose values precede that of the heap-parent in symmetric order are calledleft heap-children;right heap-childrenare defined analogously. \u22a50 r=3 1 r=2 \u22a51 r=3 2 r=1 \u22a52 r=3 3 r=2 \u22a53 r=4 4 r=3 \u22a54 r=4 5 r=0 \u22a55 r=1 5 1 \u22a50 \u22a51 2 3 \u22a52 4 \u22a53 \u22a54 \u22a55 r= 0 ",
+        "keyword": "heap",
+        "page": 10
+      },
+      {
+        "context": " call this theheap view of heavy paths; see Figure 6. To distinguish between the children in the tree itself and in the heap view, we call the children and parents in the heap view theheap-childrenandheap-parents, respectively. Heap-children whose values precede that of the heap-parent in symmetric order are calledleft heap-children;right heap-childrenare defined analogously. \u22a50 r=3 1 r=2 \u22a51 r=3 2 r=1 \u22a52 r=3 3 r=2 \u22a53 r=4 4 r=3 \u22a54 r=4 5 r=0 \u22a55 r=1 5 1 \u22a50 \u22a51 2 3 \u22a52 4 \u22a53 \u22a54 \u22a55 r= 0 r= 2 r= 1 r= 2 r",
+        "keyword": "heap",
+        "page": 10
+      },
+      {
+        "context": "eavy paths; see Figure 6. To distinguish between the children in the tree itself and in the heap view, we call the children and parents in the heap view theheap-childrenandheap-parents, respectively. Heap-children whose values precede that of the heap-parent in symmetric order are calledleft heap-children;right heap-childrenare defined analogously. \u22a50 r=3 1 r=2 \u22a51 r=3 2 r=1 \u22a52 r=3 3 r=2 \u22a53 r=4 4 r=3 \u22a54 r=4 5 r=0 \u22a55 r=1 5 1 \u22a50 \u22a51 2 3 \u22a52 4 \u22a53 \u22a54 \u22a55 r= 0 r= 2 r= 1 r= 2 r= 3 r= 3 r= 3 r= 3 r= 4 r= 4",
+        "keyword": "heap",
+        "page": 10
+      },
+      {
+        "context": "n the children in the tree itself and in the heap view, we call the children and parents in the heap view theheap-childrenandheap-parents, respectively. Heap-children whose values precede that of the heap-parent in symmetric order are calledleft heap-children;right heap-childrenare defined analogously. \u22a50 r=3 1 r=2 \u22a51 r=3 2 r=1 \u22a52 r=3 3 r=2 \u22a53 r=4 4 r=3 \u22a54 r=4 5 r=0 \u22a55 r=1 5 1 \u22a50 \u22a51 2 3 \u22a52 4 \u22a53 \u22a54 \u22a55 r= 0 r= 2 r= 1 r= 2 r= 3 r= 3 r= 3 r= 3 r= 4 r= 4 r= 1 Figure 6: Left: an example splay tree and",
+        "keyword": "heap",
+        "page": 10
+      },
+      {
+        "context": "eap view, we call the children and parents in the heap view theheap-childrenandheap-parents, respectively. Heap-children whose values precede that of the heap-parent in symmetric order are calledleft heap-children;right heap-childrenare defined analogously. \u22a50 r=3 1 r=2 \u22a51 r=3 2 r=1 \u22a52 r=3 3 r=2 \u22a53 r=4 4 r=3 \u22a54 r=4 5 r=0 \u22a55 r=1 5 1 \u22a50 \u22a51 2 3 \u22a52 4 \u22a53 \u22a54 \u22a55 r= 0 r= 2 r= 1 r= 2 r= 3 r= 3 r= 3 r= 3 r= 4 r= 4 r= 1 Figure 6: Left: an example splay tree and its heavy-path decomposition. Right: the heap",
+        "keyword": "heap",
+        "page": 10
+      }
+    ],
+    "heavy": [
+      {
+        "context": "tures that allow us to analyze splay trees even when the optimal tree performs rotations. In fact, the core of our argument \u2013 defining the rank of a node by its depth in the optimal tree and defining heavy paths in the splay tree to lead towards vertices closest to the root of the optimal tree \u2013 can be seen as an alternative to the ranks used in the original static-optimality analysis and can also be used to rederive static optimality. The proof then has three more core ingredients. First, we in",
+        "keyword": "heavy path",
+        "page": 3
+      },
+      {
+        "context": "ality. The proof then has three more core ingredients. First, we introduce lazy intervals, which allow us to absorb changes in the ranks after a tree rotates. Second, we observe that the structure of heavy paths after a splay changes similarly to a pairing heap after a delete-min. This lets us use recent progress in the analysis of multi-pass and pure pairing heaps [ST25; TX26] to help bound the total number of zig-zigs performed. Third, we show that we can assume a normal form on the optimal tr",
+        "keyword": "heavy path",
+        "page": 3
+      },
+      {
+        "context": "in properties while slowing it down only by a constant factor. With this, we show that the number of zig-zags can be asymptotically bounded by the number of zig-zigs by observing how the structure of heavy paths changes. Finally, we apply the same techniques to prove the split conjecture for splay trees up to a \u02dcO(log logn) factor. 2 Setting the stage In this section, we set up the basics needed to state our result: we define the model in which the time complexity of binary search trees is measu",
+        "keyword": "heavy path",
+        "page": 3
+      },
+      {
+        "context": "ted in Figure 4a. Rotations happen on internal nodes, and all value nodes always remain attached to their internal parent; see Figure 4b. Relating the splay tree to the optimal tree through ranks and heavy paths.As in the dynamic case, the re-proof of the static case starts by relating the splay tree to an optimal tree T OPT static. For every nodevin the splay treeT, we define its rank to be its depth inT OPT static. Consider an edge (u,v) withubeing the parent ofv. The minimum rank among the no",
+        "keyword": "heavy path",
+        "page": 6
+      },
+      {
+        "context": "epth in the optimal tree, which we prove in Lemma 4. Thus, for each internal node, exactly one of its three children is connected to it via a heavy edge. This decomposes the tree into a collection of heavy paths and light edges, with each light edge connecting paths of different ranks. For an internal node, the rank of the bottom-most node on the same heavy path plays a role analogous to that of the rank in the original access-lemma analysis of splay trees, where the rank was the logarithm of th",
+        "keyword": "heavy path",
+        "page": 6
+      },
+      {
+        "context": "This decomposes the tree into a collection of heavy paths and light edges, with each light edge connecting paths of different ranks. For an internal node, the rank of the bottom-most node on the same heavy path plays a role analogous to that of the rank in the original access-lemma analysis of splay trees, where the rank was the logarithm of the sum of weights. 6",
+        "keyword": "heavy path",
+        "page": 6
+      },
+      {
+        "context": "utive interval of nodes has a unique node minimizing the depth in the optimal tree, which we prove in Lemma 4. Thus, for each internal node, exactly one of its three children is connected to it via a heavy edge. This decomposes the tree into a collection of heavy paths and light edges, with each light edge connecting paths of different ranks. For an internal node, the rank of the bottom-most node on the same heavy path plays a role analogous to that of the rank in the original access-lemma analy",
+        "keyword": "heavy edge",
+        "page": 6
+      },
+      {
+        "context": "mal tree, which we prove in Lemma 4. Thus, for each internal node, exactly one of its three children is connected to it via a heavy edge. This decomposes the tree into a collection of heavy paths and light edges, with each light edge connecting paths of different ranks. For an internal node, the rank of the bottom-most node on the same heavy path plays a role analogous to that of the rank in the original access-lemma analysis of splay trees, where the rank was the logarithm of the sum of weights",
+        "keyword": "light edge",
+        "page": 6
+      },
+      {
+        "context": "e in Lemma 4. Thus, for each internal node, exactly one of its three children is connected to it via a heavy edge. This decomposes the tree into a collection of heavy paths and light edges, with each light edge connecting paths of different ranks. For an internal node, the rank of the bottom-most node on the same heavy path plays a role analogous to that of the rank in the original access-lemma analysis of splay trees, where the rank was the logarithm of the sum of weights. 6",
+        "keyword": "light edge",
+        "page": 6
+      },
+      {
+        "context": "\u22a52 r=3 3 r=2 \u22a53 r=3 4 r=0 \u22a54 r=3 5 r=2 \u22a55 r=3 6 r=1 \u22a56 r=2 (c) The ranks of external nodes are based on their depth in the example optimal treeT OPT. Based on these ranks, the tree is decomposed into heavy paths (thick) which are connected by light edges (dashed). The heavy path corresponding to value 4 has rank 0 so it contains the root. The parent of external node 1 is the only bend on this heavy path. Figure 4: An overview of the concepts for splay-tree analysis. The ternary view, in particul",
+        "keyword": "heavy path",
+        "page": 7
+      },
+      {
+        "context": "nks of external nodes are based on their depth in the example optimal treeT OPT. Based on these ranks, the tree is decomposed into heavy paths (thick) which are connected by light edges (dashed). The heavy path corresponding to value 4 has rank 0 so it contains the root. The parent of external node 1 is the only bend on this heavy path. Figure 4: An overview of the concepts for splay-tree analysis. The ternary view, in particular, makes the structure of heavy paths nice. Every heavy path now end",
+        "keyword": "heavy path",
+        "page": 7
+      },
+      {
+        "context": "nto heavy paths (thick) which are connected by light edges (dashed). The heavy path corresponding to value 4 has rank 0 so it contains the root. The parent of external node 1 is the only bend on this heavy path. Figure 4: An overview of the concepts for splay-tree analysis. The ternary view, in particular, makes the structure of heavy paths nice. Every heavy path now ends in an external node and there is exactly one such external node on each heavy path. We can therefore associate each heavy pat",
+        "keyword": "heavy path",
+        "page": 7
+      }
+    ],
+    "lazy": [
+      {
+        "context": " as an alternative to the ranks used in the original static-optimality analysis and can also be used to rederive static optimality. The proof then has three more core ingredients. First, we introduce lazy intervals, which allow us to absorb changes in the ranks after a tree rotates. Second, we observe that the structure of heavy paths after a splay changes similarly to a pairing heap after a delete-min. This lets us use recent progress in the analysis of multi-pass and pure pairing heaps [ST25; ",
+        "keyword": "lazy interval",
+        "page": 3
+      },
+      {
+        "context": "eavy-path decomposition. Right: the heap view obtained from the tree on the left, where heap-children are ordered as in the symmetric order and the dashed line separates left and right heap-children. Lazy intervals for handling gap changes caused by rotations.The straightforward idea of using the sum of gaps as a potential while allowing rotations of the optimal tree does not work. A rotation in the optimal tree can change up to \u0398(n) ranks and gaps, which would yield a useless O(n)-competitivene",
+        "keyword": "lazy interval",
+        "page": 10
+      },
+      {
+        "context": "ted nodes form a consecutive interval [i,j] in symmetric order, as they correspond to subtrees in the optimal tree. Therefore, we can group consecutive heap-children of each heavy path into so-called lazy intervals. Instead of updating the gaps, we simply record the amount by which all gaps in an interval are shifted. The amount by which the whole interval is shifted is called aninterval gap and the gaps without this shift are calledpoint gaps. The important property of lazy intervals is that, f",
+        "keyword": "lazy interval",
+        "page": 10
+      },
+      {
+        "context": "y which all gaps in an interval are shifted. The amount by which the whole interval is shifted is called aninterval gap and the gaps without this shift are calledpoint gaps. The important property of lazy intervals is that, for zig-zigs occurring within a lazy interval, the interval gap cancels out of the corresponding changes to the gaps. Thus, the point gaps behave as if they were the gaps themselves; see Figure 7. In other words, it does not matter whether we first update the gaps and then pe",
+        "keyword": "lazy interval",
+        "page": 10
+      },
+      {
+        "context": "by which the whole interval is shifted is called aninterval gap and the gaps without this shift are calledpoint gaps. The important property of lazy intervals is that, for zig-zigs occurring within a lazy interval, the interval gap cancels out of the corresponding changes to the gaps. Thus, the point gaps behave as if they were the gaps themselves; see Figure 7. In other words, it does not matter whether we first update the gaps and then perform zig-zigs, or we perform the zig-zigs and only late",
+        "keyword": "lazy interval",
+        "page": 10
+      },
+      {
+        "context": " perform the zig-zigs and only later update the gaps lazily when needed. Thus we can track the sum of point gaps instead of the sum of gaps and every rotation can then be handled by creating O(1) new lazy intervals. Contracting gaps to bound the number of zig-zigs.The remaining difficulty is posed by boundary zig-zigs, which affect heap-children from two different lazy intervals. To simplify the discussion of zig-zigs, recall that a zig-zig takes three consecutive heap-children and hangs the two",
+        "keyword": "lazy interval",
+        "page": 10
+      },
+      {
+        "context": " be handled by creating O(1) new lazy intervals. Contracting gaps to bound the number of zig-zigs.The remaining difficulty is posed by boundary zig-zigs, which affect heap-children from two different lazy intervals. To simplify the discussion of zig-zigs, recall that a zig-zig takes three consecutive heap-children and hangs the two 10",
+        "keyword": "lazy interval",
+        "page": 10
+      },
+      {
+        "context": " z+ 2 gap(z+ 1 )\u2212gap(y+ 1 ) gap(z+ 2 )\u2212gap(y+ 2 ) Figure 7: The change of point gaps after two consecutive zig-zigs over heavy edges in one particular configuration with all heap-children in the same lazy intervalI. We useg I as a shorthand for intervalgap(I). gap(\u00b7) denotes the gap before the zig-zigs. Note that for the resulting gap ofz + i , the interval gaps cancel. with higher rank in a lazy interval of the one with lower rank. We decompose this event into two pairings, in each of which one",
+        "keyword": "lazy interval",
+        "page": 11
+      },
+      {
+        "context": "same lazy intervalI. We useg I as a shorthand for intervalgap(I). gap(\u00b7) denotes the gap before the zig-zigs. Note that for the resulting gap ofz + i , the interval gaps cancel. with higher rank in a lazy interval of the one with lower rank. We decompose this event into two pairings, in each of which one heap-child is hung below another heap-child with lower rank. In this terminology, the problem lies withboundary pairings, where the two heavy paths are not from the same lazy interval. An attemp",
+        "keyword": "lazy interval",
+        "page": 11
+      },
+      {
+        "context": "airings, in each of which one heap-child is hung below another heap-child with lower rank. In this terminology, the problem lies withboundary pairings, where the two heavy paths are not from the same lazy interval. An attempt to resolve this would be to modify the optimal tree so that it always has logarithmic depth and thus logarithmic ranks while incurring only constant slowdown. But even when charging to this modified tree, each boundary pairing can increase the sum of point gaps by up to \u0398(l",
+        "keyword": "lazy interval",
+        "page": 11
+      },
+      {
+        "context": "1 z+ 1 y+ 2 z+ 2 \u2308log(128\u221296)\u2309=\u2308log(32)\u2309= 5 \u2308log(128\u221232)\u2309= 7 Figure 8: The change to contracted point gaps after two consecutive zig-zigs over heavy edges with corresponding heap-children in the same lazy interval. The pairing (y + 1,z + 1 ) is good as the two heap-children had point gaps of the same magnitude, so the contracted point gap ofz + 1 decreases. The pairing (y + 2,z + 2 ) is bad as the point gaps are of different magnitude, therefore the contracted point gap ofz + 2 is not guaranteed",
+        "keyword": "lazy interval",
+        "page": 12
+      },
+      {
+        "context": "ote that in reality we use\u23081 + log(1 +x)\u2309for the contracted gap, to avoid edge cases. We use\u2308log(x)\u2309in this figure instead for simplicity. In both, the logarithms are binary. boundaries of very large lazy intervals, and their effects can be subsumed by internal pairings. We call these pairingsunimportant. On the other hand, important pairings cannot happen too often within any one lazy interval, and since we do not create too many lazy intervals, their total number is bounded. Once we also bound",
+        "keyword": "lazy interval",
+        "page": 12
+      }
+    ],
+    "pairing": [
+      {
+        "context": "ents. First, we introduce lazy intervals, which allow us to absorb changes in the ranks after a tree rotates. Second, we observe that the structure of heavy paths after a splay changes similarly to a pairing heap after a delete-min. This lets us use recent progress in the analysis of multi-pass and pure pairing heaps [ST25; TX26] to help bound the total number of zig-zigs performed. Third, we show that we can assume a normal form on the optimal tree, which restricts it to certain properties whil",
+        "keyword": "pairing",
+        "page": 3
+      },
+      {
+        "context": "tes. Second, we observe that the structure of heavy paths after a splay changes similarly to a pairing heap after a delete-min. This lets us use recent progress in the analysis of multi-pass and pure pairing heaps [ST25; TX26] to help bound the total number of zig-zigs performed. Third, we show that we can assume a normal form on the optimal tree, which restricts it to certain properties while slowing it down only by a constant factor. With this, we show that the number of zig-zags can be asympt",
+        "keyword": "pairing",
+        "page": 3
+      },
+      {
+        "context": "notes the gap before the zig-zigs. Note that for the resulting gap ofz + i , the interval gaps cancel. with higher rank in a lazy interval of the one with lower rank. We decompose this event into two pairings, in each of which one heap-child is hung below another heap-child with lower rank. In this terminology, the problem lies withboundary pairings, where the two heavy paths are not from the same lazy interval. An attempt to resolve this would be to modify the optimal tree so that it always has",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": "he one with lower rank. We decompose this event into two pairings, in each of which one heap-child is hung below another heap-child with lower rank. In this terminology, the problem lies withboundary pairings, where the two heavy paths are not from the same lazy interval. An attempt to resolve this would be to modify the optimal tree so that it always has logarithmic depth and thus logarithmic ranks while incurring only constant slowdown. But even when charging to this modified tree, each bounda",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": "ld be to modify the optimal tree so that it always has logarithmic depth and thus logarithmic ranks while incurring only constant slowdown. But even when charging to this modified tree, each boundary pairing can increase the sum of point gaps by up to \u0398(logn). This again could not be used to prove ano(logn) competitive ratio. The solution is to contract the point gaps by passing them through an integer-valued logarithmic function. As a potential, we then sum the contracted point gaps instead of ",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": " to contract the point gaps by passing them through an integer-valued logarithmic function. As a potential, we then sum the contracted point gaps instead of the point gaps. As a result, each boundary pairing increases the sum of contracted point gaps byO(log logn), so we can hope for \u02dcO(log logn)-competitiveness. The contraction, however, complicates matters, as a decrease in a point gap does not imply a decrease in the corresponding contracted point gap, so not all internal pairings decrease th",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": " for \u02dcO(log logn)-competitiveness. The contraction, however, complicates matters, as a decrease in a point gap does not imply a decrease in the corresponding contracted point gap, so not all internal pairings decrease the sum of contracted point gaps. The internal pairings where the point gaps are of the same magnitude, which we callgood, still decrease the sum of contracted point gaps. This is because decreasing the input of the logarithm by a constant fraction decreases its output by a constan",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": "licates matters, as a decrease in a point gap does not imply a decrease in the corresponding contracted point gap, so not all internal pairings decrease the sum of contracted point gaps. The internal pairings where the point gaps are of the same magnitude, which we callgood, still decrease the sum of contracted point gaps. This is because decreasing the input of the logarithm by a constant fraction decreases its output by a constant. We are able to bound good pairings by the total increase in th",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": "e callgood, still decrease the sum of contracted point gaps. This is because decreasing the input of the logarithm by a constant fraction decreases its output by a constant. We are able to bound good pairings by the total increase in the sum of contracted point gaps. The other internal pairings are calledbad, and bounding them requires more work. See also Figure 8. The next step is to show that there are not too many boundary pairings. Some occur at the 11",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": " the input of the logarithm by a constant fraction decreases its output by a constant. We are able to bound good pairings by the total increase in the sum of contracted point gaps. The other internal pairings are calledbad, and bounding them requires more work. See also Figure 8. The next step is to show that there are not too many boundary pairings. Some occur at the 11",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": " in the sum of contracted point gaps. The other internal pairings are calledbad, and bounding them requires more work. See also Figure 8. The next step is to show that there are not too many boundary pairings. Some occur at the 11",
+        "keyword": "pairing",
+        "page": 11
+      },
+      {
+        "context": "ich we callgood, still decrease the sum of contracted point gaps. This is because decreasing the input of the logarithm by a constant fraction decreases its output by a constant. We are able to bound good pairings by the total increase in the sum of contracted point gaps. The other internal pairings are calledbad, and bounding them requires more work. See also Figure 8. The next step is to show that there are not too many boundary pairings. Some occur at the 11",
+        "keyword": "good pairing",
+        "page": 11
+      }
+    ],
+    "rank": [
+      {
+        "context": "ality: besides charging work to a static tree, we build structures that allow us to analyze splay trees even when the optimal tree performs rotations. In fact, the core of our argument \u2013 defining the rank of a node by its depth in the optimal tree and defining heavy paths in the splay tree to lead towards vertices closest to the root of the optimal tree \u2013 can be seen as an alternative to the ranks used in the original static-optimality analysis and can also be used to rederive static optimality.",
+        "keyword": "rank of",
+        "page": 3
+      },
+      {
+        "context": "ren is connected to it via a heavy edge. This decomposes the tree into a collection of heavy paths and light edges, with each light edge connecting paths of different ranks. For an internal node, the rank of the bottom-most node on the same heavy path plays a role analogous to that of the rank in the original access-lemma analysis of splay trees, where the rank was the logarithm of the sum of weights. 6",
+        "keyword": "rank of",
+        "page": 6
+      },
+      {
+        "context": "ign dummy values to null nodes in a way consistent with the tree structure. We imagine that the static optimal tree contains these nodes as well \u2013 in fact, their place is uniquely determined \u2013 and we define the ranks of null nodes analogously to other nodes. The newly added nodes are called external, while all other nodes are called internal. Overall, in the ternary view, all internal nodes are hollow and have exactly three children, and their structure exactly matches that of the original tree.",
+        "keyword": "define the rank",
+        "page": 6
+      },
+      {
+        "context": "and say the rank of the heavy path is the rank of this bottom-most node. In addition, if we imagine that the external nodes connected by light edges have degenerate heavy paths consisting of a single node, then every external node also has its own heavy path. See also Figure 4c. Potential via gaps.We now have a",
+        "keyword": "rank of",
+        "page": 8
+      },
+      {
+        "context": "and say the rank of the heavy path is the rank of this bottom-most node. In addition, if we imagine that the external nodes connected by light edges have degenerate heavy paths consisting of a single node, then every external node also has its own heavy path. See also Figure 4c. Potential via gaps.We now have almost everything needed to pro",
+        "keyword": "rank of",
+        "page": 8
+      },
+      {
+        "context": "ything needed to prove static optimality. As in the original proof of static optimality, where rank differences along edges were central, we define thegapof a heavy pathPas the difference between the rank ofPand the rank of the heavy path to which it is connected by a light edge. We also associate the gap of a heavy path with the light edge to its top-most node. The gap of the root heavy path, which contains the root, is 0. The sum of the gaps of all heavy paths will serve as a potential: we sho",
+        "keyword": "rank of",
+        "page": 8
+      },
+      {
+        "context": " prove static optimality. As in the original proof of static optimality, where rank differences along edges were central, we define thegapof a heavy pathPas the difference between the rank ofPand the rank of the heavy path to which it is connected by a light edge. We also associate the gap of a heavy path with the light edge to its top-most node. The gap of the root heavy path, which contains the root, is 0. The sum of the gaps of all heavy paths will serve as a potential: we show that each oper",
+        "keyword": "rank of",
+        "page": 8
+      },
+      {
+        "context": "t, one would have to verify it in many different situations based on how exactly the light and heavy edges are positioned. On the path fromxto the root, the gaps on the light edges sum to exactly the rank ofx. Thus, the operations over light edges for one access increase the sum of gaps by at most the rank ofx. 5 Zig-zigs on heavy edges decrease gaps.Next, we show that every zig-zig over heavy edges decreases the sum of gaps by at least one. It suffices to consider a right zig-zig, as the situat",
+        "keyword": "rank of",
+        "page": 8
+      },
+      {
+        "context": "ges are positioned. On the path fromxto the root, the gaps on the light edges sum to exactly the rank ofx. Thus, the operations over light edges for one access increase the sum of gaps by at most the rank ofx. 5 Zig-zigs on heavy edges decrease gaps.Next, we show that every zig-zig over heavy edges decreases the sum of gaps by at least one. It suffices to consider a right zig-zig, as the situation with a left zig-zig is analogous. Definex \u25e6 andy\u25e6 as above, and letz \u25e6 be the parent ofy \u25e6. Letzbe ",
+        "keyword": "rank of",
+        "page": 8
+      },
+      {
+        "context": " we assumed that the operation was over heavy edges, so its gap was measured with respect tox. Therefore, it had higher rank, which implies that the gaps ofzandz + decrease by at least one, since the rank of the reference node in the definition of the gap increases. See Figure 5 for an illustration of this case. It can be checked that this holds in the other cases as well and that, for the other nodes, the ranks do not increase. 5This case never occurs in the dynamic setting. There, we can assum",
+        "keyword": "rank of",
+        "page": 8
+      },
+      {
+        "context": "x+ y+ z+ gap(y+) gap(z+) gap(y+) x+ y+ z+ gap(z+)\u2212gap(y +) Figure 5: The situation after a zig-zig over two heavy edges in one particular configuration, assuming the rank ofy + is smaller than the rank ofz +. gap(\u00b7) denotes the gap before the zig-zig. The gap ofz + decreases as before it was computed based onx + and after it is computed based ony + which has higher rank. Concluding static optimality for sufficiently long sequences.Similarly, a zig-zag over two h",
+        "keyword": "rank of",
+        "page": 9
+      },
+      {
+        "context": "x+ y+ z+ gap(y+) gap(z+) gap(y+) x+ y+ z+ gap(z+)\u2212gap(y +) Figure 5: The situation after a zig-zig over two heavy edges in one particular configuration, assuming the rank ofy + is smaller than the rank ofz +. gap(\u00b7) denotes the gap before the zig-zig. The gap ofz + decreases as before it was computed based onx + and after it is computed based ony + which has higher rank. Concluding static optimality for sufficiently long sequences.Similarly, a zig-zag over two heavy edges can be shown to decr",
+        "keyword": "rank of",
+        "page": 9
+      }
+    ]
+  }
+}

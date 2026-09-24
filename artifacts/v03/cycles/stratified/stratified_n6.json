@@ -1,0 +1,3264 @@
+[
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 0,
+  "edge": 0,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 5,
+   "before": 6,
+   "delta": -1
+  },
+  "cycle": 0,
+  "edge": 1,
+  "gap_sum": {
+   "after": 2,
+   "before": 3,
+   "delta": -1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 0,
+  "edge": 2,
+  "gap_sum": {
+   "after": 3,
+   "before": 2,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 3,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 7,
+   "delta": 0
+  },
+  "cycle": 0,
+  "edge": 3,
+  "gap_sum": {
+   "after": 3,
+   "before": 4,
+   "delta": -1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 3,
+   "delta": 4
+  },
+  "cycle": 1,
+  "edge": 0,
+  "gap_sum": {
+   "after": 3,
+   "before": 1,
+   "delta": 2
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 2,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 6,
+   "before": 6,
+   "delta": 0
+  },
+  "cycle": 1,
+  "edge": 1,
+  "gap_sum": {
+   "after": 3,
+   "before": 4,
+   "delta": -1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 1,
+  "edge": 2,
+  "gap_sum": {
+   "after": 3,
+   "before": 2,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 4,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 6,
+   "delta": 1
+  },
+  "cycle": 1,
+  "edge": 3,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 3,
+   "delta": 4
+  },
+  "cycle": 2,
+  "edge": 0,
+  "gap_sum": {
+   "after": 3,
+   "before": 1,
+   "delta": 2
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 3,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 1,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 1,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 6,
+   "delta": 1
+  },
+  "cycle": 2,
+  "edge": 1,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 3,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 3,
+   "delta": 4
+  },
+  "cycle": 2,
+  "edge": 2,
+  "gap_sum": {
+   "after": 3,
+   "before": 1,
+   "delta": 2
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "RR",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 4,
+  "y": 5,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 1,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 1,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 6,
+   "delta": 1
+  },
+  "cycle": 2,
+  "edge": 3,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 3,
+  "edge": 0,
+  "gap_sum": {
+   "after": 3,
+   "before": 2,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 6,
+   "before": 6,
+   "delta": 0
+  },
+  "cycle": 3,
+  "edge": 1,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 3,
+  "edge": 2,
+  "gap_sum": {
+   "after": 3,
+   "before": 2,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 4,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 6,
+   "delta": 1
+  },
+  "cycle": 3,
+  "edge": 3,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 4,
+   "delta": 4
+  },
+  "cycle": 4,
+  "edge": 0,
+  "gap_sum": {
+   "after": 4,
+   "before": 3,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 6,
+   "before": 6,
+   "delta": 0
+  },
+  "cycle": 4,
+  "edge": 1,
+  "gap_sum": {
+   "after": 4,
+   "before": 4,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 4,
+   "delta": 4
+  },
+  "cycle": 4,
+  "edge": 2,
+  "gap_sum": {
+   "after": 4,
+   "before": 3,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 4,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 7,
+   "delta": 1
+  },
+  "cycle": 4,
+  "edge": 3,
+  "gap_sum": {
+   "after": 4,
+   "before": 4,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 5,
+  "edge": 0,
+  "gap_sum": {
+   "after": 3,
+   "before": 2,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 6,
+   "before": 6,
+   "delta": 0
+  },
+  "cycle": 5,
+  "edge": 1,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 5,
+  "edge": 2,
+  "gap_sum": {
+   "after": 3,
+   "before": 2,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 4,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 6,
+   "delta": 1
+  },
+  "cycle": 5,
+  "edge": 3,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 5,
+   "delta": 3
+  },
+  "cycle": 6,
+  "edge": 0,
+  "gap_sum": {
+   "after": 5,
+   "before": 4,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 6,
+   "before": 6,
+   "delta": 0
+  },
+  "cycle": 6,
+  "edge": 1,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 4,
+   "delta": 4
+  },
+  "cycle": 6,
+  "edge": 2,
+  "gap_sum": {
+   "after": 4,
+   "before": 3,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 3,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 7,
+   "delta": 1
+  },
+  "cycle": 6,
+  "edge": 3,
+  "gap_sum": {
+   "after": 4,
+   "before": 5,
+   "delta": -1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 4,
+   "delta": 4
+  },
+  "cycle": 7,
+  "edge": 0,
+  "gap_sum": {
+   "after": 4,
+   "before": 3,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 6,
+   "before": 6,
+   "delta": 0
+  },
+  "cycle": 7,
+  "edge": 1,
+  "gap_sum": {
+   "after": 4,
+   "before": 4,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 4,
+   "delta": 4
+  },
+  "cycle": 7,
+  "edge": 2,
+  "gap_sum": {
+   "after": 4,
+   "before": 3,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 4,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 7,
+   "delta": 1
+  },
+  "cycle": 7,
+  "edge": 3,
+  "gap_sum": {
+   "after": 4,
+   "before": 4,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 5,
+   "delta": 3
+  },
+  "cycle": 8,
+  "edge": 0,
+  "gap_sum": {
+   "after": 4,
+   "before": 4,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 6,
+   "before": 6,
+   "delta": 0
+  },
+  "cycle": 8,
+  "edge": 1,
+  "gap_sum": {
+   "after": 3,
+   "before": 4,
+   "delta": -1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 4,
+   "delta": 4
+  },
+  "cycle": 8,
+  "edge": 2,
+  "gap_sum": {
+   "after": 4,
+   "before": 3,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 3,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 7,
+   "delta": 1
+  },
+  "cycle": 8,
+  "edge": 3,
+  "gap_sum": {
+   "after": 4,
+   "before": 5,
+   "delta": -1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 8,
+   "before": 4,
+   "delta": 4
+  },
+  "cycle": 9,
+  "edge": 0,
+  "gap_sum": {
+   "after": 4,
+   "before": 3,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 5,
+   "before": 5,
+   "delta": 0
+  },
+  "cycle": 9,
+  "edge": 1,
+  "gap_sum": {
+   "after": 2,
+   "before": 2,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 9,
+  "edge": 2,
+  "gap_sum": {
+   "after": 3,
+   "before": 2,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 3,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 7,
+   "delta": 0
+  },
+  "cycle": 9,
+  "edge": 3,
+  "gap_sum": {
+   "after": 3,
+   "before": 4,
+   "delta": -1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 6,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 10,
+  "edge": 0,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "IMPORTANT",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -4,
+   "4": -7,
+   "6": -13,
+   "8": -19,
+   "12": -31,
+   "16": -43,
+   "24": -67,
+   "32": -91,
+   "64": -187
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 1,
+  "y": 5,
+  "zig": {
+   "LL": 2,
+   "LR": 0,
+   "RL": 0,
+   "RR": 0,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 3,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 1,
+   "before": 0,
+   "created": 1,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 5,
+   "before": 5,
+   "delta": 0
+  },
+  "cycle": 10,
+  "edge": 1,
+  "gap_sum": {
+   "after": 2,
+   "before": 2,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -3,
+   "3": -6,
+   "4": -9,
+   "6": -15,
+   "8": -21,
+   "12": -33,
+   "16": -45,
+   "24": -69,
+   "32": -93,
+   "64": -189
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 5,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 4,
+   "length": 5,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 1,
+   "created": 0,
+   "destroyed": 1
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 4,
+   "delta": 3
+  },
+  "cycle": 10,
+  "edge": 2,
+  "gap_sum": {
+   "after": 3,
+   "before": 2,
+   "delta": 1
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   3,
+   2
+  ],
+  "max_intervals_per_rotation": 3,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   },
+   {
+    "case": "LL",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": 1,
+   "3": -1,
+   "4": -3,
+   "6": -7,
+   "8": -11,
+   "12": -19,
+   "16": -27,
+   "24": -43,
+   "32": -59,
+   "64": -123
+  },
+  "s0_scale_path": [
+   2,
+   2,
+   1,
+   1,
+   0
+  ],
+  "x": 3,
+  "y": 5,
+  "zig": {
+   "LL": 1,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 2
+  }
+ },
+ {
+  "a": 2,
+  "b_path": {
+   "heavy": 2,
+   "length": 3,
+   "light_positions": []
+  },
+  "bends": {
+   "after": 0,
+   "before": 0,
+   "created": 0,
+   "destroyed": 0
+  },
+  "contracted_sum": {
+   "after": 7,
+   "before": 6,
+   "delta": 1
+  },
+  "cycle": 10,
+  "edge": 3,
+  "gap_sum": {
+   "after": 3,
+   "before": 3,
+   "delta": 0
+  },
+  "heap_violations": {
+   "after": 0,
+   "before": 0
+  },
+  "intervals_created_per_rotation": [
+   4
+  ],
+  "max_intervals_per_rotation": 4,
+  "pairings": [
+   {
+    "case": "RR",
+    "class": "DEGENERATE_merged",
+    "same_interval": false
+   }
+  ],
+  "regret": {
+   "2": -1,
+   "3": -3,
+   "4": -5,
+   "6": -9,
+   "8": -13,
+   "12": -21,
+   "16": -29,
+   "24": -45,
+   "32": -61,
+   "64": -125
+  },
+  "s0_scale_path": [
+   1,
+   1,
+   0
+  ],
+  "x": 5,
+  "y": 3,
+  "zig": {
+   "LL": 0,
+   "LR": 0,
+   "RL": 0,
+   "RR": 1,
+   "ZIG": 0,
+   "zigzag": 0,
+   "zigzig": 1
+  }
+ }
+]

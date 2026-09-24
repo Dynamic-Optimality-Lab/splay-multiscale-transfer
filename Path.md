@@ -364,6 +364,21 @@ The reviewer returned ACCEPT for MST0-01/02/04/16. Recorded as `math/reviews/MST
 
 ---
 
+## Review-response turn 7 (2026-09-23): WP-2A translation freeze (this commit)
+
+WP-2A implemented exactly: L6 source extraction from frozen bytes (68 pp, rank=OPT-depth
+verbatim rule recovered with page-anchored quotes), 9 translation modules + independent
+dict-based second implementation, 27-record mapping doc (SAME with recorded
+operationalizations; heavy-edge uniqueness PROVED for ordinary BSTs via interval-LCA —
+0 ties over 19,413 pairs; tie-break unreachable insurance), dual agreement green,
+5 mutant controls green, contracted identity on 0..4999, MST0-03 proof + package,
+`run_phase02.py` real runner, human ACCEPT recorded schema-valid,
+`artifacts/v03/freeze/PHASE02_L6_MAPPING_FREEZE.json` FROZEN. WP-2B entry unblocked.
+Console: `[WP2A-STEP-00..05]` (`run_phase02.py`, `extract.py`, `mapping_check.py`;
+line table in the WP-2B section below).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.

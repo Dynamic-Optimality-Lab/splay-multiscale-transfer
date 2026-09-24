@@ -1,0 +1,26 @@
+{
+  "case_completeness_audit": "27/27 objects recorded; 7 ops UNDETERMINED paid/free; fallbacks present, unactivated (zero N/A rulings)",
+  "computational_evidence": "agreement suites; 5 mutant controls; 0-tie exhaustive n<=6; contracted identity 0..4999",
+  "hypotheses_checked": [
+    "H1 source passages verbatim with pages (extract.py re-runnable)",
+    "H2 interval-uniqueness LCA argument for heavy edges",
+    "H3 implementations share no code (pointer vs dict)",
+    "H4 no theorem language in mapping records"
+  ],
+  "lifecycle_note": "UNPROVED -> PROVED -> REVIEWED; recorded by human verdict, agent-authored proof",
+  "objections": [
+    "O1 magnitude operationalization accepted as prereg-legal explicitness",
+    "O2 LARGE_INTERVAL_THRESHOLD=64 accepted as preregistered explicitness"
+  ],
+  "obligation_id": "MST0-03",
+  "proof_dependency_audit": "frozen L6 bytes + prereg yaml (hash-pinned); MST0-02 (REVIEWED)",
+  "reviewer": {
+    "date_utc": "2026-09-23",
+    "identity": "Saif Malik",
+    "role": "human-owner"
+  },
+  "schema": "THEOREM-REVIEW-v0.3",
+  "statement": "For every imported source object used theorem-facing, the Pair-Access counterpart is either literally identical (SAME, with quoted source definition), or differs only as explicitly recorded with proof; no source theorem is consumed; no object is used before its mapping is reviewed.",
+  "theorem_sha256": "F55EB4A4BF77F2D2C29FA6D5BACD32CE082045883D3211D6528FD6F5E2F82A1E",
+  "verdict": "ACCEPT"
+}

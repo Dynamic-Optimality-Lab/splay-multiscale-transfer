@@ -1,0 +1,94 @@
+{
+  "counters": {
+    "counters": {
+      "2": {
+        "create": [
+          0,
+          40
+        ],
+        "failures": 0,
+        "repay": [
+          0,
+          0
+        ]
+      },
+      "3": {
+        "create": [
+          8,
+          705
+        ],
+        "failures": 0,
+        "repay": [
+          54,
+          54
+        ]
+      },
+      "4": {
+        "create": [
+          1118,
+          35056
+        ],
+        "failures": 16,
+        "repay": [
+          3318,
+          3334
+        ]
+      }
+    },
+    "verdicts": {
+      "D1_node": "DEBT_ATOM_FAMILY_INCONSISTENT",
+      "D2_edge": "DEBT_ATOM_FAMILY_INCONSISTENT",
+      "D3_recency": "DEBT_ATOM_FAMILY_INCONSISTENT",
+      "D4_nested": "DEBT_ATOM_FAMILY_INCONSISTENT",
+      "D5_rank": "DEBT_ATOM_FAMILY_INCONSISTENT",
+      "D6_mapped": "DEBT_ATOM_FAMILY_INCONSISTENT",
+      "D7_multiscale": "DEBT_ATOM_FAMILY_INCONSISTENT"
+    }
+  },
+  "separation": {
+    "bend_structure": {
+      "create": {
+        "burden": 0,
+        "total": 24
+      },
+      "destroy": {
+        "burden": 13,
+        "total": 15
+      },
+      "flat": {
+        "burden": 0,
+        "total": 31
+      }
+    },
+    "gap_delta": {
+      "down": {
+        "burden": 0,
+        "total": 7
+      },
+      "flat": {
+        "burden": 0,
+        "total": 34
+      },
+      "up": {
+        "burden": 13,
+        "total": 29
+      }
+    },
+    "heavy_status": {
+      "all-heavy": {
+        "burden": 13,
+        "total": 70
+      }
+    },
+    "zig_pattern": {
+      "mixed": {
+        "burden": 0,
+        "total": 2
+      },
+      "zigzig": {
+        "burden": 13,
+        "total": 68
+      }
+    }
+  }
+}
