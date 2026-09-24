@@ -38,8 +38,8 @@
       "status": "UNPROVED"
     },
     "MST0-10": {
-      "evidence": "math/theorem_MST10_ledger_determinism.md",
-      "status": "PROVED"
+      "evidence": "MST0-10.review.json:ACCEPT",
+      "status": "REVIEWED"
     },
     "MST0-11": {
       "evidence": "math/theorem_MST11_transfer_preservation.md declares SETUP",
