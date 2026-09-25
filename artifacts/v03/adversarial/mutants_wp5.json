@@ -1,0 +1,53 @@
+{
+  "mutants": [
+    {
+      "caught": true,
+      "evidence": "eligibility FAILED: unsigned_masses (all produced masses nonnegative (Branch-A lower-bound route))",
+      "mechanism": "eligibility-refusal",
+      "mutant": "M1-credit-sign"
+    },
+    {
+      "caught": true,
+      "evidence": "eligibility FAILED: frozen_scale_system (all produced scales are the frozen (S0,0) system)",
+      "mechanism": "eligibility-refusal",
+      "mutant": "M2-scale-level"
+    },
+    {
+      "caught": true,
+      "evidence": "predicate outside frozen menu 'P_never'",
+      "mechanism": "menu-refusal",
+      "mutant": "M3-activation-predicate"
+    },
+    {
+      "caught": true,
+      "evidence": "SPENT-producing T5 starves repayment on burdened corpus",
+      "mechanism": "residual-difference",
+      "mutant": "M4-transfer-output"
+    },
+    {
+      "caught": true,
+      "evidence": "HLD-11 hash differs (4F017B28C1D7B2DB...); new ID required",
+      "mechanism": "identity-discipline",
+      "mutant": "M5-injection-coefficient"
+    },
+    {
+      "caught": true,
+      "evidence": "frozen-ID binding refused: parameters differ from MSTC-0002 (new ID required)",
+      "mechanism": "binding-refusal",
+      "mutant": "M6-constant-C"
+    },
+    {
+      "caught": true,
+      "evidence": "HLD-11 hash differs; mapping change needs new ID",
+      "mechanism": "identity-discipline",
+      "mutant": "M7-mapping-choice"
+    },
+    {
+      "caught": true,
+      "evidence": "predicate outside frozen menu 'P_zigzig'",
+      "mechanism": "menu-refusal",
+      "mutant": "M8-zig-classification"
+    }
+  ],
+  "n_caught": 8
+}

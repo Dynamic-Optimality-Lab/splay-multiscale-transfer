@@ -1,0 +1,244 @@
+{
+  "replayed": [
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0001",
+      "clean_max_res": [
+        2,
+        1
+      ],
+      "idx": 4406,
+      "kind": "first-violation",
+      "primary_max_res": [
+        2,
+        1
+      ],
+      "size": 32
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 0,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 10
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 5000,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 10
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 0,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 5000,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 0,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 16
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 5000,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 16
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 0,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 24
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 5000,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 24
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 0,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 32
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 5000,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 32
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 0,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 48
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 5000,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 48
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 0,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 64
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "clean_max_res": [
+        0,
+        1
+      ],
+      "idx": 5000,
+      "kind": "zero-violation sample",
+      "primary_max_res": [
+        0,
+        1
+      ],
+      "size": 64
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0003",
+      "clean_max_res": [
+        1,
+        1
+      ],
+      "idx": 3610,
+      "kind": "first-violation",
+      "primary_max_res": [
+        1,
+        1
+      ],
+      "size": 16
+    }
+  ]
+}

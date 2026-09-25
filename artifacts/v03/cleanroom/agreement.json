@@ -1,0 +1,195 @@
+{
+  "disagreements": 0,
+  "n_checks": 27,
+  "rows": [
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 0,
+      "kind": "h3t-stratified",
+      "size": 10
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 5000,
+      "kind": "h3t-stratified",
+      "size": 10
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 9999,
+      "kind": "h3t-stratified",
+      "size": 10
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 0,
+      "kind": "h3t-stratified",
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 5000,
+      "kind": "h3t-stratified",
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 9999,
+      "kind": "h3t-stratified",
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 0,
+      "kind": "h3t-stratified",
+      "size": 16
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 5000,
+      "kind": "h3t-stratified",
+      "size": 16
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 9999,
+      "kind": "h3t-stratified",
+      "size": 16
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 0,
+      "kind": "h3t-stratified",
+      "size": 24
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 5000,
+      "kind": "h3t-stratified",
+      "size": 24
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 9999,
+      "kind": "h3t-stratified",
+      "size": 24
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 0,
+      "kind": "h3t-stratified",
+      "size": 32
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 5000,
+      "kind": "h3t-stratified",
+      "size": 32
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 9999,
+      "kind": "h3t-stratified",
+      "size": 32
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 0,
+      "kind": "h3t-stratified",
+      "size": 48
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 5000,
+      "kind": "h3t-stratified",
+      "size": 48
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 9999,
+      "kind": "h3t-stratified",
+      "size": 48
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 0,
+      "kind": "h3t-stratified",
+      "size": 64
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 5000,
+      "kind": "h3t-stratified",
+      "size": 64
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 9999,
+      "kind": "h3t-stratified",
+      "size": 64
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 0,
+      "kind": "synthetic",
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 1,
+      "kind": "synthetic",
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 2,
+      "kind": "synthetic",
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 3,
+      "kind": "synthetic",
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 4,
+      "kind": "synthetic",
+      "size": 12
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "idx": 5,
+      "kind": "synthetic",
+      "size": 12
+    }
+  ]
+}

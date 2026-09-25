@@ -49,15 +49,26 @@ def test_firewall() -> None:
 
 
 def test_real_bank_state() -> None:
+    # NOTE (WP-5 lifecycle update): Phase 15 consumed the bank once, so the live
+    # firewall is UNLOCKED_ONCE/1 with a matching reveal record. The pre-freeze
+    # BANK_COMMITTED behavior remains covered by fixture tests above and by the
+    # WP-5 HLD suite (HLD-07 commitment exact, HLD-08 freeze-predates-reveal,
+    # HLD-09 unlock-at-most-once); git history preserves the prior PASS.
     st = firewall_mod.load_state(os.path.join(ROOT, "artifacts", "v03", "holdouts", "h3t_state.json"))
-    check("HLD-07 H3T BANK_COMMITTED unlock 0",
-          st.get("state") == "BANK_COMMITTED" and st.get("unlock_count") == 0)
-    try:
-        firewall_mod.guard_read(os.path.join(ROOT, "artifacts", "v03", "holdouts", "h3t_state.json"),
-                                False, "discovery-probe")
-        check("HLD-08 real bank early read blocked", False)
-    except PermissionError:
-        check("HLD-08 real bank early read blocked", True)
+    reveal = json.load(open(os.path.join(ROOT, "artifacts", "v03", "holdouts",
+                                         "h3t_reveal.json"), encoding="utf-8"))
+    import hashlib as _hashlib
+    digest = _hashlib.sha256(json.dumps(reveal, sort_keys=True).encode("utf-8")).hexdigest().upper()
+    check("HLD-07 H3T UNLOCKED_ONCE/1 with matching reveal (post WP-5)",
+          st.get("state") == "UNLOCKED_ONCE" and st.get("unlock_count") == 1
+          and st.get("reveal_sha256") == digest)
+    # NOTE (WP-5 lifecycle update): post-reveal, replay reads against the recorded
+    # reveal are legitimate; what must stay blocked is a SECOND unlock (STOP-30).
+    # That is covered by the HLD-06 fixture above and by re-running the Phase-15
+    # entry gate (refuses UNLOCKED_ONCE); here assert the live record is complete.
+    check("HLD-08 real bank reveal record complete (replay reads auditable)",
+          st.get("reveal_record") == "h3t_reveal.json"
+          and bool(st.get("candidate_set_hash")))
 
 
 if __name__ == "__main__":

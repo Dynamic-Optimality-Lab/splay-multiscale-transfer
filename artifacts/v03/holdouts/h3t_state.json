@@ -1,8 +1,16 @@
 {
+  "candidate_ids": [
+    "MSTC-0001",
+    "MSTC-0002",
+    "MSTC-0003"
+  ],
+  "candidate_set_hash": "8FD3273143DEC3CA4611A1093F3521B8F22DE2BBD6A82715EE270412F65A2A00",
   "commitment": {
     "logical_stream": "CB37F3D99110118F7CDD7FC62D8534918CC003CE82E0EB0BE97034B2E9E425A7",
     "total": 70000
   },
-  "state": "BANK_COMMITTED",
-  "unlock_count": 0
+  "reveal_record": "h3t_reveal.json",
+  "reveal_sha256": "FC916F06E02A39CA33C1D3B47ADC66F3CEDBD865E83042EBBB3044E4B80DFCED",
+  "state": "UNLOCKED_ONCE",
+  "unlock_count": 1
 }

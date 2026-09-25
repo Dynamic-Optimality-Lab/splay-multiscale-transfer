@@ -1,0 +1,655 @@
+{
+  "kills": [],
+  "n_kills": 0,
+  "n_trials": 54,
+  "trials": [
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 16,
+      "seed": 9016
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 16,
+      "seed": 9016
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 16,
+      "seed": 9016
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 16,
+      "seed": 9016
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 16,
+      "seed": 9016
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 16,
+      "seed": 9016
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 24,
+      "seed": 9024
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 24,
+      "seed": 9024
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 24,
+      "seed": 9024
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 24,
+      "seed": 9024
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 24,
+      "seed": 9024
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 24,
+      "seed": 9024
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 32,
+      "seed": 9032
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 32,
+      "seed": 9032
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 32,
+      "seed": 9032
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 32,
+      "seed": 9032
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 32,
+      "seed": 9032
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 32,
+      "seed": 9032
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 48,
+      "seed": 9048
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 48,
+      "seed": 9048
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 48,
+      "seed": 9048
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 48,
+      "seed": 9048
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 48,
+      "seed": 9048
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 48,
+      "seed": 9048
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 64,
+      "seed": 9064
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 64,
+      "seed": 9064
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 64,
+      "seed": 9064
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 64,
+      "seed": 9064
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 64,
+      "seed": 9064
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 64,
+      "seed": 9064
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 96,
+      "seed": 9096
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 96,
+      "seed": 9096
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 96,
+      "seed": 9096
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 96,
+      "seed": 9096
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 96,
+      "seed": 9096
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 96,
+      "seed": 9096
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 128,
+      "seed": 9128
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 128,
+      "seed": 9128
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 128,
+      "seed": 9128
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 128,
+      "seed": 9128
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 128,
+      "seed": 9128
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 128,
+      "seed": 9128
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 192,
+      "seed": 9192
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 192,
+      "seed": 9192
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 192,
+      "seed": 9192
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 192,
+      "seed": 9192
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 192,
+      "seed": 9192
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 192,
+      "seed": 9192
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "RANDOM_LEGAL",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 256,
+      "seed": 9256
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "SPINE_VS_BALANCED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 256,
+      "seed": 9256
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "OPPOSITE_SPINE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 256,
+      "seed": 9256
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "ALTERNATING_KEEP_DELETE",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 256,
+      "seed": 9256
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "DELETE_BURST_THEN_KEEP",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 256,
+      "seed": 9256
+    },
+    {
+      "agree": true,
+      "calculus_id": "MSTC-0002",
+      "feasible": true,
+      "kind": "MIRROR_PAIRED",
+      "max_res": [
+        0,
+        1
+      ],
+      "n": 256,
+      "seed": 9256
+    }
+  ]
+}

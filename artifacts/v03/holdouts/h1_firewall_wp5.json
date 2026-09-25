@@ -1,0 +1,10 @@
+{
+  "bank_id": "HOLDOUT-H1-v0.1",
+  "candidate_ids": [
+    "MSTC-0001",
+    "MSTC-0002",
+    "MSTC-0003"
+  ],
+  "candidate_set_hash": "8FD3273143DEC3CA4611A1093F3521B8F22DE2BBD6A82715EE270412F65A2A00",
+  "contents_revealed": false
+}

@@ -1,0 +1,13 @@
+{
+  "bank_id": "HOLDOUT-H2R-v0.1",
+  "candidates": [
+    "MSTC-0001",
+    "MSTC-0002",
+    "MSTC-0003"
+  ],
+  "firewall_after": "BANK_COMMITTED",
+  "fresh_claim": false,
+  "n_episodes": 0,
+  "reason": "bank bytes in sealed parent custody, never vendored; firewall BANK_COMMITTED/unlocks=0 preserved; no fabrication",
+  "verdict": "FRESH_H2R_NOT_APPLICABLE"
+}

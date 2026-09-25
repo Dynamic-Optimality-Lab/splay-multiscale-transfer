@@ -129,9 +129,9 @@ Per WorkPlan.md §WP-3 (spec PHASE 07/08/09; MST0-10/11). `firewall.py` skeleton
 
 Per WorkPlan.md §WP-4 (spec PHASE 10/11/12/13; MST0-09/12). This is the "training" WP: dev-only synthesis with the brutal entirely-different-test battery defined in WorkPlan. No solver code, no hypotheses, no residuals exist yet. Adherence verdict to be recorded when executed.
 
-## WP-5 — Freeze candidates + fresh holdouts + clean-room/large-n [PENDING — entry: dev-zero-violations @ frozen C]
+## WP-5 — Freeze candidates + fresh holdouts + clean-room/large-n [FINISHED — TRANSFER_CALCULUS_FROZEN + 1/3 H3T survivors + clean-room/large-n falsification survived by MSTC-0002; ceiling TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS (standing MSTC-0002); MST0-22/25 UNPROVED-setup by design]
 
-Per WorkPlan.md §WP-5 (spec PHASE 14/15/16; MST0-22/25). No frozen calculi, no reveals, no clean-room exist yet. Fresh banks untouched. Adherence verdict to be recorded when executed.
+Per WorkPlan.md §WP-5 (spec PHASE 14/15/16; MST0-22/25). This was the one-way validation stage: dev shortlist frozen before any fresh reveal, each compatible bank consumed exactly once in schema order, then clean-room + large-n murder attempts. No candidate was mutated after seeing fresh data under the same ID.
 
 ## WP-6 — Universal proof + bridge/negative + seal [PENDING — entry: TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS or direct proof trigger]
 
@@ -649,6 +649,138 @@ unblocked (shortlist of 3 dev hypotheses with zero dev violations at frozen C).
 
 ---
 
+## WP-5 EXECUTION RECORD (2026-09-25, this turn): Phase 5 implemented exactly as written
+
+Language note: the repo is Python, so "console.log at every step" is implemented as
+`print()` console lines, each tagged `[WP5-STEP-0x]` and preceded by a `# WP5-STEP-0x:`
+identifying comment. Table (file:line verified by read this turn):
+
+| Step | Meaning | Console lines (file:line) |
+|---|---|---|
+| 00 | Gate orchestration plan/PASS/FAIL | scripts/run_phase14.py:137,140,144; scripts/run_phase15.py:304,307,311,316; scripts/run_phase16.py:287,290,297; step_entry run_phase14.py:32,66; run_phase15.py:43,66; run_phase16.py:34,47 |
+| 01 | Eligibility audit + frozen construction | python/freeze/candidates.py:18,25,38,115,154,203; scripts/run_phase14.py:71,90 |
+| 02 | Candidate-set commitment + firewall FROZEN + ID binding | python/freeze/candidates.py:208,223,234,239,254; scripts/run_phase14.py:96,114,124 |
+| 03 | H1/H2R routing (schema + custody, no bank reads) | python/holdout/h1_evaluate.py:22,30; python/holdout/h2r_evaluate.py:24,35; scripts/run_phase15.py:105,121 |
+| 04 | H3T full exact evaluation (every episode) | python/holdout/h3t_evaluate.py:30,56,72,123,153; scripts/run_phase15.py:126,146,182,203 |
+| 05 | Independent replay of every fresh counterexample | scripts/run_phase15.py:208,254,263,272,281,284,288,291 |
+| 06 | Clean-room agreement battery | python/audit/cleanroom.py:20,46,100,148,157,175; scripts/run_phase16.py:52,106 |
+| 07 | Large-n sweep (exact-replayed kills only) | python/adversary/large_n.py:30,53,86,118; scripts/run_phase16.py:118,138 |
+| 08 | Eight mutation controls (must-catch) | scripts/run_phase16.py:150,191 |
+
+### Implementation inventory (all new unless noted; rewrites are WP-5-owned stubs)
+- Freeze: `python/freeze/__init__.py`, `python/freeze/candidates.py` (FROZEN_PREDICATES
+P_all/P_keep verbatim; `build_frozen` full §15 metadata + 8-component proof outline with
+stated gaps; `validate_eligibility` 12 machine checks fail-closed; `commit_set` canonical
+set hash; `load_frozen` record-bound (P,k,C) with `check_frozen_binding` TR-11/HLD-11
+refusal). STEP-01/02 lines: `candidates.py:18,25,38,115,154,203,208,223,234,239,254`.
+- Evaluators (frozen-calculus-only imports; AST-audited, no transfer/solver/discovery/
+adversary/generator imports): `python/holdout/h1_evaluate.py` (causal-needs-history vs
+EMPTY state-pair store → FRESH_H1_NOT_APPLICABLE, firewall EMPTY), `h2r_evaluate.py`
+(schema-compatible but bytes in sealed parent custody, never vendored → no fabrication →
+FRESH_H2R_NOT_APPLICABLE, firewall BANK_COMMITTED/0), `h3t_evaluate.py` (separately
+written rotation primitive + keyed-shape parser + T7/T5/T6 loop from the frozen record;
+terminal B-rotation carries (a_edge,y_edge); replay totals asserted). STEP-03/04 lines
+as tabled.
+- Clean-room: `python/audit/cleanroom.py` (stdlib only; fresh keyed parser with 1..n key
+validation, fresh dict-state BST splay with rotation guard, pool-count-exact ledger
+semantics; zero python/ imports, STOP-32). STEP-06 lines as tabled.
+- Large-n: `python/adversary/large_n.py` (fresh WP5-LARGEN seeds, 9 sizes × 6 kinds,
+primary evaluation + clean-room replay per trial, kills only if agree). STEP-07 lines.
+- Runners: `scripts/run_phase14.py` (REAL: STEP-00/01/02 freeze + FROZEN transition),
+`run_phase15.py` (REAL: STEP-00 audit+gates, STEP-03 routing, STEP-04 full H3T +
+UNLOCKED_ONCE, STEP-05 replay incl. `--replay-only` crash-recovery with no firewall
+change), `run_phase16.py` (REAL: STEP-00/06/07/08 + ceiling, at most finite survival).
+- Records: `artifacts/v03/hypotheses/MSTC-0001/2/3.json` (frozen, §15 metadata),
+`candidate_set_commit.json` (set_hash `8FD3273143DEC3CA…`), `h1/h2r/h3t_reveal.json`,
+`h3t_replay.json`, `h1/h2r_firewall_wp5.json`, `h3t_state.json`
+(FROZEN → UNLOCKED_ONCE/1 + reveal hash), `cleanroom/agreement.json`,
+`adversarial/large_n_wp5.json`, `adversarial/mutants_wp5.json`,
+`freeze/PHASE16_WP5_CEILING.json`, `TRANSFER_CALCULUS_LEDGER.md` (draft),
+`math/theorem_MST22_constant_independence.md` + `theorem_MST25_holdout_scope.md`
+(setup records, UNPROVED by design), `tests/holdout/test_wp5_holdout.py` (HLD-01…12),
+`tests/proof/test_holdout_scope.py` (PR-05/06/08/10/11/12/14 holdout analogues),
+`tests/test_wp5.py` (3-path agreement, firewall pins, menu/C domains, determinism).
+
+### Benchmarks (all exact; training: nothing new — candidates frozen)
+- H3T fresh (70,000 episodes, 7 sizes × 11 strata, every episode exactly):
+MSTC-0001 (P_all,k=2,C=2) FRESH_H3T_FAIL (max_res=8; first n=32 idx 4406, w=11 paid 9
+res 2, edge a=1/y=13); MSTC-0002 (P_all,k=6,C=2) FRESH_H3T_PASS (max_res=0, 70k/70k);
+MSTC-0003 (P_keep,k=1,C=6) FRESH_H3T_FAIL (max_res=23; first n=16 idx 3610, w=8 paid 7
+res 1, edge a=1/y=14). Paid<=injected holds on all three (PR-05-holdout).
+Minimal-k/dev-narrow survival did not transfer; headroom (k=6) did at C=2.
+- H1 FRESH_H1_NOT_APPLICABLE (0 episodes; causal ledgers need histories absent from
+EMPTY state-pair storage, spec S14.2). H2R FRESH_H2R_NOT_APPLICABLE (0 episodes;
+bytes in sealed parent custody, never vendored; firewall preserved; no fabrication).
+- Independent replay (STEP-05): 16 checks (2 first-violations + 14 zero-violation
+stratified samples), all agree primary==clean-room.
+- Clean-room battery (STEP-06): 27 checks (21 H3T-stratified + 6 synthetic), 0
+disagreements. Large-n (STEP-07): 54 trials (9 sizes 16…256 × 6 kinds), 0
+exact-replayed kills on the standing survivor. Mutants (STEP-08): 8/8 CAUGHT
+(sign/scale→eligibility-refusal; predicate/zig→menu-refusal; output→residual-difference;
+coefficient/mapping→identity-discipline; C→binding-refusal).
+- Entirely-different-test argument: H3T distributions/sizes/histories disjoint from
+synthesis; large-n sizes beyond development; clean-room third implementation from math
+alone; one unlock, no adaptation, new-ID-on-edit, mutation-caught suites.
+
+### Compliance audit vs WorkPlan WP-5
+- Scope: ≤3 frozen (exactly 3, complexity order kept); §15 metadata + universal C per
+candidate (conservative diagnostic anchors 2/2/6); proof outlines with stated gaps
+(MST0-08 universal blocked, MST0-13/14/15/22/25 UNPROVED — solver-only promotion
+refused by outline requirement); set hashed before any reveal; schema-order reveal
+(causal: H2R → H3T; H1 routed NOT_APPLICABLE per S14.2 compatibility rule); no mutation
+inside evaluation (post-reveal edits mint new IDs). VERDICT: compliant.
+- Files: every listed file exists (hypotheses + commit; h1/h2r/h3t reveals with truthful
+reveal-state labels; 3 evaluators; cleanroom; large_n; HLD-01…12 + PR holdout-scope
+suites; ledger draft). Extras (`h3t_replay.json`, `*_firewall_wp5.json`, MST22/25 setup
+docs, `--replay-only` recovery) justified as replay evidence / metadata-without-reveal /
+setup records / crash-recovery with no firewall change. VERDICT: compliant.
+- Code: eligibility 12/12 machine checks; (P,k,C) record-bound (TR-13); terminal-carry
+convention mirrored exactly (incl. root-access burden loss); Fraction residuals;
+first/max violations canonical; replay bundles (episode locator + edge + pool sizes +
+event trace); clean-room stdlib-only (AST-audited, STOP-32); large-n exact-replay-only
+kills; 8 mutants all caught (LED-10/TR-13). VERDICT: compliant.
+- Benchmarks/anti-overfit: firewall is the control (one freeze, one unlock, HLD-11
+hash continuity, STOP-30/31 enforced and re-run-tested, STOP-32 audited). VERDICT:
+compliant.
+- Gates: TRANSFER_CALCULUS_FROZEN + FRESH_H1_NOT_APPLICABLE + FRESH_H2R_NOT_APPLICABLE
++ FRESH_H3T_{FAIL,PASS,FAIL} + ceiling TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS
+(standing MSTC-0002; survival ≠ theorem). MST0-22/25 UNPROVED-setup (no verdicts
+requested; first consumer WP-6). 10/26 obligations REVIEWED (unchanged).
+VERDICT: compliant.
+
+### Gaps found and closed (all before calling the phase finished)
+clean-room rotation-verification gap (shared dev primitive would have been a discovery
+import → separately-written primitive + keyed parser; found during smoke, fixed);
+keyed-vs-unkeyed shape confusion (bank keyed vs dev unkeyed grammars → dedicated keyed
+parser in evaluator + 1..n key validation + splay guard in clean-room; unkeyed inputs
+fail closed instead of hanging); Fraction-vs-list comparison bug (primary Fractions vs
+clean-room [num,den] → normalized comparisons in 4 files; crashed STEP-05 post-reveal →
+completed via `--replay-only` recovery: replay record only, no firewall/reveal change,
+no second unlock); eligibility self-hit (record prose matched its own forbidden-token
+scan → prose reworded + scan kept strict); burden-free mini-corpus (mutant M4 could not
+discriminate → hot-key spine corpus with proven paid>0); stale post-reveal expectations
+in WP-3/WP-4-era checks (HLD-07/08 real-bank asserts, WP4STRESS-FW pin, STEP-10
+allowlist → lifecycle-aware updates with trajectory + hash-continuity evidence, each
+logged; pre-freeze behavior preserved by fixtures + git history). Stress-found, fixed,
+logged — none silent, none deleted.
+
+### Stress (all exit 0)
+3-path agreement (primary==dev==cleanroom on 4 synthetic episodes × 2 configs),
+firewall pins (UNLOCKED_ONCE/1, H1 EMPTY, H2R COMMITTED/0, hash continuity),
+menu/C-domain refusals (5), bad-key KeyError, determinism, HLD-01…12, PR holdout-scope
+(20 checks), Phase-14/15 re-run refusal (one-freeze/one-unlock), full regression green
+(phase00/foundation/wp0stress/wp1/wp2/wp3/wp4/translation/corpus/rotations/parent/
+transfer/solver/adversary/firewall/dev-bounds + WP-5 suites).
+
+### Verdict
+WP-5 FINISHED. Gates emitted exactly as specified (with H1/H2R truthfully
+NOT_APPLICABLE under the compatibility rule: only compatible banks are used).
+No training occurred; no candidate mutated post-reveal; no second unlock; no theorem
+claimed. WP-6 entry unblocked (standing finite survivor MSTC-0002; arbitrary-n proof
+outstanding).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -662,5 +794,6 @@ unblocked (shortlist of 3 dev hypotheses with zero dev violations at frozen C).
 - 2026-09-23: Turn 10 (WP-2 EXECUTION) — Phase 2 implemented exactly: WP-2A (source extraction, 9+1 translation modules, 27-record mapping, dual agreement, mutants, MST0-03 proof, ACCEPT, freeze cert) + WP-2B (70-edge stratification, 19 motifs, n7 validation, D5, lemma battery with MST0-05 PROVED/MST0-06 killed+v2/MST0-07 PROVED/MST0-08 split, baseline shape, reports), ACCEPT all four lemma verdicts (08 scoped finite), allowlist/baseline/stub compliance fixes, full regression green. WP-2 FINISHED. Re-verified → commit+push.
 - 2026-09-23: Turn 11 (WP-3 EXECUTION) -- Phase 3 implemented exactly: provenance machinery, ledger machinery (U_R deterministic, tag-independence), transfer grammar (10 templates clean, 3 negatives caught, Branch B BLOCKED), leakage audit clean, H3T 70k bank (streams + 539 exact replays, BANK_COMMITTED, committed), freeze certs, MST0-10 conditional ACCEPT discharged and recorded, MST0-11 UNPROVED-setup. 15 suites/runners green. WP-3 FINISHED. Re-verified --> commit+push.
 - 2026-09-23: Turn 12 (WP-4 EXECUTION) -- Phase 4 implemented exactly: masks frozen (384 near-critical, sel/val splits, 120+120 histories), flow screen (worst k=1 at C=2), CEGIS(z3)+brute+ILP agree (C=2: 30/42, C>=3: 42/42), histories screen (P_all-only survival, dominance-pruned, 0 fails), shortlist 3 dev hypotheses (zero residuals, UNTOUCHED), Branch B NOT_ACTIVATED, triage 11 motifs NOT_ACTIVATED (ratios constant), battery 84/0 kills over 9 modes, 20 suites green. WP-4 FINISHED. Re-verified --> commit+push.
+- 2026-09-25: Turn 13 (WP-5 EXECUTION) -- Phase 5 implemented exactly: freeze (eligibility 12/12 ×3, MSTC-0001/2/3 + set_hash 8FD32731…, H3T BANK_COMMITTED → TRANSFER_CALCULUS_FROZEN) → fresh reveal once (H1/H2R NOT_APPLICABLE with preserved justification; H3T 70k exact: MSTC-0001 FAIL max 8, MSTC-0002 PASS 70k/70k, MSTC-0003 FAIL max 23; UNLOCKED_ONCE/1) → replay 16/16 agree → clean-room 27/27 agree → large-n 54 trials 0 kills → mutants 8/8 caught → ceiling TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS (standing MSTC-0002). Gaps closed: clean-room independence rewrite, keyed-shape parser + key/guard hardening, Fraction normalization (STEP-05 crash → --replay-only recovery, no firewall change), eligibility prose, burdened mini-corpus, lifecycle-aware WP-3/WP-4-era checks + STEP-10 allowlist. All suites + full regression green. WP-5 FINISHED. Re-verified --> commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); all repairs logged per turn, none silent.

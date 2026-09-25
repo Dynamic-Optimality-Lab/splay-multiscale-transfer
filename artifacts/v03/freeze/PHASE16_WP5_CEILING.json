@@ -1,0 +1,8 @@
+{
+  "ceiling": "TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS",
+  "killed_large_n": [],
+  "note": "finite-sample survival across H3T + clean-room + large-n; arbitrary-n proof belongs to WP-6",
+  "standing": [
+    "MSTC-0002"
+  ]
+}

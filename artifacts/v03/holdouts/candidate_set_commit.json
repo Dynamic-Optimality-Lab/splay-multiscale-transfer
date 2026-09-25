@@ -1,0 +1,50 @@
+{
+  "candidates": [
+    {
+      "C": 2,
+      "calculus_id": "MSTC-0001",
+      "k": 2,
+      "parent_calculus": "MSTC-DEV-0001",
+      "predicate": {
+        "any_of": [
+          {
+            "mode_is": "KEEP"
+          },
+          {
+            "mode_is": "DELETE"
+          }
+        ]
+      },
+      "sha256": "A8492C949B54AAEAA55EE7DCB4B2155FC2AF9B40200A310A37F6ED9EE88420C9"
+    },
+    {
+      "C": 2,
+      "calculus_id": "MSTC-0002",
+      "k": 6,
+      "parent_calculus": "MSTC-DEV-0002",
+      "predicate": {
+        "any_of": [
+          {
+            "mode_is": "KEEP"
+          },
+          {
+            "mode_is": "DELETE"
+          }
+        ]
+      },
+      "sha256": "930EAD000A38955469EBBDE468DB166E4EA6F1FD71BBFAF87C4AF36813A1489E"
+    },
+    {
+      "C": 6,
+      "calculus_id": "MSTC-0003",
+      "k": 1,
+      "parent_calculus": "MSTC-DEV-0003",
+      "predicate": {
+        "mode_is": "KEEP"
+      },
+      "sha256": "FE56D095DADF551E989C9BFF11796E17088825F3E25C7A64A377185E5BFE10F4"
+    }
+  ],
+  "set_hash": "8FD3273143DEC3CA4611A1093F3521B8F22DE2BBD6A82715EE270412F65A2A00",
+  "status": "TRANSFER_CALCULUS_FROZEN"
+}

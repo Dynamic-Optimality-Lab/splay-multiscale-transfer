@@ -1,0 +1,199 @@
+{
+  "L6_translation_version": "L6MAP-v0.3.1",
+  "active_predicate": {
+    "any_of": [
+      {
+        "mode_is": "KEEP"
+      },
+      {
+        "mode_is": "DELETE"
+      }
+    ]
+  },
+  "branch": "RAW_BOUNDARY",
+  "calculus_id": "MSTC-0002",
+  "cancellation_rules": [],
+  "constant_policy": "frozen diagnostic C per candidate; larger-C rungs are stability readings, never hardness; theorem C belongs to WP-6 proof",
+  "credit_type_definitions": {
+    "BOUNDARY_ACTIVE": "credit eligible under the frozen predicate to pay KEEP regret",
+    "BOUNDARY_LATENT": "injected discrepancy credit, not yet payable",
+    "SPENT": "discharged credit removed from the ledger"
+  },
+  "fresh_bank_eligibility": "REPLAY_HISTORY_COMPATIBLE + TRANSFER_CALCULUS (causal ledger; histories required)",
+  "initialization": "synchronized empty ledger, energy 0",
+  "injection_rules": [
+    {
+      "bound": "k=6 per A-side rotation, interior-boundary site cycling",
+      "branch": "RAW_BOUNDARY",
+      "k": 6,
+      "match": {
+        "side_is": "A"
+      },
+      "n_independent": true,
+      "precondition": "A-side rotation",
+      "rule_id": "TR-A-T7",
+      "symmetry_behavior": "relabel-invariant",
+      "template": "T7_A_rotation_injection",
+      "trigger_event": "rotation"
+    }
+  ],
+  "integrated_energy_definition": "E(L) = count(BOUNDARY_LATENT) + count(BOUNDARY_ACTIVE); unit masses",
+  "lower_bound_claim": "unsigned masses imply E(L) >= 0 for every legal ledger; E(empty) = 0",
+  "ontology_version": "MST-ONTOLOGY-v0.3",
+  "parent_calculus": "MSTC-DEV-0002",
+  "proof_obligations": [
+    "MST0-09",
+    "MST0-13",
+    "MST0-14",
+    "MST0-15",
+    "MST0-22"
+  ],
+  "proof_outline": [
+    {
+      "claim": "one A reference-tree rotation moves O(1) boundary support",
+      "component": "reference rotation locality",
+      "evidence": "MST0-08 REVIEWED scoped finite (exhaustive n<=6 bounds flips<=2/gap<=2); arbitrary-n UNPROVED",
+      "status": "FINITE_PROVED_UNIVERSAL_BLOCKED"
+    },
+    {
+      "claim": "DELETE/A-only restructuring injects at most k=6 per A-rotation",
+      "component": "injection",
+      "evidence": "construction holds by site-cycling definition; universal bound is MST0-13 (WP-6)",
+      "status": "DEV_EXACT_UNPROVED_UNIVERSAL"
+    },
+    {
+      "claim": "B zig-zig rotations conserve the boundary packet up to activation",
+      "component": "zig-zig transfer",
+      "evidence": "MST0-06 REVIEWED (natural form FALSE_AS_STATED with witnesses; conditional v2 PROVED)",
+      "status": "CONDITIONAL_PROVED"
+    },
+    {
+      "claim": "B zig-zag rotations expose bends payable by active credit",
+      "component": "zig-zag/bend payment",
+      "evidence": "MST0-07 REVIEWED (816/816 destroy >=1 bend)",
+      "status": "PROVED_FINITE"
+    },
+    {
+      "claim": "predicate P_all activates exactly the burdened boundary packet",
+      "component": "boundary event handling",
+      "evidence": "zero dev residuals at C=2; universal statement is MST0-14 (WP-6)",
+      "status": "DEV_EXACT_UNPROVED_UNIVERSAL"
+    },
+    {
+      "claim": "E(L) >= 0 along every legal execution",
+      "component": "lower bound / nonnegativity",
+      "evidence": "Branch A uses unsigned unit masses; no signed component exists",
+      "status": "HOLDS_BY_CONSTRUCTION"
+    },
+    {
+      "claim": "local rules telescope into an execution energy without path dependence",
+      "component": "integrability",
+      "evidence": "MST0-15 belongs to WP-6; finite ledgers are append-ordered and deterministic",
+      "status": "UNPROVED"
+    },
+    {
+      "claim": "Splay(Y)+E_m-E_0 <= C*Splay(X) with C=2, A(n)=0",
+      "component": "telescoping",
+      "evidence": "requires MST0-13/14/15 REVIEWED (WP-6); finite survival is not a theorem",
+      "status": "UNPROVED"
+    }
+  ],
+  "reference_snapshot_convention": "KEEP_REF_SNAPSHOT-v1",
+  "repayment_rules": [
+    {
+      "branch": "RAW_BOUNDARY",
+      "consume": [
+        {
+          "type": "BOUNDARY_ACTIVE"
+        }
+      ],
+      "match": {
+        "mode_is": "KEEP"
+      },
+      "n_independent": true,
+      "precondition": "KEEP edge with w>0",
+      "produce": [
+        {
+          "mass": [
+            1,
+            1
+          ],
+          "provenance": "PAID_REGRET",
+          "scale": [
+            "S0",
+            0
+          ],
+          "support": [
+            "key",
+            0
+          ],
+          "type": "SPENT"
+        }
+      ],
+      "repayment": "min(pool, w) with w = y - C*a exact",
+      "rule_id": "TR-A-T6",
+      "symmetry_behavior": "relabel-invariant",
+      "template": "T6_repayment",
+      "trigger_event": "rotation"
+    }
+  ],
+  "scale_definitions": {
+    "level": 0,
+    "note": "single dyadic size scale; n-independent form",
+    "system": "S0"
+  },
+  "schema_version": "MST-CALCULUS-v0.3",
+  "status": "FROZEN_PRE_REVEAL",
+  "support_definitions": {
+    "form": [
+      "boundary",
+      "i",
+      "i+1",
+      "orientation"
+    ],
+    "note": "interior interval boundaries only; no per-state/per-cycle/per-bank identity",
+    "orientation": "LEFT|RIGHT relative to the accessed key"
+  },
+  "transfer_rules": [
+    {
+      "branch": "RAW_BOUNDARY",
+      "consume": [
+        {
+          "type": "BOUNDARY_LATENT"
+        }
+      ],
+      "match": {
+        "any_of": [
+          {
+            "mode_is": "KEEP"
+          },
+          {
+            "mode_is": "DELETE"
+          }
+        ]
+      },
+      "n_independent": true,
+      "precondition": "frozen predicate fires on the current rotation event",
+      "produce": [
+        {
+          "mass": [
+            1,
+            1
+          ],
+          "provenance": "B_ZIGZAG_EXPOSED",
+          "scale": [
+            "S0",
+            0
+          ],
+          "support": "inherit",
+          "type": "BOUNDARY_ACTIVE"
+        }
+      ],
+      "rule_id": "TR-A-T5",
+      "symmetry_behavior": "relabel-invariant",
+      "template": "T5_boundary_activation",
+      "trigger_event": "rotation"
+    }
+  ],
+  "universal_constant_C": 2
+}

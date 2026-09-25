@@ -156,8 +156,16 @@ AUTHORIZED_NAMESPACES = {
     "transfer_grammar/": "WP-4 frozen grammar inputs (copies, prereg untouched)",
     "solver/": "WP-4 solver records (backend freeze, assignments, certificates)",
     "hypotheses/": "WP-4 dev transfer hypotheses (never fresh-tested; new-ID discipline)",
-    "adversarial/": "WP-4 adversarial families + counterexample records",
+    "adversarial/": "WP-4 adversarial families + counterexample records (WP-5 large-n/mutants share it)",
     "proofs/obligation_status.json": "WP-1 derived obligation statuses (recomputed, never frozen)",
+    "cleanroom/": "WP-5 Phase-16 clean-room agreement records (post-freeze falsification)",
+    "holdouts/candidate_set_commit.json": "WP-5 Phase-14 candidate-set commitment (freeze record)",
+    "holdouts/h1_firewall_wp5.json": "WP-5 Phase-14 H1 candidate-set metadata (no contents revealed)",
+    "holdouts/h2r_firewall_wp5.json": "WP-5 Phase-14 H2R candidate-set metadata (no contents revealed)",
+    "holdouts/h1_reveal.json": "WP-5 Phase-15 H1 routing record (one-unlock reveal set)",
+    "holdouts/h2r_reveal.json": "WP-5 Phase-15 H2R routing record (one-unlock reveal set)",
+    "holdouts/h3t_reveal.json": "WP-5 Phase-15 H3T reveal record (one-unlock reveal set)",
+    "holdouts/h3t_replay.json": "WP-5 Phase-15 independent-replay record (one-unlock reveal set)",
 }
 DENIED_UNTIL_AUTHORIZED = ("seal/FINAL_RESULT.json",)
 # Note: hypotheses/, solver/, transfer_grammar/ were denied pending WP-4 and are now

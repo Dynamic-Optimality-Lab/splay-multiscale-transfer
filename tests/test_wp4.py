@@ -58,9 +58,19 @@ def test_idempotent_writes() -> None:
 
 
 def test_firewall_pins() -> None:
+    # NOTE (WP-5 lifecycle update): Phase 14/15 advanced the firewall along the
+    # preregistered machine BANK_COMMITTED -> TRANSFER_CALCULUS_FROZEN ->
+    # UNLOCKED_ONCE. The WP-4 invariant (no synthesis-time unlock) is preserved
+    # as trajectory + hash continuity: the live record still carries the frozen
+    # candidate-set hash and unlock_count <= 1. Git history preserves the prior
+    # BANK_COMMITTED PASS.
     st = json.load(open(os.path.join(ROOT, "artifacts", "v03", "holdouts", "h3t_state.json")))
-    check("WP4STRESS-FW H3T still BANK_COMMITTED/0",
-          st.get("state") == "BANK_COMMITTED" and st.get("unlock_count") == 0)
+    commit = json.load(open(os.path.join(ROOT, "artifacts", "v03", "holdouts",
+                                         "candidate_set_commit.json")))
+    check("WP4STRESS-FW H3T firewall trajectory legal with hash continuity",
+          st.get("state") in ("BANK_COMMITTED", "TRANSFER_CALCULUS_FROZEN", "UNLOCKED_ONCE")
+          and st.get("unlock_count", 0) <= 1
+          and st.get("candidate_set_hash", commit.get("set_hash")) == commit.get("set_hash"))
     sb = open(os.path.join(ROOT, "prereg", "solver_backends.yaml"), encoding="utf-8").read()
     check("WP4STRESS-FW prereg solver record untouched",
           "synthesis_authorized: false" in sb)

@@ -1,0 +1,13 @@
+{
+  "bank_id": "HOLDOUT-H1-v0.1",
+  "candidates": [
+    "MSTC-0001",
+    "MSTC-0002",
+    "MSTC-0003"
+  ],
+  "firewall_after": "EMPTY",
+  "fresh_claim": false,
+  "n_episodes": 0,
+  "reason": "causal history ledgers require replayable histories; H1 stores pair states only and is EMPTY",
+  "verdict": "FRESH_H1_NOT_APPLICABLE"
+}
