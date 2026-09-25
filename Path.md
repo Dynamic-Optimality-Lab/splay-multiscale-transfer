@@ -133,9 +133,9 @@ Per WorkPlan.md §WP-4 (spec PHASE 10/11/12/13; MST0-09/12). This is the "traini
 
 Per WorkPlan.md §WP-5 (spec PHASE 14/15/16; MST0-22/25). This was the one-way validation stage: dev shortlist frozen before any fresh reveal, each compatible bank consumed exactly once in schema order, then clean-room + large-n murder attempts. No candidate was mutated after seeing fresh data under the same ID.
 
-## WP-6 — Universal proof + bridge/negative + seal [PENDING — entry: TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS or direct proof trigger]
+## WP-6 — Universal proof + bridge/negative + seal [FINISHED — MST0-13 PROVED (author claim, review requested) + 23/24/26 PROVED (review requested) + 14/15 UNPROVED + 17/18/19 BLOCKED + 12/20/21 NOT_APPLICABLE; lifecycle 10/4/3/3/6 with 0 jumps; terminal seal TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS; archive + reproduce green]
 
-Per WorkPlan.md §WP-6 (spec PHASE 17/18/19; MST0-13/14/15/17/18/19/20/21). No proofs beyond stubs; no FINAL_RESULT; no archive. Adherence verdict to be recorded when executed.
+Per WorkPlan.md §WP-6 (spec PHASE 17/18/19; MST0-13/14/15/17/18/19/20/21). Stop-mining observed throughout (no synthesis module imported or executed by any WP-6 code path). Exactly one primary promoted (MSTC-0002). No universal KEEP/PA/bridge/negative theorem claimed; no finite result upgraded. Adherence verdict recorded in the execution record below.
 
 ---
 
@@ -781,6 +781,154 @@ outstanding).
 
 ---
 
+## WP-6 EXECUTION RECORD (2026-09-25, this turn): Phase 6 implemented exactly as written
+
+Language note: the repo is Python, so "console.log at every step" is implemented as
+`print()` console lines, each tagged `[WP6-STEP-0x]` and preceded by a `# WP6-STEP-0x:`
+identifying comment. Table (file:line verified by read this turn):
+
+| Step | Meaning | Console lines (file:line) |
+|---|---|---|
+| 00 | Gate orchestration plan/PASS/FAIL | scripts/run_phase17.py:184,187,191,195; run_phase17 step_entry 56,72; scripts/run_phase18.py:173,177,182,185; run_phase18 step_entry 43,55; scripts/run_phase19.py:141,144; run_phase19 step_entry 28,39,41 |
+| 01 | Universal-record presence audit | scripts/run_phase17.py:30,77,107 |
+| 02 | MST0-13 machine evidence (supporting only) | scripts/run_phase17.py:113,152 |
+| 03 | Lifecycle audit + bundles | python/audit/lifecycle.py:24,32,79; scripts/run_phase17.py:157,178,195 |
+| 04 | Bridge/negative audit | scripts/run_phase18.py:20,60,102 |
+| 05 | Report verification (Q01–Q40 + discipline) | scripts/run_phase18.py:34,38,107,125 |
+| 06 | Ledger/atlas finalization (idempotent) | scripts/run_phase18.py:130,145,147,166,168 |
+| 07 | FINAL_RESULT (exactly one level) | python/seal/finalize.py:37,58,116; scripts/run_phase19.py:45,57 |
+| 08 | Freeze roll-forward + audits + manifest | python/seal/finalize.py:121,130,168,182,241,264,286,305,333,384,414; scripts/run_phase19.py:61,83 |
+| 09 | Deterministic archive + rebuild compare | python/seal/finalize.py:187,236; scripts/run_phase19.py:109,120 |
+| 10 | Fresh-checkout reproduction | scripts/run_phase19.py:125,131,134,153 |
+
+### Implementation inventory (all new unless noted)
+- Universal records: `math/theorem_MST13_delete_injection.md` (arbitrary-n proof:
+E_after−E_before ≤ 6·cost_A(D) via rotations≤cost + bounded T7 + conserving T5 +
+inapplicable T6; case-complete ROOT/ZIG/LL/RR/LR/RL; no finite premise; author
+PROVED, review requested), `theorem_MST14_keep_repayment.md` + `theorem_MST15_
+integrability.md` (UNPROVED status records with evidence/gaps), `theorem_MST17_
+pair_access.md`/`MST18_telescoping.md`/`MST19_bridge.md` (BLOCKED docs + convention
+checklist NOT_REACHED) + `math/reviews/MST0-17/18/19.BLOCKED` markers,
+`theorem_MST20_negative_guard.md` (renamed to gate-matrix filename;
+NOT_APPLICABLE) + `theorem_MST21_negative_family.md` (NOT_APPLICABLE) +
+`math/reviews/MST0-12/20/21.not_applicable.json` justifications,
+`theorem_MST23_finite_integrability_guard.md`/`MST24_branch_scope.md`/`MST26_
+literature_scope.md` (guard/scope PROVED records), MST12 NOT_APPLICABLE addendum,
+MST09 fresh-outcome addendum, 4 PENDING review packages (13/23/24/26 with theorem
+SHAs), 11 superseded stubs deleted (logged). STEP-01 lines as tabled.
+- Lifecycle: `python/audit/lifecycle.py` (0 jumps + every-status-pointer audit →
+`proofs/lifecycle_audit.json` + 26 `proofs/bundles/`); `python/audit/status.py`
+extended with NOT_APPLICABLE derivation (justification-gated, fail-closed;
+WP-1 file, additive); Phase-17 refreshes the live derived view and asserts
+coincidence with the audit. `math/proof_status.json` intentionally unmodified
+(normative freeze entry, STOP-05). STEP-03 lines as tabled.
+- Bridge/negative: `artifacts/v03/audits/bridge_negative_audit.json` (G16
+PROVED-pending-review, G17–21 NOT_REACHED, NEG-01…08 vacuous-with-evidence,
+exactly-one-finite-branch verified). STEP-04 lines as tabled.
+- Reports: `MULTISCALE_TRANSFER_REPORT.md` (Q01–Q40 answered explicitly),
+`THEOREM_STATUS_REPORT.md` (26-row ledger + gates + human actions),
+`REPRODUCIBILITY.md` (one-unlock reproduction contract), `AI_USE.md` (INV-065
+disclosure); `TRANSFER_CALCULUS_LEDGER.md` FINAL seal section + `COUNTEREXAMPLE_
+ATLAS.md` fresh-kills section (idempotent, marker-guarded); KEEP/L6 atlases left
+byte-identical (complete WP-2 deliverables). STEP-05/06 lines as tabled.
+- Seal: `python/seal/finalize.py` (terminal recompute validator; FINAL_RESULT
+from artifacts; working-tree inventory with forward slashes; 424-file manifest;
+deterministic tar.zst + sidecar + pure rebuild compare; threat/stop/invariant/
+test/arithmetic/resource audits) + `scripts/run_phase17/18/19.py` (REAL) +
+`scripts/reproduce_all_v0.3.py` extended (9 gates, REPRODUCE_ALL: PASS) +
+`tests/seal/test_seal.py` (SEAL-01…12) + `tests/proof/test_pr.py` (PR-01…14 +
+NEG analogues) + `tests/mutation/test_seal_mutants.py` (5 must-catch) +
+allowlist entries (proofs/lifecycle+evidence+bundles, audits/) + stub-list
+lifecycle updates (14–19 all real; 19 idempotent byte-identical). STEP-07…10
+lines as tabled.
+
+### Benchmarks (no training; the proof itself + reproduction + audits)
+- Lifecycle: 10 REVIEWED / 4 PROVED (13/23/24/26 author-claims, reviews
+requested, none consumed) / 3 NOT_APPLICABLE (12/20/21 justified) / 3 BLOCKED
+(17/18/19 prerequisite-pointed) / 6 UNPROVED (09/11/14/15/22/25) = 26/26, 0
+jumps, every status pointer-carrying.
+- MST0-13 machine evidence: 18/18 fresh-sample checks `injected ≤ k·R_A` hold
+(all three frozen candidates, supporting only).
+- Seal: FINAL_RESULT terminal `TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS`
+(regeneration-identical); manifest 424 files; archive 426 members / 16.9 MB /
+rebuild byte-identical; reproduce exit 0; SEAL 12/12, PR 14+NEG green, mutants
+5/5 caught; threats 90/90 + stops 50/50 exact; invariants 70/70 defined;
+decision modules float-free (7 benign non-decision hits dispositioned); no
+resource failure in any WP (§26.7 record).
+- Entirely-different-test closure: the seal verifies commitments/hashes/gates
+and recomputes what one-unlock semantics permit (replay/replay-bundles/
+clean-room/large-n spots); banks are never re-unlocked (re-run refusal proven).
+
+### Compliance audit vs WorkPlan WP-6
+- Scope: stop-mining honored (WP-6 imports no synthesis; runners assert entry
+gates); at most one primary promoted (MSTC-0002); well-definedness/locality/
+injection/zig-zig/zig-zag/boundary/lower-bound/integrability/telescope addressed
+as PROVED (13, with review requested) or explicitly open (08-universal/14/15) —
+nothing asserted without argument; bridge audited-as-checklist (BLOCKED, L2/L3
+bytes pending, premise use refused); negative path closed as NOT_ACTIVATED with
+N1–N5 + STOP-34/35 evidence (no family, no form, no claim); seal from artifacts
+only with exactly one terminal level; deterministic archive with shard +
+logical-stream hashes; failed artifacts retained (STOP-48 honored).
+VERDICT: compliant.
+- Files: every listed file exists (theorem docs 13–26 per gate-matrix filenames;
+lifecycle + bundles; audits/; seal/{FINAL_RESULT,MANIFEST,ARCHIVE+tar.zst};
+8 reports; reproduce; SEAL/PR/mutation suites). `math/proof_status.json`
+deliberately unmodified — normative freeze entry (STOP-05); the final lifecycle
+audit lives in `proofs/lifecycle_audit.json` + refreshed derived view, with
+coincidence asserted machine-side. Extras (bridge_negative_audit, MST13
+evidence, review packages, --temper-proof validators) justified as audit
+evidence. VERDICT: compliant with the one documented placement resolution.
+- Code: exact arithmetic in decisions (audited); case-complete proof record
+(ROOT/ZIG/LL/RR/LR/RL + T7/T5/T6 exhaustive); no finite premise (machine
+negation-context scan); no hidden n-dependence (interval-relative sites);
+additive term absent and stated (A(n)=0 targeted, unreached); C from frozen
+record, independence unclaimed (MST0-22 setup). VERDICT: compliant.
+- Benchmarks/anti-overfit: STOP-36 (no finite premise), STOP-37/38 (case
+coverage in MST13 + lemma docs), STOP-39 (n-independence), STOP-40/41/42
+(integrability/lower-bound/partition status honestly open or held),
+STOP-43/44/45 (bridge audit recorded BLOCKED, not passed), threat/stop/test/
+invariant audits green. VERDICT: compliant.
+- Gates: terminal exactly `TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS`
+(G16 PROVED-pending-review not consumed; G17–21 NOT_REACHED). Exactly one
+theorem-facing branch active: none (finite branch only). VERDICT: compliant.
+
+### Gaps found and closed (all before calling the phase finished)
+gate-matrix filename for MST0-20 (`negative_guard`, renamed, logged); status.py
+NOT_APPLICABLE pathway missing (added justification-gated derivation + 3
+justifications); stale derived obligation view (Phase-17 refreshes + asserts
+coincidence); arithmetic-audit self-match on its own pattern literal
+(SCAN-EXEMPT); seal inventory pre-commit skew (working-tree inventory:
+HEAD-tracked minus disk-deleted plus untracked); manifest/archive shifting
+sets (single-inventory member flow + seal-envelope exclusion + forward
+slashes); audit self-pollution across runs (derived outputs excluded from
+reference corpora); persisted wall-timings breaking byte-determinism (console
+only) + self-referential size walk (inputs only); proof-check naive scans
+(negation-context matching, hyphenated checklist keys, doc-language-aware case
+checks); wp0stress/allowlist/firewall/WP4-pin lifecycle updates for the sealed
+state (trajectory + hash-continuity evidence); freeze roll-forward for living
+trackers with protected-entry stability gate (23 stable, Path.md rolled).
+Stress-found, fixed, logged — none silent, none deleted.
+
+### Stress (all exit 0)
+Phase-17/18/19 PASS; lifecycle re-derivation clean; injection evidence 18/18;
+HLD-01…12 + PR holdout-scope + 3-path agreement + firewall pins re-green;
+SEAL-01…12; PR-01…14 + NEG analogues; 5 seal mutants caught; phase19 re-run
+byte-identical (seal determinism); full regression green (phase00/foundation/
+wp0stress/wp1/wp2/wp3/wp4/wp5/translation/corpus/rotations/parent/transfer/
+solver/adversary/firewall/dev-bounds/holdout/proof/seal/mutation + reproduce).
+
+### Verdict
+WP-6 FINISHED. Terminal seal `TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS`
+(standing MSTC-0002). No theorem claimed beyond 4 author-claim records awaiting
+human review (13/23/24/26, none consumed); all other obligations REVIEWED (10),
+NOT_APPLICABLE (3, justified), BLOCKED (3, prerequisite-pointed), or UNPROVED
+(6, evidenced). Archive sealed + reproduced. The experiment is complete:
+finite transfer discovery with exact obstructions preserved, universal proof
+program open with defined pending actions (human reviews; MST0-14/15/08-U
+research, none queued, none claimed).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -796,4 +944,5 @@ outstanding).
 - 2026-09-23: Turn 12 (WP-4 EXECUTION) -- Phase 4 implemented exactly: masks frozen (384 near-critical, sel/val splits, 120+120 histories), flow screen (worst k=1 at C=2), CEGIS(z3)+brute+ILP agree (C=2: 30/42, C>=3: 42/42), histories screen (P_all-only survival, dominance-pruned, 0 fails), shortlist 3 dev hypotheses (zero residuals, UNTOUCHED), Branch B NOT_ACTIVATED, triage 11 motifs NOT_ACTIVATED (ratios constant), battery 84/0 kills over 9 modes, 20 suites green. WP-4 FINISHED. Re-verified --> commit+push.
 - 2026-09-25: Turn 13 (WP-5 EXECUTION) -- Phase 5 implemented exactly: freeze (eligibility 12/12 ×3, MSTC-0001/2/3 + set_hash 8FD32731…, H3T BANK_COMMITTED → TRANSFER_CALCULUS_FROZEN) → fresh reveal once (H1/H2R NOT_APPLICABLE with preserved justification; H3T 70k exact: MSTC-0001 FAIL max 8, MSTC-0002 PASS 70k/70k, MSTC-0003 FAIL max 23; UNLOCKED_ONCE/1) → replay 16/16 agree → clean-room 27/27 agree → large-n 54 trials 0 kills → mutants 8/8 caught → ceiling TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS (standing MSTC-0002). Gaps closed: clean-room independence rewrite, keyed-shape parser + key/guard hardening, Fraction normalization (STEP-05 crash → --replay-only recovery, no firewall change), eligibility prose, burdened mini-corpus, lifecycle-aware WP-3/WP-4-era checks + STEP-10 allowlist. All suites + full regression green. WP-5 FINISHED. Re-verified --> commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
-- Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); all repairs logged per turn, none silent.
+- Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); MSTC-0001/0003 killed fresh with witnesses + MSTC-0002 standing finite (see WP-5 record); universal KEEP/PA/bridge program open with defined pending actions, none queued (see WP-6 record); all repairs logged per turn, none silent.
+- 2026-09-25: Turn 14 (WP-6 EXECUTION) -- Phase 6 implemented exactly: universal records (MST0-13 PROVED author-claim + machine evidence 18/18; 14/15 UNPROVED; 17/18/19 BLOCKED; 12/20/21 NOT_APPLICABLE justified; 23/24/26 PROVED guard/scope; MST09/12 addenda; 4 PENDING review packages; 11 stubs deleted) → lifecycle 10/4/3/3/6, 0 jumps, 26 bundles → bridge/negative audit (no theorem branch; NEG 8/8 vacuous) → reports (Q01–Q40, theorem status, reproducibility, AI use; ledger FINAL; atlases extended) → seal (FINAL_RESULT finite level, regeneration-identical; 424-file manifest; 16.9 MB archive rebuild-identical; reproduce exit 0; SEAL 12/12, PR+NEG, 5 mutants) → terminal TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS. Gaps closed: matrix filenames, NOT_APPLICABLE derivation, stale derived view, scanner self-matches, pre-commit inventory, shifting seal sets, audit self-pollution, wall-clock/size determinism, naive proof scans, lifecycle-aware checks, freeze roll-forward gate. All suites + full regression green. WP-6 FINISHED; experiment sealed. Re-verified --> commit+push.

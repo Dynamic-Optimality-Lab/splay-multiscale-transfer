@@ -46,3 +46,15 @@ Any change to credit type, support, scale, predicate, coefficient, rule
 precondition/output, cancellation rule, C, initialization, or snapshot
 convention mints a new calculus ID with status `POST_HOLDOUT` and is never
 called fresh-tested on the consumed banks (TR-11, HLD-12).
+
+## WP-6 seal (FINAL)
+
+<!-- WP6-SEAL -->
+Standing finite survivor: MSTC-0002 (P_all, k=6, C=2) —
+70,000/70,000 H3T episodes + 54 large-n trials, zero exact
+residuals. Siblings MSTC-0001 (max_res=8) and MSTC-0003
+(max_res=23) killed fresh with witnesses in
+`artifacts/v03/holdouts/h3t_reveal.json`. Terminal claim:
+`TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS` (see
+`artifacts/v03/seal/FINAL_RESULT.json`). No theorem; pending
+human reviews MST0-13/23/24/26 are not consumed.

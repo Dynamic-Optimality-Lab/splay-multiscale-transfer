@@ -57,6 +57,7 @@ def derive(root: str) -> dict:
     for oid in sorted(PROOF_DOCS):
         review = os.path.join(root, "math", "reviews", "%s.review.json" % oid)
         blocked = os.path.join(root, "math", "reviews", "%s.BLOCKED" % oid)
+        na_rec = os.path.join(root, "math", "reviews", "%s.not_applicable.json" % oid)
         proof = os.path.join(root, *PROOF_DOCS[oid].split("/"))
         if os.path.exists(review):
             try:
@@ -75,6 +76,18 @@ def derive(root: str) -> dict:
             claimed = m.group(1) if m else "PROVED"
             if claimed == "PROVED":
                 out[oid] = {"status": "PROVED", "evidence": PROOF_DOCS[oid]}
+            elif claimed == "NOT_APPLICABLE" and os.path.exists(na_rec):
+                try:
+                    rec = json.load(open(na_rec, encoding="utf-8"))
+                    ok = bool(rec.get("reason")) and bool(rec.get("evidence"))
+                except (json.JSONDecodeError, OSError):
+                    ok = False
+                if ok:
+                    out[oid] = {"status": "NOT_APPLICABLE",
+                                "evidence": "%s.not_applicable.json" % oid}
+                else:
+                    out[oid] = {"status": "UNPROVED",
+                                "evidence": "NOT_APPLICABLE without preserved justification"}
             else:
                 out[oid] = {"status": "UNPROVED",
                             "evidence": "%s declares %s" % (PROOF_DOCS[oid], claimed)}

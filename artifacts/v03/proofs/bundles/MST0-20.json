@@ -1,0 +1,12 @@
+{
+  "evidence": "MST0-20.not_applicable.json",
+  "justification": {
+    "date_utc": "2026-09-25",
+    "evidence": "all kills recorded as candidate-at-frozen-C rejections (ladder.json, histories_screen.json, h3t_reveal.json); triage.json uses actual R_k only (N3 fails 11/11); no g/f-infinity claim in any record",
+    "obligation_id": "MST0-20",
+    "reason": "no fixed-b/finite-cycle failure was ever promoted toward unbounded subsequence overhead; nothing to guard"
+  },
+  "obligation": "MST0-20",
+  "proof_sha256": "6CD8919FF1D1ED84CCE6B1108D95BFBBAF91F81BCA59F931654771C01B1A9493",
+  "status": "NOT_APPLICABLE"
+}

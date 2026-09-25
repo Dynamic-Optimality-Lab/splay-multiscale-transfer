@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST22_constant_independence.md declares UNPROVED",
+  "obligation": "MST0-22",
+  "proof_sha256": "67E896DF7A436766F2E83423AF9A79A5D48DBA6567A729B8AB8DCECE2F53AB1B",
+  "status": "UNPROVED"
+}

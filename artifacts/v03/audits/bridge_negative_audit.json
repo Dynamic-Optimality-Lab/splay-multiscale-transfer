@@ -1,0 +1,83 @@
+{
+  "exactly_one_branch_active": true,
+  "finite_branch": {
+    "active": true,
+    "level": "TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS",
+    "standing": [
+      "MSTC-0002"
+    ]
+  },
+  "negative_branch": {
+    "neg_checks": [
+      {
+        "check": "fixed-C failure not misclassified",
+        "evidence": "all kills labeled candidate-at-frozen-C (ladder/histories/h3t reveals)",
+        "id": "NEG-01",
+        "status": "VACUOUS_NOT_ACTIVATED"
+      },
+      {
+        "check": "actual Splay ratio used",
+        "evidence": "triage tracked R_k = sum(c_B)/sum(c_A) only (triage.json)",
+        "id": "NEG-02",
+        "status": "VACUOUS_NOT_ACTIVATED"
+      },
+      {
+        "check": "family closed form",
+        "evidence": "VACUOUS: no family (NOT_ACTIVATED 11/11)",
+        "id": "NEG-03",
+        "status": "VACUOUS_NOT_ACTIVATED"
+      },
+      {
+        "check": "diagonal-rooted legality",
+        "evidence": "VACUOUS: no family",
+        "id": "NEG-04",
+        "status": "VACUOUS_NOT_ACTIVATED"
+      },
+      {
+        "check": "symbolic full-sequence upper bound",
+        "evidence": "VACUOUS: no family",
+        "id": "NEG-05",
+        "status": "VACUOUS_NOT_ACTIVATED"
+      },
+      {
+        "check": "symbolic subsequence lower bound",
+        "evidence": "VACUOUS: no family",
+        "id": "NEG-06",
+        "status": "VACUOUS_NOT_ACTIVATED"
+      },
+      {
+        "check": "ratio limit proof",
+        "evidence": "VACUOUS: no family",
+        "id": "NEG-07",
+        "status": "VACUOUS_NOT_ACTIVATED"
+      },
+      {
+        "check": "independent family replay",
+        "evidence": "VACUOUS: no family",
+        "id": "NEG-08",
+        "status": "VACUOUS_NOT_ACTIVATED"
+      }
+    ],
+    "not_activated": 11,
+    "status": "NEGATIVE_FAMILY_NOT_ACTIVATED",
+    "theorem_branch_active": false,
+    "triaged_motifs": 11
+  },
+  "obligation_counts": {
+    "BLOCKED": 3,
+    "NOT_APPLICABLE": 3,
+    "PROVED": 4,
+    "REVIEWED": 10,
+    "UNPROVED": 6
+  },
+  "positive_branch": {
+    "MST_GATE_16": "PROVED_PENDING_REVIEW (author claim, not consumed)",
+    "MST_GATE_17": "NOT_REACHED (MST0-14/15 UNPROVED)",
+    "MST_GATE_18": "NOT_REACHED",
+    "MST_GATE_19": "NOT_REACHED",
+    "MST_GATE_20": "NOT_REACHED",
+    "MST_GATE_21": "NOT_REACHED",
+    "primary": "MSTC-0002",
+    "theorem_branch_active": false
+  }
+}

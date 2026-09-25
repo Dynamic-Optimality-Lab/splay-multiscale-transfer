@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST11_transfer_preservation.md declares SETUP",
+  "obligation": "MST0-11",
+  "proof_sha256": "B3B71A532577FB109AA7B0E1EBC82DE3D83929EBC266E8B489F56C096DBBDFDF",
+  "status": "UNPROVED"
+}

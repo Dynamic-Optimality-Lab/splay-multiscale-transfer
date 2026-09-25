@@ -34,7 +34,7 @@
       "status": "REVIEWED"
     },
     "MST0-09": {
-      "evidence": "no proof document yet",
+      "evidence": "math/theorem_MST09_raw_boundary.md declares UNPROVED",
       "status": "UNPROVED"
     },
     "MST0-10": {
@@ -46,19 +46,19 @@
       "status": "UNPROVED"
     },
     "MST0-12": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-12.not_applicable.json",
+      "status": "NOT_APPLICABLE"
     },
     "MST0-13": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "math/theorem_MST13_delete_injection.md",
+      "status": "PROVED"
     },
     "MST0-14": {
-      "evidence": "no proof document yet",
+      "evidence": "math/theorem_MST14_keep_repayment.md declares UNPROVED",
       "status": "UNPROVED"
     },
     "MST0-15": {
-      "evidence": "no proof document yet",
+      "evidence": "math/theorem_MST15_integrability.md declares UNPROVED",
       "status": "UNPROVED"
     },
     "MST0-16": {
@@ -66,44 +66,44 @@
       "status": "REVIEWED"
     },
     "MST0-17": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-17.BLOCKED marker",
+      "status": "BLOCKED"
     },
     "MST0-18": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-18.BLOCKED marker",
+      "status": "BLOCKED"
     },
     "MST0-19": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-19.BLOCKED marker",
+      "status": "BLOCKED"
     },
     "MST0-20": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-20.not_applicable.json",
+      "status": "NOT_APPLICABLE"
     },
     "MST0-21": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "MST0-21.not_applicable.json",
+      "status": "NOT_APPLICABLE"
     },
     "MST0-22": {
-      "evidence": "no proof document yet",
+      "evidence": "math/theorem_MST22_constant_independence.md declares UNPROVED",
       "status": "UNPROVED"
     },
     "MST0-23": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "math/theorem_MST23_finite_integrability_guard.md",
+      "status": "PROVED"
     },
     "MST0-24": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "math/theorem_MST24_branch_scope.md",
+      "status": "PROVED"
     },
     "MST0-25": {
-      "evidence": "no proof document yet",
+      "evidence": "math/theorem_MST25_holdout_scope.md declares UNPROVED",
       "status": "UNPROVED"
     },
     "MST0-26": {
-      "evidence": "no proof document yet",
-      "status": "UNPROVED"
+      "evidence": "math/theorem_MST26_literature_scope.md",
+      "status": "PROVED"
     }
   }
 }

@@ -38,3 +38,14 @@ either vacuous (cycles C≥3, histories C≥12) or easier.
 Finite survival only. Fresh banks (H2R/H3T), clean-room reimplementation, large-n
 adversarial falsification, and arbitrary-n proof all outstanding (WP-5/WP-6).
 A fresh-holdout violation kills the corresponding candidate without touching the rest.
+
+## WP-5/WP-6 outcome addendum (2026-09-25; original conjecture above unchanged)
+
+Fresh H3T (70,000 episodes, every episode exact): MSTC-0001 (P_all,k=2,C=2) killed
+(max_res=8; first n=32 idx 4406, w=11 paid 9 res 2); MSTC-0003 (P_keep,k=1,C=6)
+killed (max_res=23; first n=16 idx 3610, w=8 paid 7 res 1); MSTC-0002
+(P_all,k=6,C=2) survives (max_res=0, 70k/70k) plus 54 large-n trials with 0 kills
+(witnesses clean-room replayed in `artifacts/v03/holdouts/h3t_reveal.json` /
+`h3t_replay.json`). Status stays UNPROVED: the survivor has finite survival only
+(§32.7), and arbitrary-n repayment (MST0-14) is not proved. The dev-stage
+"minimal-k anchor" reading did not transfer; headroom (k=6) did at C=2.

@@ -159,16 +159,29 @@ def test_invalid_inputs() -> None:
 
 def test_stubs_fail_closed() -> None:
     import subprocess
-    for n in (19,):
-        r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase%02d.py" % n)],
-                           capture_output=True, text=True)
-        check("STRESS-STUB phase%02d exit 2" % n, r.returncode == 2)
-        check("STRESS-STUB phase%02d says NOT_AUTHORIZED" % n, "NOT_AUTHORIZED" in r.stdout)
-    # Real runners 07/09 re-run green (idempotent, no bank contact).
-    for n in ("07", "09"):
+    # NOTE (WP-6 lifecycle update): phases 14–19 are all real runners now; no
+    # fail-closed stubs remain (all 20 spec phases owned by real runners).
+    # Real runners 07/09/17/18 re-run green (idempotent, no bank contact).
+    for n in ("07", "09", "17", "18"):
         r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase%s.py" % n)],
                            capture_output=True, text=True)
         check("STRESS-STUB phase%s re-run exit 0" % n, r.returncode == 0)
+    # Real runners 14/15 refuse re-runs fail-closed (one-freeze/one-unlock).
+    for n in ("14", "15"):
+        r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase%s.py" % n)],
+                           capture_output=True, text=True)
+        check("STRESS-STUB phase%s re-run refuses (one-way)" % n, r.returncode != 0)
+    # Real runner 19 re-runs green with byte-identical outputs (seal determinism).
+    import hashlib as _hl2
+    _sealdir = os.path.join(ROOT, "artifacts", "v03", "seal")
+    _before = {fn: _hl2.sha256(open(os.path.join(_sealdir, fn), "rb").read()).hexdigest()
+               for fn in sorted(os.listdir(_sealdir))}
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase19.py")],
+                       capture_output=True, text=True)
+    _after = {fn: _hl2.sha256(open(os.path.join(_sealdir, fn), "rb").read()).hexdigest()
+              for fn in sorted(os.listdir(_sealdir))}
+    check("STRESS-STUB phase19 re-run exit 0", r.returncode == 0)
+    check("STRESS-STUB phase19 outputs byte-identical", _before == _after)
     # Real runner 08 refuses regeneration once committed (fail-closed).
     r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "run_phase08.py"),
                         "--sizes", "10", "--per-size", "22"],

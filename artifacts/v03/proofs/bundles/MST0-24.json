@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST24_branch_scope.md",
+  "obligation": "MST0-24",
+  "proof_sha256": "F88E0A3606FCFB0395D0EA5DC7000E0B45ACFC7FF9613118D55FC572D3F51329",
+  "status": "PROVED"
+}

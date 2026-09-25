@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST25_holdout_scope.md declares UNPROVED",
+  "obligation": "MST0-25",
+  "proof_sha256": "1E327E163828A9CA794D5FA025A6AADFCB1AB82935C95FBE3C4B33E1A6F2B30C",
+  "status": "UNPROVED"
+}

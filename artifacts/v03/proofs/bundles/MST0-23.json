@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST23_finite_integrability_guard.md",
+  "obligation": "MST0-23",
+  "proof_sha256": "81C4D88B0416DBF19517C8EE33FD1B19BAB0382BB4339ED9ADA34A3DD70502B9",
+  "status": "PROVED"
+}

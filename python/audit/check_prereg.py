@@ -166,6 +166,10 @@ AUTHORIZED_NAMESPACES = {
     "holdouts/h2r_reveal.json": "WP-5 Phase-15 H2R routing record (one-unlock reveal set)",
     "holdouts/h3t_reveal.json": "WP-5 Phase-15 H3T reveal record (one-unlock reveal set)",
     "holdouts/h3t_replay.json": "WP-5 Phase-15 independent-replay record (one-unlock reveal set)",
+    "proofs/lifecycle_audit.json": "WP-6 Phase-17 lifecycle audit (0 jumps, pointers)",
+    "proofs/MST13_injection_bound.json": "WP-6 Phase-17 MST0-13 machine evidence (supporting only)",
+    "proofs/bundles/": "WP-6 Phase-17 per-obligation bundles (26 pointers)",
+    "audits/": "WP-6 Phase-18/19 audits (bridge/negative, threats, stops, invariants, tests, arithmetic, resources, manifest)",
 }
 DENIED_UNTIL_AUTHORIZED = ("seal/FINAL_RESULT.json",)
 # Note: hypotheses/, solver/, transfer_grammar/ were denied pending WP-4 and are now

@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST14_keep_repayment.md declares UNPROVED",
+  "obligation": "MST0-14",
+  "proof_sha256": "AC0CA89C352F6E334030B7A7A6755C79A4CBAC3F315B6E86463C24E76E8C9400",
+  "status": "UNPROVED"
+}

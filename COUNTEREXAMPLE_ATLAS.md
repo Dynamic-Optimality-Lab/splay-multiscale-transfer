@@ -26,3 +26,12 @@ distinguished from conjecture failures by actual-ratio tracking (never residuals
   inflation/generalization), shortlist (P_all,2,2), (P_all,6,2), (P_keep,1,6):
   zero exact residuals at frozen C; search engines best residual 0 everywhere.
 - `artifacts/v03/adversarial/battery.json`.
+
+## Killed on fresh H3T (WP-5, frozen C, append-only)
+
+<!-- WP6-FRESH-KILLS -->
+- MSTC-0001 (P_all,k=2,C=2): max_res=[8,1]; first n=32 idx 4406 (w=[11,1] paid 9, edge a=1/y=13, x=11). Minimal-k anchor does not transfer; rate insufficiency vs burst demand at larger n.
+- MSTC-0003 (P_keep,k=1,C=6): max_res=[23,1]; first n=16 idx 3610 (w=[8,1] paid 7, edge a=1/y=14, x=3). Weakest-predicate survivor does not transfer; DELETE-burst timing killer persists fresh.
+- MSTC-0002 (P_all,k=6,C=2): 0/70,000 residuals; not a kill — standing survivor (finite only).
+- Full witnesses + replay bundles: `artifacts/v03/holdouts/h3t_reveal.json`; replays: `h3t_replay.json`.
+- Representation obstructions (§32.10), not conjecture obstructions: no growing actual Splay ratio observed anywhere.

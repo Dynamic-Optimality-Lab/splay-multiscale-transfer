@@ -1,0 +1,327 @@
+{
+  "bundles": {
+    "MST0-01": {
+      "evidence": "MST0-01.review.json:ACCEPT",
+      "obligation": "MST0-01",
+      "proof_sha256": "A35D1221CE03FE51C3FD3C49D2FA894739AA05067103868A838DB34D25039CE9",
+      "review_sha256": "09EB4510933E6A7DAD8006F79255FDAD7FA9CAF9FE28B02BE3CFF88BDF5F025B",
+      "status": "REVIEWED"
+    },
+    "MST0-02": {
+      "evidence": "MST0-02.review.json:ACCEPT",
+      "obligation": "MST0-02",
+      "proof_sha256": "E175A2DEEAF5C303B10E66F2C0F5F0DD1E96E56B38763EAFD0CC3F9E9100601C",
+      "review_sha256": "ED2F83C71076F98E85639F6A3BBFF7902B389F194BF8005687B768D50150FB55",
+      "status": "REVIEWED"
+    },
+    "MST0-03": {
+      "evidence": "MST0-03.review.json:ACCEPT",
+      "obligation": "MST0-03",
+      "proof_sha256": "F55EB4A4BF77F2D2C29FA6D5BACD32CE082045883D3211D6528FD6F5E2F82A1E",
+      "review_sha256": "5349C4BF2D0A871579C411DEF2AC842B253354CF80401CC2D834ADD6BEDDC644",
+      "status": "REVIEWED"
+    },
+    "MST0-04": {
+      "evidence": "MST0-04.review.json:ACCEPT",
+      "obligation": "MST0-04",
+      "proof_sha256": "04ED59EC16DAF8B40A14E07D65A180A9DA4FFA538D301A044DA962BC3F7AFB83",
+      "review_sha256": "D61D5A045F9E0B8A616AC6B67E25AA16A2CAA8A8231F0AC897C07AF805993F47",
+      "status": "REVIEWED"
+    },
+    "MST0-05": {
+      "evidence": "MST0-05.review.json:ACCEPT",
+      "obligation": "MST0-05",
+      "proof_sha256": "2C4455A4212381C0A7F03A07E2706FE5D7124D12CF69EA0C5DD6B5A5CF9ECBBE",
+      "review_sha256": "44AF131B8B11525883C8C66E69CD6E27F1ED9E43DEB72F0F530F6B0857061C4F",
+      "status": "REVIEWED"
+    },
+    "MST0-06": {
+      "evidence": "MST0-06.review.json:ACCEPT",
+      "obligation": "MST0-06",
+      "proof_sha256": "3BF6CE289B2BDC869331A74017E1A4FFF0C8BE523F132B19A485A6A79D1669D6",
+      "review_sha256": "6088CBCDEF4837D3066D4CFAD747E6BB2E361664C54903A9700C765594C6721F",
+      "status": "REVIEWED"
+    },
+    "MST0-07": {
+      "evidence": "MST0-07.review.json:ACCEPT",
+      "obligation": "MST0-07",
+      "proof_sha256": "063359C99751D24A1E8FFDCD9C510FD3D4D2E0969BF8FFF946A808AEB67DB3EE",
+      "review_sha256": "3ECA199EA29FB4413EDB1B7615D1EA5C91096972CF216A520DCF404EC50DE2E1",
+      "status": "REVIEWED"
+    },
+    "MST0-08": {
+      "evidence": "MST0-08.review.json:ACCEPT",
+      "obligation": "MST0-08",
+      "proof_sha256": "2A8A3DB0FE902EC280F2FD119B4591CA3F3FBEFEC9468DC40216288DD6C645FE",
+      "review_sha256": "D8D734BCF6E30BA7949A25D110E9D1D8D363FD279C591399C9792FA799C85334",
+      "status": "REVIEWED"
+    },
+    "MST0-09": {
+      "evidence": "math/theorem_MST09_raw_boundary.md declares UNPROVED",
+      "obligation": "MST0-09",
+      "proof_sha256": "CBCBEF486E8672430907EC8E2A84BF38F50F6FF13EC6110E1B939BC54C652464",
+      "status": "UNPROVED"
+    },
+    "MST0-10": {
+      "evidence": "MST0-10.review.json:ACCEPT",
+      "obligation": "MST0-10",
+      "proof_sha256": "F976C12FC8A4ECD9BE1FA1549EC164CC438E6E5012FA4EB728931E5C42028097",
+      "review_sha256": "603779D392EB9830CBFC6678DC0EE477FC410DCAD0CB3D1D9BAF91E33A8823D5",
+      "status": "REVIEWED"
+    },
+    "MST0-11": {
+      "evidence": "math/theorem_MST11_transfer_preservation.md declares SETUP",
+      "obligation": "MST0-11",
+      "proof_sha256": "B3B71A532577FB109AA7B0E1EBC82DE3D83929EBC266E8B489F56C096DBBDFDF",
+      "status": "UNPROVED"
+    },
+    "MST0-12": {
+      "evidence": "MST0-12.not_applicable.json",
+      "justification": {
+        "date_utc": "2026-09-25",
+        "evidence": "branch_b.json SIGNED_TRANSFER_NOT_ACTIVATED; all frozen records branch RAW_BOUNDARY with empty cancellation_rules and nonnegative masses (validate_eligibility 12/12); MST0-24 branch-scope record",
+        "obligation_id": "MST0-12",
+        "reason": "Branch B preregistered-not-activated; zero signed components exist in any frozen calculus, so no lower bound is owed"
+      },
+      "obligation": "MST0-12",
+      "proof_sha256": "E09E488CF07A4D6AC8E440CC4C757AFEFC1A55AC06943461907E71186BFB4408",
+      "status": "NOT_APPLICABLE"
+    },
+    "MST0-13": {
+      "evidence": "math/theorem_MST13_delete_injection.md",
+      "obligation": "MST0-13",
+      "proof_sha256": "09E0568FF225F7A29AAEFA709388E4ACDDFFE29EE54E18A7389C6313B51C483B",
+      "status": "PROVED"
+    },
+    "MST0-14": {
+      "evidence": "math/theorem_MST14_keep_repayment.md declares UNPROVED",
+      "obligation": "MST0-14",
+      "proof_sha256": "AC0CA89C352F6E334030B7A7A6755C79A4CBAC3F315B6E86463C24E76E8C9400",
+      "status": "UNPROVED"
+    },
+    "MST0-15": {
+      "evidence": "math/theorem_MST15_integrability.md declares UNPROVED",
+      "obligation": "MST0-15",
+      "proof_sha256": "6692CA4FB2ED8CAF506110196A3A96863D9D8E614F1761A2351455A2EEE9E75D",
+      "status": "UNPROVED"
+    },
+    "MST0-16": {
+      "evidence": "MST0-16.review.json:ACCEPT",
+      "obligation": "MST0-16",
+      "proof_sha256": "3DBF2B987E1C60841CFF3F083BC35678F5A3A9D0A04BCE723E344BED38F15B6A",
+      "review_sha256": "9595395F66D433C8162F573AA6E4DCC5459B1B4C5399950A6C7F659D8A437711",
+      "status": "REVIEWED"
+    },
+    "MST0-17": {
+      "evidence": "MST0-17.BLOCKED marker",
+      "marker": {
+        "blocked_by": [
+          "MST0-13 PROVED awaiting review",
+          "MST0-14 UNPROVED",
+          "MST0-15 UNPROVED"
+        ],
+        "date_utc": "2026-09-25",
+        "obligation_id": "MST0-17",
+        "reason": "block composition requires REVIEWED MST0-13/14/15; KEEP repayment and integrability unproved"
+      },
+      "obligation": "MST0-17",
+      "status": "BLOCKED"
+    },
+    "MST0-18": {
+      "evidence": "MST0-18.BLOCKED marker",
+      "marker": {
+        "blocked_by": [
+          "MST0-17 BLOCKED"
+        ],
+        "date_utc": "2026-09-25",
+        "obligation_id": "MST0-18",
+        "reason": "no Pair-Access lemma exists to telescope; no additive term to audit"
+      },
+      "obligation": "MST0-18",
+      "status": "BLOCKED"
+    },
+    "MST0-19": {
+      "evidence": "MST0-19.BLOCKED marker",
+      "marker": {
+        "blocked_by": [
+          "MST0-18 BLOCKED",
+          "L2/L3 bytes PENDING"
+        ],
+        "date_utc": "2026-09-25",
+        "obligation_id": "MST0-19",
+        "reason": "no monotonicity theorem to bridge; bridge-audit premise bytes unretrievable"
+      },
+      "obligation": "MST0-19",
+      "status": "BLOCKED"
+    },
+    "MST0-20": {
+      "evidence": "MST0-20.not_applicable.json",
+      "justification": {
+        "date_utc": "2026-09-25",
+        "evidence": "all kills recorded as candidate-at-frozen-C rejections (ladder.json, histories_screen.json, h3t_reveal.json); triage.json uses actual R_k only (N3 fails 11/11); no g/f-infinity claim in any record",
+        "obligation_id": "MST0-20",
+        "reason": "no fixed-b/finite-cycle failure was ever promoted toward unbounded subsequence overhead; nothing to guard"
+      },
+      "obligation": "MST0-20",
+      "proof_sha256": "6CD8919FF1D1ED84CCE6B1108D95BFBBAF91F81BCA59F931654771C01B1A9493",
+      "status": "NOT_APPLICABLE"
+    },
+    "MST0-21": {
+      "evidence": "MST0-21.not_applicable.json",
+      "justification": {
+        "date_utc": "2026-09-25",
+        "evidence": "triage.json 11/11 NEGATIVE_FAMILY_NOT_ACTIVATED (ratios constant); h3t_reveal.json kills are representation obstructions with no growing actual ratio",
+        "obligation_id": "MST0-21",
+        "reason": "negative family never activated; no closed-form (T_k,X_k,Y_k) family pursued or claimed"
+      },
+      "obligation": "MST0-21",
+      "proof_sha256": "267FDA5727FE358E8C154ADF84C563798B8A381404D64AADA66896C36FB38AEC",
+      "status": "NOT_APPLICABLE"
+    },
+    "MST0-22": {
+      "evidence": "math/theorem_MST22_constant_independence.md declares UNPROVED",
+      "obligation": "MST0-22",
+      "proof_sha256": "67E896DF7A436766F2E83423AF9A79A5D48DBA6567A729B8AB8DCECE2F53AB1B",
+      "status": "UNPROVED"
+    },
+    "MST0-23": {
+      "evidence": "math/theorem_MST23_finite_integrability_guard.md",
+      "obligation": "MST0-23",
+      "proof_sha256": "81C4D88B0416DBF19517C8EE33FD1B19BAB0382BB4339ED9ADA34A3DD70502B9",
+      "status": "PROVED"
+    },
+    "MST0-24": {
+      "evidence": "math/theorem_MST24_branch_scope.md",
+      "obligation": "MST0-24",
+      "proof_sha256": "F88E0A3606FCFB0395D0EA5DC7000E0B45ACFC7FF9613118D55FC572D3F51329",
+      "status": "PROVED"
+    },
+    "MST0-25": {
+      "evidence": "math/theorem_MST25_holdout_scope.md declares UNPROVED",
+      "obligation": "MST0-25",
+      "proof_sha256": "1E327E163828A9CA794D5FA025A6AADFCB1AB82935C95FBE3C4B33E1A6F2B30C",
+      "status": "UNPROVED"
+    },
+    "MST0-26": {
+      "evidence": "math/theorem_MST26_literature_scope.md",
+      "obligation": "MST0-26",
+      "proof_sha256": "AA8879836DD2BB4E246F76B2CC2F6157FA023632C4314E2C9965EB81D62FF648",
+      "status": "PROVED"
+    }
+  },
+  "counts": {
+    "BLOCKED": 3,
+    "NOT_APPLICABLE": 3,
+    "PROVED": 4,
+    "REVIEWED": 10,
+    "UNPROVED": 6
+  },
+  "jumps": [],
+  "pointerless": [],
+  "statuses": {
+    "MST0-01": {
+      "evidence": "MST0-01.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-02": {
+      "evidence": "MST0-02.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-03": {
+      "evidence": "MST0-03.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-04": {
+      "evidence": "MST0-04.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-05": {
+      "evidence": "MST0-05.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-06": {
+      "evidence": "MST0-06.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-07": {
+      "evidence": "MST0-07.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-08": {
+      "evidence": "MST0-08.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-09": {
+      "evidence": "math/theorem_MST09_raw_boundary.md declares UNPROVED",
+      "status": "UNPROVED"
+    },
+    "MST0-10": {
+      "evidence": "MST0-10.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-11": {
+      "evidence": "math/theorem_MST11_transfer_preservation.md declares SETUP",
+      "status": "UNPROVED"
+    },
+    "MST0-12": {
+      "evidence": "MST0-12.not_applicable.json",
+      "status": "NOT_APPLICABLE"
+    },
+    "MST0-13": {
+      "evidence": "math/theorem_MST13_delete_injection.md",
+      "status": "PROVED"
+    },
+    "MST0-14": {
+      "evidence": "math/theorem_MST14_keep_repayment.md declares UNPROVED",
+      "status": "UNPROVED"
+    },
+    "MST0-15": {
+      "evidence": "math/theorem_MST15_integrability.md declares UNPROVED",
+      "status": "UNPROVED"
+    },
+    "MST0-16": {
+      "evidence": "MST0-16.review.json:ACCEPT",
+      "status": "REVIEWED"
+    },
+    "MST0-17": {
+      "evidence": "MST0-17.BLOCKED marker",
+      "status": "BLOCKED"
+    },
+    "MST0-18": {
+      "evidence": "MST0-18.BLOCKED marker",
+      "status": "BLOCKED"
+    },
+    "MST0-19": {
+      "evidence": "MST0-19.BLOCKED marker",
+      "status": "BLOCKED"
+    },
+    "MST0-20": {
+      "evidence": "MST0-20.not_applicable.json",
+      "status": "NOT_APPLICABLE"
+    },
+    "MST0-21": {
+      "evidence": "MST0-21.not_applicable.json",
+      "status": "NOT_APPLICABLE"
+    },
+    "MST0-22": {
+      "evidence": "math/theorem_MST22_constant_independence.md declares UNPROVED",
+      "status": "UNPROVED"
+    },
+    "MST0-23": {
+      "evidence": "math/theorem_MST23_finite_integrability_guard.md",
+      "status": "PROVED"
+    },
+    "MST0-24": {
+      "evidence": "math/theorem_MST24_branch_scope.md",
+      "status": "PROVED"
+    },
+    "MST0-25": {
+      "evidence": "math/theorem_MST25_holdout_scope.md declares UNPROVED",
+      "status": "UNPROVED"
+    },
+    "MST0-26": {
+      "evidence": "math/theorem_MST26_literature_scope.md",
+      "status": "PROVED"
+    }
+  }
+}

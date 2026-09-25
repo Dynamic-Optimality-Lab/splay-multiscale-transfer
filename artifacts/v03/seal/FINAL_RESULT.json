@@ -1,0 +1,95 @@
+{
+  "allowed_meaning": "A frozen arbitrary-n-defined calculus satisfies all tested exact inequalities, fresh holdouts, and adversarial evaluations.",
+  "ancestor_commit": "6de1ca2a595e8895f54794f3a211fe6ee1a95a80",
+  "branch_exclusivity": "finite branch only; no theorem branch active",
+  "experiment": "SPLAY-AM-MST-v0.3",
+  "firewalls": {
+    "H1": "EMPTY/NOT_APPLICABLE",
+    "H2R": "BANK_COMMITTED/NOT_APPLICABLE",
+    "H3T": "UNLOCKED_ONCE/unlocks=1",
+    "n8": "PARTIALLY_REVEALED_CANARY_CONTAMINATED"
+  },
+  "forbidden_readings": [
+    "the calculus works for all n",
+    "Dynamic Optimality is proved"
+  ],
+  "gates": {
+    "MST-GATE-0..15": "reached per WP records",
+    "MST-GATE-16": "PROVED_PENDING_REVIEW (author claim, not consumed)",
+    "MST-GATE-17..21": "NOT_REACHED"
+  },
+  "hashes": {
+    "candidate_set": "8FD3273143DEC3CA4611A1093F3521B8F22DE2BBD6A82715EE270412F65A2A00",
+    "h3t_logical_stream": "CB37F3D99110118F7CDD7FC62D8534918CC003CE82E0EB0BE97034B2E9E425A7",
+    "h3t_per_size_streams": {
+      "10": "388749A1C90AA91F15B3730EB67CB7CA73CFA54ACF161A941E0C02C910077349",
+      "12": "3C4DE45080E342789407A73B2838DCA757A22629C138CCA51103C6CC7491C97E",
+      "16": "AABD4677447D4C55ECCA1B8E141AD22B2064BB3A9A003AAFF78A343015BB0A6B",
+      "24": "6778AF6415655AABF7361670A8D5055B1E7E44592DD2677FFA8FB0DF8B036059",
+      "32": "17779DA2404537E4E9BA3E872C2AC93BC8D78C57348F74BF54C5B35C1CF08A9E",
+      "48": "26C3F23DEC7F2F83BB57F8306B1D3A5249DB4BA6D56A63C524C132BD8E890DE5",
+      "64": "C8E3E5342D05705BA92A71123681C9AD3FE1EF44A9F0AAE530E794C184FA78D1"
+    },
+    "h3t_reveal": "FC916F06E02A39CA33C1D3B47ADC66F3CEDBD865E83042EBBB3044E4B80DFCED"
+  },
+  "killed_fresh": [
+    {
+      "calculus_id": "MSTC-0001",
+      "first_violation": {
+        "episode_hash": "53EA998E6AF724625CB2F7E59CC4A434996F91A835B50A468DA7048B09D1B050",
+        "idx": 4406,
+        "paid": 9,
+        "res": [
+          2,
+          1
+        ],
+        "size": 32,
+        "w": [
+          11,
+          1
+        ]
+      },
+      "max_residual": [
+        8,
+        1
+      ],
+      "verdict": "FRESH_H3T_FAIL"
+    },
+    {
+      "calculus_id": "MSTC-0003",
+      "first_violation": {
+        "episode_hash": "DF00A60B32E165285821F794B15C52F1E6C7D38EBB323E9BFA7A31C92C4038BF",
+        "idx": 3610,
+        "paid": 7,
+        "res": [
+          1,
+          1
+        ],
+        "size": 16,
+        "w": [
+          8,
+          1
+        ]
+      },
+      "max_residual": [
+        23,
+        1
+      ],
+      "verdict": "FRESH_H3T_FAIL"
+    }
+  ],
+  "obligations": {
+    "BLOCKED": 3,
+    "NOT_APPLICABLE": 3,
+    "PROVED": 4,
+    "REVIEWED": 10,
+    "UNPROVED": 6
+  },
+  "parent_sealed_commit": "38c1be6afd2ab2420aa094c68ce45ee6a26b3628",
+  "repo_head": "94197b89acdf9f06865e2ebfe3579105ff2c6c9e",
+  "standing": [
+    "MSTC-0002"
+  ],
+  "terminal_claim": "TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS",
+  "upgrade_path": "pending human reviews MST0-13/23/24/26; MST0-13 ACCEPT permits re-seal at BOUNDED_DELETE_INJECTION_PROVED by versioned amendment only"
+}

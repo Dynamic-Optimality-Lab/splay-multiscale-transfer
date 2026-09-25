@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST13_delete_injection.md",
+  "obligation": "MST0-13",
+  "proof_sha256": "09E0568FF225F7A29AAEFA709388E4ACDDFFE29EE54E18A7389C6313B51C483B",
+  "status": "PROVED"
+}

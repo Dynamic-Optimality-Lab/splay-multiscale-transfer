@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-09-25 — WP-6 EXECUTION (Phase 6 finished: universal records + seal at TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS)
+- Universal records: MST0-13 DELETE injection author-PROVED (case-complete, no finite premise; review requested), MST0-14/15 UNPROVED, MST0-17/18/19 BLOCKED, MST0-12/20/21 NOT_APPLICABLE with justifications, MST0-23/24/26 guard/scope PROVED (review requested). Lifecycle 10/4/3/3/6 with 0 jumps. Bridge audit NOT reached (L2/L3 bytes pending); negative branch NOT activated. Reports (Q01–Q40, theorem status, reproducibility, AI use); ledger FINAL; atlases extended. FINAL_RESULT (finite level, exactly one claim), 424-file manifest, 16.9 MB deterministic archive (rebuild-identical), full reproduce green, SEAL-01…12 + PR-01…14/NEG + 5 seal mutants green. WP-6 FINISHED; experiment sealed.
+
+## 2026-09-25 — WP-5 EXECUTION (Phase 5 finished: freeze + one fresh reveal + falsification, ceiling SURVIVES_FINITE_TESTS)
+- Froze MSTC-0001/2/3 (set_hash 8FD32731…, TRANSFER_CALCULUS_FROZEN); H1/H2R truthfully NOT_APPLICABLE; H3T 70k exact (MSTC-0001 FAIL max 8, MSTC-0002 PASS 70k/70k, MSTC-0003 FAIL max 23; UNLOCKED_ONCE/1); replay 16/16 + clean-room 27/27 agree; large-n 54 trials 0 kills; mutants 8/8 caught. WP-5 FINISHED.
+
 ## 2026-09-23 — WP-4 EXECUTION (Phase 4 finished: Branch-A survives dev + Branch-B unfired + triage quiet + battery clean)
 - Masks frozen (384 near-critical, 9.6k noncritical sel, 52k val, 120+120 histories); flow screen (worst k=1 at C=2); CEGIS(z3)+brute+ILP agree per rung (C=2: 30/42, C≥3: 42/42); histories screen (P_all-only survival, dominance-pruned, 0 fails fresh); shortlist 3 dev hypotheses (zero residuals, UNTOUCHED); Branch B NOT_ACTIVATED; triage 11 motifs NOT_ACTIVATED (ratios constant); battery 84/0 kills over 9 modes. 20 suites/runners green. WP-4 FINISHED.
 

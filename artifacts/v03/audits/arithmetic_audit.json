@@ -1,0 +1,13 @@
+{
+  "decision_module_hits": [],
+  "non_decision_hits": [
+    "python\\holdout\\h3t_generate.py:260:scale = per_size / float(sum(STRATUM_COUNTS.values()))",
+    "python\\l6_translation\\contracted.py:26:return math.ceil(1 + math.log2(1 + g))",
+    "python\\l6_translation\\heavy.py:22:return float(\"inf\")",
+    "python\\l6_translation\\heavy.py:39:return float(\"inf\")",
+    "python\\l6_translation\\heavy.py:41:ml = rec(u.left) if u.left is not None else float(\"inf\")",
+    "python\\l6_translation\\heavy.py:42:mr = rec(u.right) if u.right is not None else float(\"inf\")",
+    "python\\l6_translation\\independent.py:28:return float(\"inf\")"
+  ],
+  "policy": "exact integers/Fraction in decisions; floats diagnostic-only"
+}

@@ -1,0 +1,50 @@
+{
+  "families": {
+    "CYC": [
+      "tests/cycles/test_corpus.py"
+    ],
+    "HLD": [
+      "tests/holdout/test_firewall.py",
+      "tests/holdout/test_wp5_holdout.py"
+    ],
+    "L6": [
+      "tests/translation/test_mapping.py"
+    ],
+    "LED": [
+      "tests/provenance/test_provenance.py",
+      "tests/ledger/test_ledger.py"
+    ],
+    "NEG": [
+      "tests/adversary/test_engines.py"
+    ],
+    "PR": [
+      "tests/proof/test_dev_bounds.py",
+      "tests/proof/test_holdout_scope.py",
+      "tests/proof/test_pr.py"
+    ],
+    "Parent": [
+      "tests/parent/test_import.py"
+    ],
+    "ROT": [
+      "tests/rotations/test_trace.py"
+    ],
+    "SEAL": [
+      "tests/seal/test_seal.py"
+    ],
+    "TR": [
+      "tests/transfer/test_branchA.py",
+      "tests/transfer/test_grammar.py",
+      "tests/solver/test_solver.py"
+    ],
+    "WP": [
+      "tests/test_foundation.py",
+      "tests/test_wp0_stress.py",
+      "tests/test_wp1.py",
+      "tests/test_wp2.py",
+      "tests/test_wp3.py",
+      "tests/test_wp4.py",
+      "tests/test_wp5.py"
+    ]
+  },
+  "n_files": 23
+}

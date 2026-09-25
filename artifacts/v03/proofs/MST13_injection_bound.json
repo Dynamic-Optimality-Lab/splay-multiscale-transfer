@@ -1,0 +1,277 @@
+{
+  "n_checks": 18,
+  "note": "supporting evidence for MST0-13 Lemma 2; the proof is the doc",
+  "rows": [
+    {
+      "bound": [
+        74,
+        1
+      ],
+      "calculus_id": "MSTC-0001",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        74,
+        1
+      ],
+      "r_a": 37,
+      "size": 10
+    },
+    {
+      "bound": [
+        276,
+        1
+      ],
+      "calculus_id": "MSTC-0001",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        276,
+        1
+      ],
+      "r_a": 138,
+      "size": 10
+    },
+    {
+      "bound": [
+        92,
+        1
+      ],
+      "calculus_id": "MSTC-0001",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        92,
+        1
+      ],
+      "r_a": 46,
+      "size": 24
+    },
+    {
+      "bound": [
+        448,
+        1
+      ],
+      "calculus_id": "MSTC-0001",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        448,
+        1
+      ],
+      "r_a": 224,
+      "size": 24
+    },
+    {
+      "bound": [
+        114,
+        1
+      ],
+      "calculus_id": "MSTC-0001",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        114,
+        1
+      ],
+      "r_a": 57,
+      "size": 64
+    },
+    {
+      "bound": [
+        684,
+        1
+      ],
+      "calculus_id": "MSTC-0001",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        684,
+        1
+      ],
+      "r_a": 342,
+      "size": 64
+    },
+    {
+      "bound": [
+        222,
+        1
+      ],
+      "calculus_id": "MSTC-0002",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        222,
+        1
+      ],
+      "r_a": 37,
+      "size": 10
+    },
+    {
+      "bound": [
+        828,
+        1
+      ],
+      "calculus_id": "MSTC-0002",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        828,
+        1
+      ],
+      "r_a": 138,
+      "size": 10
+    },
+    {
+      "bound": [
+        276,
+        1
+      ],
+      "calculus_id": "MSTC-0002",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        276,
+        1
+      ],
+      "r_a": 46,
+      "size": 24
+    },
+    {
+      "bound": [
+        1344,
+        1
+      ],
+      "calculus_id": "MSTC-0002",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        1344,
+        1
+      ],
+      "r_a": 224,
+      "size": 24
+    },
+    {
+      "bound": [
+        342,
+        1
+      ],
+      "calculus_id": "MSTC-0002",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        342,
+        1
+      ],
+      "r_a": 57,
+      "size": 64
+    },
+    {
+      "bound": [
+        2052,
+        1
+      ],
+      "calculus_id": "MSTC-0002",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        2052,
+        1
+      ],
+      "r_a": 342,
+      "size": 64
+    },
+    {
+      "bound": [
+        37,
+        1
+      ],
+      "calculus_id": "MSTC-0003",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        37,
+        1
+      ],
+      "r_a": 37,
+      "size": 10
+    },
+    {
+      "bound": [
+        138,
+        1
+      ],
+      "calculus_id": "MSTC-0003",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        138,
+        1
+      ],
+      "r_a": 138,
+      "size": 10
+    },
+    {
+      "bound": [
+        46,
+        1
+      ],
+      "calculus_id": "MSTC-0003",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        46,
+        1
+      ],
+      "r_a": 46,
+      "size": 24
+    },
+    {
+      "bound": [
+        224,
+        1
+      ],
+      "calculus_id": "MSTC-0003",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        224,
+        1
+      ],
+      "r_a": 224,
+      "size": 24
+    },
+    {
+      "bound": [
+        57,
+        1
+      ],
+      "calculus_id": "MSTC-0003",
+      "holds": true,
+      "idx": 0,
+      "injected": [
+        57,
+        1
+      ],
+      "r_a": 57,
+      "size": 64
+    },
+    {
+      "bound": [
+        342,
+        1
+      ],
+      "calculus_id": "MSTC-0003",
+      "holds": true,
+      "idx": 5000,
+      "injected": [
+        342,
+        1
+      ],
+      "r_a": 342,
+      "size": 64
+    }
+  ],
+  "violations": 0
+}

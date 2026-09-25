@@ -1,0 +1,13 @@
+{
+  "evidence": "MST0-18.BLOCKED marker",
+  "marker": {
+    "blocked_by": [
+      "MST0-17 BLOCKED"
+    ],
+    "date_utc": "2026-09-25",
+    "obligation_id": "MST0-18",
+    "reason": "no Pair-Access lemma exists to telescope; no additive term to audit"
+  },
+  "obligation": "MST0-18",
+  "status": "BLOCKED"
+}

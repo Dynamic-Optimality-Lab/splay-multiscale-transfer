@@ -1,0 +1,15 @@
+{
+  "evidence": "MST0-17.BLOCKED marker",
+  "marker": {
+    "blocked_by": [
+      "MST0-13 PROVED awaiting review",
+      "MST0-14 UNPROVED",
+      "MST0-15 UNPROVED"
+    ],
+    "date_utc": "2026-09-25",
+    "obligation_id": "MST0-17",
+    "reason": "block composition requires REVIEWED MST0-13/14/15; KEEP repayment and integrability unproved"
+  },
+  "obligation": "MST0-17",
+  "status": "BLOCKED"
+}

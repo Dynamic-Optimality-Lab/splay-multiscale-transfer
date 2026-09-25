@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST09_raw_boundary.md declares UNPROVED",
+  "obligation": "MST0-09",
+  "proof_sha256": "CBCBEF486E8672430907EC8E2A84BF38F50F6FF13EC6110E1B939BC54C652464",
+  "status": "UNPROVED"
+}

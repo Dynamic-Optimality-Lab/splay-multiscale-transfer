@@ -1,0 +1,50 @@
+{
+  "attempted": [
+    "H3T 70k exact evaluation",
+    "large-n through n=256",
+    "clean-room agreement",
+    "full seal + archive"
+  ],
+  "claims_still_valid": "all finite claims; no claim depended on unattempted work",
+  "failures": [],
+  "largest_artifacts": [
+    {
+      "bytes": 5654975,
+      "path": "artifacts/v03/discovery/masks.json"
+    },
+    {
+      "bytes": 3083381,
+      "path": "artifacts/v03/transfer_grammar/hist_corpus.json"
+    },
+    {
+      "bytes": 2868166,
+      "path": "artifacts/v03/holdouts/h3t_bank/n64.json.zst"
+    },
+    {
+      "bytes": 2535492,
+      "path": "artifacts/v03/holdouts/h3t_bank/n48.json.zst"
+    },
+    {
+      "bytes": 2144773,
+      "path": "artifacts/v03/holdouts/h3t_bank/n32.json.zst"
+    },
+    {
+      "bytes": 1926334,
+      "path": "artifacts/v03/holdouts/h3t_bank/n24.json.zst"
+    },
+    {
+      "bytes": 1670912,
+      "path": "artifacts/v03/holdouts/h3t_bank/n16.json.zst"
+    },
+    {
+      "bytes": 1527529,
+      "path": "artifacts/v03/holdouts/h3t_bank/n12.json.zst"
+    }
+  ],
+  "status": "NO_RESOURCE_FAILURE (all WPs completed; RESOURCE_LIMIT_NO_CLAIM not needed)",
+  "unattempted_by_plan": [
+    "n>256 histories (beyond \u00a716 ladder bound)",
+    "post-seal proof program MST0-14/15 (open research)"
+  ],
+  "wp6_step_wall_s": {}
+}

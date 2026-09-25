@@ -1,0 +1,6 @@
+{
+  "evidence": "math/theorem_MST15_integrability.md declares UNPROVED",
+  "obligation": "MST0-15",
+  "proof_sha256": "6692CA4FB2ED8CAF506110196A3A96863D9D8E614F1761A2351455A2EEE9E75D",
+  "status": "UNPROVED"
+}
