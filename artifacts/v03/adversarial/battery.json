@@ -1,0 +1,1265 @@
+{
+  "kills": [],
+  "rows": [
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "uniform",
+      "ratio": [
+        132,
+        202
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "uniform",
+      "ratio": [
+        132,
+        202
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "uniform",
+      "ratio": [
+        132,
+        202
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "uniform",
+      "ratio": [
+        107,
+        223
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "uniform",
+      "ratio": [
+        107,
+        223
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "uniform",
+      "ratio": [
+        107,
+        223
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "uniform",
+      "ratio": [
+        161,
+        202
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "uniform",
+      "ratio": [
+        161,
+        202
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "uniform",
+      "ratio": [
+        161,
+        202
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "uniform",
+      "ratio": [
+        155,
+        216
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "uniform",
+      "ratio": [
+        155,
+        216
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "uniform",
+      "ratio": [
+        155,
+        216
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "uniform",
+      "ratio": [
+        154,
+        190
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "uniform",
+      "ratio": [
+        154,
+        190
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "uniform",
+      "ratio": [
+        154,
+        190
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "uniform",
+      "ratio": [
+        157,
+        216
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "uniform",
+      "ratio": [
+        157,
+        216
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "uniform",
+      "ratio": [
+        157,
+        216
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "structured",
+      "ratio": [
+        115,
+        210
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "structured",
+      "ratio": [
+        115,
+        210
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "structured",
+      "ratio": [
+        115,
+        210
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "structured",
+      "ratio": [
+        141,
+        224
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "structured",
+      "ratio": [
+        141,
+        224
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "structured",
+      "ratio": [
+        141,
+        224
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "structured",
+      "ratio": [
+        172,
+        195
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "structured",
+      "ratio": [
+        172,
+        195
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "structured",
+      "ratio": [
+        172,
+        195
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "structured",
+      "ratio": [
+        152,
+        204
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "structured",
+      "ratio": [
+        152,
+        204
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "structured",
+      "ratio": [
+        152,
+        204
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "structured",
+      "ratio": [
+        113,
+        188
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "structured",
+      "ratio": [
+        113,
+        188
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "structured",
+      "ratio": [
+        113,
+        188
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "structured",
+      "ratio": [
+        149,
+        206
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "structured",
+      "ratio": [
+        149,
+        206
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "structured",
+      "ratio": [
+        149,
+        206
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "hillclimb",
+      "ratio": [
+        147,
+        222
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "hillclimb",
+      "ratio": [
+        147,
+        222
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "hillclimb",
+      "ratio": [
+        147,
+        222
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "annealing",
+      "ratio": [
+        119,
+        189
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "annealing",
+      "ratio": [
+        119,
+        189
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "annealing",
+      "ratio": [
+        119,
+        189
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "genetic",
+      "ratio": [
+        162,
+        213
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "genetic",
+      "ratio": [
+        162,
+        213
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "genetic",
+      "ratio": [
+        162,
+        213
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "neighborhood",
+      "ratio": [
+        128,
+        185
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "neighborhood",
+      "ratio": [
+        128,
+        185
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "neighborhood",
+      "ratio": [
+        128,
+        185
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "neighborhood",
+      "ratio": [
+        129,
+        197
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "neighborhood",
+      "ratio": [
+        129,
+        197
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "neighborhood",
+      "ratio": [
+        129,
+        197
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        195
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        195
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        195
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        191
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        191
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 3,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        191
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        189
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        189
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 4,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        189
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        190
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        190
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 5,
+      "mode": "neighborhood",
+      "ratio": [
+        130,
+        190
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "splicing",
+      "ratio": [
+        19,
+        24
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "splicing",
+      "ratio": [
+        19,
+        24
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "splicing",
+      "ratio": [
+        19,
+        24
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "splicing",
+      "ratio": [
+        12,
+        16
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "splicing",
+      "ratio": [
+        12,
+        16
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "splicing",
+      "ratio": [
+        12,
+        16
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "inflation",
+      "ratio": [
+        15,
+        15
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "inflation",
+      "ratio": [
+        15,
+        15
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "inflation",
+      "ratio": [
+        15,
+        15
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "inflation",
+      "ratio": [
+        18,
+        18
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "inflation",
+      "ratio": [
+        18,
+        18
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "inflation",
+      "ratio": [
+        18,
+        18
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "inflation",
+      "ratio": [
+        130,
+        227
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "inflation",
+      "ratio": [
+        130,
+        227
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 2,
+      "mode": "inflation",
+      "ratio": [
+        130,
+        227
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "generalization",
+      "ratio": [
+        21,
+        21
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "generalization",
+      "ratio": [
+        21,
+        21
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 0,
+      "mode": "generalization",
+      "ratio": [
+        21,
+        21
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        2,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "generalization",
+      "ratio": [
+        23,
+        23
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_all",
+        6,
+        2
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "generalization",
+      "ratio": [
+        23,
+        23
+      ]
+    },
+    {
+      "agree": true,
+      "cfg": [
+        "P_keep",
+        1,
+        6
+      ],
+      "feasible": true,
+      "hist": 1,
+      "mode": "generalization",
+      "ratio": [
+        23,
+        23
+      ]
+    }
+  ]
+}

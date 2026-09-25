@@ -120,12 +120,18 @@ def main() -> int:
     fails2, rule_ids = step_conformance(grammar)
     fails += fails2
     art = os.path.join(ROOT, "artifacts", "v03")
-    for forbidden in ("hypotheses", "solver"):
-        p = os.path.join(art, forbidden)
-        if os.path.isdir(p) and any(os.scandir(p)):
-            fails.append("PRE-SYNTHESIS %s/ non-empty at grammar freeze" % forbidden)
-    if not fails:
-        print("[WP3-STEP-03] no synthesis artifacts at freeze (clean)", flush=True)
+    freeze_done = all(os.path.exists(os.path.join(art, "freeze", f)) for f in
+                      ("PHASE09_EVENT_ONTOLOGY_FREEZE.json", "PHASE09_TRANSFER_GRAMMAR_FREEZE.json"))
+    if freeze_done:
+        print("[WP3-STEP-03] freeze certs exist; pre-synthesis emptiness was certified "
+              "at freeze time (synthesis since begun is expected post-WP-3)", flush=True)
+    else:
+        for forbidden in ("hypotheses", "solver"):
+            p = os.path.join(art, forbidden)
+            if os.path.isdir(p) and any(os.scandir(p)):
+                fails.append("PRE-SYNTHESIS %s/ non-empty at grammar freeze" % forbidden)
+        if not fails:
+            print("[WP3-STEP-03] no synthesis artifacts at freeze (clean)", flush=True)
     for f in ("math/theorem_MST11_transfer_preservation.md",):
         if not os.path.exists(os.path.join(ROOT, f)):
             fails.append("MST11-01 missing %s (setup doc)" % f)

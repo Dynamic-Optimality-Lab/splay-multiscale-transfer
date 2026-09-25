@@ -1,0 +1,1716 @@
+{
+  "rungs": [
+    {
+      "C": 2,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 30
+    },
+    {
+      "C": 3,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    },
+    {
+      "C": 4,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    },
+    {
+      "C": 6,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    },
+    {
+      "C": 8,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    },
+    {
+      "C": 12,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    },
+    {
+      "C": 16,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    },
+    {
+      "C": 24,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    },
+    {
+      "C": 32,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    },
+    {
+      "C": 64,
+      "fails": [],
+      "feasible": [
+        {
+          "k": 0,
+          "predicate": "P_all"
+        },
+        {
+          "k": 1,
+          "predicate": "P_all"
+        },
+        {
+          "k": 2,
+          "predicate": "P_all"
+        },
+        {
+          "k": 3,
+          "predicate": "P_all"
+        },
+        {
+          "k": 4,
+          "predicate": "P_all"
+        },
+        {
+          "k": 5,
+          "predicate": "P_all"
+        },
+        {
+          "k": 6,
+          "predicate": "P_all"
+        },
+        {
+          "k": 0,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 1,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 2,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 3,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 4,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 5,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 6,
+          "predicate": "P_keep"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzig"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigzag"
+        },
+        {
+          "k": 0,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 1,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 2,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 3,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 4,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 5,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 6,
+          "predicate": "P_zigonly"
+        },
+        {
+          "k": 0,
+          "predicate": "P_never"
+        },
+        {
+          "k": 1,
+          "predicate": "P_never"
+        },
+        {
+          "k": 2,
+          "predicate": "P_never"
+        },
+        {
+          "k": 3,
+          "predicate": "P_never"
+        },
+        {
+          "k": 4,
+          "predicate": "P_never"
+        },
+        {
+          "k": 5,
+          "predicate": "P_never"
+        },
+        {
+          "k": 6,
+          "predicate": "P_never"
+        }
+      ],
+      "flow_dead": false,
+      "n_feasible": 42
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "selected": [
+    {
+      "C": 2,
+      "histories_max_residual": [
+        0,
+        1
+      ],
+      "k": 2,
+      "predicate": "P_all"
+    },
+    {
+      "C": 2,
+      "histories_max_residual": [
+        0,
+        1
+      ],
+      "k": 6,
+      "predicate": "P_all"
+    },
+    {
+      "C": 6,
+      "histories_max_residual": [
+        0,
+        1
+      ],
+      "k": 1,
+      "predicate": "P_keep"
+    }
+  ],
+  "status": "DEV_SHORTLIST_NOT_FROZEN"
+}

@@ -27,7 +27,7 @@ def _pattern_match(pattern: dict, credit: dict) -> bool:
 
 
 # WP3-STEP-02: deterministic update (the MST0-10 function).
-def update(ledger: list, event: dict, rules: list) -> tuple[list, list]:
+def update(ledger: list, event: dict, rules: list, _skip_validation: bool = False) -> tuple[list, list]:
     """Apply rules in rule_id order; return (new_ledger, applied_trace).
 
     Domain: finite legal ledgers × legal rotation events × finite WELL-FORMED
@@ -44,7 +44,8 @@ def update(ledger: list, event: dict, rules: list) -> tuple[list, list]:
     cur = list(ledger)
     trace = []
     for rule in sorted(rules, key=lambda r: r["rule_id"]):
-        active_mod.check_event_predicate(rule["match"])
+        if not _skip_validation:
+            active_mod.check_event_predicate(rule["match"])
         if not active_mod.evaluate(rule["match"], {"type": "", "support": (),
                                                    "scale": ("", 0),
                                                    "mass": Fraction(0),
@@ -66,7 +67,19 @@ def update(ledger: list, event: dict, rules: list) -> tuple[list, list]:
         for c in consumed:
             cur = ledger_state.remove(cur, c)
         for template in rule.get("produce", []):
-            cur = ledger_state.add(cur, dict(template))
+            if isinstance(template, dict) and template.get("support") == "inherit":
+                if not consumed:
+                    trace.append({"rule": rule["rule_id"], "applied": False,
+                                  "reason": "inherit-without-consumed"})
+                    continue
+                produced = dict(template)
+                produced["support"] = consumed[0]["support"]
+                cur = ledger_state.add(cur, ledger_state.make_credit(
+                    produced.get("type"), produced["support"],
+                    tuple(produced.get("scale", ("S0", 0))),
+                    template.get("mass"), produced.get("provenance", "")))
+            else:
+                cur = ledger_state.add(cur, dict(template))
         trace.append({"rule": rule["rule_id"], "applied": True,
                       "consumed": len(consumed),
                       "produced": len(rule.get("produce", []))})

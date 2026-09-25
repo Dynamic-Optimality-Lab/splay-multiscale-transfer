@@ -1,0 +1,24 @@
+{
+  "C": 6,
+  "branch": "RAW_BOUNDARY",
+  "calculus_id": "MSTC-DEV-0003",
+  "constant_policy": "DIAGNOSTIC_ONLY (frozen C per candidate; theorem C in WP-5)",
+  "energy_definition": "unit pool accounting (dev only; WP-5 freezes)",
+  "fresh_holdout_status": "UNTOUCHED",
+  "histories_max_residual": [
+    0,
+    1
+  ],
+  "k": 1,
+  "mapping_version": "L6MAP-v0.3.1",
+  "note": "development hypothesis only; never fresh-tested; IDs immutable",
+  "ontology_version": "MST-ONTOLOGY-v0.3",
+  "predicate": "P_keep",
+  "rule_ids": [
+    "TR-A-T7",
+    "TR-A-T5",
+    "TR-A-T6"
+  ],
+  "schema_version": "MST-CALCULUS-v0.3",
+  "status": "DEV_FALSIFICATION_PENDING"
+}

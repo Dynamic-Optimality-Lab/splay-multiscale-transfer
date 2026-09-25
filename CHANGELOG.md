@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-09-23 — WP-4 EXECUTION (Phase 4 finished: Branch-A survives dev + Branch-B unfired + triage quiet + battery clean)
+- Masks frozen (384 near-critical, 9.6k noncritical sel, 52k val, 120+120 histories); flow screen (worst k=1 at C=2); CEGIS(z3)+brute+ILP agree per rung (C=2: 30/42, C≥3: 42/42); histories screen (P_all-only survival, dominance-pruned, 0 fails fresh); shortlist 3 dev hypotheses (zero residuals, UNTOUCHED); Branch B NOT_ACTIVATED; triage 11 motifs NOT_ACTIVATED (ratios constant); battery 84/0 kills over 9 modes. 20 suites/runners green. WP-4 FINISHED.
+
 ## 2026-09-23 — WP-3 EXECUTION (Phase 3 finished: provenance + ledger + grammar + H3T + MST0-10)
 - Provenance/ledger/transfer machinery (deterministic U_R, support arity, event/credit predicate separation, duplicate-ID guards, tag-independence, flow/energy exactness); leakage audit clean over 7 scopes (two-tier + carve-outs); H3T 70,000-episode bank (11 strata, streams verified, 539 exact independent replays, BANK_COMMITTED, 14.1 MB committed to git); prereg untouched (re-verified); freeze certs; Branch B BLOCKED; MST0-10 conditional ACCEPT discharged via 3 fixes and recorded schema-valid; MST0-11 UNPROVED-setup. 15 suites/runners green. WP-3 FINISHED.
 

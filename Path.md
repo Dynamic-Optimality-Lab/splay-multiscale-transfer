@@ -125,7 +125,7 @@ Per WorkPlan.md §WP-2 (spec PHASE 02/04-science/05/06; MST0-03/05/06/07/08). No
 
 Per WorkPlan.md §WP-3 (spec PHASE 07/08/09; MST0-10/11). `firewall.py` skeleton exists; generator/ledger/grammar code pending. No H3T bank content exists; no discovery read has occurred. Adherence verdict to be recorded when executed.
 
-## WP-4 — Transfer synthesis (Branch A/B, triage, stress) [PENDING — entry: TRANSFER_GRAMMAR_FROZEN]
+## WP-4 — Transfer synthesis (Branch A/B, triage, stress) [FINISHED — ALL GATES EMITTED (SURVIVES_DEV + NOT_ACTIVATED + NOT_ACTIVATED + zero-kill); MST0-09/12 UNPROVED by design]
 
 Per WorkPlan.md §WP-4 (spec PHASE 10/11/12/13; MST0-09/12). This is the "training" WP: dev-only synthesis with the brutal entirely-different-test battery defined in WorkPlan. No solver code, no hypotheses, no residuals exist yet. Adherence verdict to be recorded when executed.
 
@@ -530,6 +530,125 @@ executed; no holdout contents read (state metadata only); fresh banks H1/H2R unt
 
 ---
 
+## WP-4 EXECUTION RECORD (2026-09-23, this turn): Phase 4 implemented exactly as written
+
+### Implementation inventory (all new, production-grade, no placeholders)
+- Discovery masks + corpora: `python/cycles/discovery.py` (Johnson bounded cycles n4,
+spliced walks n5/6, top-K=128 + slack {0,1,2} union, noncritical sel n2-5 full /
+val n6-7 sampled, generated selection/validation on frozen disjoint seeds,
+rotation-level corpus builder with C-independent (a_edge,y_edge) events + prefix
+sequences). STEP-01 lines: `discovery.py:152,166,195,208,231,316,341,361`;
+`run_phase10.py:163` (masks frozen).
+- Solver engines: `encode_sat.py:32,45` (z3 one-hot predicate SAT + blocking),
+`smt.py:32,51` (per-predicate k lower bounds, fresh scope per predicate),
+`ilp.py:23,25` (exact minimal-k scan 0..6 with log certificate),
+`flow.py` (Edmonds-Karp max-flow + per-cycle required-k necessity),
+`certify.py:84` (independent direct-pool replay + agreement gate).
+- Candidate+evaluation: `transfer/branchA.py` (P_all/P_keep/P_zigzig/P_zigzag/P_zigonly/
+P_never menu, k 0..6, T7 interior-boundary site cycling, T5/T6 through update()
+with precompiled validation + inherit-support; fail_fast mode),
+`transfer/ladder.py:34` (fixed-family rung sweep, stability wording),
+`transfer/branchB.py:53` (signed borrowing probe with floor, BLOCKED without
+exact Branch-A rejection).
+- Adversary battery: `generators.py` (seeded families + exact actual-ratio R with
+dual-core agreement), `hillclimb.py:33`, `anneal.py:37`, `genetic.py:37`,
+`neighborhood.py:21`, `splice.py:19`, `inflate.py`, `generalize.py:24` (N1-N5).
+All nine required modes execute with distinct run records.
+- Runners: `run_phase10.py` (STEP-00:68,73,111,125,431,434; STEP-01:163,276,450,470;
+STEP-02:313 + cert agreement 409; STEP-03:378,384,415,511,518,523,551,559,587,592,616,637,639,643),
+`run_phase11.py` (STEP-04 activation gate), `run_phase12.py` (STEP-07 triage),
+`run_phase13.py` (STEP-00/06/08 battery + zero-violation gate).
+- Records: `math/theorem_MST09_raw_boundary.md` (conjecture + finite evidence +
+minimal obstruction witnesses, UNPROVED by design), `math/theorem_MST12_signed_lower_bound.md`
+(setup, NOT_ACTIVATED), `COUNTEREXAMPLE_ATLAS.md` (append-only draft),
+`artifacts/v03/hypotheses/MSTC-DEV-0001..0003.json` (dev only, UNTOUCHED, never
+fresh-tested), `tests/{transfer/test_branchA,solver/test_solver,adversary/test_engines,
+proof/test_dev_bounds}.py`, `tests/test_wp4.py` (agreement, freeze, firewall, menu/k domains).
+
+### Benchmarks (all exact, dev-only; entirely-different tests per WorkPlan)
+- Masks frozen: near-critical 384 (n4:220→128, n5:208→128, n6:3419→128); noncritical
+sel n2/3/4/5 = 6/45/736/8800; val n6/n7 = 24000/28000; generated 120/120 (seeds disjoint).
+- Flow screen (402 cycles/rung): worst required_k=1 at C=2 (n5-c0), 0 at C≥3 —
+necessary condition consistent with search minima (tight at C=2).
+- Stage-1 grid (critical×3 + near-critical, 438 sequences): C=2: 30/42 feasible
+(P_all/P_keep k≥1; all non-P_all/P_keep dead ∀k); C=3,4,6,8,12,16,24,32,64: 42/42
+feasible; CEGIS/z3 + brute force + ILP minimal-k coincide per predicate per rung;
+engine == independent replay on every one of 420 configs (CERT-01 clean).
+- Histories screen (120 generated selection histories; burden max w=8/7/6/4/2 at
+C=2/3/4/6/8; C≥12 VACUOUS recorded inconclusive): (P_all,k≥2) feasible at C=2,3,4
+and (P_all/P_keep/P_zigzig,k≥1) at C=6,8; every other predicate dead ∀k≤6
+(timing killer: non-P_all never activates during DELETE bursts); dominance-pruned
+(P_all,6 decides death per rung; minima only on survival — proved in-record).
+- Verdict: RAW_BOUNDARY_LAW_SURVIVES_DEV (narrowly: P_all-only survival), 0 fails on
+the fresh run (`fail kinds: {}`). Gate semantics honored: one residual at frozen C
+rejects that candidate at that C (killed configs listed with first violations in
+`histories_screen.json`/`ladder.json`); larger-C rungs recorded stability, never hardness.
+- Branch B: SIGNED_TRANSFER_NOT_ACTIVATED (no exact Branch-A rejection; probe module
+tested on fixtures, unfired on corpus). Triage: 11 motifs inflated ×1/2/4/8, actual
+ratios CONSTANT (= cycle ratio, e.g. 16/16→128/128), N3 fails 11/11 →
+NEGATIVE_FAMILY_NOT_ACTIVATED. Battery: 84 evaluations over 9 modes, 0 kills
+(engines best residual 0; shortlist zero-violation gate passes).
+- Shortlist (NOT frozen; WP-5 Phase 14 freezes): (P_all,2,2) minimal-k anchor,
+(P_all,6,2) max-headroom anchor, (P_keep,1,6) weakest-predicate survivor — 3/3 ≤ cap,
+each zero residuals at frozen C on dev.
+- Backend frozen: z3-solver 5.1.0.0, seeds random_seed=0, threads=1, no parameter
+files; prereg `solver_backends.yaml` untouched (WP-0 snapshot); H3T firewall pinned
+(BANK_COMMITTED/0, state hash logged); synthesis namespaces holdout-clean
+(bank-content scan: imports + bank paths, blocklist-declaration carve-out).
+
+### Compliance audit vs WorkPlan WP-4
+- Scope: Branch-A first, Branch-B only on exact rejection (gated, unfired), triage on
+actual ratios (never residuals), ladder without rule edits, ≤3 primaries. VERDICT: compliant.
+- Files: every listed file exists; extras (`discovery.py` masks, `hist_corpus.json`
+persistence, `fails.json`/`checkpoints.json` diagnostics) justified as frozen-input
+provenance. Prereg yamls untouched (STOP-05 clear on every phase00 run). VERDICT: compliant.
+- Code: exact SAT/SMT/ILP/flow with certificates; floats nowhere in decisions;
+site-cycling + inherit-support documented choices; fail_fast verdict-exact;
+dominance proved not asserted; checkpoints code-tagged (stale recomputes).
+VERDICT: compliant.
+- Benchmarks/anti-overfit: training = selection only; validation (n7 critical,
+n6/7 noncritical, generated validation) never read by synthesis (masks enforce);
+n8/H1/H2R/H3T untouched (firewall pins + scans); clean-room/large-n belong to WP-5;
+ladder varies C only; mutants/dual-core/independent-replay throughout. VERDICT: compliant.
+- Gates: RAW_BOUNDARY_LAW_SURVIVES_DEV (exactly one of the three allowed) +
+SIGNED_TRANSFER_NOT_ACTIVATED + NEGATIVE_FAMILY_NOT_ACTIVATED + battery zero-kill
+gate for WP-5 entry. MST0-09 UNPROVED-conjecture, MST0-12 UNPROVED-setup (no verdicts
+requested; first consumer WP-6). VERDICT: compliant.
+
+### Gaps found and closed (all before calling the phase finished)
+splay_case/case schema split (silent no-match → all residuals wrong; fixed by
+unified `splay_case` + corpus rebuild); certify pool leak across sequences (false
+feasible → per-sequence reset); CEGIS/SMT cross-predicate coupling (k-space
+exhausted after 1 predicate → fresh SMT scope per predicate); brute/CEGIS minima
+agreement (set-equality overstated → minima comparison); histories vacuity
+(unburdened rungs → VACUOUS_NO_BURDEN, not passes); timeouts (PairDomain per-history
+→ build_tree_from_shape; memoization; dominance pruning; per-step checkpoints with
+code tags + --fresh); z3 seed params (sat.random_seed unknown → random_seed);
+firewall scan self-hits (carve-outs for blocklist declarations, bank-content
+semantics); masks schema drift (counts vs lists → lists+tag canonical, test aligned);
+max-flow expectation (5→4 min-cut) + required-k test (k=1 for infeasibility);
+phase07 scope creep (transfer/ whole-dir → WP-3 files only); phase09 post-WP-4
+re-run (pre-synthesis emptiness → freeze-time certification preserved, idempotent);
+allowlist extensions (WP-4 namespaces named with authorizing phase); baseline
+relocation; stub-list updates; duplicate SURVIVES print; eval_memo arity; shortlist
+C-attachment; review-record hash duplication (pre-write check).
+Stress-found, fixed, and logged — none silent, none deleted.
+
+### Stress (all exit 0)
+Toy corpora (feasible/agree/monotone/fail_fast), SAT/SMT UNSAT-after-blocking,
+max-flow + required-k arithmetic, ILP minima, cert gates, adversary determinism +
+interfaces + N1-N5 fail-closed, WP-4 agreement/firewall/menu/k-domain, proof dev
+bounds (shortlist ≤3, zero residuals, UNTOUCHED hypotheses), fuzz-free determinism
+(memoized grid), idempotent checkpoints, firewall pins (H3T committed, prereg snapshot).
+
+### Verdict
+WP-4 FINISHED. Gates emitted exactly as specified; 10/26 obligations REVIEWED
+(unchanged: 01–08,10,16; MST0-09/12 UNPROVED by design). No synthesis outside dev,
+no holdout contact, no rule mutation (rules fixed; ladder varies C only). WP-5 entry
+unblocked (shortlist of 3 dev hypotheses with zero dev violations at frozen C).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -542,5 +661,6 @@ executed; no holdout contents read (state metadata only); fresh banks H1/H2R unt
 - 2026-09-23: Turn 9 (WP-1 EXECUTION) — Phase 1 implemented exactly: canonical enumeration (counts 4/19/196/1764/17424/184041 exact), sealed import (52 files, manifest cross-check), strict replay (19/19 cycles, ratios 3/2–8/5–23/14 exact, all-KEEP closed), forced derivatives edge-exact KEEP-only, 15 specimen witnesses exact, failure table (3 PHI REJECTED, 7 atom families INCONSISTENT), 70-edge dual-core agreement, expansion idempotent, 4 proofs PROVED + review packages, stress green, full regression green. Gates emitted (mechanics scope); human verdict ACCEPT all four recorded schema-valid → subgate CLOSED, WP-1 FINISHED. Re-verified → commit+push.
 - 2026-09-23: Turn 10 (WP-2 EXECUTION) — Phase 2 implemented exactly: WP-2A (source extraction, 9+1 translation modules, 27-record mapping, dual agreement, mutants, MST0-03 proof, ACCEPT, freeze cert) + WP-2B (70-edge stratification, 19 motifs, n7 validation, D5, lemma battery with MST0-05 PROVED/MST0-06 killed+v2/MST0-07 PROVED/MST0-08 split, baseline shape, reports), ACCEPT all four lemma verdicts (08 scoped finite), allowlist/baseline/stub compliance fixes, full regression green. WP-2 FINISHED. Re-verified → commit+push.
 - 2026-09-23: Turn 11 (WP-3 EXECUTION) -- Phase 3 implemented exactly: provenance machinery, ledger machinery (U_R deterministic, tag-independence), transfer grammar (10 templates clean, 3 negatives caught, Branch B BLOCKED), leakage audit clean, H3T 70k bank (streams + 539 exact replays, BANK_COMMITTED, committed), freeze certs, MST0-10 conditional ACCEPT discharged and recorded, MST0-11 UNPROVED-setup. 15 suites/runners green. WP-3 FINISHED. Re-verified --> commit+push.
+- 2026-09-23: Turn 12 (WP-4 EXECUTION) -- Phase 4 implemented exactly: masks frozen (384 near-critical, sel/val splits, 120+120 histories), flow screen (worst k=1 at C=2), CEGIS(z3)+brute+ILP agree (C=2: 30/42, C>=3: 42/42), histories screen (P_all-only survival, dominance-pruned, 0 fails), shortlist 3 dev hypotheses (zero residuals, UNTOUCHED), Branch B NOT_ACTIVATED, triage 11 motifs NOT_ACTIVATED (ratios constant), battery 84/0 kills over 9 modes, 20 suites green. WP-4 FINISHED. Re-verified --> commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); all repairs logged per turn, none silent.

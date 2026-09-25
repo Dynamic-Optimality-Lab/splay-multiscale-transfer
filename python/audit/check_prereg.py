@@ -152,10 +152,17 @@ AUTHORIZED_NAMESPACES = {
     "holdouts/h3t_bank/": "WP-3 quarantined H3T bank (firewall-guarded, hash-committed)",
     "holdouts/h3t_commitment.json": "WP-3 H3T commitment record",
     "holdouts/h3t_state.json": "WP-3 H3T firewall state",
-    "proofs/obligation_status.json": "WP-1 derived obligation statuses",
+    "discovery/": "WP-4 frozen discovery masks (pre-synthesis dev/validation splits)",
+    "transfer_grammar/": "WP-4 frozen grammar inputs (copies, prereg untouched)",
+    "solver/": "WP-4 solver records (backend freeze, assignments, certificates)",
+    "hypotheses/": "WP-4 dev transfer hypotheses (never fresh-tested; new-ID discipline)",
+    "adversarial/": "WP-4 adversarial families + counterexample records",
+    "proofs/obligation_status.json": "WP-1 derived obligation statuses (recomputed, never frozen)",
 }
-DENIED_UNTIL_AUTHORIZED = ("hypotheses/", "solver/", "transfer_grammar/",
-                           "holdouts/h3t_bank", "seal/FINAL_RESULT.json")
+DENIED_UNTIL_AUTHORIZED = ("seal/FINAL_RESULT.json",)
+# Note: hypotheses/, solver/, transfer_grammar/ were denied pending WP-4 and are now
+# explicitly authorized above (dev synthesis is WP-4's purpose); holdouts/h3t_bank/
+# stays authorized as the quarantined bank. Only the seal result remains denied.
 
 
 def check_no_early_science(root: str, artifacts_rel: str = "artifacts/v03") -> list[str]:

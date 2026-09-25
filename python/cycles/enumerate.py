@@ -49,6 +49,11 @@ def parse_shape(ss: str) -> tuple | None:
 
 def build_node_tree(shape_idx_shapes: list[str], idx: int, n: int) -> Node | None:
     """Fresh pointer-based BST for tree_id idx (inorder keys 1..n)."""
+    return build_tree_from_shape(shape_idx_shapes[idx], n)
+
+
+def build_tree_from_shape(shape_string: str, n: int) -> Node | None:
+    """Fresh pointer BST from a shape string (no enumeration needed)."""
     keys = iter(range(1, n + 1))
 
     def rec(skel: tuple | None) -> Node | None:
@@ -64,7 +69,8 @@ def build_node_tree(shape_idx_shapes: list[str], idx: int, n: int) -> Node | Non
             node.right.parent = node
         return node
 
-    return rec(parse_shape(shape_idx_shapes[idx]))
+    tree = rec(parse_shape(shape_string))
+    return tree
 
 
 def node_shape_string(root: Node | None) -> str:

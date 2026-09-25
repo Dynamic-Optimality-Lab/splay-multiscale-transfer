@@ -34,9 +34,16 @@ from python.provenance import merge as merge_mod  # noqa: E402
 from python.provenance import sources as sources_mod  # noqa: E402
 from python.rotations.trace import trace_delete, trace_keep  # noqa: E402
 
-LEAKAGE_SCOPES = ["python/provenance", "python/ledger", "python/transfer",  # LEAKAGE-scope
-                  "python/holdout", "scripts/run_phase07.py", "scripts/run_phase08.py",  # LEAKAGE-scope
-                  "scripts/run_phase09.py"]  # LEAKAGE-scope
+LEAKAGE_SCOPES = ["python/provenance", "python/ledger",  # LEAKAGE-scope
+                  "python/transfer/grammar.py", "python/transfer/templates_T1_T10.py",  # LEAKAGE-scope
+                  "python/transfer/branches.py", "python/transfer/complexity.py",  # LEAKAGE-scope
+                  "python/holdout/firewall.py", "python/holdout/h3t_generate.py",  # LEAKAGE-scope
+                  "python/holdout/h3t_verify.py", "scripts/run_phase07.py",  # LEAKAGE-scope
+                  "scripts/run_phase08.py", "scripts/run_phase09.py"]  # LEAKAGE-scope
+# NOTE: WP-4 synthesis paths (transfer/branchA.py, branchB.py, ladder.py,
+# solver/*, adversary/*, cycles/discovery.py, run_phase10-13.py) are
+# TARGET-AWARE by design (they compute exact regret residuals) and are
+# intentionally OUT of this target-blind scope.
 # Files legitimately outside the WP-3 target-blind scope (audited separately).
 LEAKAGE_EXCLUDE = {"python/provenance/d5_analysis.py":  # LEAKAGE-exclusion
                    "WP-2B target-joined science (reads legitimate post-freeze)"}  # LEAKAGE-exclusion

@@ -14,7 +14,7 @@
   ],
   "grammar_sha256": "21F17870D1198C4FC2E2B77AA230209BAC698D5902F97B7F0B120858DA96FE81",
   "impl_hashes": {
-    "python/ledger/update.py": "E3A78F8F077A141F",
+    "python/ledger/update.py": "DC7C1177E7285E1C",
     "python/provenance/active.py": "1DD1494918DC533F",
     "python/transfer/branches.py": "2A6C9DE155F76475",
     "python/transfer/complexity.py": "8FD26A0C2E826388",

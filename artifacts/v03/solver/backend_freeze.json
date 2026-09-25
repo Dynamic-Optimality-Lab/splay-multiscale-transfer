@@ -1,0 +1,13 @@
+{
+  "backend": "z3-solver",
+  "certificate_capability": "model-replay + unsat-by-exhaustion-agreement",
+  "module_hash": "54E1833C2DF2CA01C33B487180F75580",
+  "package_version": "5.1.0.0",
+  "parameter_files": [],
+  "reported_version": "5.1.0",
+  "role": "discovery CEGIS proposer; verdicts require independent replay + brute-force agreement",
+  "seeds": {
+    "random_seed": 0
+  },
+  "threads": 1
+}

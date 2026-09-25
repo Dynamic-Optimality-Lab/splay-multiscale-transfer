@@ -1,0 +1,3401 @@
+{
+  "2|P_all|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_all|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "2|P_all|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "2|P_all|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "2|P_all|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "2|P_all|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "2|P_keep|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_keep|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_keep|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_keep|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_keep|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_keep|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_zigonly|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigonly|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigonly|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigonly|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigonly|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigonly|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigzag|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigzag|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigzag|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigzag|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigzag|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigzag|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        5,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      5,
+      1
+    ]
+  },
+  "2|P_zigzig|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_zigzig|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_zigzig|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_zigzig|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_zigzig|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "2|P_zigzig|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        5,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "3|P_all|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_all|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_all|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "3|P_all|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "3|P_all|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "3|P_all|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "3|P_all|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "3|P_keep|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_keep|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_keep|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_keep|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_keep|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_keep|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_keep|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_never|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_never|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_never|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_never|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_never|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_never|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_never|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigonly|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigonly|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigonly|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigonly|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigonly|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigonly|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigonly|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzag|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzag|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzag|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzag|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzag|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzag|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzag|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzig|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        4,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      4,
+      1
+    ]
+  },
+  "3|P_zigzig|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_zigzig|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_zigzig|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_zigzig|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_zigzig|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "3|P_zigzig|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 3,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        4,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "4|P_all|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_all|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 5,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "4|P_all|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "4|P_all|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "4|P_all|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "4|P_all|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "4|P_all|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "4|P_keep|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_keep|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 5,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "4|P_keep|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 5,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "4|P_keep|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 5,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "4|P_keep|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 5,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "4|P_keep|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 5,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "4|P_keep|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 5,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "4|P_never|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_never|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_never|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_never|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_never|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_never|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_never|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigonly|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigonly|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigonly|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigonly|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigonly|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigonly|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigonly|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzag|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzag|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzag|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzag|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzag|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzag|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzag|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzig|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        3,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        3,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      3,
+      1
+    ]
+  },
+  "4|P_zigzig|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 4,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "4|P_zigzig|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 4,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "4|P_zigzig|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 4,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "4|P_zigzig|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 4,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "4|P_zigzig|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 4,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "4|P_zigzig|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 4,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        6,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "6|P_all|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_all|1": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_all|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_all|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_all|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_all|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_all|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_keep|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_keep|1": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_keep|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_keep|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_keep|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_keep|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_keep|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_never|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_never|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_never|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_never|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_never|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_never|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_never|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigonly|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigonly|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigonly|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigonly|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigonly|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigonly|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigonly|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzag|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzag|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzag|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzag|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzag|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzag|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzag|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzig|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-0",
+      "w": [
+        1,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "6|P_zigzig|1": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_zigzig|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_zigzig|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_zigzig|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_zigzig|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "6|P_zigzig|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_all|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_all|1": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_all|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_all|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_all|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_all|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_all|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_keep|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_keep|1": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_keep|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_keep|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_keep|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_keep|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_keep|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_never|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_never|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_never|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_never|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_never|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_never|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_never|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_zigonly|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_zigonly|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigonly|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigonly|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigonly|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigonly|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigonly|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigzag|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_zigzag|1": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigzag|2": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigzag|3": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigzag|4": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigzag|5": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigzag|6": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 1,
+      "res": [
+        1,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      1,
+      1
+    ]
+  },
+  "8|P_zigzig|0": {
+    "fails": [],
+    "histories_feasible": false,
+    "histories_first_violation": {
+      "paid": 0,
+      "res": [
+        2,
+        1
+      ],
+      "seq": "gen-58",
+      "w": [
+        2,
+        1
+      ]
+    },
+    "histories_max_residual": [
+      2,
+      1
+    ]
+  },
+  "8|P_zigzig|1": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_zigzig|2": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_zigzig|3": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_zigzig|4": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_zigzig|5": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  },
+  "8|P_zigzig|6": {
+    "fails": [],
+    "histories_feasible": true,
+    "histories_first_violation": null,
+    "histories_max_residual": [
+      0,
+      1
+    ]
+  }
+}

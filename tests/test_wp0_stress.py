@@ -117,9 +117,8 @@ def test_mutations_fail_closed() -> None:
         open(l6, "w").write(txt)
         check("STRESS-MUT pre-resolved mapping fails",
               any("L6-00" in x for x in check_prereg.check_l6_contract(tmp)))
-        # Early science file fails the allowlist.
-        os.makedirs(os.path.join(tmp, "artifacts", "v03", "hypotheses"))
-        open(os.path.join(tmp, "artifacts", "v03", "hypotheses", "MSTC-0001.json"), "w").write("{}")
+        # Unauthorized science file fails the allowlist (top-level rogue file).
+        open(os.path.join(tmp, "artifacts", "v03", "ROGUE_SCIENCE.json"), "w").write("{}")
         check("STRESS-MUT early science fails",
               any("EARLY-SCIENCE" in x for x in check_prereg.check_no_early_science(tmp)))
         # Missing fallback field fails (object-level mutation, not the schema line).

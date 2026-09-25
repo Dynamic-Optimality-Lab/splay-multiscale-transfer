@@ -1,0 +1,741 @@
+{
+  "triaged": [
+    {
+      "config": [
+        "P_keep",
+        0,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_zigzig",
+        0,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_zigzag",
+        0,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_zigonly",
+        0,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_never",
+        0,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_never",
+        1,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_never",
+        2,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_never",
+        3,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_never",
+        4,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_never",
+        5,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    },
+    {
+      "config": [
+        "P_never",
+        6,
+        2
+      ],
+      "first_violation": {
+        "paid": 0,
+        "res": [
+          1,
+          1
+        ],
+        "seq": "crit-n5-c0",
+        "w": [
+          1,
+          1
+        ]
+      },
+      "ratios": [
+        {
+          "ratio": [
+            16,
+            16
+          ],
+          "sum_a": 16,
+          "sum_b": 16,
+          "times": 1
+        },
+        {
+          "ratio": [
+            32,
+            32
+          ],
+          "sum_a": 32,
+          "sum_b": 32,
+          "times": 2
+        },
+        {
+          "ratio": [
+            64,
+            64
+          ],
+          "sum_a": 64,
+          "sum_b": 64,
+          "times": 4
+        },
+        {
+          "ratio": [
+            128,
+            128
+          ],
+          "sum_a": 128,
+          "sum_b": 128,
+          "times": 8
+        }
+      ],
+      "triage": {
+        "checks": {
+          "N1_legal_reachable": true,
+          "N2_explicit_construction": true,
+          "N3_actual_ratio_grows": false,
+          "N4_independent_replay": true,
+          "N5_diagonal_rooted": true
+        },
+        "status": "NEGATIVE_FAMILY_NOT_ACTIVATED"
+      }
+    }
+  ]
+}
