@@ -217,11 +217,15 @@ def verify_anchors(evdir: str, fact: list) -> tuple[list[str], dict]:
 
 
 # WP-1 REPAIR STEP V11: near-critical records (F5: identify, bind, classify).
-def verify_near_critical(evdir: str) -> tuple[list[str], dict]:
-    """Vendor-verify near-tight hypotheses (quarantined) + below-optimum records."""
+def verify_near_critical(outdir: str) -> tuple[list[str], dict]:
+    """Vendor-verify near-tight hypotheses (quarantined) + below-optimum records.
+
+    Near-tight families live in v01evidence/adversarial/; below-optimum
+    records were already vendored under v01baseline as critical_n*_below_*.
+    """
     fails: list[str] = []
-    NT = "falsification/adversarial/near_tight_families.json"
-    fams = json.load(open(os.path.join(evdir, NT), encoding="utf-8"))
+    NT = os.path.join(outdir, "v01evidence", "adversarial", "near_tight_families.json")
+    fams = json.load(open(NT, encoding="utf-8"))
     if not isinstance(fams, list) or not fams:
         fails.append("NEAR-01 near-tight families malformed")
     else:
@@ -231,7 +235,8 @@ def verify_near_critical(evdir: str) -> tuple[list[str], dict]:
                 break
     below = {}
     for n in (2, 3, 4, 5, 6, 7):
-        rec = json.load(open(os.path.join(evdir, "critical", "n%d" % n, "below_optimum.json"),
+        rec = json.load(open(os.path.join(outdir, "v01baseline", "v01",
+                                          "critical_n%d_below_optimum.json" % n),
                              encoding="utf-8"))
         if not all(k in rec for k in ("b_minus", "certified_b", "kind", "label", "n")):
             fails.append("NEAR-02 n=%d below-optimum record malformed" % n)
