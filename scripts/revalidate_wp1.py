@@ -262,13 +262,15 @@ def step_named_tests() -> None:
     from collections import Counter as _Counter
     rot_src = open(os.path.join(ROOT, "tests", "rotations", "test_rot_named.py"),
                    encoding="utf-8").read()
-    rot_ids = _re.findall(r"check\(\s*\"(ROT-0[1-9]|ROT-1[0-2])", rot_src)
-    rot_ids += _re.findall(r"\(\"(ROT-0[4-8])\",", rot_src)
+    rot_ids = _re.findall(r"check\(\s*\"(ROT-0[1-9]|ROT-1[0-2]) ", rot_src)
     check("ROT-01..12 each bound exactly once",
           _Counter(rot_ids) == {"ROT-%02d" % i: 1 for i in range(1, 13)})
+    check("ROT-04..08 fixture registry complete",
+          sorted(set(_re.findall(r"\(\"(ROT-0[4-8])\",", rot_src)))
+          == ["ROT-%02d" % i for i in range(4, 9)])
     cyc_src = open(os.path.join(ROOT, "tests", "parent", "test_import.py"),
                    encoding="utf-8").read()
-    cyc_ids = _re.findall(r"check\(\s*\"(CYC-0[1-5]|IMPORT-01)", cyc_src)
+    cyc_ids = _re.findall(r"check\(\s*\"(CYC-0[1-5]|IMPORT-01) ", cyc_src)
     check("CYC-01..05 each bound exactly once (+IMPORT-01 auxiliary)",
           _Counter(cyc_ids).get("IMPORT-01", 0) >= 1
           and all(_Counter(cyc_ids).get("CYC-0%d" % i, 0) == 1 for i in range(1, 6)))

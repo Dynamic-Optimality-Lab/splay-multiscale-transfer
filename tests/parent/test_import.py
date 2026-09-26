@@ -38,11 +38,11 @@ def test_ledger() -> None:
         p = os.path.join(base, sub, *entry["dest"].split("/"))
         if sha(p) != entry["sha256"]:
             bad += 1
-    check("CYC-01 vendored bytes match ledger", bad == 0)
+    check("IMPORT-02 vendored bytes match ledger", bad == 0)
     rep = json.load(open(os.path.join(base, "replay.json")))
     # WP-1 REPAIR STEP T1: exact normative bindings (CYC-01 closes, CYC-02
     # parent ratio, CYC-03 all-KEEP recomputed, CYC-04 forced derivatives).
-    b_star = {"4": "3/2", "5": "8/5", "6": "8/5", "7": "23/14"}
+    b_star = {"2": "1", "3": "1", "4": "3/2", "5": "8/5", "6": "8/5", "7": "23/14"}
     for n, row in sorted(rep.items()):
         check("CYC-01 n=%s every cycle closes" % n,
               row["replayed_ok"] == row["cycles"]
@@ -73,7 +73,7 @@ def test_ledger() -> None:
     # binding per CYC ID; auxiliary checks carry non-CYC IDs like IMPORT-01).
     import re as _re
     src = open(__file__, encoding="utf-8").read()
-    found = _re.findall(r"check\(\s*\"(CYC-0[1-5]|IMPORT-01)[^\"]*\"", src)
+    found = _re.findall(r"check\(\s*\"(CYC-0[1-5]|IMPORT-01) ", src)
     from collections import Counter as _Counter
     counts = _Counter(found)
     check("CYC-01..05 each bound exactly once (dictionary, not set)",
