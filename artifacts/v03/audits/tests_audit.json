@@ -26,6 +26,8 @@
       "tests/parent/test_import.py"
     ],
     "ROT": [
+      "tests/rotations/test_rot_mutants.py",
+      "tests/rotations/test_rot_named.py",
       "tests/rotations/test_trace.py"
     ],
     "SEAL": [
@@ -46,5 +48,5 @@
       "tests/test_wp5.py"
     ]
   },
-  "n_files": 23
+  "n_files": 25
 }

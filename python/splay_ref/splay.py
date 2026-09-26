@@ -8,6 +8,7 @@ units and never redefine cost (MST0-02 / ROT-12).
 """
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass, field
 
 
@@ -84,10 +85,32 @@ def search_path(root: Node, x: int) -> list[int]:
     raise KeyError(f"key {x} not in tree")
 
 
+def _neighborhood_hash(top: "Node | None") -> str:
+    """SHA-256 over the keyed serialization of the minimal rotated subtree.
+
+    Identical grammar to independent._subserialize, so hashes compare
+    cross-implementation (ROT-10 neighborhood component).
+    """
+    return hashlib.sha256(serialize(top).encode("utf-8")).hexdigest()
+
+
+def _depth_of(node: Node) -> int:
+    """Depth of node by parent walk (search-path position of x)."""
+    d = 0
+    while node.parent is not None:
+        node = node.parent
+        d += 1
+    return d
+
+
 def splay(root: Node, x: int) -> tuple[Node, list[dict]]:
     """Splay key x to root. Returns (new_root, rotation_events).
 
-    Each event: {case, index, keys_local}. Cases: ROOT/ZIG/LL/RR/LR/RL.
+    Each event: {case, index, keys_local, nh_before, nh_after, orientation,
+    depth_before}. Cases: ROOT/ZIG/LL/RR/LR/RL. nh_* are neighborhood hashes
+    of the minimal rotated subtree before/after rewiring (spec §5.1);
+    orientation is the child direction tuple; depth_before is x's search-path
+    position before this rotation. Cost convention unchanged (ROT-12).
     """
     # locate node
     cur: Node | None = root
@@ -101,38 +124,65 @@ def splay(root: Node, x: int) -> tuple[Node, list[dict]]:
     while node.parent is not None:
         p = node.parent
         g = p.parent
+        depth_before = _depth_of(node)
         if g is None:
             case = "ZIG"
+            orientation = "L" if p.left is node else "R"
+            nh_before = _neighborhood_hash(p)
             if p.left is node:
                 _rotate_right(p)
             else:
                 _rotate_left(p)
             events.append({"case": case, "index": idx,
-                           "keys_local": sorted([p.key, node.key])})
+                           "keys_local": sorted([p.key, node.key]),
+                           "nh_before": nh_before,
+                           "nh_after": _neighborhood_hash(node),
+                           "orientation": orientation,
+                           "depth_before": depth_before})
         elif p.left is node and g.left is p:
             case = "LL"
+            nh_before = _neighborhood_hash(g)
             _rotate_right(g)
             _rotate_right(p)
             events.append({"case": case, "index": idx,
-                           "keys_local": sorted([g.key, p.key, node.key])})
+                           "keys_local": sorted([g.key, p.key, node.key]),
+                           "nh_before": nh_before,
+                           "nh_after": _neighborhood_hash(node),
+                           "orientation": "L,L",
+                           "depth_before": depth_before})
         elif p.right is node and g.right is p:
             case = "RR"
+            nh_before = _neighborhood_hash(g)
             _rotate_left(g)
             _rotate_left(p)
             events.append({"case": case, "index": idx,
-                           "keys_local": sorted([g.key, p.key, node.key])})
+                           "keys_local": sorted([g.key, p.key, node.key]),
+                           "nh_before": nh_before,
+                           "nh_after": _neighborhood_hash(node),
+                           "orientation": "R,R",
+                           "depth_before": depth_before})
         elif p.left is node and g.right is p:
             case = "RL"
+            nh_before = _neighborhood_hash(g)
             _rotate_right(p)
             _rotate_left(g)
             events.append({"case": case, "index": idx,
-                           "keys_local": sorted([g.key, p.key, node.key])})
+                           "keys_local": sorted([g.key, p.key, node.key]),
+                           "nh_before": nh_before,
+                           "nh_after": _neighborhood_hash(node),
+                           "orientation": "L,R",
+                           "depth_before": depth_before})
         elif p.right is node and g.left is p:
             case = "LR"
+            nh_before = _neighborhood_hash(g)
             _rotate_left(p)
             _rotate_right(g)
             events.append({"case": case, "index": idx,
-                           "keys_local": sorted([g.key, p.key, node.key])})
+                           "keys_local": sorted([g.key, p.key, node.key]),
+                           "nh_before": nh_before,
+                           "nh_after": _neighborhood_hash(node),
+                           "orientation": "R,L",
+                           "depth_before": depth_before})
         else:  # pragma: no cover - unreachable under BST invariant
             raise AssertionError("splay parent/child inconsistency")
         idx += 1

@@ -166,6 +166,7 @@ AUTHORIZED_NAMESPACES = {
     "holdouts/h2r_reveal.json": "WP-5 Phase-15 H2R routing record (one-unlock reveal set)",
     "holdouts/h3t_reveal.json": "WP-5 Phase-15 H3T reveal record (one-unlock reveal set)",
     "holdouts/h3t_replay.json": "WP-5 Phase-15 independent-replay record (one-unlock reveal set)",
+    "rotations/": "WP-1 rotation-trace corpus (sharded zst + manifest + MST02 bundle)",
     "proofs/lifecycle_audit.json": "WP-6 Phase-17 lifecycle audit (0 jumps, pointers)",
     "proofs/MST13_injection_bound.json": "WP-6 Phase-17 MST0-13 machine evidence (supporting only)",
     "proofs/bundles/": "WP-6 Phase-17 per-obligation bundles (26 pointers)",

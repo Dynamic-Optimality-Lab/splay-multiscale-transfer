@@ -1,0 +1,35 @@
+{
+  "convention": "KEEP_REF_SNAPSHOT-v1",
+  "logical_stream": "16C7320E5A11F6DBAE1CF0B8820D17959A989CFB289FF85218D03198E8C64F20",
+  "n_traces": 70,
+  "shards": {
+    "4": {
+      "bytes": 1543,
+      "count": 12,
+      "file": "traces_n4.json.zst",
+      "sha256": "3236495C2DE183EED135702096B6FD588BF5D9F11636DDC4C62F7B5402307D79",
+      "traces": 12
+    },
+    "5": {
+      "bytes": 1103,
+      "count": 4,
+      "file": "traces_n5.json.zst",
+      "sha256": "2D2941BA7406EA5BE1505E893FFB505DBD44DD387B4D1C123BDC47E48E86E348",
+      "traces": 4
+    },
+    "6": {
+      "bytes": 5160,
+      "count": 44,
+      "file": "traces_n6.json.zst",
+      "sha256": "694FC61870AAF17AA23F3EF3E8AF3E7B5E2DA6E93D8136D3B9BC8298BC0E94CD",
+      "traces": 44
+    },
+    "7": {
+      "bytes": 2674,
+      "count": 10,
+      "file": "traces_n7.json.zst",
+      "sha256": "BC2D73AC00D999990864F4256DB4D5323AC0D96EE18D2F0275CF884D52B7EBC0",
+      "traces": 10
+    }
+  }
+}

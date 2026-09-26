@@ -1,0 +1,41 @@
+{
+  "logical_stream": "9B4A588D6DB43EE0EE51870F54FB0321EA9C429FCC571F6C92F70D72EC571D59",
+  "shards": {
+    "4": {
+      "bytes": 1435,
+      "count": 6,
+      "cycles": 6,
+      "file": "expanded_n4.json.zst",
+      "json": "expanded_n4.json",
+      "sha256": "0B52F362B7CA26F37C7E1648438A04BAAADF3E3C8183828065327BD3C1D981B3",
+      "sha256_json": "4D2A9017AED353161B16EB06A1ACFD6BB92E98774702A5EC0E65F1261AD95B1C"
+    },
+    "5": {
+      "bytes": 1025,
+      "count": 1,
+      "cycles": 1,
+      "file": "expanded_n5.json.zst",
+      "json": "expanded_n5.json",
+      "sha256": "5A1C4DE8E44A118DE1BB732BFA397AA7CEC45BD5F2F851F6C79EAA646352A109",
+      "sha256_json": "5A39D8C275A44E793558D9EF9CF8576E52D2EFBDFEE04DADD4B8909549881C97"
+    },
+    "6": {
+      "bytes": 4515,
+      "count": 11,
+      "cycles": 11,
+      "file": "expanded_n6.json.zst",
+      "json": "expanded_n6.json",
+      "sha256": "485D09431E9E097ED42F9DE05F78917B0BAA083147311330E4DB2B5604A690E1",
+      "sha256_json": "5F81C995ADDCC041DCB1DB90360CF59606B6D210022E4CB8199DB9E2825E1BC2"
+    },
+    "7": {
+      "bytes": 2366,
+      "count": 1,
+      "cycles": 1,
+      "file": "expanded_n7.json.zst",
+      "json": "expanded_n7.json",
+      "sha256": "7D0FE102BEA22755A3D1201A8935A08C6DDB04FE17D909E30A599B46E596999A",
+      "sha256_json": "38C7DD6A4DFD59F503261E51CDE0289CE4F2706C13B9F4ABA33632713644B17D"
+    }
+  }
+}

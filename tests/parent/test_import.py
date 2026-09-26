@@ -40,10 +40,41 @@ def test_ledger() -> None:
             bad += 1
     check("CYC-01 vendored bytes match ledger", bad == 0)
     rep = json.load(open(os.path.join(base, "replay.json")))
-    for n, row in rep.items():
-        check("CYC-02 n=%s all cycles replayed" % n, row["replayed_ok"] == row["cycles"])
-        check("CYC-03 n=%s ratio rows consistent" % n,
-              all(r["mismatch_count"] == 0 for r in row["rows"]))
+    # WP-1 REPAIR STEP T1: exact normative bindings (CYC-01 closes, CYC-02
+    # parent ratio, CYC-03 all-KEEP recomputed, CYC-04 forced derivatives).
+    b_star = {"4": "3/2", "5": "8/5", "6": "8/5", "7": "23/14"}
+    for n, row in sorted(rep.items()):
+        check("CYC-01 n=%s every cycle closes" % n,
+              row["replayed_ok"] == row["cycles"]
+              and all(r["closed"] for r in row["rows"]))
+        check("CYC-02 n=%s exact parent ratio %s" % (n, b_star[n]),
+              all(r["ratio"] == b_star[n] for r in row["rows"]))
+        check("CYC-03 n=%s all-KEEP recomputed" % n,
+              all(r["all_keep"] for r in row["rows"]))
+    for n, row in sorted(rep.items()):
+        forced = row.get("forced", {})
+        check("CYC-04 n=%s forced derivatives match parent KEEP-only" % n,
+              forced.get("mismatches", 1) == 0
+              and forced.get("keep", -1) == forced.get("count", -2))
+    # WP-1 REPAIR STEP T2: CYC-05 expansion deterministic (manifest + re-hash).
+    expdir = os.path.join(ROOT, "artifacts", "v03", "cycles", "expanded")
+    manifest = json.load(open(os.path.join(expdir, "expanded_manifest.json")))
+    ok_manifest = True
+    for n, spec in sorted(manifest["shards"].items()):
+        if sha(os.path.join(expdir, spec["json"])) != spec["sha256_json"]:
+            ok_manifest = False
+        if sha(os.path.join(expdir, spec["file"])) != spec["sha256"]:
+            ok_manifest = False
+    logical = hashlib.sha256("".join(sorted(
+        s["sha256"] for s in manifest["shards"].values())).encode()).hexdigest().upper()
+    check("CYC-05 expansion shards + logical stream verify",
+          ok_manifest and logical == manifest["logical_stream"])
+    # WP-1 REPAIR STEP T3: set-equality gate over this file's CYC bindings.
+    import re as _re
+    src = open(__file__, encoding="utf-8").read()
+    ids = set(_re.findall(r"check\(\s*\"(CYC-0[1-5])", src))
+    check("CYC-01..05 all bound exactly once with normative meaning",
+          ids == {"CYC-01", "CYC-02", "CYC-03", "CYC-04", "CYC-05"})
 
 
 if __name__ == "__main__":

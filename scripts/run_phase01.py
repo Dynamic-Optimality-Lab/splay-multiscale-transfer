@@ -252,6 +252,11 @@ def step_specimens(outdir: str, sizes: list[int]) -> list[str]:
 
 
 def main() -> int:
+    import time as _time
+    import tracemalloc as _tracemalloc
+    from python.audit import log as log_mod
+    _tracemalloc.start()
+    _t0 = _time.perf_counter()
     ap = argparse.ArgumentParser()
     ap.add_argument("--v01", required=True)
     ap.add_argument("--v02", required=True)
@@ -277,6 +282,23 @@ def main() -> int:
     statuses = obligation_status.main(ROOT)
     if statuses.get("MST0-01", {}).get("status") != "REVIEWED":
         print("[WP1-STEP-07] subgate: MST0-01 not REVIEWED; certified consumption stays blocked", flush=True)
+    exit_code = 1 if fails else 0
+    # WP1-STEP-00: §27 execution record (append-only; fullest honest field set).
+    rec = log_mod.static_fields(ROOT)
+    rec.update({
+        "phase": "01", "branch": "WP-1", "command": sys.argv,
+        "scientific_status": "PARENT_CHAIN_VERIFIED" if not fails else "PHASE01_FAIL",
+        "clone_args": {"v01": args.v01, "v02": args.v02},
+        "input_hashes": {"v01_sealed_commit": V01_COMMIT, "v02_sealed_commit": V02_COMMIT},
+        "output_hashes": log_mod.hash_outputs(ROOT, ["artifacts/v03/parent_import"]),
+        "wall_s": round(_time.perf_counter() - _t0, 2),
+        "allocator_peak_bytes": _tracemalloc.get_traced_memory()[1],
+        "exit_code": exit_code,
+    })
+    _tracemalloc.stop()
+    # WP-1 REPAIR STEP L3: append the §27 execution record (fail-closed fields).
+    log_mod.write_log(os.path.join(ROOT, "artifacts", "v03", "logs", "phase01_wp1.jsonl"), rec)
+    print("[WP1-STEP-00] §27 record appended (phase01_wp1.jsonl)", flush=True)
     if fails:
         print("[WP1-STEP-00] PHASE01_FAIL (%d)" % len(fails), flush=True)
         for x in fails:

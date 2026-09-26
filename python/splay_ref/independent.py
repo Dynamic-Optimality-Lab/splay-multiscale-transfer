@@ -110,6 +110,39 @@ def serialize2(st: dict) -> str:
     return rec(st["root"])
 
 
+def _subserialize(nodes: dict, k: int | None) -> str:
+    """Keyed subtree serialization from an arbitrary node (serialize2 grammar)."""
+    if k is None:
+        return "."
+    return "(" + str(k) + _subserialize(nodes, nodes[k][0]) + _subserialize(nodes, nodes[k][1]) + ")"
+
+
+def _nh(nodes: dict, k: int | None) -> str:
+    """Neighborhood hash with the identical grammar as splay._neighborhood_hash."""
+    import hashlib as _hl
+    return _hl.sha256(_subserialize(nodes, k).encode("utf-8")).hexdigest()
+
+
+def _depth2(nodes: dict, x: int) -> int:
+    """Depth of x by parent walk (search-path position)."""
+    d = 0
+    while nodes[x][2] is not None:
+        x = nodes[x][2]
+        d += 1
+    return d
+
+
+def path2(st: dict, x: int) -> list[int]:
+    """Root-to-x search path in dict-state (ROT-02 cross-core comparison)."""
+    nodes = st["nodes"]
+    if x not in nodes:
+        raise KeyError(x)
+    chain = [x]
+    while nodes[chain[-1]][2] is not None:
+        chain.append(nodes[chain[-1]][2])
+    return list(reversed(chain))
+
+
 def splay2(st: dict, x: int) -> list[dict]:
     nodes = st["nodes"]
     if x not in nodes:
@@ -119,33 +152,50 @@ def splay2(st: dict, x: int) -> list[dict]:
     while nodes[x][2] is not None:
         p = nodes[x][2]
         g = nodes[p][2]
+        depth_before = _depth2(nodes, x)
         if g is None:
             case = "ZIG"
+            orientation = "L" if nodes[p][0] is x else "R"
+            nh_before = _nh(nodes, p)
             if nodes[p][0] is x:
                 _rot_right(st, p)
             else:
                 _rot_left(st, p)
             evs.append({"case": case, "index": idx,
-                        "keys_local": sorted([p, x])})
+                        "keys_local": sorted([p, x]),
+                        "nh_before": nh_before, "nh_after": _nh(nodes, x),
+                        "orientation": orientation, "depth_before": depth_before})
         elif nodes[p][0] is x and nodes[g][0] is p:
+            nh_before = _nh(nodes, g)
             _rot_right(st, g)
             _rot_right(st, p)
             evs.append({"case": "LL", "index": idx,
-                        "keys_local": sorted([g, p, x])})
+                        "keys_local": sorted([g, p, x]),
+                        "nh_before": nh_before, "nh_after": _nh(nodes, x),
+                        "orientation": "L,L", "depth_before": depth_before})
         elif nodes[p][1] is x and nodes[g][1] is p:
+            nh_before = _nh(nodes, g)
             _rot_left(st, g)
             _rot_left(st, p)
             evs.append({"case": "RR", "index": idx,
-                        "keys_local": sorted([g, p, x])})
+                        "keys_local": sorted([g, p, x]),
+                        "nh_before": nh_before, "nh_after": _nh(nodes, x),
+                        "orientation": "R,R", "depth_before": depth_before})
         elif nodes[p][0] is x and nodes[g][1] is p:
+            nh_before = _nh(nodes, g)
             _rot_right(st, p)
             _rot_left(st, g)
             evs.append({"case": "RL", "index": idx,
-                        "keys_local": sorted([g, p, x])})
+                        "keys_local": sorted([g, p, x]),
+                        "nh_before": nh_before, "nh_after": _nh(nodes, x),
+                        "orientation": "L,R", "depth_before": depth_before})
         else:
+            nh_before = _nh(nodes, g)
             _rot_left(st, p)
             _rot_right(st, g)
             evs.append({"case": "LR", "index": idx,
-                        "keys_local": sorted([g, p, x])})
+                        "keys_local": sorted([g, p, x]),
+                        "nh_before": nh_before, "nh_after": _nh(nodes, x),
+                        "orientation": "R,L", "depth_before": depth_before})
         idx += 1
     return evs
