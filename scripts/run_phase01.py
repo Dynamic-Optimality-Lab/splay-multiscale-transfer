@@ -59,18 +59,18 @@ def step_import(v01: str, v02: str, outdir: str, skip_if_sealed: bool = True) ->
         return fails
     dest_v01 = os.path.join(outdir, "v01baseline")
     dest_v02 = os.path.join(outdir, "v02baseline")
-    dest_ev01 = os.path.join(outdir, "v01evidence")
-    dest_ev02 = os.path.join(outdir, "v02evidence")
     ledger, f1 = import_parent.vendor({"v01": v01}, dest_v01)
     fails += f1
     ledger2, f2 = import_parent.vendor({"v02": v02}, dest_v02)
     fails += f2
     # WP-1 REPAIR STEP V0: vendor the sealed parent-evidence classes (F1/F3/F5).
+    # NOTE: dest_root is outdir (ledger dest paths already carry their
+    # v01evidence//v02evidence/ prefixes); passing a prefixed dir doubles it.
     ledger_ev1, f3 = import_parent.vendor(
-        {"v01": v01}, dest_ev01, import_parent.V01_EVIDENCE_FILES)
+        {"v01": v01}, outdir, import_parent.V01_EVIDENCE_FILES)
     fails += f3
     ledger_ev2, f4 = import_parent.vendor(
-        {"v02": v02}, dest_ev02, import_parent.V02_EVIDENCE_FILES)
+        {"v02": v02}, outdir, import_parent.V02_EVIDENCE_FILES)
     fails += f4
     if fails:
         return fails
@@ -82,7 +82,13 @@ def step_import(v01: str, v02: str, outdir: str, skip_if_sealed: bool = True) ->
             manifest[parts[1]] = parts[0].upper()
     checked = 0
 
+    # WP-1 REPAIR STEP V0b: v01 seal files are WP-0 bootstrap records (verified
+    # by phase00), outside the WP-1 cycle/evidence cross-check scope: skip.
+    SEAL_SKIPS = ("v01/FINAL_RESULT.json", "v01/MANIFEST.sha256")
+
     def _manifest_key(dest: str) -> str | None:
+        if dest in SEAL_SKIPS:
+            return "SKIP-SEAL-BOOTSTRAP"
         if dest.startswith("v01/critical_n"):
             size, fname = dest.split("critical_n")[1].split("_", 1)
             return next((k for k in manifest
@@ -94,6 +100,8 @@ def step_import(v01: str, v02: str, outdir: str, skip_if_sealed: bool = True) ->
 
     for entry in ledger + ledger_ev1:
         mkey = _manifest_key(entry["dest"])
+        if mkey == "SKIP-SEAL-BOOTSTRAP":
+            continue
         if mkey is None or manifest[mkey] != entry["sha256"]:
             fails.append("IMPORT-02 v0.1 manifest mismatch for %s" % entry["dest"])
         else:
