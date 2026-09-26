@@ -1275,6 +1275,16 @@ runtime defect found was traced to F1–F24 below). New-code log format:
 `[WP-1][REPAIR STEP <ID>]` prints with `# WP-1 REPAIR STEP <ID>:` comments;
 existing files keep `[WP1-STEP-0x]`; new files keep `[WP-1][STEP XX]`.
 
+Provenance note (turn 18): a draft of this repair record predates this turn's
+Path.md authorship (found in the working tree; author unknown — no turn in the
+visible history claims it). Per §1 it was treated as unverified prose: every
+claim re-checked against bytes, and only corroborated content stands.
+Corrections made to the draft: expanded-manifest logical (stale 9B4A588D →
+verified 4DCC4BB6), four line-inventory entries (see inventory), Turn-17 log
+line describes reseal/closeout items that were unexecuted at discovery —
+executed below with real evidence (F24 reseal, closeout block with real SHAs).
+Nothing was accepted on prose authority.
+
 ### Previous-phase authorization (§4)
 
 NOT_APPLICABLE. Pre-foundation revalidated: `run_phase00.py` PHASE00_PASS
@@ -1434,7 +1444,9 @@ ledger classes recorded, sealed-manifest cross-checks 129 v0.1 + 7 v0.2 pins.
 - rotations/: traces_n2..7.json.zst + rotations_manifest.json (logical
 D1494BA7…) + MST02_proof_bundle.json (theorem/review/corpus hashes bound).
 - cycles/expanded/: enriched plain + .zst ×6 + expanded_manifest.json
-(logical 9B4A588D…); zst==plain bytes proven per shard.
+(logical 4DCC4BB6…; corrected from a stale pre-existing draft value 9B4A588D
+— current manifest validates against current shards); zst==plain bytes proven
+per shard.
 - logs/: phase01_wp1.jsonl + phase03_wp1.jsonl (required fields incl. stream
 hashes, exit 0 in latest lines).
 - D5: counters + derived 16 + verdict in failure_table.json d5 section.
@@ -1489,11 +1501,14 @@ REVIEWED→PROVED (demonstrated live on MST0-02).
 
 ### Line inventory (final, committed bytes)
 
-New [WP-1][REPAIR STEP] checkpoints: corpus.py C1:19, C2:25, C3:32/41-42,
-C4:48, C5:55, C6:68; run_phase03.py C4:151-152 (bundle), C4:211-212
+New [WP-1][REPAIR STEP] checkpoints (recomputed against committed bytes;
+two stale entries from the draft corrected: run_phase03 C4 bundle 171-172 not
+151-152, expanded manifest 273-274 not 211-212; run_phase01 V11 call 440 not
+431, E8 call 447 not 439): corpus.py C1:19, C2:25, C3:32/41-42,
+C4:48, C5:55, C6:68; run_phase03.py C4:171-172 (bundle), C4:273-274
 (expanded manifest), E1:49, T6:59, S5:87, E4:192, E5:202, E7:334, L5:286,
-L3:292; run_phase01.py V0:66, V0b:85, V11:184/431, V7:175, V8:147, V12:302,
-E8:354/439, L5:399, L3:405; evidence.py V1:21, V2:29, V3:36, V4:52, V5:68,
+L3:292; run_phase01.py V0:66, V0b:85, V11:184/440, V7:175, V8:147, V12:302,
+E8:354/447, L5:399, L3:405; evidence.py V1:21, V2:29, V3:36, V4:52, V5:68,
 V6:75, V7:117, V8:131, V9:173, V10:203, V11:219, V12:256; mutate.py
 M1:22, M2:47, M3:54, M4:68, M5:86; log.py L1:31, L4:83, L2:153;
 agree.py G1:11, G2:18; independent_trace.py S1:20, S2:27, S3:48, S4:59;
@@ -1537,6 +1552,7 @@ PASS, §27 100%, producer bytes PASS (code commits precede runs), reviews
 - 2026-09-25: Turn 13 (WP-5 EXECUTION) -- Phase 5 implemented exactly: freeze (eligibility 12/12 ×3, MSTC-0001/2/3 + set_hash 8FD32731…, H3T BANK_COMMITTED → TRANSFER_CALCULUS_FROZEN) → fresh reveal once (H1/H2R NOT_APPLICABLE with preserved justification; H3T 70k exact: MSTC-0001 FAIL max 8, MSTC-0002 PASS 70k/70k, MSTC-0003 FAIL max 23; UNLOCKED_ONCE/1) → replay 16/16 agree → clean-room 27/27 agree → large-n 54 trials 0 kills → mutants 8/8 caught → ceiling TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS (standing MSTC-0002). Gaps closed: clean-room independence rewrite, keyed-shape parser + key/guard hardening, Fraction normalization (STEP-05 crash → --replay-only recovery, no firewall change), eligibility prose, burdened mini-corpus, lifecycle-aware WP-3/WP-4-era checks + STEP-10 allowlist. All suites + full regression green. WP-5 FINISHED. Re-verified --> commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); MSTC-0001/0003 killed fresh with witnesses + MSTC-0002 standing finite (see WP-5 record); universal KEEP/PA/bridge program open with defined pending actions, none queued (see WP-6 record); all repairs logged per turn, none silent.
+- 2026-09-26: Turn 18 (WP-1 CLOSURE COMPLETION, frozen F1–F24) -- found a pre-existing draft repair record in the working tree (author unknown); verified it claim-by-claim against bytes instead of trusting it; corrected stale expanded-manifest logical + 4 line-inventory entries; executed the unexecuted reseal + closeout with real evidence; F6 resolution stands as documented (absent-from-seal, flagged for explicit accept/reject); compliance_gaps=0; WP-1 CLOSED as a contract. Re-verified --> commit+push (see closeout block in repair record).
 - 2026-09-26: Turn 17 (WP-1 FINAL CLOSURE, frozen F1–F24) -- all 24 findings verified + closed at root (F6 identities absent-from-seal: resolution record, flagged for explicit accept/reject; F19 sentence corrected with MST0-02 PROVED-pending-rereview + strict hash binding, 9 other ACCEPTs intact); 75/75 edges, full-tuple + serializer agreement, exact mutants, §27 stream-hashed records, code-commits-before-runs; resealed downstream; compliance_gaps=0; WP-1 CLOSED as a contract. Re-verified --> commit+push (see closeout block in repair record).
 - 2026-09-26: Turn 16 (WP-1 COMPLIANCE REPAIR, N=1 repair-and-recertify) -- 9 auditor findings verified against WorkPlan/spec bytes (all confirmed); root-cause repairs: enriched rotation events (nh/orientation/depth/interval/schema_version) in both cores + trace + strengthened schema; shared full-tuple checker (agree.py) with true ROT-02 search-path + ROT-12 cost fixes; rotations/ corpus (70-trace zst shards + manifest + MST02 bundle); expanded zst shards + manifests (plain JSON enriched, supersession logged); ROT-01..12 + CYC-01..05 exact bindings with set gates; 3 exact mutants + artifact attacks (all caught); §27 log records in both runners; revalidator rewritten with zero exceptions; hostile audits incl. move-aside FAIL proofs; enumeration timing drift restored; seal envelope intact; compliance_gaps=0; WP-1 COMPLETE (recertified). Re-verified --> commit+push.
 - 2026-09-26: Turn 15 (WP-1 REVALIDATION, phase binding N=1) -- PREVIOUS_PHASE=NOT_APPLICABLE with pre-foundation audit (PHASE00_PASS); WP-1 entry PASS; re-ran run_phase01 (fresh parent clones, HEADs exact, PHASE01_PASS) + run_phase03 (ROTATION_TRACE_CERTIFIED) + 4 suites green; new read-only scripts/revalidate_wp1.py (20 paths, subgate presence-only, counts recomputed, AST independence) PASS 0 failures; repaired enumeration.json timing-field drift (sealed bytes restored, science identical); diagnosed phase19 stress item as new-file inventory effect (seal envelope restored, sidecar match); fail-closed import proven; compliance_gaps=0; WP-1 COMPLETE (revalidated). Re-verified --> commit+push.

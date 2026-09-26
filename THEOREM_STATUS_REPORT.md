@@ -10,7 +10,7 @@ unmodified (normative freeze, STOP-05).
 | Obligation | Status | Evidence pointer |
 |---|---|---|
 | MST0-01 parent transport | REVIEWED | MST0-01.review.json:ACCEPT |
-| MST0-02 rotation refinement | REVIEWED | MST0-02.review.json:ACCEPT |
+| MST0-02 rotation refinement | PROVED | corrected bytes differ from reviewed bytes; historical ACCEPT preserved in review.json; re-review requested (WP-1 repair turn) |
 | MST0-03 L6 translation | REVIEWED | MST0-03.review.json:ACCEPT |
 | MST0-04 snapshot legitimacy | REVIEWED | MST0-04.review.json:ACCEPT |
 | MST0-05 heavy path | REVIEWED | MST0-05.review.json:ACCEPT |
@@ -36,7 +36,7 @@ unmodified (normative freeze, STOP-05).
 | MST0-25 holdout scope | UNPROVED | WP-5 setup record |
 | MST0-26 literature scope | PROVED | scope record + package (human review requested) |
 
-Counts: REVIEWED 10, PROVED 4, NOT_APPLICABLE 3, BLOCKED 3, UNPROVED 6 (26/26).
+Counts: REVIEWED 9, PROVED 5, NOT_APPLICABLE 3, BLOCKED 3, UNPROVED 6 (26/26).
 
 ## Ladder gates MST-GATE-0…21
 

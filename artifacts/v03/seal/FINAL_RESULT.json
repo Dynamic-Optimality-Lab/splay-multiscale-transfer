@@ -81,12 +81,12 @@
   "obligations": {
     "BLOCKED": 3,
     "NOT_APPLICABLE": 3,
-    "PROVED": 4,
-    "REVIEWED": 10,
+    "PROVED": 5,
+    "REVIEWED": 9,
     "UNPROVED": 6
   },
   "parent_sealed_commit": "38c1be6afd2ab2420aa094c68ce45ee6a26b3628",
-  "repo_head": "94197b89acdf9f06865e2ebfe3579105ff2c6c9e",
+  "repo_head": "3062c0180157399cc0e877c0d238edc7f3aff7c0",
   "standing": [
     "MSTC-0002"
   ],
