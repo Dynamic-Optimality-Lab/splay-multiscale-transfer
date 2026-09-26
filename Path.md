@@ -1532,7 +1532,29 @@ ROT 12/12 unique/exact, CYC 5/5 unique/exact, mutants 3/3 killed, serializer
 PASS, §27 100%, producer bytes PASS (code commits precede runs), reviews
 9 REVIEWED + MST0-02 PROVED-pending-rereview, Path evidence PASS.
 
-### Closeout (§14/§15/§26 — appended post-push, see below)
+### Closeout (§14/§15/§26)
+
+```text
+commit_sha (closure): 9859e654b76ba92c1d0e0809f62a7ffe1cac3b98
+remote: https://github.com/Dynamic-Optimality-Lab/splay-multiscale-transfer.git
+push_result: 3ffc557..9859e65 main -> main (verified: remote HEAD == 9859e65)
+remote_head_verified: 9859e654b76ba92c1d0e0809f62a7ffe1cac3b98 == origin/HEAD
+post_push_working_tree: clean except this closeout block + freeze roll (recorded
+  in the follow-up record commit below; no source/artifact changes after push)
+producer_commits: db6df39 (repair code freeze) + follow-up code fixes, all
+  preceding authoritative runs (local_commit in §27 records)
+evidence_commit: 3062c01 (authoritative artifacts + earlier Path/freeze state)
+seal: FINAL_RESULT terminal TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS, obligations
+  9 REVIEWED / 5 PROVED / 3 NOT_APPLICABLE / 3 BLOCKED / 6 UNPROVED, 562-file
+  manifest, 18.2MB archive rebuild-identical, reproduce PASS
+```
+
+Note on the two pre-existing record issues found during this turn: the Turn-17
+log line's "resealed downstream" and the F24 row described work that had not
+executed when the draft text was discovered — both are now true (reseal above).
+The stale expanded-manifest logical and four line-inventory entries were
+corrected to verified values. Everything else in the adopted draft verified
+against bytes as written.
 
 ---
 
