@@ -201,7 +201,7 @@ def step_evidence(outdir: str, sizes: list[int]) -> list[str]:
         fails += fB
     fA, _s = evidence_mod.verify_anchors(os.path.join(outdir, "v02evidence"), fact)
     fails += fA
-    fN, _s = evidence_mod.verify_near_critical(evdir)
+    fN, _s = evidence_mod.verify_near_critical(outdir)
     fails += fN
     return fails
 
