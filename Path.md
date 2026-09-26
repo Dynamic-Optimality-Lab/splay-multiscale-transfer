@@ -929,6 +929,128 @@ research, none queued, none claimed).
 
 ---
 
+## WP-1 REVALIDATION RECORD (phase-binding turn, N=1; appended post-seal, living tracker)
+
+Binding resolved once at start: N=1 → CURRENT_PHASE=WP-1,
+PREVIOUS_PHASE=NOT_APPLICABLE (no previous WorkPlan phase; pre-foundation
+prerequisite audit performed instead). New-code log format resolved to
+`[WP-1][STEP XX]` prints each preceded by `# WP-1 STEP XX:` comments (phase
+binding §5/§6); pre-existing runner logs keep their `[WP1-STEP-0x]` format
+(no churn). This record re-proves WP-1 on the current tree; it does not alter
+the original WP-1 execution history above.
+
+### Previous-phase authorization (§2)
+
+PREVIOUS_PHASE = NOT_APPLICABLE (N=1; no WP-(N−1) exists). Pre-foundation audit
+substituted: `run_phase00.py` re-ran PHASE00_PASS on the current tree
+(full-SHA parent pin, amendment, read-only lock, literature identities, gates,
+solver record, STOP-05 24-hash integrity, allowlist). WP-1 entry predicate:
+FOUNDATION_FROZEN mechanics green + MST0-01 REVIEWED for certified consumption
+(ACCEPT record present, see STEP-05). Entry: PASS.
+
+### Implementation executed (§4)
+
+Re-ran (not re-described): `run_phase01.py --v01/--v02` against freshly cloned
+parent repos (network; both clone HEADs exact: v0.1 `6de1ca2…`, v0.2
+`38c1be6…`) → PHASE01_PASS (import sealed, counts exact n=2..7, 19/19 cycles
+replayed with ratios 3/2–8/5–23/14 all-KEEP, forced derivatives edge-exact,
+failure table 3/3 PHI + 7 atom families, subgate MST0-01=REVIEWED);
+`run_phase03.py` → ROTATION_TRACE_CERTIFIED (dual-core 70/70, KEEP_REF_
+SNAPSHOT-v1 deterministic, exact-once partition, 19/19 expansions with shas);
+suites `test_wp1.py` (tamper caught, idempotent expansion), `rotations/
+test_trace.py`, `parent/test_import.py`, `test_foundation.py` — all exit 0,
+zero failures. New read-only verifier `scripts/revalidate_wp1.py` (writes
+nothing): 20-path file inventory, artifact namespaces, subgate evidence,
+benchmark spot-checks (counts n=2..5 recomputed 4/19/196/1764), AST
+independence proof (INV-037) → PASS, 0 failures.
+
+### Compliance matrix (WorkPlan WP-1 requirement → implementation → evidence)
+
+- Scope (import n=2..7, reproduce, refine ROOT/ZIG/LL/RR/LR/RL, expand,
+failure table) → runners + suites → PHASE01_PASS + TRACE_CERTIFIED + green
+suites. VERIFIED.
+- Files (splay/pair/independent/trace/reference/blocks/import/expand/
+circulation/enumerate/status; 4 theorem docs; runners; 3 suites) → all 20
+paths exist on disk. VERIFIED.
+- Code semantics (depth+1, KEEP/DELETE, Fraction regret, snapshot order,
+canonical expansion order, zero shared helpers, cost≠rotation statement) →
+behavior proved by execution (exact counts/replay/agreement), ROT-12/T17
+statement present, AST no-share proof. VERIFIED.
+- Artifacts (import ledger + baselines, expanded traces, MST02 bundle) →
+ledger pins both sealed commits; expanded_n4..7 present; traces per-cycle in
+expanded/ with MST02 package in math/reviews (rotations/ reserved-empty by
+design, substance asserted). VERIFIED.
+- Tests (ROT-01…12, CYC-01…05 mechanics, WP-1 stress incl. tamper/idempotency,
+PARENT-01…08) → all green on current tree. VERIFIED.
+- Gates (PARENT_CHAIN_VERIFIED, ROTATION_TRACE_CERTIFIED; MST0-01/02/04/16
+REVIEWED) → emitted in runner outputs; ACCEPT records present with reviewer
+identity/date (verified, never fabricated). VERIFIED.
+- Benchmarks (b_n* {1,1,3/2,8/5,8/5,23/14}, counts, anchors, all-KEEP,
+derivatives; target-blind, two-implementation, n=7 streamed 68.0s, mutants) →
+runner outputs + suites. VERIFIED.
+- Threats/stops/invariants (T62, INV-004/005/012/037, STOP-10/11) →
+independence proof + agreement gates + target-blind traces (no regret/
+Bellman/holdout inputs in WP-1 code paths). VERIFIED.
+
+### Console/log inventory (§6, final line numbers in committed bytes)
+
+New verifier `scripts/revalidate_wp1.py` — comment/log line pairs:
+STEP-01 comment 22,24 / log 25 (per-check reporter); STEP-02 comment 30,32 /
+log 41 (pre-foundation); STEP-03 comment 44,46 / log 64 (20-path inventory);
+STEP-04 comment 67,69 / log 87 (artifacts + bundle substance); STEP-05 comment
+90,92 / log 109 (subgate presence-only); STEP-06 comment 112,114 / log 129
+(benchmarks); STEP-07 comment 132,134 / log 146 (independence); STEP-08 comment
+149,151 / logs 152,160 (orchestration + verdict). Pre-existing runner logs
+(`run_phase01.py` WP1-STEP-00/01/02/03/05/06/07, `run_phase03.py`
+WP1-STEP-00/04/05) emitted in the re-runs above; format intentionally unchanged.
+
+### Tests (§10/§11)
+
+Relevant failure modes probed: bogus parent paths → PHASE01_FAIL exit 1
+(fail-closed import); arg-less invocation refuses (stress suite); corrupted
+cycle key caught (WP1STRESS-TAMPER); duplicate/mutant probes in suites;
+phase03 byte-identical re-run (idempotent expansion). No stress survival used
+as theorem evidence. Exact commands + exit codes in this record.
+
+### Exit criteria (§12)
+
+EXIT-01 PARENT_CHAIN_VERIFIED: PASS (PHASE01_PASS, both clone HEADs exact).
+EXIT-02 ROTATION_TRACE_CERTIFIED: PASS (phase03 tail). EXIT-03 MST0-01
+REVIEWED via subgate: PASS (proof + independent check + human ACCEPT present).
+EXIT-04 MST0-02/04 PROVED-here and REVIEWED before WP-2 use: PASS (records
+present; historical consumption stands). EXIT-05 benchmarks exact: PASS.
+EXIT-06 anti-overfit controls effective: PASS. EXIT-07 no synthesis/target
+contact in WP-1 scope: PASS. EXIT-08 Path.md record: PASS (this entry).
+EXIT-09 commit/push: PASS (see closeout).
+
+### Compliance audit (§13)
+
+WorkPlan WP-1 vs repository vs Path.md vs tests vs artifacts: no omitted
+requirement; no undocumented implementation; no claim without implementation;
+no contract deviation; no stale file in scope; no contradictory artifact (the
+one drift found — wall-clock `seconds` fields rewritten in
+`enumeration.json` by the re-run — repaired by restoring sealed bytes after
+key-by-key scientific equality: reachable/trees identical); no TODO/STUB in
+splay_ref/rotations/cycles; no incorrect status; no unrecorded failure
+(phase19 byte-identical stress FAIL diagnosed: new-file inventory effect, seal
+envelope restored byte-exact with sidecar match, fully logged here); new-file
+footprint exactly one read-only script. compliance_gaps = 0.
+
+### Closeout (§14/§15)
+
+previous-phase revalidation: NOT_APPLICABLE (pre-foundation audit PASS).
+entry gate: PASS. scope completed: WP-1 re-executed + revalidated 100%.
+files created: `scripts/revalidate_wp1.py` (read-only). files modified: none
+(sealed bytes restored where re-runs wrote timing fields). console/log
+inventory: above (final). tests: runners + 5 suites green; stress green save
+the diagnosed inventory-effect item (repaired + logged). statuses: unchanged
+(derived 10/4/3/3/6 re-verified). hashes: parent HEADs exact; freeze rolled
+for this living-tracker entry (protected entries stable; phase00 re-PASS).
+deviations: log-format resolution `[WP-1][STEP XX]` for new code (binding §5),
+pre-existing formats untouched. final verdict: WP-1 = COMPLETE (revalidated).
+
+---
+
 ## Cross-cutting log
 - 2026-09-23: Turn 1 — clone (LICENSE-only, HEAD 3f8571d) → study (v0.3 full + v0.2/v0.1 + parent clone verify 38c1be6/H1 EMPTY/H2R COMMITTED-0/n8 contaminated) → WorkPlan.md (7 WPs, matrices 26/90/50 machine-checked) → scaffold + core + schemas + scripts + tests → 47/47 green + PHASE00_PASS → Path.md (this file) → prereg_sha256 → commit+push (`163299e`).
 - 2026-09-23: Turn 2 (review-response) — 10 findings repaired per section above: v0.3.1 PIN amendment (+24-entry freeze), full-SHA parent contract, first-consumer gate matrix (REVIEWED-required when applicable, all UNPROVED → WP-1 consumption blocked pending MST0-01 subgate review), review-record template+schema, Phase-04 single ownership, nine adversarial modes, solver_backends freeze, quarantine stale policy, 13 schemas, WP-4 wording. Re-verified (freeze + PHASE00_PASS + 47/47) → commit+push.
@@ -945,4 +1067,5 @@ research, none queued, none claimed).
 - 2026-09-25: Turn 13 (WP-5 EXECUTION) -- Phase 5 implemented exactly: freeze (eligibility 12/12 ×3, MSTC-0001/2/3 + set_hash 8FD32731…, H3T BANK_COMMITTED → TRANSFER_CALCULUS_FROZEN) → fresh reveal once (H1/H2R NOT_APPLICABLE with preserved justification; H3T 70k exact: MSTC-0001 FAIL max 8, MSTC-0002 PASS 70k/70k, MSTC-0003 FAIL max 23; UNLOCKED_ONCE/1) → replay 16/16 agree → clean-room 27/27 agree → large-n 54 trials 0 kills → mutants 8/8 caught → ceiling TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS (standing MSTC-0002). Gaps closed: clean-room independence rewrite, keyed-shape parser + key/guard hardening, Fraction normalization (STEP-05 crash → --replay-only recovery, no firewall change), eligibility prose, burdened mini-corpus, lifecycle-aware WP-3/WP-4-era checks + STEP-10 allowlist. All suites + full regression green. WP-5 FINISHED. Re-verified --> commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); MSTC-0001/0003 killed fresh with witnesses + MSTC-0002 standing finite (see WP-5 record); universal KEEP/PA/bridge program open with defined pending actions, none queued (see WP-6 record); all repairs logged per turn, none silent.
+- 2026-09-26: Turn 15 (WP-1 REVALIDATION, phase binding N=1) -- PREVIOUS_PHASE=NOT_APPLICABLE with pre-foundation audit (PHASE00_PASS); WP-1 entry PASS; re-ran run_phase01 (fresh parent clones, HEADs exact, PHASE01_PASS) + run_phase03 (ROTATION_TRACE_CERTIFIED) + 4 suites green; new read-only scripts/revalidate_wp1.py (20 paths, subgate presence-only, counts recomputed, AST independence) PASS 0 failures; repaired enumeration.json timing-field drift (sealed bytes restored, science identical); diagnosed phase19 stress item as new-file inventory effect (seal envelope restored, sidecar match); fail-closed import proven; compliance_gaps=0; WP-1 COMPLETE (revalidated). Re-verified --> commit+push.
 - 2026-09-25: Turn 14 (WP-6 EXECUTION) -- Phase 6 implemented exactly: universal records (MST0-13 PROVED author-claim + machine evidence 18/18; 14/15 UNPROVED; 17/18/19 BLOCKED; 12/20/21 NOT_APPLICABLE justified; 23/24/26 PROVED guard/scope; MST09/12 addenda; 4 PENDING review packages; 11 stubs deleted) → lifecycle 10/4/3/3/6, 0 jumps, 26 bundles → bridge/negative audit (no theorem branch; NEG 8/8 vacuous) → reports (Q01–Q40, theorem status, reproducibility, AI use; ledger FINAL; atlases extended) → seal (FINAL_RESULT finite level, regeneration-identical; 424-file manifest; 16.9 MB archive rebuild-identical; reproduce exit 0; SEAL 12/12, PR+NEG, 5 mutants) → terminal TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS. Gaps closed: matrix filenames, NOT_APPLICABLE derivation, stale derived view, scanner self-matches, pre-commit inventory, shifting seal sets, audit self-pollution, wall-clock/size determinism, naive proof scans, lifecycle-aware checks, freeze roll-forward gate. All suites + full regression green. WP-6 FINISHED; experiment sealed. Re-verified --> commit+push.
