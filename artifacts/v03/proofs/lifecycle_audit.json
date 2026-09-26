@@ -8,11 +8,10 @@
       "status": "REVIEWED"
     },
     "MST0-02": {
-      "evidence": "MST0-02.review.json:ACCEPT",
+      "evidence": "proof bytes differ from reviewed bytes (re-review required)",
       "obligation": "MST0-02",
-      "proof_sha256": "E175A2DEEAF5C303B10E66F2C0F5F0DD1E96E56B38763EAFD0CC3F9E9100601C",
-      "review_sha256": "ED2F83C71076F98E85639F6A3BBFF7902B389F194BF8005687B768D50150FB55",
-      "status": "REVIEWED"
+      "proof_sha256": "382A46E79A0F29D3D8BB57218FE3409B32B33E0E2198B3A93C74D3A21FE4F833",
+      "status": "PROVED"
     },
     "MST0-03": {
       "evidence": "MST0-03.review.json:ACCEPT",
@@ -212,8 +211,8 @@
   "counts": {
     "BLOCKED": 3,
     "NOT_APPLICABLE": 3,
-    "PROVED": 4,
-    "REVIEWED": 10,
+    "PROVED": 5,
+    "REVIEWED": 9,
     "UNPROVED": 6
   },
   "jumps": [],
@@ -224,8 +223,8 @@
       "status": "REVIEWED"
     },
     "MST0-02": {
-      "evidence": "MST0-02.review.json:ACCEPT",
-      "status": "REVIEWED"
+      "evidence": "proof bytes differ from reviewed bytes (re-review required)",
+      "status": "PROVED"
     },
     "MST0-03": {
       "evidence": "MST0-03.review.json:ACCEPT",

@@ -1,4 +1,79 @@
 {
+  "2": {
+    "claimed_b": [
+      1,
+      1
+    ],
+    "cycles": 1,
+    "forced": {
+      "count": 4,
+      "keep": 4,
+      "mismatches": 0
+    },
+    "replayed_ok": 1,
+    "rows": [
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 0,
+        "mismatch_count": 0,
+        "ratio": "1",
+        "sum_a": 1,
+        "sum_y": 1
+      }
+    ]
+  },
+  "3": {
+    "claimed_b": [
+      1,
+      1
+    ],
+    "cycles": 4,
+    "forced": {
+      "count": 17,
+      "keep": 17,
+      "mismatches": 0
+    },
+    "replayed_ok": 4,
+    "rows": [
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 0,
+        "mismatch_count": 0,
+        "ratio": "1",
+        "sum_a": 1,
+        "sum_y": 1
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 1,
+        "mismatch_count": 0,
+        "ratio": "1",
+        "sum_a": 1,
+        "sum_y": 1
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 2,
+        "mismatch_count": 0,
+        "ratio": "1",
+        "sum_a": 1,
+        "sum_y": 1
+      },
+      {
+        "all_keep": true,
+        "closed": true,
+        "cycle": 3,
+        "mismatch_count": 0,
+        "ratio": "1",
+        "sum_a": 1,
+        "sum_y": 1
+      }
+    ]
+  },
   "4": {
     "claimed_b": [
       3,

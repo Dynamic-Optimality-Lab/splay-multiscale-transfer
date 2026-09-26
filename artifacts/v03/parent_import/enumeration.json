@@ -1,32 +1,38 @@
 {
   "2": {
+    "method": "full-BFS",
     "reachable": 4,
     "seconds": 0.0,
     "trees": 2
   },
   "3": {
+    "method": "full-BFS",
     "reachable": 19,
     "seconds": 0.0,
     "trees": 5
   },
   "4": {
+    "method": "full-BFS",
     "reachable": 196,
-    "seconds": 0.0,
+    "seconds": 0.1,
     "trees": 14
   },
   "5": {
+    "method": "full-BFS",
     "reachable": 1764,
-    "seconds": 0.2,
+    "seconds": 1.2,
     "trees": 42
   },
   "6": {
+    "method": "full-BFS",
     "reachable": 17424,
-    "seconds": 3.5,
+    "seconds": 33.7,
     "trees": 132
   },
   "7": {
+    "method": "streamed-certificate (no pair BFS)",
     "reachable": 184041,
-    "seconds": 49.2,
+    "seconds": 1.2,
     "trees": 429
   }
 }

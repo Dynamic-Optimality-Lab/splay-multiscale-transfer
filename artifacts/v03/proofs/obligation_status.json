@@ -6,8 +6,8 @@
       "status": "REVIEWED"
     },
     "MST0-02": {
-      "evidence": "MST0-02.review.json:ACCEPT",
-      "status": "REVIEWED"
+      "evidence": "proof bytes differ from reviewed bytes (re-review required)",
+      "status": "PROVED"
     },
     "MST0-03": {
       "evidence": "MST0-03.review.json:ACCEPT",

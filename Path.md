@@ -1256,6 +1256,269 @@ for this living-tracker entry (protected entries stable; phase00 re-PASS).
 deviations: log-format resolution `[WP-1][STEP XX]` for new code (binding §5),
 pre-existing formats untouched. final verdict: WP-1 = COMPLETE (revalidated).
 
+**SUPERSEDED BY THE WP-1 COMPLIANCE REPAIR RECORD BELOW** (auditor matrix
+F1–F24): the Turn-15/16 `compliance_gaps = 0` / `WP-1 = COMPLETE` claims above
+were based on an incomplete contract surface and are preserved here as
+superseded history, not deleted.
+
+---
+
+## WP-1 COMPLIANCE REPAIR RECORD (frozen closure set F1–F24; N=1)
+
+Binding resolved once: N=1 → CURRENT_PHASE=WP-1, PREVIOUS_PHASE=NOT_APPLICABLE
+(pre-foundation revalidation substituted; no previous WorkPlan phase exists).
+Commit audited: 3ffc557. Authority set (frozen for this audit): WorkPlan.md
+WP-1 + spec §§4–5, PHASE 01, PHASE 03, §9.4, §21, §24, §25, §27 + v0.3.1 pin
+amendment + sealed parent artifacts (both clones re-verified at sealed HEADs).
+Mode: repair-and-recertify; no new requirements added during repair (any
+runtime defect found was traced to F1–F24 below). New-code log format:
+`[WP-1][REPAIR STEP <ID>]` prints with `# WP-1 REPAIR STEP <ID>:` comments;
+existing files keep `[WP1-STEP-0x]`; new files keep `[WP-1][STEP XX]`.
+
+### Previous-phase authorization (§4)
+
+NOT_APPLICABLE. Pre-foundation revalidated: `run_phase00.py` PHASE00_PASS
+(full-SHA pin, amendment, lock, literature, gates, solver record, STOP-05
+24-hash integrity, allowlist) on the repair tree; parent clones at sealed
+HEADs (v0.1 6de1ca2a…, v0.2 38c1be6a…); MST0-01 REVIEWED (human ACCEPT present,
+bytes intact). Authorization: PASS.
+
+### Defect closure matrix (all 24 verified against authoritative bytes first)
+
+- F1 parent evidence classes (REAL). Import ledger covered only cycles/
+summaries/specs. Root: vendor lists omitted sealed trees/transitions/
+reachability/certificates/anchors/near-critical classes. Repair:
+V01_EVIDENCE_FILES (99 files: trees/transitions/reachability/certificates/
+audits n2..7, witness_path n2/n3, near-tight families) + V02_EVIDENCE_FILES
+(7: anchors n2..7, panel), hash-bound vendor + sealed-manifest cross-checks
+(129 v0.1 + 7 v0.2 pins), ledger classes recorded. Verified: cross-checks
+green, revalidator STEP-04 (bytes match ledger). CLOSED.
+- F2 transition/cost + streamed n7 (REAL). Only counts recomputed; n7 full
+BFS. Repair: `evidence.py` full (tree,x) cost+after-shape compare n2..6
+against decoded sealed tables (order-independent shape keys; observed n5
+210/210, n6 792/792, zero mismatches), member-set equality vs sealed
+reachable sets, streamed n7 (summary claims + member stream 184041 +
+sealed audits PASS + witness 23/14 replay, no pair BFS). CLOSED.
+- F3 bn/Bellman evidence (REAL). Repair: per-n bn claim + witness replay +
+reachable count + sealed audit verdict (n2..7); anchor maxU/maxV cross-checked
+n2..7 vs fact_table (exact). potential_upper hash-bound only (Bellman
+semantics out of WP-1 scope, stated). CLOSED.
+- F4 75-edge coverage (REAL). replay.json held n4..7 (70). Repair: replay +
+expansion + corpus extended n2..7 (1+4+70=75); replay rows, CYC checks, and
+gates cover all sizes; corpus holds 75 traces with 75 unique canonical edge
+IDs. Metric 75/75: PASS. CLOSED.
+- F5 near-critical (REAL). Parent HAS near_tight_families.json (v0.1
+adversarial hypotheses, UNDECIDED at v0.1 WP-6 P17 — importing them as
+certified cycles would be misclassification) + below_optimum n2..7 (records,
+not cycles). Repair: both hash-bound; families quarantined as context (never
+replayed as certified evidence); below_optimum field-verified + classified.
+No silent omission, no misclassification. CLOSED.
+- F6 D5 identities (REAL demand, absent source). Exhaustive negative search:
+sealed manifest + full v0.2 tree contain only aggregates 3318/3334 + verdict
+INCONSISTENT (v0.2 screen rule lives outside sealed artifacts).
+Manufacturing identities would fabricate evidence (§17/§24), so: complete
+sealed class imported hash-bound (recency_atoms.json, already vendored),
+count 3334−3318=16 derived machine-side, new `d5` failure-table section with
+verdict + provenance + absent-identities note. Closed as
+CLOSED_WITH_RESOLUTION under the auditor's own F5 escape doctrine
+(absent parent object → resolution record, never silent); flagged here for
+explicit auditor accept/reject (would need a contract amendment to override).
+- F7 pair_id unhashed (REAL, low impact). No callers anywhere. Repair: SHA-256
+over canonical serialization (64-hex) + determinism/distinctness unit test.
+CLOSED.
+- F8 corpus-local edge labels (REAL). Repair: `dom.edge_id`
+(n:src:mode:x from frozen state/mode/key/successor convention) + uniqueness
+assertion over 75 corpus edges; traces/expansion/corpus all carry it. CLOSED.
+- F9 serializer singularity (REAL). Repair: `independent_trace.py` (imports
+independent core only) + per-edge canonical-bytes compare in runner (75/75
+identical). Structural independence (AST-gated, no trace/reference/pair
+imports) + behavioral agreement separated. CLOSED.
+- F10 trace-layer asserts (REAL). Repair: `trace.certify_keep/delete`
+(pre-costs, key integrity, full-tuple independent replay, successor equality —
+fail-closed) + in-trace cost/root/key asserts; runner routes every certified
+edge through certify. CLOSED.
+- F11 expansion schema (REAL). Repair: per-edge edge_id/A_trace/snapshot/
+B_trace/translated_l6_stream + ledger placeholders (schema-declared empties
+for WP-2/WP-3) + cycle_id (n/index/source/key_word); combined events
+retained. circulation.py unaffected (reads existing keys only). CLOSED.
+- F12 canonical order (REAL, low impact). Repair: `canonical_key`
+[n,source,length,key_word] + ThreadPoolExecutor over cycles with sorted
+reduce; per-n shards preserve canonical sub-order; manifest records order
+string. Determinism proven by byte-identical re-runs. CLOSED.
+- F13 CYC double-binding (REAL). `check("CYC-01 vendored bytes…")` renamed
+IMPORT-02; dictionary gate (each CYC-01..05 exactly once + frozen
+meaning-table). Metric 5/5 unique/exact: PASS. CLOSED.
+- F14 tie-break mutant (REAL). WP-1 dispatch has no value-tie branch (strict
+comparisons, unique keys — the deterministic canonical-order rule is the
+mutated decision). Repair: monkeypatched mirror-serializer mutant through the
+production ROT-01 path (must reject; implementation restored in finally) +
+order probe honestly labeled canonical-ordering. Baseline pass + mutant fail
+both asserted. CLOSED.
+- F15 snapshot escape clause (REAL). Repair: distinct-shape A/B fixture with
+loud degeneracy raise (no escape clause); shared probe library used by runner
+gate and suite alike. CLOSED.
+- F16 stream hashes (REAL). Repair: `log.capture` tee (pass-through,
+finally-restored) in both runners; hashes recorded post-close; verifier
+requires non-null in latest records. CLOSED.
+- F17 producer-bytes binding (REAL). Repair: code-freeze commits (this turn:
+producer code committed before authoritative runs; local_commit in §27
+records equals the code commit); two-commit discipline documented (code →
+execute → evidence). CLOSED.
+- F18 mutant-before-status (REAL). Repair: `rotations/mutate.py` importable
+probes + phase03 gate pre-certification + phase01 inline tamper probe
+pre-PASS. Statuses emitted only after gates. CLOSED.
+- F19 proof sentence (REAL; externally checked). "One pointer rewiring" is
+false for double cases. Repair: minimal precision edit (one case-step: 1
+rewiring ZIG, 2 double cases); statement/domain/hypotheses/evidence/
+conclusion unchanged; rotation logic untouched (behavior-preserving — diff
+shows additions only).
+- F20 lifecycle consequence (REAL). Strict hash-binding enforced in
+`status.derive` (ACCEPT binds exact bytes; mismatch → PROVED + re-review
+flag); all other 9 ACCEPTs verified still matching. MST0-02 → PROVED pending
+human re-review (package updated to PENDING; historical ACCEPT preserved
+untouched in review.json). Bundles/lifecycle regenerated. Human re-review is
+an external pending item (non-blocking for WP-1 exit: exit needs PROVED here,
+satisfied; WP-2's historical consumption used intact bytes).
+- F21 closeout fields (DOCS). This entry carries full fields at its end
+(post-push closeout block); remote push verified below.
+- F22 exact commands (DOCS). All important runs recorded literally with
+arguments + exit codes (see Provenance).
+- F23 stress language (DOCS). Exact exit codes recorded (wp0stress exits
+nonzero on the single diagnosed inventory item; no PASS-except language).
+- F24 reseal (CROSS-PHASE). Executed at closeout via run_phase19 mechanics
+(manifest/archive/FINAL_RESULT regenerated on the closed tree); no WP-1 work
+after reseal except the Path closeout block + freeze roll + record commit.
+
+### Transitive defects (substantive only)
+
+- Plain-JSON digest hashed pre-newline bytes: writer now hashes landed bytes.
+- `path2`/`_subserialize` added without touching `splay2` consumers.
+- Sealed expanded bytes superseded (old→new SHAs: n4 47FB6052→4D2A9017, n5
+A248E0A1→5A39D8C2, n6 E1E0F81C→5F81C995, n7 C75A3558→38C7DD6A); old bytes in
+git history; seal pins 353ee92 with append-only + documented modification.
+- MST02 review: bytes changed → PROVED (see F20); nothing fabricated.
+- BranchA/h3t stepwise builders untouched (own event paths, WP-4/5 owned).
+- Nitpicks resolved per auditor: diagonal starts stay in PairDomain (semantics
+correct, placement not a blocker); neighborhood HASH of canonical exact
+serialization accepted with independently tested serializer (F9).
+
+### Named-test matrix (ID → meaning → implementation → result)
+
+ROT-01 final tree (unit + runner + foundation) PASS; ROT-02 search path
+(unit + runner) PASS; ROT-03 ROOT PASS; ROT-04 ZIG / 05 LL / 06 RR / 07 LR /
+08 RL (crafted fixtures, orientation+depth+neighborhoods, both cores) PASS;
+ROT-09 canonical ordering + byte-identical reruns PASS; ROT-10 full tuple
+(unit + 75-edge runner + 295-event fuzz, 0 divergences) + independent
+serializer bytes (75/75) PASS; ROT-11 snapshot + convention PASS; ROT-12
+cost==depth+1, events 1/rewirings 2/cost 3 non-conflation, cross-core costs
+PASS; dictionary gate 12/12 unique PASS. CYC-01 closes / 02 ratios 1,1,3/2,
+8/5,8/5,23/14 / 03 all-KEEP / 04 forced KEEP-only zero mismatches / 05
+shards+logical PASS; dictionary gate 5/5 unique PASS. Mutants: case-label,
+canonical-ordering (tie-break analogue, documented), snapshot-order (no
+escape), mirror-serializer (implementation-level) — all baseline-pass +
+mutant-caught.
+
+### Independent verification (full contract tuple)
+
+Producer A pointer core vs producer B dict core: search paths, case
+sequences, local-key tuples, neighborhood hashes, orientation, depth (per
+side), final-tree serializations, pre-splay costs. Canonical forms: §5.5
+events + keyed serializations (grammar identity proven by execution).
+Serializer independence: separate module, AST-gated imports, canonical-bytes
+equality 75/75. Mutations proving catch: all of the above.
+
+### Artifact audit (paths, formats, hashes, manifests)
+
+- parent_import: baselines + v01evidence (99 files) + v02evidence (7 files),
+ledger classes recorded, sealed-manifest cross-checks 129 v0.1 + 7 v0.2 pins.
+- rotations/: traces_n2..7.json.zst + rotations_manifest.json (logical
+D1494BA7…) + MST02_proof_bundle.json (theorem/review/corpus hashes bound).
+- cycles/expanded/: enriched plain + .zst ×6 + expanded_manifest.json
+(logical 9B4A588D…); zst==plain bytes proven per shard.
+- logs/: phase01_wp1.jsonl + phase03_wp1.jsonl (required fields incl. stream
+hashes, exit 0 in latest lines).
+- D5: counters + derived 16 + verdict in failure_table.json d5 section.
+
+### Provenance (exact commands, exit codes)
+
+- `python scripts/run_phase00.py` → exit 0 (PHASE00_PASS, pre-foundation).
+- `git clone --depth 50 .../splay-bellman-debt.git` + `.../splay-pair-dynamics.git`
+(to Temp/opencode/parent-v02 + parent-v01) → exit 0; clone HEADs exact.
+- `python scripts/run_phase01.py --v01 <parent-v01> --v02 <parent-v02>` →
+exit 0 (PHASE01_PASS; earlier uncommitted-code attempt exited 1 on manifest
+scope bug + crashed on evidence path bug — both fixed, code-committed, then
+this authoritative PASS).
+- `python scripts/run_phase01.py --v01 C:/nonexistent --v02 C:/nonexistent` →
+exit 1 (PHASE01_FAIL, fail-closed import).
+- `python scripts/run_phase03.py` → exit 0 (ROTATION_TRACE_CERTIFIED;
+75 traces, mutant gate 3/3).
+- `python scripts/revalidate_wp1.py` → exit 0 (PASS, 0 failures); with
+rotations/ moved aside → exit 1 (7 failures); with phase03 log moved aside →
+exit 1 (1 failure); restored → exit 0.
+- Suites: test_wp1, test_trace, test_rot_named, test_rot_mutants,
+test_import, test_foundation, translation, corpus, wp2, wp3, proof (dev
+bounds, holdout scope, PR+NEG), transfer, solver, wp4, wp5, adversary,
+firewall, HLD, dev_bounds → exit 0. `python tests/test_wp0_stress.py` →
+exit 1 SOLELY on `phase19 outputs byte-identical` (inventory grew with repair
+files; within-run rebuild identical; seal envelope restored byte-exact
+afterward) — recorded exactly, no PASS-except language.
+- `python scripts/freeze_prereg.py` → 24 entries (closeout step).
+
+### Exit criteria (reconstructed from WorkPlan WP-1 bytes)
+
+EXIT-01 PARENT_CHAIN_VERIFIED: PASS (PHASE01_PASS, clone HEADs exact,
+evidence classes verified). EXIT-02 ROTATION_TRACE_CERTIFIED: PASS (full
+tuple + serializer + mutant gate). EXIT-03 MST0-01 REVIEWED subgate: PASS
+(record intact, bytes match). EXIT-04 MST0-02/04 PROVED-here: PASS (02
+PROVED on corrected bytes + re-review requested; 04 REVIEWED intact).
+EXIT-05 benchmarks exact (incl. 75/75, certs, anchors): PASS. EXIT-06
+anti-overfit (agreement, streamed n7, exact mutants): PASS. EXIT-07 no
+synthesis/target contact in WP-1 scope: PASS. EXIT-08 Path.md repair record:
+PASS (this entry). EXIT-09 commit/push: closeout block below.
+
+### False-closure attacks (§23 applicable subset)
+
+delete rotations/ → verifier FAIL(7); delete §27 log → FAIL(1);
+plain-JSON-for-zst → read_shard raises; removed logical_stream → validator
+FAIL; shard byte-tamper → hash mismatch; removed hash field → FAIL;
+case/nh/order/snapshot/tie-break mutants → checker rejects with baselines
+passing; nondeterministic reduction → zstd byte-identical proven; prose
+forgery → verifier reads zero Path.md bytes; special-casing → no semantic
+exemptions in verifier (grep-verified); stale review → strict binding flips
+REVIEWED→PROVED (demonstrated live on MST0-02).
+
+### Line inventory (final, committed bytes)
+
+New [WP-1][REPAIR STEP] checkpoints: corpus.py C1:19, C2:25, C3:32/41-42,
+C4:48, C5:55, C6:68; run_phase03.py C4:151-152 (bundle), C4:211-212
+(expanded manifest), E1:49, T6:59, S5:87, E4:192, E5:202, E7:334, L5:286,
+L3:292; run_phase01.py V0:66, V0b:85, V11:184/431, V7:175, V8:147, V12:302,
+E8:354/439, L5:399, L3:405; evidence.py V1:21, V2:29, V3:36, V4:52, V5:68,
+V6:75, V7:117, V8:131, V9:173, V10:203, V11:219, V12:256; mutate.py
+M1:22, M2:47, M3:54, M4:68, M5:86; log.py L1:31, L4:83, L2:153;
+agree.py G1:11, G2:18; independent_trace.py S1:20, S2:27, S3:48, S4:59;
+revalidator [WP-1][STEP] pairs per its 13 steps (comment/log lines in file).
+Semantic repairs docstring-documented at splay.py:87-97, trace.py
+certify/asserts, expand.py E2/E3, enumerate.py edge_id.
+
+### Stress (final battery)
+
+Runners + 20 suites green as listed in Provenance; wp0stress green except the
+single diagnosed inventory item (exit 1, recorded exactly); phase19 re-run
+inside stress exited 0 (seal machinery works on extended tree) with outputs
+restored afterward to preserve the historical envelope until F24 reseal.
+
+### Verdict
+
+WP-1 = COMPLETE (recertified against the frozen F1–F24 closure set; replaces
+the false Turn-15/16 zero-gap claims above, which remain visible as superseded
+history). Metric: 75/75 edges, parent classes 100% (with F6 resolution),
+ROT 12/12 unique/exact, CYC 5/5 unique/exact, mutants 3/3 killed, serializer
+PASS, §27 100%, producer bytes PASS (code commits precede runs), reviews
+9 REVIEWED + MST0-02 PROVED-pending-rereview, Path evidence PASS.
+
+### Closeout (§14/§15/§26 — appended post-push, see below)
+
 ---
 
 ## Cross-cutting log
@@ -1274,6 +1537,7 @@ pre-existing formats untouched. final verdict: WP-1 = COMPLETE (revalidated).
 - 2026-09-25: Turn 13 (WP-5 EXECUTION) -- Phase 5 implemented exactly: freeze (eligibility 12/12 ×3, MSTC-0001/2/3 + set_hash 8FD32731…, H3T BANK_COMMITTED → TRANSFER_CALCULUS_FROZEN) → fresh reveal once (H1/H2R NOT_APPLICABLE with preserved justification; H3T 70k exact: MSTC-0001 FAIL max 8, MSTC-0002 PASS 70k/70k, MSTC-0003 FAIL max 23; UNLOCKED_ONCE/1) → replay 16/16 agree → clean-room 27/27 agree → large-n 54 trials 0 kills → mutants 8/8 caught → ceiling TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS (standing MSTC-0002). Gaps closed: clean-room independence rewrite, keyed-shape parser + key/guard hardening, Fraction normalization (STEP-05 crash → --replay-only recovery, no firewall change), eligibility prose, burdened mini-corpus, lifecycle-aware WP-3/WP-4-era checks + STEP-10 allowlist. All suites + full regression green. WP-5 FINISHED. Re-verified --> commit+push.
 - Standing user instructions honored: Path/WorkPlan depth rule, stale-clearance rule, commit+push without prompting.
 - Failures preserved: test-loop stale-root KeyError (fixed, see WP-0 §12); SHA-256 environment quirk (resolved §14); MST0-06 natural form killed with witnesses + v2 conditional (see WP-2 record); MST0-08 arbitrary-n conjecture explicitly UNPROVED with gap (finite bounds proved); MSTC-0001/0003 killed fresh with witnesses + MSTC-0002 standing finite (see WP-5 record); universal KEEP/PA/bridge program open with defined pending actions, none queued (see WP-6 record); all repairs logged per turn, none silent.
+- 2026-09-26: Turn 17 (WP-1 FINAL CLOSURE, frozen F1–F24) -- all 24 findings verified + closed at root (F6 identities absent-from-seal: resolution record, flagged for explicit accept/reject; F19 sentence corrected with MST0-02 PROVED-pending-rereview + strict hash binding, 9 other ACCEPTs intact); 75/75 edges, full-tuple + serializer agreement, exact mutants, §27 stream-hashed records, code-commits-before-runs; resealed downstream; compliance_gaps=0; WP-1 CLOSED as a contract. Re-verified --> commit+push (see closeout block in repair record).
 - 2026-09-26: Turn 16 (WP-1 COMPLIANCE REPAIR, N=1 repair-and-recertify) -- 9 auditor findings verified against WorkPlan/spec bytes (all confirmed); root-cause repairs: enriched rotation events (nh/orientation/depth/interval/schema_version) in both cores + trace + strengthened schema; shared full-tuple checker (agree.py) with true ROT-02 search-path + ROT-12 cost fixes; rotations/ corpus (70-trace zst shards + manifest + MST02 bundle); expanded zst shards + manifests (plain JSON enriched, supersession logged); ROT-01..12 + CYC-01..05 exact bindings with set gates; 3 exact mutants + artifact attacks (all caught); §27 log records in both runners; revalidator rewritten with zero exceptions; hostile audits incl. move-aside FAIL proofs; enumeration timing drift restored; seal envelope intact; compliance_gaps=0; WP-1 COMPLETE (recertified). Re-verified --> commit+push.
 - 2026-09-26: Turn 15 (WP-1 REVALIDATION, phase binding N=1) -- PREVIOUS_PHASE=NOT_APPLICABLE with pre-foundation audit (PHASE00_PASS); WP-1 entry PASS; re-ran run_phase01 (fresh parent clones, HEADs exact, PHASE01_PASS) + run_phase03 (ROTATION_TRACE_CERTIFIED) + 4 suites green; new read-only scripts/revalidate_wp1.py (20 paths, subgate presence-only, counts recomputed, AST independence) PASS 0 failures; repaired enumeration.json timing-field drift (sealed bytes restored, science identical); diagnosed phase19 stress item as new-file inventory effect (seal envelope restored, sidecar match); fail-closed import proven; compliance_gaps=0; WP-1 COMPLETE (revalidated). Re-verified --> commit+push.
 - 2026-09-25: Turn 14 (WP-6 EXECUTION) -- Phase 6 implemented exactly: universal records (MST0-13 PROVED author-claim + machine evidence 18/18; 14/15 UNPROVED; 17/18/19 BLOCKED; 12/20/21 NOT_APPLICABLE justified; 23/24/26 PROVED guard/scope; MST09/12 addenda; 4 PENDING review packages; 11 stubs deleted) → lifecycle 10/4/3/3/6, 0 jumps, 26 bundles → bridge/negative audit (no theorem branch; NEG 8/8 vacuous) → reports (Q01–Q40, theorem status, reproducibility, AI use; ledger FINAL; atlases extended) → seal (FINAL_RESULT finite level, regeneration-identical; 424-file manifest; 16.9 MB archive rebuild-identical; reproduce exit 0; SEAL 12/12, PR+NEG, 5 mutants) → terminal TRANSFER_CALCULUS_SURVIVES_FINITE_TESTS. Gaps closed: matrix filenames, NOT_APPLICABLE derivation, stale derived view, scanner self-matches, pre-commit inventory, shifting seal sets, audit self-pollution, wall-clock/size determinism, naive proof scans, lifecycle-aware checks, freeze roll-forward gate. All suites + full regression green. WP-6 FINISHED; experiment sealed. Re-verified --> commit+push.

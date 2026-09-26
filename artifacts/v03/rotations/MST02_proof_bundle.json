@@ -1,9 +1,9 @@
 {
   "corpus_manifest": "artifacts/v03/rotations/rotations_manifest.json",
-  "corpus_manifest_sha256": "433B3AEA3E4CBBF0BADB082DD78C571F33E17201EEE3729FD64AA4BB19B68E37",
+  "corpus_manifest_sha256": "EED5C60136335B16BA71FC1146CD90074B1E7BC8C9F5AE056F6A925C4F882420",
   "gate": "ROTATION_TRACE_CERTIFIED (mechanics scope)",
   "obligation": "MST0-02",
   "review_record": "math/reviews/MST0-02.review.json",
   "theorem_doc": "math/theorem_MST02_rotation_refinement.md",
-  "theorem_sha256": "E175A2DEEAF5C303B10E66F2C0F5F0DD1E96E56B38763EAFD0CC3F9E9100601C"
+  "theorem_sha256": "382A46E79A0F29D3D8BB57218FE3409B32B33E0E2198B3A93C74D3A21FE4F833"
 }

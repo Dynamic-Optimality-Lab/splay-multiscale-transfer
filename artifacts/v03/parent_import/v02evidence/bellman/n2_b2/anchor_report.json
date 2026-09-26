@@ -1,0 +1,13 @@
+{
+  "R": 4,
+  "delete_create": 0,
+  "exact_repay": 0,
+  "keep_excess": 0,
+  "maxU": 4,
+  "maxV": 0,
+  "max_delete_dV_scaled": 0,
+  "max_excess_scaled": 0,
+  "n": 2,
+  "utight": 2,
+  "vtight": 2
+}

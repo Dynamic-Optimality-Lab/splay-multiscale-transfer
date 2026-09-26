@@ -104,6 +104,14 @@
     }
   ],
   "labels": {
+    "D5_RANK_LEDGER": {
+      "derived_failures": 16,
+      "evidence": "sealed D5_rank counters n4 create [1118, 35056] repay [3318, 3334] -> 16 derived failures",
+      "identities": null,
+      "identities_note": "absent from all sealed parent artifacts (manifest-wide and full-tree search); count derived machine-side, never fabricated",
+      "pointer": "v02/debt_atoms/recency_atoms.json",
+      "verdict": "DEBT_ATOM_FAMILY_INCONSISTENT"
+    },
     "FEATURE_DERIVATIVE_INCONSISTENT": {
       "evidence": "parent claim, imported as context",
       "pointer": "v01/FINAL_RESULT.json"

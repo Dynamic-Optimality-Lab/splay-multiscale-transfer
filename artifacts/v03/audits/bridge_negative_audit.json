@@ -66,8 +66,8 @@
   "obligation_counts": {
     "BLOCKED": 3,
     "NOT_APPLICABLE": 3,
-    "PROVED": 4,
-    "REVIEWED": 10,
+    "PROVED": 5,
+    "REVIEWED": 9,
     "UNPROVED": 6
   },
   "positive_branch": {

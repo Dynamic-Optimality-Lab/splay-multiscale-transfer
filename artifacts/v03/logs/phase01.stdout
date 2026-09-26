@@ -1,0 +1,61 @@
+[WP1-STEP-00] PHASE 01: import, enumerate, verify counts, replay cycles, failure table, subgate report
+[WP1-STEP-01] import ledger exists; re-verifying vendored bytes
+[WP1-STEP-01] v0.1 HEAD exact: 6de1ca2a595e8895f54794f3a211fe6ee1a95a80
+[WP1-STEP-01] v0.2 HEAD exact: 38c1be6afd2ab2420aa094c68ce45ee6a26b3628
+[WP1-STEP-01] vendored 32 files (C:\Users\Saif malik\OneDrive\Documents\Desktop\Number2\artifacts\v03\parent_import\v01baseline)
+[WP1-STEP-01] vendored 21 files (C:\Users\Saif malik\OneDrive\Documents\Desktop\Number2\artifacts\v03\parent_import\v02baseline)
+[WP1-STEP-01] vendored 99 files (C:\Users\Saif malik\OneDrive\Documents\Desktop\Number2\artifacts\v03\parent_import)
+[WP1-STEP-01] vendored 7 files (C:\Users\Saif malik\OneDrive\Documents\Desktop\Number2\artifacts\v03\parent_import)
+[WP1-STEP-01] v0.1 manifest cross-check: 129 files pinned
+[WP1-STEP-01] v0.2 manifest cross-check: 7 files pinned
+[WP1-STEP-01] import ledger written (32+21+99+7 files)
+[WP1-STEP-02] n=2 trees=2 reachable=4 seconds=0.0
+[WP1-STEP-03] n=2 reachable count exact: 4
+[WP1-STEP-03] n=2 reachable member set exact: 4 states
+[WP1-STEP-02] n=3 trees=5 reachable=19 seconds=0.0
+[WP1-STEP-03] n=3 reachable count exact: 19
+[WP1-STEP-03] n=3 reachable member set exact: 19 states
+[WP1-STEP-02] n=4 trees=14 reachable=196 seconds=0.1
+[WP1-STEP-03] n=4 reachable count exact: 196
+[WP1-STEP-03] n=4 reachable member set exact: 196 states
+[WP1-STEP-02] n=5 trees=42 reachable=1764 seconds=1.2
+[WP1-STEP-03] n=5 reachable count exact: 1764
+[WP1-STEP-03] n=5 reachable member set exact: 1764 states
+[WP1-STEP-02] n=6 trees=132 reachable=17424 seconds=33.7
+[WP1-STEP-03] n=6 reachable count exact: 17424
+[WP1-STEP-03] n=6 reachable member set exact: 17424 states
+[WP1-STEP-03] n7 reachable stream verified: 184041 members (no BFS)
+[WP1-STEP-03] n7 sealed audits PASS (reachability/transitions/bn)
+[WP1-STEP-03] n7 witness cycle replayed: ratio 23/14 exact
+[WP1-STEP-02] n=7 streamed certificate verified seconds=1.2
+[WP1-STEP-03] n=2 tree transitions exact: 4/4 records
+[WP1-STEP-03] n=2 bn certificate verified: 1/1 witness exact
+[WP1-STEP-03] n=3 tree transitions exact: 15/15 records
+[WP1-STEP-03] n=3 bn certificate verified: 1/1 witness exact
+[WP1-STEP-03] n=4 tree transitions exact: 56/56 records
+[WP1-STEP-03] n=4 bn certificate verified: 3/2 witness exact
+[WP1-STEP-03] n=5 tree transitions exact: 210/210 records
+[WP1-STEP-03] n=5 bn certificate verified: 8/5 witness exact
+[WP1-STEP-03] n=6 tree transitions exact: 792/792 records
+[WP1-STEP-03] n=6 bn certificate verified: 8/5 witness exact
+[WP1-STEP-03] Bellman anchors cross-checked n2..7 (maxU/maxV exact)
+[WP1-STEP-03] near-critical classes bound: 6 near-tight hypotheses (quarantined adversarial context) + below-optimum n2..7
+[WP1-STEP-05] n=2 forced derivatives exact: 4/4 edges, KEEP=4
+[WP1-STEP-05] n=2 replayed 1/1 cycles ratio=1/1 all-KEEP closed
+[WP1-STEP-05] n=3 forced derivatives exact: 17/17 edges, KEEP=17
+[WP1-STEP-05] n=3 replayed 4/4 cycles ratio=1/1 all-KEEP closed
+[WP1-STEP-05] n=4 forced derivatives exact: 12/12 edges, KEEP=12
+[WP1-STEP-05] n=4 replayed 6/6 cycles ratio=3/2 all-KEEP closed
+[WP1-STEP-05] n=5 forced derivatives exact: 8/8 edges, KEEP=8
+[WP1-STEP-05] n=5 replayed 1/1 cycles ratio=8/5 all-KEEP closed
+[WP1-STEP-05] n=6 forced derivatives exact: 84/84 edges, KEEP=84
+[WP1-STEP-05] n=6 replayed 11/11 cycles ratio=8/5 all-KEEP closed
+[WP1-STEP-05] n=7 forced derivatives exact: 10/10 edges, KEEP=10
+[WP1-STEP-05] n=7 replayed 1/1 cycles ratio=23/14 all-KEEP closed
+[WP1-STEP-06] failure table: 3/3 PHI REJECTED confirmed; 7 labels with pointers
+[WP1-STEP-06] D5 ledger resolved: 3318/3334 -> 16 (identities absent-from-seal)
+[WP1-STEP-06] atom families inconsistent: D1_node,D2_edge,D3_recency,D4_nested,D5_rank,D6_mapped,D7_multiscale
+[WP1-STEP-06] specimen witnesses: 15 replayed exact, 3 context-only (n=2 aggregates)
+[WP1-STEP-06] tamper probe: genuine clean, 2/2 corruptions caught
+[WP1-STEP-07] obligation statuses: {'REVIEWED': 9, 'PROVED': 5, 'UNPROVED': 6, 'NOT_APPLICABLE': 3, 'BLOCKED': 3}
+[WP1-STEP-07] WP-1 pre-consumption subgate MST0-01=REVIEWED (needs REVIEWED)

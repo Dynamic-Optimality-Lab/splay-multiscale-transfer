@@ -1,0 +1,90 @@
+{
+  "note": "V/U across b recorded as FINITE_OBSERVATION; no monotonicity claim proved",
+  "panel": {
+    "2": {
+      "3/1": {
+        "feasible": true,
+        "maxU": 6,
+        "maxV": 0
+      },
+      "4/1": {
+        "feasible": true,
+        "maxU": 8,
+        "maxV": 0
+      },
+      "5/2": {
+        "feasible": true,
+        "maxU": 10,
+        "maxV": 0
+      }
+    },
+    "3": {
+      "3/1": {
+        "feasible": true,
+        "maxU": 15,
+        "maxV": 0
+      },
+      "4/1": {
+        "feasible": true,
+        "maxU": 20,
+        "maxV": 0
+      },
+      "5/2": {
+        "feasible": true,
+        "maxU": 25,
+        "maxV": 1
+      }
+    },
+    "4": {
+      "3/1": {
+        "feasible": true,
+        "maxU": 35,
+        "maxV": 1
+      },
+      "4/1": {
+        "feasible": true,
+        "maxU": 48,
+        "maxV": 0
+      },
+      "5/2": {
+        "feasible": true,
+        "maxU": 57,
+        "maxV": 3
+      }
+    },
+    "5": {
+      "3/1": {
+        "feasible": true,
+        "maxU": 57,
+        "maxV": 2
+      },
+      "4/1": {
+        "feasible": true,
+        "maxU": 76,
+        "maxV": 1
+      },
+      "5/2": {
+        "feasible": true,
+        "maxU": 95,
+        "maxV": 5
+      }
+    },
+    "6": {
+      "3/1": {
+        "feasible": true,
+        "maxU": 68,
+        "maxV": 3
+      },
+      "4/1": {
+        "feasible": true,
+        "maxU": 92,
+        "maxV": 2
+      },
+      "5/2": {
+        "feasible": true,
+        "maxU": 110,
+        "maxV": 7
+      }
+    }
+  }
+}

@@ -162,6 +162,503 @@
       "source": "artifacts/seal/MANIFEST.sha256"
     }
   ],
+  "v01evidence_files": [
+    {
+      "dest": "v01evidence/trees/n2/trees.jsonl.zst",
+      "sha256": "9B303F683E5E0FA7BFC94E38B9CA212424911430A4DA6AD3B26E938245009EC8",
+      "source": "artifacts/trees/n2/trees.jsonl.zst"
+    },
+    {
+      "dest": "v01evidence/trees/n2/summary.json",
+      "sha256": "998809D7D7624208CA7385C24778773E830902A4FB2C069C07E55DCD1E5A72B2",
+      "source": "artifacts/trees/n2/summary.json"
+    },
+    {
+      "dest": "v01evidence/trees/n2/SHA256SUMS",
+      "sha256": "6DA764AAAE7EEC0F19805E67ECB71C9CD3887294BE54AEBE62BC103704901BB4",
+      "source": "artifacts/trees/n2/SHA256SUMS"
+    },
+    {
+      "dest": "v01evidence/transitions/n2/forward.bin.zst",
+      "sha256": "B186A9E55F740FD013A7C548A74FE40F53AECF2B7F3114F3EC721307C666723A",
+      "source": "artifacts/transitions/n2/forward.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n2/inverse.bin.zst",
+      "sha256": "104A7B33E884868717D6D00642FD4315A88293D0D541F668169538A9F31D9F64",
+      "source": "artifacts/transitions/n2/inverse.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n2/summary.json",
+      "sha256": "03FE011E43DD59C57669D061A716288B0984308BCC41E5979D15ED67D9534F79",
+      "source": "artifacts/transitions/n2/summary.json"
+    },
+    {
+      "dest": "v01evidence/reachability/n2/reachable.json.zst",
+      "sha256": "955A16720342E3E3E73D0E895080E56DA93D2EFE0EDF3817EA068D60DE42752F",
+      "source": "artifacts/reachability/n2/reachable.json.zst"
+    },
+    {
+      "dest": "v01evidence/reachability/n2/summary.json",
+      "sha256": "5BC439FBED7B541EB26A50E38FFEBF4426597FB4A65032262A630846202385E0",
+      "source": "artifacts/reachability/n2/summary.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n2/bn_certificate.json",
+      "sha256": "2D398D546E64C45FF8C08CDF5589D641984B9445792BF0E0036AA370ED7F7610",
+      "source": "artifacts/certificates/n2/bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n2/witness_cycle.json",
+      "sha256": "1423506A679DA92545780AA5915FBE4D16BC77CEE2C64E87769E33FB9A14D3DE",
+      "source": "artifacts/certificates/n2/witness_cycle.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n2/potential_upper.json.zst",
+      "sha256": "B0F7DE3C89B70E9E2394F1A4135A3C2D05AD44C1A89648690C059E8144CFF16D",
+      "source": "artifacts/certificates/n2/potential_upper.json.zst"
+    },
+    {
+      "dest": "v01evidence/audits/n2/verify_reachability.json",
+      "sha256": "18F15A58ACDDBE98EEBEB457F67CE7EB241B7E5CFF801B940463AE7E2AA228E6",
+      "source": "artifacts/audits/n2/verify_reachability.json"
+    },
+    {
+      "dest": "v01evidence/audits/n2/verify_transitions.json",
+      "sha256": "DC2280BD33A617D1BDF34664385F9659C606C1A6381354E72777BDF823780570",
+      "source": "artifacts/audits/n2/verify_transitions.json"
+    },
+    {
+      "dest": "v01evidence/audits/n2/verify_bn_certificate.json",
+      "sha256": "4B37450360D80DBC8FF320CCA4DF79B7A306CE59477B30240A3795B50A2C39EE",
+      "source": "artifacts/audits/n2/verify_bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/audits/n2/verify_uv.json",
+      "sha256": "375E04D4E00D5466AC848AD9EDAC0AB345A3030848D50F034443569B0B1CEFB7",
+      "source": "artifacts/audits/n2/verify_uv.json"
+    },
+    {
+      "dest": "v01evidence/audits/n2/verify_critical_objects.json",
+      "sha256": "CF93C19153DAA7F1D590122DF0199A786FF85E2DC27122697FC48FF1967C4774",
+      "source": "artifacts/audits/n2/verify_critical_objects.json"
+    },
+    {
+      "dest": "v01evidence/trees/n3/trees.jsonl.zst",
+      "sha256": "2F11D85BEB9B3A551EC581664CAE91374EAD471EB7170BDED5BEF95AE1602AB6",
+      "source": "artifacts/trees/n3/trees.jsonl.zst"
+    },
+    {
+      "dest": "v01evidence/trees/n3/summary.json",
+      "sha256": "A6D37B1F6E07F078D08FA5B509FC28382E9F14A379DECB192185EF77E95270A7",
+      "source": "artifacts/trees/n3/summary.json"
+    },
+    {
+      "dest": "v01evidence/trees/n3/SHA256SUMS",
+      "sha256": "5247D9F8B416654F7CA3D7BEED58755CAF9697D58BBD666182C3348818CFBC13",
+      "source": "artifacts/trees/n3/SHA256SUMS"
+    },
+    {
+      "dest": "v01evidence/transitions/n3/forward.bin.zst",
+      "sha256": "13E4F9151BD4B4CE9D008D3ABA7F77BC2AF386BDE6815FD2F181FC3BC98FED86",
+      "source": "artifacts/transitions/n3/forward.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n3/inverse.bin.zst",
+      "sha256": "71953EAC509BECD1ACF21FC318D67C6F59B8A87A882F465BF0F0F28B3311B3AC",
+      "source": "artifacts/transitions/n3/inverse.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n3/summary.json",
+      "sha256": "0386E205CDC5FE00C08E4E081E2AF5B641B8010AC386DF3D2BDEF77F30C6220C",
+      "source": "artifacts/transitions/n3/summary.json"
+    },
+    {
+      "dest": "v01evidence/reachability/n3/reachable.json.zst",
+      "sha256": "0A253A83B2C95D4B9D519F544707F8F6876A1A58626C5420A9BB57903DB04393",
+      "source": "artifacts/reachability/n3/reachable.json.zst"
+    },
+    {
+      "dest": "v01evidence/reachability/n3/summary.json",
+      "sha256": "94FBBCC179675CA9D62CF33FBDE45ADEC3F43B6D2F9BCF4B71F5D0A51AED4D78",
+      "source": "artifacts/reachability/n3/summary.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n3/bn_certificate.json",
+      "sha256": "5BD738013F5BCAC7548A24E894C064B02DAAFE76C143235C1E5F06B4DCEF44AB",
+      "source": "artifacts/certificates/n3/bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n3/witness_cycle.json",
+      "sha256": "68AC2FE2D1341886DD65E518C5EABCB6082194D58610AE416F45C5668F16AB99",
+      "source": "artifacts/certificates/n3/witness_cycle.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n3/potential_upper.json.zst",
+      "sha256": "4D449E0B519AB23664B077DF8409783D7B599598CDAAFEC1AB521D98A5F728AA",
+      "source": "artifacts/certificates/n3/potential_upper.json.zst"
+    },
+    {
+      "dest": "v01evidence/audits/n3/verify_reachability.json",
+      "sha256": "7AF64620C8B453D9B8818E35188D72D9FB99432C37AEB3DE9637DC5CB77AD469",
+      "source": "artifacts/audits/n3/verify_reachability.json"
+    },
+    {
+      "dest": "v01evidence/audits/n3/verify_transitions.json",
+      "sha256": "E6C117911126DAAC266D9497AEFED776BC1657DEFC91D1213C3F209143D093FC",
+      "source": "artifacts/audits/n3/verify_transitions.json"
+    },
+    {
+      "dest": "v01evidence/audits/n3/verify_bn_certificate.json",
+      "sha256": "AA89817AEB4B9333F80AF1C7A12BE25F680C96810C913E78A2EFCF0CE35768FA",
+      "source": "artifacts/audits/n3/verify_bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/audits/n3/verify_uv.json",
+      "sha256": "0AA03FB8922573F4C8EBEC1928677045D642394B16C7E08A363D30C9961A9AB4",
+      "source": "artifacts/audits/n3/verify_uv.json"
+    },
+    {
+      "dest": "v01evidence/audits/n3/verify_critical_objects.json",
+      "sha256": "E31DD4F15C53846ECB50963C3773FC077C9C82C5C2497738AD207562DCD46E39",
+      "source": "artifacts/audits/n3/verify_critical_objects.json"
+    },
+    {
+      "dest": "v01evidence/trees/n4/trees.jsonl.zst",
+      "sha256": "D6920EC3774B7D39789C65DAE1F4C15AE4ADCC4F5DD80FE97DD8FCE2DBD4D597",
+      "source": "artifacts/trees/n4/trees.jsonl.zst"
+    },
+    {
+      "dest": "v01evidence/trees/n4/summary.json",
+      "sha256": "E0B329E0CF71C1B9564D123183692657877D9A756FD13B5E8E8C3A2442993AD7",
+      "source": "artifacts/trees/n4/summary.json"
+    },
+    {
+      "dest": "v01evidence/trees/n4/SHA256SUMS",
+      "sha256": "96CCAF04D217EA256929935CB20BFB0E91B76E122AD3C9AEE97FDFB48DFA4582",
+      "source": "artifacts/trees/n4/SHA256SUMS"
+    },
+    {
+      "dest": "v01evidence/transitions/n4/forward.bin.zst",
+      "sha256": "DAD008DC1EC0923E852CC37459BD6C0BA0E114A4F0341EA44A4EBC1B2BD2F17B",
+      "source": "artifacts/transitions/n4/forward.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n4/inverse.bin.zst",
+      "sha256": "0F888226AA7A44AE9AEE9A165E81BC6F1B288DAB8FF4078C5D89859BCD31015B",
+      "source": "artifacts/transitions/n4/inverse.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n4/summary.json",
+      "sha256": "706EC9FA4BC6893F4E1AA1B263984F549D316CD2783F676118FC144A7BB6572E",
+      "source": "artifacts/transitions/n4/summary.json"
+    },
+    {
+      "dest": "v01evidence/reachability/n4/reachable.json.zst",
+      "sha256": "E6207A2F450830D8C9D79DBB517509ED5FB2D406E4083742F305AF6847BB3FE7",
+      "source": "artifacts/reachability/n4/reachable.json.zst"
+    },
+    {
+      "dest": "v01evidence/reachability/n4/summary.json",
+      "sha256": "10085A64F36DBD6134EA1C3A45FBC159C9F1F2AF30658F8AE2BA89C6BF36664F",
+      "source": "artifacts/reachability/n4/summary.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n4/bn_certificate.json",
+      "sha256": "CA26D7265A518C41DB0F8E011B955CD4D6A9F4DD3CC3ACF34F9D77DDB63B2310",
+      "source": "artifacts/certificates/n4/bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n4/witness_cycle.json",
+      "sha256": "3739C247A1E965ED78CE8604B4B673396FBC4A5DCB5ACEC9BEFEC0817E27AAAE",
+      "source": "artifacts/certificates/n4/witness_cycle.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n4/potential_upper.json.zst",
+      "sha256": "7604FDE5454573F5C305994AB8C31507262F7821272C98781E5C7E4F32731297",
+      "source": "artifacts/certificates/n4/potential_upper.json.zst"
+    },
+    {
+      "dest": "v01evidence/audits/n4/verify_reachability.json",
+      "sha256": "0279E4BEEA7F2285C412D49BCA79399F1D0E1B10F262F84A7193CA9B517F7486",
+      "source": "artifacts/audits/n4/verify_reachability.json"
+    },
+    {
+      "dest": "v01evidence/audits/n4/verify_transitions.json",
+      "sha256": "2664F00F7992FFDD11B83384BFFAD2F1B69FF9AB7F312E4F9FB08CD91CA8A2FB",
+      "source": "artifacts/audits/n4/verify_transitions.json"
+    },
+    {
+      "dest": "v01evidence/audits/n4/verify_bn_certificate.json",
+      "sha256": "23470BF266DDC584C2E70124BE9E2ABF139E5ACF4F3C9A6F904A65EF59963BFF",
+      "source": "artifacts/audits/n4/verify_bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/audits/n4/verify_uv.json",
+      "sha256": "FC5D605EE21C8E5BAFC65E94CF3D1690C940EDD89E6ADC65FB400D5A6CAD1A10",
+      "source": "artifacts/audits/n4/verify_uv.json"
+    },
+    {
+      "dest": "v01evidence/audits/n4/verify_critical_objects.json",
+      "sha256": "82DAA48FB787AF7E6543B87685A13267873A8D4C6989C85CCF66C774B4DE2955",
+      "source": "artifacts/audits/n4/verify_critical_objects.json"
+    },
+    {
+      "dest": "v01evidence/trees/n5/trees.jsonl.zst",
+      "sha256": "27BFA7E4B6E34D58A4C8804419CB03B420F776276230F2D9F95D70461B325A70",
+      "source": "artifacts/trees/n5/trees.jsonl.zst"
+    },
+    {
+      "dest": "v01evidence/trees/n5/summary.json",
+      "sha256": "82DABBE1874D724FE813643924A91A27BBFCBE2CB6658924F2DD439F17FC9DF4",
+      "source": "artifacts/trees/n5/summary.json"
+    },
+    {
+      "dest": "v01evidence/trees/n5/SHA256SUMS",
+      "sha256": "9CE69795BE108BC2009EBD8B3FFA46EA788512715DB0F9C274845A28B8641C46",
+      "source": "artifacts/trees/n5/SHA256SUMS"
+    },
+    {
+      "dest": "v01evidence/transitions/n5/forward.bin.zst",
+      "sha256": "8BA04CD5F17D35EE930D9E727CBF3F62E5693954FC837C706E919D291EA20FCE",
+      "source": "artifacts/transitions/n5/forward.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n5/inverse.bin.zst",
+      "sha256": "BD76BE950177C95775C91107BFE885A1B127C61341C7404B92638DF61D42A605",
+      "source": "artifacts/transitions/n5/inverse.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n5/summary.json",
+      "sha256": "E3232C38F91FA4FDFD8206F3F3529531635F55C3551E74FCFE6EA1CEEEACB470",
+      "source": "artifacts/transitions/n5/summary.json"
+    },
+    {
+      "dest": "v01evidence/reachability/n5/reachable.json.zst",
+      "sha256": "E969A04502B95E917F1C16F30F06B1ADF79293A98191604F370BEBE851388C39",
+      "source": "artifacts/reachability/n5/reachable.json.zst"
+    },
+    {
+      "dest": "v01evidence/reachability/n5/summary.json",
+      "sha256": "2A5CAC03C92DC826B2507071BAE718179ADF572B96751D471C443E491B6142C5",
+      "source": "artifacts/reachability/n5/summary.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n5/bn_certificate.json",
+      "sha256": "DD4199842BD34891236BCF3735DA9EC0422E362F2EAFEE02E5B47A0DC695FE2A",
+      "source": "artifacts/certificates/n5/bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n5/witness_cycle.json",
+      "sha256": "0F5808FA6D76252676AD7747F2ACC98E13404DF141A65FA47BB1F059735F5168",
+      "source": "artifacts/certificates/n5/witness_cycle.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n5/potential_upper.json.zst",
+      "sha256": "EEB8EF9AD87363666C9FE992CBBC4BB6C78FFF6A620DDA1EA244DCBF7DAA881E",
+      "source": "artifacts/certificates/n5/potential_upper.json.zst"
+    },
+    {
+      "dest": "v01evidence/audits/n5/verify_reachability.json",
+      "sha256": "2952A41213693FA66E37415C2E572973A85B1C50C7D8DEE8A679D2774B46CB0B",
+      "source": "artifacts/audits/n5/verify_reachability.json"
+    },
+    {
+      "dest": "v01evidence/audits/n5/verify_transitions.json",
+      "sha256": "D77786DD786BDE2E11254BC9A6C0986E94E3E3FA7F91B9CEB5C9358DEAAE05D6",
+      "source": "artifacts/audits/n5/verify_transitions.json"
+    },
+    {
+      "dest": "v01evidence/audits/n5/verify_bn_certificate.json",
+      "sha256": "028598A930EB7E198D4CEAC6EF2EB5E7BAE601AD96395617FA0EBD1F33D16C34",
+      "source": "artifacts/audits/n5/verify_bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/audits/n5/verify_uv.json",
+      "sha256": "CEBE514BF883C38A028D7FA463F103D38C8151DF419835CBF707B5281F3A9A99",
+      "source": "artifacts/audits/n5/verify_uv.json"
+    },
+    {
+      "dest": "v01evidence/audits/n5/verify_critical_objects.json",
+      "sha256": "3A80046501FD08FBD2EE8013944FAB67143DD9B60AE0340D2D573B92C6215883",
+      "source": "artifacts/audits/n5/verify_critical_objects.json"
+    },
+    {
+      "dest": "v01evidence/trees/n6/trees.jsonl.zst",
+      "sha256": "889563357BA6A51C9E906E13BA90EBFC8DA64DD702F527E087D1D0DECB973953",
+      "source": "artifacts/trees/n6/trees.jsonl.zst"
+    },
+    {
+      "dest": "v01evidence/trees/n6/summary.json",
+      "sha256": "D57050635277A5F69CCBF886A9627BCCEAFDC25AA0D35A300989959A1DFADCA7",
+      "source": "artifacts/trees/n6/summary.json"
+    },
+    {
+      "dest": "v01evidence/trees/n6/SHA256SUMS",
+      "sha256": "CA54861524C6BE3A443602C9F4C7723EA8E3AA9B9D846A9281A21FC3CB0929A5",
+      "source": "artifacts/trees/n6/SHA256SUMS"
+    },
+    {
+      "dest": "v01evidence/transitions/n6/forward.bin.zst",
+      "sha256": "BCFD93C4A0023E6ED285C595205882BDBFA98EA9FA735B7F2522A16520D5F460",
+      "source": "artifacts/transitions/n6/forward.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n6/inverse.bin.zst",
+      "sha256": "DDBB661119FA53BEBF398F219C359EE26BB39DEF8459992D8DD3FDA0902F6A65",
+      "source": "artifacts/transitions/n6/inverse.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n6/summary.json",
+      "sha256": "3F445B910B2AEC389B21532A63EDCC81787CE57A85C853EC86C8F4D2053A0705",
+      "source": "artifacts/transitions/n6/summary.json"
+    },
+    {
+      "dest": "v01evidence/reachability/n6/reachable.json.zst",
+      "sha256": "728F012FD671B2CD385578F9D6F7576558597A0F5FE4150FC96124C7D723F93B",
+      "source": "artifacts/reachability/n6/reachable.json.zst"
+    },
+    {
+      "dest": "v01evidence/reachability/n6/summary.json",
+      "sha256": "2FDCF574D834F86F891DDD3B741EC89445C3E0B350F6715D7F026875F6E28674",
+      "source": "artifacts/reachability/n6/summary.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n6/bn_certificate.json",
+      "sha256": "70B8801FBC444C9ED249C85660E4629F68F593A63B48C22CF1F919168AE9F356",
+      "source": "artifacts/certificates/n6/bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n6/witness_cycle.json",
+      "sha256": "8B6FED2B94DF6F975171B8793DBA9627E3D4C04FC4A51228EB48F021C3EFC1CB",
+      "source": "artifacts/certificates/n6/witness_cycle.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n6/potential_upper.json.zst",
+      "sha256": "B95DB6B3E67FDE67462B3FB84CFF9507250092E48B19943E7D24BF0C44A6B6C0",
+      "source": "artifacts/certificates/n6/potential_upper.json.zst"
+    },
+    {
+      "dest": "v01evidence/audits/n6/verify_reachability.json",
+      "sha256": "AB96BF7CEC4289AD50A1F4F71734C1DB313BDEB1E98AFA2F15EBEA578028641F",
+      "source": "artifacts/audits/n6/verify_reachability.json"
+    },
+    {
+      "dest": "v01evidence/audits/n6/verify_transitions.json",
+      "sha256": "8C2CACF98DFDAAF6961BFE2A88AAD7520184DAC82BDA5509771CEC08017C824B",
+      "source": "artifacts/audits/n6/verify_transitions.json"
+    },
+    {
+      "dest": "v01evidence/audits/n6/verify_bn_certificate.json",
+      "sha256": "D8DEC08B8FF8723B48D7774B3956B89FFE27819CF8265C4B9C1563FE09A29D53",
+      "source": "artifacts/audits/n6/verify_bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/audits/n6/verify_uv.json",
+      "sha256": "8FF80534DEF92A4BD94D70659D280AC28CFED9C5D15CE3B27EC2DA79F981C446",
+      "source": "artifacts/audits/n6/verify_uv.json"
+    },
+    {
+      "dest": "v01evidence/audits/n6/verify_critical_objects.json",
+      "sha256": "33E8AC70A1351FE97307FEC70CBBBD57EF4473BD069786A87BBB9937A81D683B",
+      "source": "artifacts/audits/n6/verify_critical_objects.json"
+    },
+    {
+      "dest": "v01evidence/trees/n7/trees.jsonl.zst",
+      "sha256": "FC1400B6800C010AD6C06BFF326D14326E04A4C60493428FEAFF3EFA14CDE2CE",
+      "source": "artifacts/trees/n7/trees.jsonl.zst"
+    },
+    {
+      "dest": "v01evidence/trees/n7/summary.json",
+      "sha256": "7E487615F25F42628A8DEDAE9B348E6EE66BA37D67BA22C5AFC640619686F171",
+      "source": "artifacts/trees/n7/summary.json"
+    },
+    {
+      "dest": "v01evidence/trees/n7/SHA256SUMS",
+      "sha256": "79C9D61A377A2180B8A63D2A3C11EAB7CF25D3F72FE8AAD3E318D46A9F172AF5",
+      "source": "artifacts/trees/n7/SHA256SUMS"
+    },
+    {
+      "dest": "v01evidence/transitions/n7/forward.bin.zst",
+      "sha256": "A481A30285FAC07E8850A23A407F1D0A0D97B5E675A224EDC83E94A32E046842",
+      "source": "artifacts/transitions/n7/forward.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n7/inverse.bin.zst",
+      "sha256": "D936069C456D20F39F5F7271EE00C380BB7C72D4F20B4B73C59B562E28E12293",
+      "source": "artifacts/transitions/n7/inverse.bin.zst"
+    },
+    {
+      "dest": "v01evidence/transitions/n7/summary.json",
+      "sha256": "83351D438B50B07C3DA3F64906C755380F82D5FF6010989F768D76A0D749E301",
+      "source": "artifacts/transitions/n7/summary.json"
+    },
+    {
+      "dest": "v01evidence/reachability/n7/reachable.json.zst",
+      "sha256": "4FE3F72E034D823923337C103A5E6A22D03A33B2CF4966A51D07D2EBB4E20EF7",
+      "source": "artifacts/reachability/n7/reachable.json.zst"
+    },
+    {
+      "dest": "v01evidence/reachability/n7/summary.json",
+      "sha256": "6B4C5495170384545664984B993E1A6524738BB1C2CBFDFFD31C9115BC556FEF",
+      "source": "artifacts/reachability/n7/summary.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n7/bn_certificate.json",
+      "sha256": "4ED03273DDE286CDBFCA5CB7271EE7CB32192A7D5C491BE57809B145AE892535",
+      "source": "artifacts/certificates/n7/bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n7/witness_cycle.json",
+      "sha256": "9A6EA09C764674DC65A2905D83D5004BE829C29AA870F20705F3644D38D98F68",
+      "source": "artifacts/certificates/n7/witness_cycle.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n7/potential_upper.json.zst",
+      "sha256": "8774DCC1D26EBEC0A42F3CDFC1B278627BD5CF53D64E8F51722292D88AD0558C",
+      "source": "artifacts/certificates/n7/potential_upper.json.zst"
+    },
+    {
+      "dest": "v01evidence/audits/n7/verify_reachability.json",
+      "sha256": "D1B3569DC0AB0FEE3D8FE73B147BAF182D9357052A68EAEA878F8B9AE7A9E191",
+      "source": "artifacts/audits/n7/verify_reachability.json"
+    },
+    {
+      "dest": "v01evidence/audits/n7/verify_transitions.json",
+      "sha256": "615561D989AE21211CAEBA5645911F90618C66173EB9187F73E62940DB227342",
+      "source": "artifacts/audits/n7/verify_transitions.json"
+    },
+    {
+      "dest": "v01evidence/audits/n7/verify_bn_certificate.json",
+      "sha256": "0B064AB30603F456E1F1313201D0B1039016491F185F5B315CAF87627D9C799C",
+      "source": "artifacts/audits/n7/verify_bn_certificate.json"
+    },
+    {
+      "dest": "v01evidence/audits/n7/verify_uv.json",
+      "sha256": "55B6359880451C536813E1ECF34CA4184E78F5ECD0E60DF2944B2824F27C43F3",
+      "source": "artifacts/audits/n7/verify_uv.json"
+    },
+    {
+      "dest": "v01evidence/audits/n7/verify_critical_objects.json",
+      "sha256": "53677D443A8246AB6E6ED117B2F5D5AFE2CDF781E9BB5627F862DA0B28B3E05A",
+      "source": "artifacts/audits/n7/verify_critical_objects.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n2/witness_path.json",
+      "sha256": "E64F32612066E539FF3A61C27B9C93D869EA21460CFCCA8300C81E1D666EDFF5",
+      "source": "artifacts/certificates/n2/witness_path.json"
+    },
+    {
+      "dest": "v01evidence/certificates/n3/witness_path.json",
+      "sha256": "6E871D12267D9074C427D38383464D4C16B70EF6C2FBB0488AC4D0CDC01EF2AB",
+      "source": "artifacts/certificates/n3/witness_path.json"
+    },
+    {
+      "dest": "v01evidence/adversarial/near_tight_families.json",
+      "sha256": "F008DC31BA0CBDA3FB19A94E311315DD0F5470F3F307B7E5590A641F2072CF68",
+      "source": "artifacts/falsification/adversarial/near_tight_families.json"
+    }
+  ],
   "v02_commit": "38c1be6afd2ab2420aa094c68ce45ee6a26b3628",
   "v02_files": [
     {
@@ -173,6 +670,11 @@
       "dest": "v02/FINAL_RESULT.json",
       "sha256": "C5B1C60ADE7090C3B32000A3FF94FC376D65DF4ECAF16AA2AD227DC775995140",
       "source": "artifacts/v02/seal/FINAL_RESULT.json"
+    },
+    {
+      "dest": "v02/MANIFEST.sha256",
+      "sha256": "5C4BA61B1409A1E92263912173B749AD6BDE0CBBEB174E2CA285FEABA64BB17F",
+      "source": "artifacts/v02/seal/MANIFEST.sha256"
     },
     {
       "dest": "v02/hypothesis_ledger.json",
@@ -263,6 +765,43 @@
       "dest": "v02/specimens_n7_witnesses.json",
       "sha256": "2794CBA912AE4133353D6C79F44AE9FA2794B655137AB99FF0AAF099443D5B05",
       "source": "artifacts/v02/specimens/n7/witnesses.json"
+    }
+  ],
+  "v02evidence_files": [
+    {
+      "dest": "v02evidence/bellman/n2_b2/anchor_report.json",
+      "sha256": "AEE444CBDE3E54EE497A46CD5357289C45205B166DC574941F4680177B7CB5B2",
+      "source": "artifacts/v02/bellman/n2_b2/anchor_report.json"
+    },
+    {
+      "dest": "v02evidence/bellman/n3_b2/anchor_report.json",
+      "sha256": "B4E2277F83FFDA0B3BB4A0BEE270E7A203AA71EF83B5A67201DDF75FC703A865",
+      "source": "artifacts/v02/bellman/n3_b2/anchor_report.json"
+    },
+    {
+      "dest": "v02evidence/bellman/n4_b2/anchor_report.json",
+      "sha256": "5D723B17A4A71DF30FE579C0EAF9FDB57CA6259D3A286D1F090CD797F6AE1F3E",
+      "source": "artifacts/v02/bellman/n4_b2/anchor_report.json"
+    },
+    {
+      "dest": "v02evidence/bellman/n5_b2/anchor_report.json",
+      "sha256": "038C892565AE68D5408DCB2B0D7FD5F11DDFD1EE97661D7CFAF657D8DD08A13F",
+      "source": "artifacts/v02/bellman/n5_b2/anchor_report.json"
+    },
+    {
+      "dest": "v02evidence/bellman/n6_b2/anchor_report.json",
+      "sha256": "C7E26319003B22388F2CD5E329B2493189B84540FD623699D819DF480E73958D",
+      "source": "artifacts/v02/bellman/n6_b2/anchor_report.json"
+    },
+    {
+      "dest": "v02evidence/bellman/n7_b2/anchor_report.json",
+      "sha256": "FA90E7012F5FACDC7A93BFBC41956E8E5DD73065A0EFA5358B692A493BF3CE0C",
+      "source": "artifacts/v02/bellman/n7_b2/anchor_report.json"
+    },
+    {
+      "dest": "v02evidence/bellman/panel.json",
+      "sha256": "1D6861840A2F3B82E71737EF15DC8084BA18238CC3CE521FF43C393281482F97",
+      "source": "artifacts/v02/bellman/panel.json"
     }
   ]
 }

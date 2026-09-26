@@ -1,0 +1,13 @@
+{
+  "R": 1764,
+  "delete_create": 3060,
+  "exact_repay": 894,
+  "keep_excess": 938,
+  "maxU": 38,
+  "maxV": 3,
+  "max_delete_dV_scaled": 3,
+  "max_excess_scaled": 3,
+  "n": 5,
+  "utight": 1910,
+  "vtight": 1614
+}
