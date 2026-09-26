@@ -59,10 +59,19 @@ def step_import(v01: str, v02: str, outdir: str, skip_if_sealed: bool = True) ->
         return fails
     dest_v01 = os.path.join(outdir, "v01baseline")
     dest_v02 = os.path.join(outdir, "v02baseline")
+    dest_ev01 = os.path.join(outdir, "v01evidence")
+    dest_ev02 = os.path.join(outdir, "v02evidence")
     ledger, f1 = import_parent.vendor({"v01": v01}, dest_v01)
     fails += f1
     ledger2, f2 = import_parent.vendor({"v02": v02}, dest_v02)
     fails += f2
+    # WP-1 REPAIR STEP V0: vendor the sealed parent-evidence classes (F1/F3/F5).
+    ledger_ev1, f3 = import_parent.vendor(
+        {"v01": v01}, dest_ev01, import_parent.V01_EVIDENCE_FILES)
+    fails += f3
+    ledger_ev2, f4 = import_parent.vendor(
+        {"v02": v02}, dest_ev02, import_parent.V02_EVIDENCE_FILES)
+    fails += f4
     if fails:
         return fails
     # Cross-check vendored v0.1 files against the sealed v0.1 MANIFEST.
@@ -72,38 +81,79 @@ def step_import(v01: str, v02: str, outdir: str, skip_if_sealed: bool = True) ->
         if len(parts) == 2:
             manifest[parts[1]] = parts[0].upper()
     checked = 0
-    for entry in ledger:
-        if not entry["dest"].startswith("v01/critical_n"):
-            continue
-        size, fname = entry["dest"].split("critical_n")[1].split("_", 1)
-        mkey = next((k for k in manifest
-                     if k.endswith("critical/n%s/%s" % (size, fname.replace(".zst", ".zst")))), None)
+
+    def _manifest_key(dest: str) -> str | None:
+        if dest.startswith("v01/critical_n"):
+            size, fname = dest.split("critical_n")[1].split("_", 1)
+            return next((k for k in manifest
+                         if k.endswith("critical/n%s/%s" % (size, fname))), None)
+        if dest.startswith("v01evidence/"):
+            rel = dest[len("v01evidence/"):]
+            return next((k for k in manifest if k.endswith(rel)), None)
+        return None
+
+    for entry in ledger + ledger_ev1:
+        mkey = _manifest_key(entry["dest"])
         if mkey is None or manifest[mkey] != entry["sha256"]:
             fails.append("IMPORT-02 v0.1 manifest mismatch for %s" % entry["dest"])
         else:
             checked += 1
-    print("[WP1-STEP-01] v0.1 manifest cross-check: %d cycle files pinned" % checked, flush=True)
+    print("[WP1-STEP-01] v0.1 manifest cross-check: %d files pinned" % checked, flush=True)
+    # Cross-check vendored v0.2 evidence against the sealed v0.2 MANIFEST.
+    manifest2 = {}
+    for ln in open(os.path.join(dest_v02, "v02", "MANIFEST.sha256"), encoding="utf-8"):
+        parts = ln.strip().split()
+        if len(parts) == 2:
+            manifest2[parts[1]] = parts[0].upper()
+    checked2 = 0
+    for entry in ledger_ev2:
+        rel = entry["dest"][len("v02evidence/"):]
+        mkey = next((k for k in manifest2 if k.endswith(rel)), None)
+        if mkey is None or manifest2[mkey] != entry["sha256"]:
+            fails.append("IMPORT-02 v0.2 manifest mismatch for %s" % entry["dest"])
+        else:
+            checked2 += 1
+    print("[WP1-STEP-01] v0.2 manifest cross-check: %d files pinned" % checked2, flush=True)
     with open(ledger_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump({"v01_commit": V01_COMMIT, "v02_commit": V02_COMMIT,
-                   "v01_files": ledger, "v02_files": ledger2}, f, sort_keys=True, indent=2)
+                   "v01_files": ledger, "v02_files": ledger2,
+                   "v01evidence_files": ledger_ev1,
+                   "v02evidence_files": ledger_ev2}, f, sort_keys=True, indent=2)
         f.write("\n")
-    print("[WP1-STEP-01] import ledger written (%d+%d files)" % (len(ledger), len(ledger2)), flush=True)
+    print("[WP1-STEP-01] import ledger written (%d+%d+%d+%d files)"
+          % (len(ledger), len(ledger2), len(ledger_ev1), len(ledger_ev2)), flush=True)
     return fails
 
 
 # WP1-STEP-02/03: independent enumeration + count verification vs fact_table.
 def step_enumerate(outdir: str, sizes: list[int], budget_s: float) -> tuple[list[str], dict]:
     fails: list[str] = []
+    from python.cycles import evidence as evidence_mod
     fact = json.load(open(os.path.join(outdir, "v02baseline", "v02", "fact_table.json"),
                           encoding="utf-8"))
     claims = {row["n"]: row for row in fact}
+    evdir = os.path.join(outdir, "v01evidence")
     results: dict = {}
     for n in sizes:
+        if n >= 7:
+            # WP-1 REPAIR STEP V8: streamed n7 certificate verification (F2):
+            # sealed summaries + audits + witness replay, no pair-state BFS.
+            t0 = time.time()
+            fN, stats = evidence_mod.verify_n7_streamed(evdir, claims[n])
+            fails += fN
+            dt = time.time() - t0
+            results[str(n)] = {"trees": 429, "reachable": 184041,
+                               "method": "streamed-certificate (no pair BFS)",
+                               "seconds": round(dt, 1)}
+            print("[WP1-STEP-02] n=%d streamed certificate verified seconds=%.1f"
+                  % (n, dt), flush=True)
+            continue
         t0 = time.time()
         dom = PairDomain(n)
         reached = dom.reachable(progress_every=50000 if n >= 7 else 0)
         dt = time.time() - t0
-        results[str(n)] = {"trees": dom.C, "reachable": len(reached), "seconds": round(dt, 1)}
+        results[str(n)] = {"trees": dom.C, "reachable": len(reached),
+                           "method": "full-BFS", "seconds": round(dt, 1)}
         print("[WP1-STEP-02] n=%d trees=%d reachable=%d seconds=%.1f"
               % (n, dom.C, len(reached), dt), flush=True)
         if dt > budget_s:
@@ -114,10 +164,38 @@ def step_enumerate(outdir: str, sizes: list[int], budget_s: float) -> tuple[list
             fails.append("COUNT-01 n=%d recomputed %d != parent %d" % (n, len(reached), want))
         else:
             print("[WP1-STEP-03] n=%d reachable count exact: %d" % (n, want), flush=True)
+        # WP-1 REPAIR STEP V7: member-set equality vs sealed reachable set (F2).
+        fM, _stats = evidence_mod.verify_reachability_full(evdir, n, dom)
+        fails += fM
     with open(os.path.join(outdir, "enumeration.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(results, f, sort_keys=True, indent=2)
         f.write("\n")
     return fails, results
+
+
+# WP-1 REPAIR STEP V11: sealed evidence verification (trees/transitions/bn/anchors).
+def step_evidence(outdir: str, sizes: list[int]) -> list[str]:
+    """Verify parent-evidence classes: transitions, bn certificates, anchors."""
+    from python.cycles import evidence as evidence_mod
+    fails: list[str] = []
+    fact = json.load(open(os.path.join(outdir, "v02baseline", "v02", "fact_table.json"),
+                          encoding="utf-8"))
+    claims = {row["n"]: row for row in fact}
+    evdir = os.path.join(outdir, "v01evidence")
+    for n in sizes:
+        if n >= 7:
+            continue
+        fT, _s = evidence_mod.verify_tree_tables(evdir, n)
+        fails += fT
+        dom = PairDomain(n)
+        b = (int(claims[n]["b"][0]), int(claims[n]["b"][1]))
+        fB, _s = evidence_mod.verify_bn_certificate(evdir, n, dom, b)
+        fails += fB
+    fA, _s = evidence_mod.verify_anchors(os.path.join(outdir, "v02evidence"), fact)
+    fails += fA
+    fN, _s = evidence_mod.verify_near_critical(evdir)
+    fails += fN
+    return fails
 
 
 # WP1-STEP-05: replay every imported critical cycle; ratios + closure + all-KEEP.
@@ -213,6 +291,20 @@ def step_failures(outdir: str) -> list[str]:
             fails.append("FAILURE-01 %s not REJECTED in parent ledger" % h)
     if not fails:
         print("[WP1-STEP-06] failure table: 3/3 PHI REJECTED confirmed; 7 labels with pointers", flush=True)
+    # WP-1 REPAIR STEP V12: D5 ledger resolution (F6: class imported, count
+    # derived, identities absent-from-seal recorded, never fabricated).
+    from python.cycles import evidence as evidence_mod
+    d5rec, d5fails = evidence_mod.d5_resolution(os.path.join(outdir, "v02baseline"))
+    fails += d5fails
+    table["D5_RANK_LEDGER"] = {
+        "evidence": "sealed D5_rank counters n4 create %s repay %s -> %d derived failures" % (
+            d5rec.get("create"), d5rec.get("repay"), d5rec.get("derived_failures", -1)),
+        "pointer": "v02/debt_atoms/recency_atoms.json",
+        "verdict": d5rec.get("verdict"),
+        "derived_failures": d5rec.get("derived_failures"),
+        "identities": d5rec.get("identities"),
+        "identities_note": d5rec.get("identities_note"),
+    }
     with open(os.path.join(outdir, "failure_table.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump({"labels": table, "hypotheses": ledger}, f, sort_keys=True, indent=2)
         f.write("\n")
@@ -251,61 +343,118 @@ def step_specimens(outdir: str, sizes: list[int]) -> list[str]:
     return fails
 
 
+# WP-1 REPAIR STEP E8: pre-status tamper probe (§21 order for Phase 01).
+def step_tamper_probe(outdir: str) -> list[str]:
+    """Corrupt one cycle target and one key; replay must reject both.
+
+    Fast analogue of the stress tamper battery, executed inline before the
+    scientific phase status is emitted.
+    """
+    import json as _json
+    import copy as _copy
+    from python.cycles import import_parent as _imp
+    from python.cycles.enumerate import PairDomain as _PD
+    fails: list[str] = []
+    base = os.path.join(outdir, "v01baseline", "v01")
+    cyc = _json.load(open(os.path.join(base, "critical_n4_canonical_cycles.json"),
+                          encoding="utf-8"))[0]
+    dom = _PD(4)
+    rep = _imp.replay_cycle(dom, cyc)
+    if rep["mismatches"] or not rep["closed"]:
+        fails.append("TAMPER-PROBE genuine cycle unclean")
+        return fails
+    bad = _copy.deepcopy(cyc)
+    bad["edges"][0]["target"] = (bad["edges"][0]["target"] + 1) % 196
+    rep2 = _imp.replay_cycle(dom, bad)
+    if not (rep2["mismatches"] or not rep2["closed"]):
+        fails.append("TAMPER-PROBE corrupted target escaped")
+    bad2 = _copy.deepcopy(cyc)
+    bad2["edges"][0]["key"] = 5 - bad2["edges"][0]["key"] if bad2["edges"][0]["key"] != 2 else 3
+    rep3 = _imp.replay_cycle(dom, bad2)
+    if not (rep3["mismatches"] or not rep3["closed"] or rep3["ratio"] != rep["ratio"]):
+        fails.append("TAMPER-PROBE corrupted key escaped")
+    if not fails:
+        print("[WP1-STEP-06] tamper probe: genuine clean, 2/2 corruptions caught",
+              flush=True)
+    return fails
+
+
 def main() -> int:
-    import time as _time
-    import tracemalloc as _tracemalloc
     from python.audit import log as log_mod
-    _tracemalloc.start()
-    _t0 = _time.perf_counter()
     ap = argparse.ArgumentParser()
     ap.add_argument("--v01", required=True)
     ap.add_argument("--v02", required=True)
     ap.add_argument("--sizes", default="2,3,4,5,6,7")
     ap.add_argument("--budget-s", type=float, default=1200.0)
     args = ap.parse_args()
+    logdir = os.path.join(ROOT, "artifacts", "v03", "logs")
+    # WP-1 REPAIR STEP L5: capture both streams, hash after close (§27).
+    with log_mod.capture(logdir, "phase01") as cap:
+        exit_code, rec = _run(args)
+    streams = cap.hashes()
+    rec["stdout_hash"] = streams["stdout_hash"]
+    rec["stderr_hash"] = streams["stderr_hash"]
+    # WP-1 REPAIR STEP L3: append the §27 execution record (fail-closed fields).
+    log_mod.write_log(os.path.join(ROOT, "artifacts", "v03", "logs", "phase01_wp1.jsonl"), rec)
+    print("[WP1-STEP-00] §27 record appended (phase01_wp1.jsonl)", flush=True)
+    if exit_code:
+        print("[WP1-STEP-00] PHASE01_FAIL (see record)", flush=True)
+        return 1
+    print("[WP1-STEP-00] PHASE01_PASS: import sealed, counts exact, cycles replay, failures tabled", flush=True)
+    return 0
+
+
+def _run(args) -> tuple[int, dict]:
+    import time as _time
+    import tracemalloc as _tracemalloc
+    from python.audit import log as log_mod
+    _tracemalloc.start()
+    _t0 = _time.perf_counter()
     print("[WP1-STEP-00] PHASE 01: import, enumerate, verify counts, replay cycles, "
           "failure table, subgate report", flush=True)
     outdir = os.path.join(ROOT, "artifacts", "v03", "parent_import")
     os.makedirs(outdir, exist_ok=True)
     sizes = [int(s) for s in args.sizes.split(",")]
+    rec = log_mod.static_fields(ROOT)
+    rec.update({
+        "phase": "01", "branch": "WP-1", "command": sys.argv,
+        "clone_args": {"v01": args.v01, "v02": args.v02},
+        "input_hashes": {"v01_sealed_commit": V01_COMMIT, "v02_sealed_commit": V02_COMMIT},
+        "stdout_hash": None, "stderr_hash": None,
+    })
     fails: list[str] = []
     fails += step_import(args.v01, args.v02, outdir)
     if not fails:
         f2, _enum = step_enumerate(outdir, sizes, args.budget_s)
         fails += f2
     if not fails:
-        fails += step_replay(outdir, [n for n in sizes if n >= 4])
+        # WP-1 REPAIR STEP V11: sealed evidence classes before replay (F1/F3/F5).
+        fails += step_evidence(outdir, sizes)
+    if not fails:
+        fails += step_replay(outdir, sizes)
     if not fails:
         fails += step_failures(outdir)
     if not fails:
         fails += step_specimens(outdir, sizes)
+    # WP-1 REPAIR STEP E8: §21 order — tamper probe BEFORE phase status.
+    if not fails:
+        fails += step_tamper_probe(outdir)
     statuses = obligation_status.main(ROOT)
     if statuses.get("MST0-01", {}).get("status") != "REVIEWED":
         print("[WP1-STEP-07] subgate: MST0-01 not REVIEWED; certified consumption stays blocked", flush=True)
     exit_code = 1 if fails else 0
     # WP1-STEP-00: §27 execution record (append-only; fullest honest field set).
-    rec = log_mod.static_fields(ROOT)
     rec.update({
-        "phase": "01", "branch": "WP-1", "command": sys.argv,
         "scientific_status": "PARENT_CHAIN_VERIFIED" if not fails else "PHASE01_FAIL",
-        "clone_args": {"v01": args.v01, "v02": args.v02},
-        "input_hashes": {"v01_sealed_commit": V01_COMMIT, "v02_sealed_commit": V02_COMMIT},
         "output_hashes": log_mod.hash_outputs(ROOT, ["artifacts/v03/parent_import"]),
         "wall_s": round(_time.perf_counter() - _t0, 2),
         "allocator_peak_bytes": _tracemalloc.get_traced_memory()[1],
         "exit_code": exit_code,
     })
     _tracemalloc.stop()
-    # WP-1 REPAIR STEP L3: append the §27 execution record (fail-closed fields).
-    log_mod.write_log(os.path.join(ROOT, "artifacts", "v03", "logs", "phase01_wp1.jsonl"), rec)
-    print("[WP1-STEP-00] §27 record appended (phase01_wp1.jsonl)", flush=True)
-    if fails:
-        print("[WP1-STEP-00] PHASE01_FAIL (%d)" % len(fails), flush=True)
-        for x in fails:
-            print(" -", x, flush=True)
-        return 1
-    print("[WP1-STEP-00] PHASE01_PASS: import sealed, counts exact, cycles replay, failures tabled", flush=True)
-    return 0
+    for x in fails:
+        print(" -", x, flush=True)
+    return exit_code, rec
 
 
 if __name__ == "__main__":

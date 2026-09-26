@@ -82,6 +82,20 @@ def test_tampered_cycle_rejected() -> None:
           bool(rep3["mismatches"]) or not rep3["closed"] or rep3["ratio"] != rep["ratio"])
 
 
+def test_pair_id_hashed() -> None:
+    """WP-1 REPAIR STEP F7: canonical pair-state ID is hashed (64-hex)."""
+    import re as _re
+    from python.splay_ref.pair import pair_id
+    from python.splay_ref.splay import build_balanced
+    A = build_balanced([1, 2, 3])
+    B = build_balanced([1, 2, 3])
+    pid = pair_id(A, B)
+    check("WP1STRESS-PAIRID 64-hex hash", bool(_re.fullmatch(r"[0-9a-f]{64}", pid)))
+    check("WP1STRESS-PAIRID deterministic", pair_id(A, B) == pid)
+    C = build_balanced([1, 2, 3, 4])
+    check("WP1STRESS-PAIRID distinct pairs differ", pair_id(C, B) != pid)
+
+
 def test_expand_idempotent() -> None:
     import hashlib
     from python.cycles import circulation as circ_mod
@@ -104,6 +118,7 @@ def test_expand_idempotent() -> None:
 if __name__ == "__main__":
     test_exhaustive_n4_agreement()
     test_tampered_cycle_rejected()
+    test_pair_id_hashed()
     test_expand_idempotent()
     print("WP1STRESS-FAILURES:", FAILS if FAILS else "none")
     sys.exit(1 if FAILS else 0)

@@ -10,7 +10,8 @@
 
 ## Proof
 (i) `splay()` executes exactly the recorded rotation sequence: each loop iteration
-performs one pointer rewiring and appends one event (`python/splay_ref/splay.py`).
+performs one case-step — a single pointer rewiring for ZIG, two for LL/RR/LR/RL —
+and appends one event (`python/splay_ref/splay.py`).
 The returned root is the rotated tree itself, not a reconstruction; `trace_keep` /
 `trace_delete` serialize that same object. Final-tree equality between the two
 independent implementations holds on all tested sequences (`ROT-01`, `ROT-10`,

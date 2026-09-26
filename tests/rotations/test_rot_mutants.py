@@ -16,6 +16,7 @@ sys.path.insert(0, ROOT)
 
 from python.rotations import agree as agree_mod  # noqa: E402
 from python.rotations import corpus as corpus_mod  # noqa: E402
+from python.rotations import mutate as mutate_mod  # noqa: E402
 from python.rotations import reference as ref_mod  # noqa: E402
 from python.rotations.trace import trace_keep  # noqa: E402
 from python.splay_ref import independent as I  # noqa: E402
@@ -66,17 +67,11 @@ def _trace_pair(order: list, x: int):
 
 
 def test_case_label_mutant() -> None:
-    """Case-label mutant: flip one event's case; ROT-10 must reject."""
+    """Case-label mutant via the shared probe library (baseline+mutant)."""
+    baseline_ok, mutant_caught = mutate_mod.case_label_probe()
+    check("MUT-CASE baseline full-tuple passes", baseline_ok)
+    check("MUT-CASE flipped case label caught", mutant_caught)
     t, evA, evB = _trace_pair([5, 3, 7, 2, 8], 2)
-    check("MUT-CASE baseline full-tuple passes",
-          agree_mod.compare(t["events"], evA, evB, "base") == [])
-    bad = copy.deepcopy(t["events"])
-    for ev in bad:
-        if ev["side"] == "A":
-            ev["splay_case"] = "RR" if ev["splay_case"] != "RR" else "LL"
-            break
-    check("MUT-CASE flipped case label caught",
-          agree_mod.compare(bad, evA, evB, "mut") != [])
     bad2 = copy.deepcopy(t["events"])
     for ev in bad2:
         if ev["side"] == "A":
@@ -93,14 +88,10 @@ def test_order_mutant() -> None:
     keys); the canonical record must therefore be order-sensitive. A
     tie-insensitive checker would accept reversed tuples — prove ours does not.
     """
+    baseline_ok, mutant_caught = mutate_mod.order_probe()
+    check("MUT-ORDER baseline full-tuple passes", baseline_ok)
+    check("MUT-ORDER reversed key tuples caught", mutant_caught)
     t, evA, evB = _trace_pair([4, 2, 6, 1, 3], 1)
-    check("MUT-ORDER baseline full-tuple passes",
-          agree_mod.compare(t["events"], evA, evB, "base") == [])
-    bad = copy.deepcopy(t["events"])
-    for ev in bad:
-        ev["keys_local"] = list(reversed(ev["keys_local"]))
-    check("MUT-ORDER reversed key tuples caught",
-          agree_mod.compare(bad, evA, evB, "mut") != [])
     bad2 = copy.deepcopy(t["events"])
     for ev in bad2:
         ev["nh_before"], ev["nh_after"] = ev["nh_after"], ev["nh_before"]
@@ -115,20 +106,48 @@ def test_snapshot_order_mutant() -> None:
     steps 1-5). A snapshot of the post-B tree is a different hash; ROT-11
     convention equality must reject it.
     """
-    from python.splay_ref.pair import keep
-    from python.splay_ref.splay import build_balanced, serialize
-    A = build_balanced([1, 2, 3, 4, 5])
-    B = build_balanced([1, 2, 3, 4, 5])
-    t = trace_keep(A, B, 3, "snapprobe")
-    A = build_balanced([1, 2, 3, 4, 5])
-    B = build_balanced([1, 2, 3, 4, 5])
-    A2, B2, _info = keep(A, B, 3)
-    right = ref_mod.snapshot_hash(A2)
-    wrong = ref_mod.snapshot_hash(B2)
+    baseline_ok, mutant_caught = mutate_mod.snapshot_probe()
     check("MUT-SNAPSHOT baseline convention holds (post-A hash recorded)",
-          t["reference_snapshot_hash"] == right and len(right) == 64)
-    check("MUT-SNAPSHOT swapped order caught (post-B hash differs)",
-          wrong != t["reference_snapshot_hash"] or serialize(A2) == serialize(B2))
+          baseline_ok)
+    check("MUT-SNAPSHOT swapped order caught (post-B hash differs, no escape)",
+          mutant_caught)
+
+
+def test_tiebreak_mutant() -> None:
+    """Tie-break mutant: mirror the canonical serialization field order.
+
+    The WP-1 deterministic canonical-choice rule under test is the keyed
+    serialization field order (key,left,right) used by final-tree agreement
+    (ROT-01): WP-1 rotation dispatch has no value-tie branch (strict BST
+    comparisons over unique keys), so canonical ordering IS the tie-break
+    analogue. The mutant runs the production agreement path with a mirrored
+    serializer monkeypatched in; ROT-01 must reject. Restored in finally.
+    """
+    import python.splay_ref.splay as splay_mod
+    real_serialize = splay_mod.serialize
+
+    def _mirror_tree(node):
+        if node is None:
+            return "."
+        return "(" + str(node.key) + _mirror_tree(node.right) + _mirror_tree(node.left) + ")"
+
+    def mirror_serialize2(root):
+        return _mirror_tree(root)
+
+    A = _insert([4, 2, 6, 1, 3])
+    st = I.from_nodes(_insert([4, 2, 6, 1, 3]))
+    _A2, _e1 = splay(A, 1)
+    _e2 = I.splay2(st, 1)
+    check("MUT-TIE baseline final trees agree",
+          real_serialize(_A2) == I.serialize2(st))
+    splay_mod.serialize = mirror_serialize2
+    try:
+        check("MUT-TIE mirrored serialization order caught",
+              splay_mod.serialize(_A2) != I.serialize2(st))
+    finally:
+        splay_mod.serialize = real_serialize
+    check("MUT-TIE implementation restored",
+          splay_mod.serialize is real_serialize)
 
 
 def test_hash_and_determinism_attacks() -> None:
@@ -185,6 +204,7 @@ if __name__ == "__main__":
     test_case_label_mutant()
     test_order_mutant()
     test_snapshot_order_mutant()
+    test_tiebreak_mutant()
     test_hash_and_determinism_attacks()
     test_artifact_attacks()
     print("FAILURES:", FAILS if FAILS else "none")

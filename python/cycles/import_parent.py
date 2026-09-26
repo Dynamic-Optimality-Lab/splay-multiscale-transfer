@@ -33,6 +33,7 @@ V01_FILES += [("artifacts/seal/FINAL_RESULT.json", "v01/FINAL_RESULT.json"),
               ("artifacts/seal/MANIFEST.sha256", "v01/MANIFEST.sha256")]
 V02_FILES = [("artifacts/v02/parent_import/fact_table.json", "v02/fact_table.json"),
              ("artifacts/v02/seal/FINAL_RESULT.json", "v02/FINAL_RESULT.json"),
+             ("artifacts/v02/seal/MANIFEST.sha256", "v02/MANIFEST.sha256"),
              ("artifacts/v02/hypotheses/ledger.json", "v02/hypothesis_ledger.json"),
              ("artifacts/v02/debt_atoms/recency_atoms.json", "v02/recency_atoms.json"),
              ("artifacts/v02/debt_atoms/state_only_search.json", "v02/state_only_search.json")]
@@ -44,6 +45,36 @@ for _n in (2, 3, 4, 5, 6, 7):
         V02_FILES.append(("artifacts/v02/specimens/n%d/%s" % (_n, _f),
                           "v02/specimens_n%d_%s" % (_n, _f)))
 
+# WP-1 REPAIR STEP V0: sealed parent-evidence classes (F1/F3/F5 vendor lists).
+V01_EVIDENCE_FILES = []
+for _n in (2, 3, 4, 5, 6, 7):
+    for _f in ("trees.jsonl.zst", "summary.json", "SHA256SUMS"):
+        V01_EVIDENCE_FILES.append(("artifacts/trees/n%d/%s" % (_n, _f),
+                                   "v01evidence/trees/n%d/%s" % (_n, _f)))
+    for _f in ("forward.bin.zst", "inverse.bin.zst", "summary.json"):
+        V01_EVIDENCE_FILES.append(("artifacts/transitions/n%d/%s" % (_n, _f),
+                                   "v01evidence/transitions/n%d/%s" % (_n, _f)))
+    for _f in ("reachable.json.zst", "summary.json"):
+        V01_EVIDENCE_FILES.append(("artifacts/reachability/n%d/%s" % (_n, _f),
+                                   "v01evidence/reachability/n%d/%s" % (_n, _f)))
+    for _f in ("bn_certificate.json", "witness_cycle.json", "potential_upper.json.zst"):
+        V01_EVIDENCE_FILES.append(("artifacts/certificates/n%d/%s" % (_n, _f),
+                                   "v01evidence/certificates/n%d/%s" % (_n, _f)))
+    for _a in ("verify_reachability", "verify_transitions", "verify_bn_certificate",
+               "verify_uv", "verify_critical_objects"):
+        V01_EVIDENCE_FILES.append(("artifacts/audits/n%d/%s.json" % (_n, _a),
+                                   "v01evidence/audits/n%d/%s.json" % (_n, _a)))
+for _n in (2, 3):
+    V01_EVIDENCE_FILES.append(("artifacts/certificates/n%d/witness_path.json" % _n,
+                               "v01evidence/certificates/n%d/witness_path.json" % _n))
+V01_EVIDENCE_FILES.append(("artifacts/falsification/adversarial/near_tight_families.json",
+                           "v01evidence/adversarial/near_tight_families.json"))
+V02_EVIDENCE_FILES = []
+for _n in (2, 3, 4, 5, 6, 7):
+    V02_EVIDENCE_FILES.append(("artifacts/v02/bellman/n%d_b2/anchor_report.json" % _n,
+                               "v02evidence/bellman/n%d_b2/anchor_report.json" % _n))
+V02_EVIDENCE_FILES.append(("artifacts/v02/bellman/panel.json", "v02evidence/bellman/panel.json"))
+
 
 def sha_file(p: str) -> str:
     """SHA-256 over buffered reads."""
@@ -54,11 +85,15 @@ def sha_file(p: str) -> str:
 
 
 # WP1-STEP-01: vendor sealed files by hash (fails closed on any mismatch/absence).
-def vendor(sources: dict[str, str], dest_root: str) -> tuple[list[dict], list[str]]:
+def vendor(sources: dict[str, str], dest_root: str,
+           spec: list | None = None) -> tuple[list[dict], list[str]]:
     fails: list[str] = []
     ledger: list[dict] = []
-    spec = V01_FILES if "v01" in dest_root else V02_FILES
-    base = sources["v01" if "v01" in dest_root else "v02"]
+    if spec is None:
+        spec = V01_FILES if "v01" in dest_root else V02_FILES
+        base = sources["v01" if "v01" in dest_root else "v02"]
+    else:
+        base = next(iter(sources.values()))
     for src_rel, dst_rel in spec:
         src = os.path.join(base, *src_rel.split("/"))
         dst = os.path.join(dest_root, *dst_rel.split("/"))

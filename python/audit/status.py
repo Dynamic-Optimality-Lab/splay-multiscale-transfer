@@ -52,6 +52,7 @@ def derive(root: str) -> dict:
     A proof document maps to PROVED only when its Status line claims PROVED
     (SETUP/design documents map to UNPROVED with the reason recorded).
     """
+    import hashlib as _hl
     import re as _re
     out = {}
     for oid in sorted(PROOF_DOCS):
@@ -61,10 +62,22 @@ def derive(root: str) -> dict:
         proof = os.path.join(root, *PROOF_DOCS[oid].split("/"))
         if os.path.exists(review):
             try:
-                verdict = json.load(open(review, encoding="utf-8")).get("verdict")
+                rec = json.load(open(review, encoding="utf-8"))
+                verdict = rec.get("verdict")
             except (json.JSONDecodeError, OSError):
                 verdict = None
+                rec = {}
             if verdict == "ACCEPT":
+                # WP-1 REPAIR STEP H1: an ACCEPT binds the exact reviewed bytes.
+                # If the proof document changed since review, the verdict no
+                # longer binds it: author-claim PROVED pending re-review.
+                if os.path.exists(proof):
+                    cur = _hl.sha256(open(proof, "rb").read()).hexdigest().upper()
+                    if rec.get("theorem_sha256", "").upper() != cur:
+                        out[oid] = {"status": "PROVED",
+                                    "evidence": "proof bytes differ from reviewed bytes "
+                                                "(re-review required)"}
+                        continue
                 out[oid] = {"status": "REVIEWED", "evidence": "%s.review.json:ACCEPT" % oid}
                 continue
             out[oid] = {"status": "UNPROVED", "evidence": "review record without ACCEPT"}

@@ -80,6 +80,76 @@ def static_fields(root: str) -> dict:
     return fields
 
 
+# WP-1 REPAIR STEP L4: tee capture for stdout/stderr hashes (§27, F16).
+class _Tee:
+    """Write-through tee: prints to the original stream and a file."""
+
+    def __init__(self, stream, path: str):
+        self._stream = stream
+        self._file = open(path, "w", encoding="utf-8")
+
+    def write(self, data):
+        self._stream.write(data)
+        self._file.write(data)
+        return len(data)
+
+    def flush(self):
+        self._stream.flush()
+        self._file.flush()
+
+    def close(self):
+        try:
+            self._file.close()
+        except OSError:
+            pass
+
+
+class capture:
+    """Context manager capturing stdout/stderr to files (pass-through).
+
+    Usage: with capture(logdir, "phase01") as cap: ... run ...
+    Afterwards cap.hashes() returns {stdout_hash, stderr_hash, stdout_path,
+    stderr_path}. Original streams restored in finally (fail-closed).
+    """
+
+    def __init__(self, logdir: str, tag: str):
+        self._logdir = logdir
+        self._tag = tag
+        self.stdout_path = os.path.join(logdir, tag + ".stdout")
+        self.stderr_path = os.path.join(logdir, tag + ".stderr")
+
+    def __enter__(self):
+        import sys as _sys
+        os.makedirs(self._logdir, exist_ok=True)
+        self._old = (_sys.stdout, _sys.stderr)
+        _sys.stdout = _Tee(_sys.stdout, self.stdout_path)
+        _sys.stderr = _Tee(_sys.stderr, self.stderr_path)
+        return self
+
+    def __exit__(self, _exc_type, _exc, _tb):
+        import sys as _sys
+        for stream in (_sys.stdout, _sys.stderr):
+            try:
+                stream.flush()
+            except Exception:  # noqa: BLE001 - restore must not fail
+                pass
+            if isinstance(stream, _Tee):
+                stream.close()
+        _sys.stdout, _sys.stderr = self._old
+        return False
+
+    def hashes(self) -> dict:
+        """SHA-256 of the captured streams (read back from disk)."""
+        out = {}
+        for key, path in (("stdout_hash", self.stdout_path),
+                          ("stderr_hash", self.stderr_path)):
+            with open(path, "rb") as f:
+                out[key] = sha(f.read())
+        out["stdout_path"] = self.stdout_path
+        out["stderr_path"] = self.stderr_path
+        return out
+
+
 # WP-1 REPAIR STEP L2: hash every file in output dirs (deterministic order).
 def hash_outputs(root: str, rel_dirs: list) -> dict:
     """Map relpath -> SHA-256 for all files under the given artifact dirs."""

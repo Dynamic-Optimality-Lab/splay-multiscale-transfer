@@ -36,5 +36,10 @@ def l_b(a: int, y: int, b: int) -> Fraction:
 
 
 def pair_id(A: Node | None, B: Node | None) -> str:
+    """Canonical pair-state ID: SHA-256 over "serialize(A)|serialize(B)".
+
+    Frozen convention (WorkPlan WP-1): hashed, deterministic, 64-hex.
+    """
+    import hashlib as _hl
     from .splay import serialize
-    return serialize(A) + "|" + serialize(B)
+    return _hl.sha256((serialize(A) + "|" + serialize(B)).encode("utf-8")).hexdigest()

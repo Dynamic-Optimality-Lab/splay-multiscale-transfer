@@ -97,6 +97,19 @@ class PairDomain:
         """Inverse pair ID."""
         return divmod(pid, self.C)
 
+    def edge_id(self, pid: int, mode: str, x: int) -> str:
+        """Canonical Pair-Access edge identity (§5.5).
+
+        Derived from the frozen pair state/mode/key/successor convention:
+        the successor is a deterministic function of (source, mode, key), so
+        the triple identifies the edge. Corpus-local labels are forbidden.
+        """
+        if mode not in ("KEEP", "DELETE"):
+            raise ValueError("mode outside frozen contract %r" % (mode,))
+        if not (1 <= x <= self.n):
+            raise ValueError("key outside universe")
+        return "n%d:src%d:%s:x%d" % (self.n, pid, mode, x)
+
     def diagonals(self) -> list[int]:
         """Diagonal starts (synchronized trees)."""
         return [self.pid(i, i) for i in range(self.C)]

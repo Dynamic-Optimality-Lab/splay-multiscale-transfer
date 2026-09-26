@@ -26,16 +26,18 @@ from python.cycles.enumerate import PairDomain  # noqa: E402
 from python.rotations import agree as agree_mod  # noqa: E402
 from python.rotations import blocks as blocks_mod  # noqa: E402
 from python.rotations import corpus as corpus_mod  # noqa: E402
+from python.rotations import independent_trace as indep_trace_mod  # noqa: E402
 from python.rotations import reference as ref_mod  # noqa: E402
-from python.rotations.trace import trace_keep  # noqa: E402
+from python.rotations import trace as trace_mod  # noqa: E402
 from python.splay_ref import independent as I  # noqa: E402
 from python.splay_ref.splay import build_balanced, search_path  # noqa: E402
 
 
-# WP1-STEP-04: dual-core agreement on every imported corpus edge + convention checks.
+# WP1-STEP-04: full-tuple dual-core agreement on every imported corpus edge.
 def step_rotation_verification(imp: str, sizes: list[int]) -> tuple[list[str], dict]:
     fails: list[str] = []
     checked = 0
+    seen_edge_ids: set = set()
     corpus: dict[int, list] = {n: [] for n in sizes}
     for n in sizes:
         dom = PairDomain(n)
@@ -44,12 +46,23 @@ def step_rotation_verification(imp: str, sizes: list[int]) -> tuple[list[str], d
                                 encoding="utf-8"))
         for cid, cyc in enumerate(cycles):
             for i, e in enumerate(cyc["edges"]):
+                # WP-1 REPAIR STEP E1: canonical edge identity (§5.5, F8).
+                edge_id = dom.edge_id(e["source"], "KEEP", e["key"])
+                if edge_id in seen_edge_ids:
+                    fails.append("EDGE-ID %s not unique" % edge_id)
+                seen_edge_ids.add(edge_id)
                 a_id, b_id = dom.unpid(e["source"])
                 A = build_node_tree_outer(dom, a_id, n)
                 B = build_node_tree_outer(dom, b_id, n)
                 pathA = search_path(A, e["key"])
                 pathB = search_path(B, e["key"])
-                t1 = trace_keep(A, B, e["key"], "agree-%d-%d-%d" % (n, cid, i))
+                # WP-1 REPAIR STEP T6: every certified trace routes through the
+                # trace-owned validator (fail-closed inside trace.py).
+                try:
+                    t1 = trace_mod.certify_keep(A, B, e["key"], edge_id)
+                except ValueError as ex:
+                    fails.append("TRACE-CERTIFY %s: %s" % (edge_id, ex))
+                    continue
                 # Independent core on structurally identical trees.
                 A2 = build_node_tree_outer(dom, a_id, n)
                 B2 = build_node_tree_outer(dom, b_id, n)
@@ -60,20 +73,27 @@ def step_rotation_verification(imp: str, sizes: list[int]) -> tuple[list[str], d
                 evA, evB = I.splay2(stA, e["key"]), I.splay2(stB, e["key"])
                 # ROT-02 (true meaning): search paths exact on both sides.
                 if pathA != pathA2 or pathB != pathB2:
-                    fails.append("ROT-02 n=%d c=%d e=%d search-path mismatch" % (n, cid, i))
+                    fails.append("ROT-02 %s search-path mismatch" % edge_id)
                 # ROT-12 component: cross-core cost equality (convention held).
                 if a2 != t1["a"] or y2 != t1["y"]:
-                    fails.append("ROT-12 n=%d c=%d e=%d cost mismatch" % (n, cid, i))
+                    fails.append("ROT-12 %s cost mismatch" % edge_id)
                 # ROT-10 full tuple via the shared checker (single source).
-                for desc in agree_mod.compare(t1["events"], evA, evB,
-                                              "n=%d c=%d e=%d" % (n, cid, i)):
+                for desc in agree_mod.compare(t1["events"], evA, evB, edge_id):
                     fails.append("ROT-10 " + desc)
                 if I.serialize2(stA) != t1["A1"] or I.serialize2(stB) != t1["B1"]:
-                    fails.append("ROT-01 n=%d c=%d e=%d final-tree mismatch" % (n, cid, i))
+                    fails.append("ROT-01 %s final-tree mismatch" % edge_id)
                 if len(t1["reference_snapshot_hash"]) != 64:
-                    fails.append("ROT-11 n=%d c=%d e=%d snapshot malformed" % (n, cid, i))
-                corpus[n].append({"n": n, "cycle": cid, "edge_index": i,
-                                  "key": e["key"], "mode": "KEEP",
+                    fails.append("ROT-11 %s snapshot malformed" % edge_id)
+                # WP-1 REPAIR STEP S5: independent serializer end-to-end bytes.
+                stA3 = I.from_nodes(build_node_tree_outer(dom, a_id, n))
+                stB3 = I.from_nodes(build_node_tree_outer(dom, b_id, n))
+                a3, y3 = I.cost2(stA3, e["key"]), I.cost2(stB3, e["key"])
+                t2 = indep_trace_mod.trace_keep_independent(
+                    stA3, stB3, e["key"], edge_id, a3, y3, ref_mod.CONVENTION)
+                for desc in indep_trace_mod.compare_canonical(t1, t2, edge_id):
+                    fails.append("ROT-10-serializer " + desc)
+                corpus[n].append({"edge_id": edge_id, "n": n, "cycle": cid,
+                                  "edge_index": i, "key": e["key"], "mode": "KEEP",
                                   "source": e["source"], "a": t1["a"], "y": t1["y"],
                                   "convention": t1["convention"],
                                   "reference_snapshot_hash": t1["reference_snapshot_hash"],
@@ -81,15 +101,15 @@ def step_rotation_verification(imp: str, sizes: list[int]) -> tuple[list[str], d
                                   "A1": t1["A1"], "B1": t1["B1"],
                                   "events": t1["events"]})
                 checked += 1
-    print("[WP1-STEP-04] dual-core agreement on %d corpus edges (paths+costs+full-tuple+trees)" % checked,
+    print("[WP1-STEP-04] dual-core agreement on %d corpus edges (paths+costs+full-tuple+trees+serializer)" % checked,
           flush=True)
     # Reference determinism: same KEEP twice gives identical snapshot + event stream.
     A = build_balanced([1, 2, 3, 4, 5])
     B = build_balanced([1, 2, 3, 4, 5])
-    t1 = trace_keep(A, B, 3, "det-a")
+    t1 = trace_mod.trace_keep(A, B, 3, "det-a")
     A = build_balanced([1, 2, 3, 4, 5])
     B = build_balanced([1, 2, 3, 4, 5])
-    t2 = trace_keep(A, B, 3, "det-b")
+    t2 = trace_mod.trace_keep(A, B, 3, "det-b")
     if t1["reference_snapshot_hash"] != t2["reference_snapshot_hash"]:
         fails.append("ROT-11 reference snapshot not deterministic")
     elif [ev["splay_case"] for ev in t1["events"]] != [ev["splay_case"] for ev in t2["events"]]:
@@ -169,26 +189,68 @@ def step_write_corpus(corpus: dict) -> dict:
     return manifest
 
 
+# WP-1 REPAIR STEP E4: one expansion task (parallel-safe, fresh domain).
+def _expand_task(task: tuple) -> tuple:
+    """Expand a single cycle; return (canonical_key, expanded, table)."""
+    n, cid, cyc, p, q = task
+    dom = PairDomain(n)
+    ex = expand_mod.expand_cycle(dom, n, cid, cyc)
+    table = circ_mod.circulate(ex, p, q)
+    return (expand_mod.canonical_key(n, cyc, cid), ex, table)
+
+
+# WP-1 REPAIR STEP E5: mutant gate — probes must pass before certification.
+def step_mutant_gate() -> list[str]:
+    """Run the WP-1 rotation mutants; any escape blocks certification (§21)."""
+    from python.rotations import mutate as mutate_mod
+    fails: list[str] = []
+    for name, fn in (("case-label", mutate_mod.case_label_probe),
+                     ("canonical-ordering", mutate_mod.order_probe),
+                     ("snapshot-order", mutate_mod.snapshot_probe)):
+        try:
+            baseline_ok, mutant_caught = fn()
+        except Exception as e:  # noqa: BLE001 - probe crash blocks certification
+            fails.append("MUTANT-GATE %s probe crashed: %s" % (name, type(e).__name__))
+            continue
+        if not baseline_ok:
+            fails.append("MUTANT-GATE %s baseline failed" % name)
+        if not mutant_caught:
+            fails.append("MUTANT-GATE %s mutant escaped" % name)
+    if not fails:
+        print("[WP1-STEP-04] mutant gate: 3/3 probes (baseline pass, mutant caught)",
+              flush=True)
+    return fails
+
+
 # WP1-STEP-05: expand all imported cycles (prerequisite mechanics for WP-2 science).
 def step_expand(imp: str, outdir: str, sizes: list[int], b_map: dict) -> tuple[list[str], dict]:
     fails: list[str] = []
     os.makedirs(outdir, exist_ok=True)
-    shards = {}
+    from concurrent.futures import ThreadPoolExecutor
+    tasks = []
     for n in sizes:
-        dom = PairDomain(n)
         cycles = json.load(open(os.path.join(imp, "v01baseline", "v01",
                                              "critical_n%d_canonical_cycles.json" % n),
                                 encoding="utf-8"))
         p, q = b_map[n]
-        expanded = []
-        table = []
         for cid, cyc in enumerate(cycles):
-            ex = expand_mod.expand_cycle(dom, n, cid, cyc)
-            if not ex["closed"]:
-                fails.append("EXPAND-01 n=%d cycle=%d did not close" % (n, cid))
-            expanded.append(ex)
-            table.append(circ_mod.circulate(ex, p, q))
-        payload = {"n": n, "b": [p, q], "cycles": expanded, "circulation": table}
+            tasks.append((n, cid, cyc, p, q))
+    # WP-1 REPAIR STEP E6: parallel over cycles with sorted reduce (§9.4 order).
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        done = list(pool.map(_expand_task, tasks))
+    done.sort(key=lambda t: t[0])
+    by_n: dict[int, list] = {n: [] for n in sizes}
+    for key, ex, table in done:
+        if not ex["closed"]:
+            fails.append("EXPAND-01 n=%d cycle=%d did not close" % (ex["n"], ex["cycle_index"]))
+        by_n[ex["n"]].append((ex, table))
+    shards = {}
+    for n in sizes:
+        p, q = b_map[n]
+        expanded = [ex for ex, _t in by_n[n]]
+        table = [_t for _ex, _t in by_n[n]]
+        payload = {"n": n, "b": [p, q], "cycles": expanded, "circulation": table,
+                   "order": "canonical [n, source_state_id, cycle_length, key_word_lex]"}
         blob = json.dumps(payload, sort_keys=True)
         plain_path = os.path.join(outdir, "expanded_n%d.json" % n)
         with open(plain_path, "w", encoding="utf-8", newline="\n") as f:
@@ -217,18 +279,47 @@ def step_expand(imp: str, outdir: str, sizes: list[int], b_map: dict) -> tuple[l
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--sizes", default="2,3,4,5,6,7")
+    args = ap.parse_args()
+    logdir = os.path.join(ROOT, "artifacts", "v03", "logs")
+    # WP-1 REPAIR STEP L5: capture both streams, hash after close (§27).
+    with log_mod.capture(logdir, "phase03") as cap:
+        exit_code, rec = _run(args)
+    streams = cap.hashes()
+    rec["stdout_hash"] = streams["stdout_hash"]
+    rec["stderr_hash"] = streams["stderr_hash"]
+    # WP-1 REPAIR STEP L3: append the §27 execution record (fail-closed fields).
+    log_mod.write_log(os.path.join(ROOT, "artifacts", "v03", "logs", "phase03_wp1.jsonl"), rec)
+    print("[WP1-STEP-00] §27 record appended (phase03_wp1.jsonl)", flush=True)
+    if exit_code:
+        print("[WP1-STEP-00] PHASE03_FAIL (see record)", flush=True)
+        return 1
+    print("[WP1-STEP-00] ROTATION_TRACE_CERTIFIED (mechanics scope; MST0-02/04 reviews pending human)", flush=True)
+    return 0
+
+
+def _run(args) -> tuple[int, dict]:
     import time as _time
     import tracemalloc as _tracemalloc
     _tracemalloc.start()
     _t0 = _time.perf_counter()
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--sizes", default="4,5,6,7")
-    args = ap.parse_args()
     print("[WP1-STEP-00] PHASE 03: rotation verification + expansion mechanics", flush=True)
     imp = os.path.join(ROOT, "artifacts", "v03", "parent_import")
+    rec = log_mod.static_fields(ROOT)
+    rec.update({
+        "phase": "03", "branch": "WP-1", "command": sys.argv,
+        "stdout_hash": None, "stderr_hash": None,
+        "allocator_peak_bytes": None,
+    })
     if not os.path.exists(os.path.join(imp, "replay.json")):
         print("[WP1-STEP-00] PHASE03_FAIL: run_phase01 outputs missing", flush=True)
-        return 1
+        rec.update({"scientific_status": "PHASE03_FAIL",
+                    "input_hashes": {}, "output_hashes": {},
+                    "wall_s": round(_time.perf_counter() - _t0, 2),
+                    "exit_code": 1})
+        _tracemalloc.stop()
+        return 1, rec
     sizes = [int(s) for s in args.sizes.split(",")]
     fails: list[str] = []
     fails_ver, corpus = step_rotation_verification(imp, sizes)
@@ -240,11 +331,11 @@ def main() -> int:
                                       sizes, b_map)
     fails += fails_exp
     corpus_manifest = step_write_corpus(corpus) if not fails else {}
+    # WP-1 REPAIR STEP E7: §21 order — mutants run BEFORE certification status.
+    fails += step_mutant_gate()
     exit_code = 1 if fails else 0
     # WP1-STEP-00: §27 execution record (append-only; fullest honest field set).
-    rec = log_mod.static_fields(ROOT)
     rec.update({
-        "phase": "03", "branch": "WP-1", "command": sys.argv,
         "scientific_status": "ROTATION_TRACE_CERTIFIED" if not fails else "PHASE03_FAIL",
         "input_hashes": log_mod.hash_outputs(ROOT, ["artifacts/v03/parent_import"]),
         "output_hashes": log_mod.hash_outputs(ROOT, ["artifacts/v03/cycles/expanded",
@@ -254,16 +345,9 @@ def main() -> int:
         "exit_code": exit_code,
     })
     _tracemalloc.stop()
-    # WP-1 REPAIR STEP L3: append the §27 execution record (fail-closed fields).
-    log_mod.write_log(os.path.join(ROOT, "artifacts", "v03", "logs", "phase03_wp1.jsonl"), rec)
-    print("[WP1-STEP-00] §27 record appended (phase03_wp1.jsonl)", flush=True)
-    if fails:
-        print("[WP1-STEP-00] PHASE03_FAIL (%d)" % len(fails), flush=True)
-        for x in fails:
-            print(" -", x, flush=True)
-        return 1
-    print("[WP1-STEP-00] ROTATION_TRACE_CERTIFIED (mechanics scope; MST0-02/04 reviews pending human)", flush=True)
-    return 0
+    for x in fails:
+        print(" -", x, flush=True)
+    return exit_code, rec
 
 
 if __name__ == "__main__":

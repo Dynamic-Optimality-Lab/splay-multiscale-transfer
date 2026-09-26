@@ -29,7 +29,7 @@ def test_ledger() -> None:
         print("SKIP parent-import suite (run_phase01 not executed yet)")
         return
     led = json.load(open(os.path.join(base, "import_ledger.json")))
-    check("CYC-00 ledger pins both sealed commits",
+    check("IMPORT-01 ledger pins both sealed commits",
           led["v01_commit"] == "6de1ca2a595e8895f54794f3a211fe6ee1a95a80"
           and led["v02_commit"] == "38c1be6afd2ab2420aa094c68ce45ee6a26b3628")
     bad = 0
@@ -69,12 +69,21 @@ def test_ledger() -> None:
         s["sha256"] for s in manifest["shards"].values())).encode()).hexdigest().upper()
     check("CYC-05 expansion shards + logical stream verify",
           ok_manifest and logical == manifest["logical_stream"])
-    # WP-1 REPAIR STEP T3: set-equality gate over this file's CYC bindings.
+    # WP-1 REPAIR STEP T3: dictionary mapping gate (one immutable semantic
+    # binding per CYC ID; auxiliary checks carry non-CYC IDs like IMPORT-01).
     import re as _re
     src = open(__file__, encoding="utf-8").read()
-    ids = set(_re.findall(r"check\(\s*\"(CYC-0[1-5])", src))
-    check("CYC-01..05 all bound exactly once with normative meaning",
-          ids == {"CYC-01", "CYC-02", "CYC-03", "CYC-04", "CYC-05"})
+    found = _re.findall(r"check\(\s*\"(CYC-0[1-5]|IMPORT-01)[^\"]*\"", src)
+    from collections import Counter as _Counter
+    counts = _Counter(found)
+    check("CYC-01..05 each bound exactly once (dictionary, not set)",
+          all(counts.get("CYC-0%d" % i, 0) == 1 for i in range(1, 6)))
+    FROZEN_CYC = {"CYC-01": "closes", "CYC-02": "parent ratio",
+                  "CYC-03": "all-KEEP", "CYC-04": "forced derivatives",
+                  "CYC-05": "expansion deterministic"}
+    check("CYC mapping frozen (5 IDs, meanings intact)",
+          set(FROZEN_CYC) == {"CYC-0%d" % i for i in range(1, 6)}
+          and all(FROZEN_CYC[i] in src for i in FROZEN_CYC))
 
 
 if __name__ == "__main__":

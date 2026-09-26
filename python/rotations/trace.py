@@ -55,3 +55,69 @@ def trace_delete(A: Node, B: Node, x: int, edge_id: str) -> dict:
             "x": x, "a": info["a"], "y": 0,
             "reference_snapshot_hash": ref, "events": events,
             "A1": serialize(A2), "B1": serialize(B2)}
+
+
+def _key_multiset(serialized: str) -> list:
+    """Key multiset of a keyed serialization (permutation check)."""
+    import re as _re
+    return sorted(int(k) for k in _re.findall(r"(?<=\()(\d+)", serialized))
+
+
+# WP-1 REPAIR STEP T5: trace-owned assertions (fail-closed, every certified trace).
+def _assert_trace(mode: str, t: dict, a0: int, y0: int) -> None:
+    """Assert final-tree presence, key integrity, and reported costs.
+
+    A1/B1 serialize the ACTUAL post-splay objects (never reconstructions);
+    reported costs equal independently recomputed pre-splay costs.
+    """
+    if t["A1"] is None or (mode == "KEEP" and t["B1"] is None):
+        raise ValueError("trace missing final tree for %s" % t["edge_id"])
+    for tag, serial in (("A1", t["A1"]), ("B1", t["B1"])):
+        keys = _key_multiset(serial)
+        if not keys or len(set(keys)) != len(keys):
+            raise ValueError("trace %s %s keys malformed" % (t["edge_id"], tag))
+    if t["a"] != a0 or (mode == "KEEP" and t["y"] != y0):
+        raise ValueError("trace %s cost mismatch (trace-layer refinement)" % t["edge_id"])
+
+
+# WP-1 REPAIR STEP T6: trace-owned independent validator (every certified trace).
+def certify_keep(A: Node, B: Node, x: int, edge_id: str) -> dict:
+    """Build the KEEP trace and certify it against the independent core.
+
+    Runs trace_keep on the given trees plus a full-tuple independent replay on
+    structurally identical dict-states; raises on any divergence (fail-closed).
+    Returns the certified trace.
+    """
+    from python.rotations import agree as agree_mod
+    from python.splay_ref import independent as I
+    from python.splay_ref.splay import cost
+    a0, y0 = cost(A, x), cost(B, x)
+    stA, stB = I.from_nodes(A), I.from_nodes(B)
+    t = trace_keep(A, B, x, edge_id)
+    _assert_trace("KEEP", t, a0, y0)
+    evA, evB = I.splay2(stA, x), I.splay2(stB, x)
+    desc = agree_mod.compare(t["events"], evA, evB, edge_id)
+    if desc:
+        raise ValueError("trace certification failed %s: %r" % (edge_id, desc))
+    if I.serialize2(stA) != t["A1"] or I.serialize2(stB) != t["B1"]:
+        raise ValueError("trace successor mismatch %s" % edge_id)
+    return t
+
+
+# WP-1 REPAIR STEP T6: DELETE counterpart of the trace-owned validator.
+def certify_delete(A: Node, B: Node, x: int, edge_id: str) -> dict:
+    """Build the DELETE trace and certify it against the independent core."""
+    from python.rotations import agree as agree_mod
+    from python.splay_ref import independent as I
+    from python.splay_ref.splay import cost
+    a0 = cost(A, x)
+    stA = I.from_nodes(A)
+    t = trace_delete(A, B, x, edge_id)
+    _assert_trace("DELETE", t, a0, 0)
+    evA = I.splay2(stA, x)
+    desc = agree_mod.compare(t["events"], evA, [], edge_id)
+    if desc:
+        raise ValueError("trace certification failed %s: %r" % (edge_id, desc))
+    if I.serialize2(stA) != t["A1"]:
+        raise ValueError("trace successor mismatch %s" % edge_id)
+    return t
